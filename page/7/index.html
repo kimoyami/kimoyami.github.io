@@ -312,6 +312,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/" itemprop="url">2019牛客暑期多校训练营(第八场)-E(Explorer)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T22:14:12+08:00">
+                2019-08-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/线段树分治/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树分治</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/888/E" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/888/E</a><br>思路：咕咕咕了两天，研究线段树分治（ddc好像喜欢叫它时间分治），发现也是个很神奇的东西。</p>
+<h4 id="线段树分治"><a href="#线段树分治" class="headerlink" title="线段树分治"></a>线段树分治</h4><p>什么是线段树分治呢？考虑有些问题，某些范围可以看作是时间的限制，即在一个时间段内这个操作有效。同时这种操作一边比较容易但一边比较难（比如并查集合并容易，但分离就很难），但撤销前一个操作比较简单的时候（并查集撤销前一个操作比较简单）。我们就可以把所有的这些操作放在以时间（可能对应题目中不同的背景）为坐标的线段树下。考虑把这些操作放到线段树对应的区间里，然后我们按照线段树的dfs序进行处理，每次进去的时候把这个区间对应的操作加进去，然后根据题目进行某些统计，dfs完后出来的时候利用栈的性质把这些操作撤销掉。这样就避免了那些比较复杂的反面操作，从而做法变得非常优雅。</p>
+<p>考虑本题，每一条边对应一个[l, r]区间的人数，那么我们可以把人数看成线段树的下标（时间），把这些边插入到线段树中，考虑在dfs时维护一个并查集，到每个根节点后，check一下1和n是否在同一个集合中即可，然后出来的时候撤销之前的并查集合并操作即可。为了满足撤销操作，我们并查集需要按秩合并，那么这个题就没了。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/10/2019牛客暑期多校训练营-第八场-J-Just-Jump/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1725,164 +1885,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/2019-Multi-University-Training-Contest-5-H-line-symmetric/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/06/2019-Multi-University-Training-Contest-5-H-line-symmetric/" itemprop="url">2019 Multi-University Training Contest 5-H(line symmetric)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T19:49:37+08:00">
-                2019-08-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算几何/" itemprop="url" rel="index">
-                    <span itemprop="name">计算几何</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/06/2019-Multi-University-Training-Contest-5-H-line-symmetric/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/06/2019-Multi-University-Training-Contest-5-H-line-symmetric/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6631" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6631</a><br>思路：场上写的时候考虑的是枚举对称轴是点点，边边还是点边，然后发现对称轴还可以旋转非常不好写。。事实上可以考虑枚举对称轴，发现一定是相邻两个点或者隔了一个点的两个点，这样我们只用看对称轴几个条件：1、两端点数差不能大于2。 2、需要更改的位置数不能大于1。 3、如果点在对称轴上也需要更改。 4、不能有互相穿过对称轴的情况，不然交叉配对后有点相交，不再是简单多边形。 这个题主要是细节比较多。。。wa点也很多。。。。不太好写。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/06/2019-Multi-University-Training-Contest-5-H-line-symmetric/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1933,7 +1935,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">437</span>
+                  <span class="site-state-item-count">438</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1944,7 +1946,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">81</span>
+                  <span class="site-state-item-count">82</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2032,7 +2034,19 @@
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
 
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
   
 </div>
 

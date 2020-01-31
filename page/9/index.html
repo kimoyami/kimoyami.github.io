@@ -312,6 +312,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/2019牛客暑期多校训练营-第五场-F-maximum-clique-1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/01/2019牛客暑期多校训练营-第五场-F-maximum-clique-1/" itemprop="url">2019牛客暑期多校训练营(第五场)-F(maximum clique 1)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-01T21:33:29+08:00">
+                2019-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络流/" itemprop="url" rel="index">
+                    <span itemprop="name">网络流</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/01/2019牛客暑期多校训练营-第五场-F-maximum-clique-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/01/2019牛客暑期多校训练营-第五场-F-maximum-clique-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/885/F" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/885/F</a><br>思路：怎么就没想到是二分图呢，怎么就没想到是二分图呢，怎么就没想到是二分图呢？<br>借着这个机会来复习一下二分图最大匹配，最小点覆盖和最大独立集。</p>
+<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>1、二分图最大匹配：指二分图最大的匹配对数，每个点只能匹配最多一次。<br>2、二分图最小点覆盖：求一个数目最小的点集，使得每一条边连的两点都至少有一个点在点集内。<br>3、二分图的最大独立集：求一个数目最多的点集，使得任意两个点之间都没有边相连。</p>
+<h4 id="定理（不加证明）"><a href="#定理（不加证明）" class="headerlink" title="定理（不加证明）"></a>定理（不加证明）</h4><p>1、最大匹配数 = 最小点覆盖数<br>2、最大独立集数 = 点数 - 最小点覆盖数 = 点数 - 最大匹配数</p>
+<h4 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h4><p>可以用匈牙利或者网络流算法，跑出最大匹配数。<br>如果需要求最小点覆盖方案，或者最大独立集方案，采取如下方式：我们从右边没有匹配的点开始出发，沿着匹配边 - 非匹配边 - 匹配点一直走，直到走不动为止，把路上的点都标记，这样左边集合中标记的点和右边集合中没有标记的点就构成了一个最小点覆盖集。<br>考虑对于左边集合中标记的点和右边集合没标记的点，都是匹配点，这个点集就可以覆盖所有的边。为什么？考虑如果有一条边没有覆盖，那么它必然是左边没标记而右边有标记，说明这两个点都没匹配，这必然不可能，说明这不是最大匹配，出现矛盾！所以所有边都在里面了。<br>除去最小点覆盖的集合外的点，就可以构成最大独立集。</p>
+<p>回到本题，考虑想问题的反面，即从那些不能共存的数对中，选一个最大集合，使得他们能共存，这不就是独立集问题吗，主要是要看出这是一个二分图。<br>首先我们得想办法把点集分到两边去，可以按二进制中1的个数来分，为奇的在一边，为偶的在另一边。因为奇和奇之间，一定不会有边，然后跑网络流，按照上述方法标记后，取左边没标记的点和右边有标记的点即可构成最大独立集。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/01/2019牛客暑期多校训练营-第五场-F-maximum-clique-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/31/luogu-P2597-灾难/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1731,177 +1893,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/HDU-1028-Ignatius-and-the-Princess-III/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/28/HDU-1028-Ignatius-and-the-Princess-III/" itemprop="url">HDU-1028(Ignatius and the Princess III)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-28T15:38:43+08:00">
-                2019-07-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/生成函数/" itemprop="url" rel="index">
-                    <span itemprop="name">生成函数</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/28/HDU-1028-Ignatius-and-the-Princess-III/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/28/HDU-1028-Ignatius-and-the-Princess-III/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=1028" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1028</a><br>思路：下午辛辛苦苦写的东西，结果电脑出问题了全部给我没了？我哭了，那就重新写一个生成函数的介绍吧。</p>
-<h4 id="生成函数概论"><a href="#生成函数概论" class="headerlink" title="生成函数概论"></a>生成函数概论</h4><p>生成函数是通过将序列信息放入幂级数中，通过幂级数的一些运算，从而非常简单的完成一些计数统计问题。本文只讨论最主要的两种生成函数：一般型生成函数、指数型生成函数。</p>
-<h4 id="生成函数特点"><a href="#生成函数特点" class="headerlink" title="生成函数特点"></a>生成函数特点</h4><p>1、形式幂级数不关心x的值<br>2、形式幂级数不关心收敛和发散，即对f(x)的收敛和发散不做要求</p>
-<h4 id="一般型生成函数"><a href="#一般型生成函数" class="headerlink" title="一般型生成函数"></a>一般型生成函数</h4><p>考虑一个序列为{$a_0, a_1, a_2, a_3….a_n$}，那么它的一般型生成函数为：</p>
-<script type="math/tex; mode=display">f(x) = a_0 + a_1x + a_2x^2 + a_3x^3 + ... + a_nx^n</script><p>如果它是一个无穷的序列，那么它的生成函数也可以拓展成无穷项，特别当序列为{1, 1, 1…1}的无穷序列时，我们可以看到它的一般型生成函数为：</p>
-<script type="math/tex; mode=display">f(x) = 1 + x + x^2 + x^3 + ... + x^{\infty} = \frac{1}{1 - x}</script><p>考虑这个题，是一个典型的整数划分问题，我们当然可以用dp去做，但是考虑生成函数的做法，这个题会更加简单。首先划分规定了顺序，即从小到大，然后没有选择次数，我们考虑对于某个整数k，它的生成函数为：</p>
-<script type="math/tex; mode=display">f(k) = 1 + x^k + x^{2k} + ... + x^{\infty}</script><p>对于给定的n，其实只有比他小的生成函数说有用的，那么对于某个整数n，最后划分序列的生成函数为</p>
-<script type="math/tex; mode=display">res = \prod_{i = 1}^n(1 + x^i + x^{2i} + ... + x^n + ... + x^{\infty})</script><p>其实只有$x^n$以下的项是有用的，最后的答案就是$x^n$的系数，我们只用模拟多项式乘法就可以做完这个题了。</p>
-<h4 id="指数型生成函数"><a href="#指数型生成函数" class="headerlink" title="指数型生成函数"></a>指数型生成函数</h4><p>指数型生成函数跟一般型生成函数比较类似，对于某个序列{$a_0, a_1, a_2…, a_n$}，它的指数型生成函数形式如下：</p>
-<script type="math/tex; mode=display">f(x) = a_0 + a_1x + \frac{a_2}{2!}x^2 + ... + \frac{a_n}{n!}x^n</script><p>我们发现与一般型生成函数相比，指数型生成函数多除了一个阶乘。我们考虑什么地方会出现阶乘—排列，所以指数型生成函数一般用来解决排列计数问题。</p>
-<h4 id="一些有趣的性质"><a href="#一些有趣的性质" class="headerlink" title="一些有趣的性质"></a>一些有趣的性质</h4><p>上面我们提到，序列为{1, 1, 1….., 1}的无穷序列时，它的一般型生成函数为：</p>
-<script type="math/tex; mode=display">f(x) = 1 + x + x^2 + x^3 + ... + x^{\infty} = \frac{1}{1 - x}</script><p>我们考虑一个多项式g(x)与f(x)相乘，根据观察我们发现，结果$x^n$的系数就是对f(x)求一次前缀和。<br>考虑g(x)与f(x)连乘k次，那么就是对g(x)求k次前缀和，我们来看一下$f^k(x)$的生成函数：</p>
-<script type="math/tex; mode=display">f^k(x) = \frac{1}{(1 - x) ^ k}</script><p>通过牛顿二项式展开：</p>
-<script type="math/tex; mode=display">\frac{1}{(1 - x) ^ k} = \sum_{i = 0}^{\infty}C_{k + i - 1}^{k - 1}x^i</script><p>我们发现组合数$\sum_{i = 0}^{\infty}C_{k + i - 1}^{k - 1}$的实际意义就是求k次前缀和（最好记住，有些题目非常有用）。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/28/HDU-1028-Ignatius-and-the-Princess-III/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1952,7 +1943,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">437</span>
+                  <span class="site-state-item-count">438</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1963,7 +1954,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">81</span>
+                  <span class="site-state-item-count">82</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2051,7 +2042,19 @@
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
 
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
   
 </div>
 
