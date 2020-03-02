@@ -312,6 +312,164 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/2019牛客暑期多校训练营-第三场-G-Removing-Stones/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/26/2019牛客暑期多校训练营-第三场-G-Removing-Stones/" itemprop="url">2019牛客暑期多校训练营(第三场)-G(Removing Stones)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T16:06:13+08:00">
+                2019-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/笛卡尔树/" itemprop="url" rel="index">
+                    <span itemprop="name">笛卡尔树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/26/2019牛客暑期多校训练营-第三场-G-Removing-Stones/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/26/2019牛客暑期多校训练营-第三场-G-Removing-Stones/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/883/G" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/883/G</a><br>思路：场上觉得这个题如果固定左端点，然后右端点似乎并不能二分，因为后面可能出现更大的值。。。然后感觉就gg，如果固定最大值，又不知道怎么处理重复点。。。然后发现用笛卡尔树解决这个题就非常简单。还是笛卡尔树上对应的最大值区间，我们要求固定一个左/右端点情况下，另一边有多少点能够满足条件。首先我们很容易发现，只要最大堆的数量 &lt;= $\lfloor\frac{区间和}{2}\rfloor$，就一定能赢（比较简单的证明）。这样我们就统计另一边有多少点能满足，我们发现这个有单调性，可以二分。对于不跨越这个点的区间，我们递归到两边去做。为了保证复杂度正确，我们应该选择左右区间中较小的那一部分来枚举，然后在另一边二分，这样可以保证枚举的区间上届是$\lfloor\frac{区间长度}{2}\rfloor$，有人证明过这样总的枚举最多是nlogn次。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/26/2019牛客暑期多校训练营-第三场-G-Removing-Stones/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/luogu-P4755-Beautiful-Pair/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1726,164 +1884,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/23/2019牛客暑期多校训练营-第二场-D-Kth-Minimum-Clique/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/23/2019牛客暑期多校训练营-第二场-D-Kth-Minimum-Clique/" itemprop="url">2019牛客暑期多校训练营(第二场)-D(Kth Minimum Clique)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-23T22:56:51+08:00">
-                2019-07-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/bfs/" itemprop="url" rel="index">
-                    <span itemprop="name">bfs</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/23/2019牛客暑期多校训练营-第二场-D-Kth-Minimum-Clique/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/23/2019牛客暑期多校训练营-第二场-D-Kth-Minimum-Clique/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/882/D" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/882/D</a><br>思路：考虑从小到大开始向外拓展，一个大的团一定是其中任意一个子集都是团，也就是说可以从小的往大的拓展，那么我们考虑从空点开始拓展，为了不重复，我们按节点编号从小到大拓展，这样就可以不重复了，因为每100个点会有1个点出堆，所以堆中最多10000个状态，也不会炸。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/23/2019牛客暑期多校训练营-第二场-D-Kth-Minimum-Clique/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1934,7 +1934,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">442</span>
+                  <span class="site-state-item-count">443</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1945,7 +1945,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">83</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

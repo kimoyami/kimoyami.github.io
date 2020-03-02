@@ -312,6 +312,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(10635)(Prince-and-Princess)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/17/Uva(10635)(Prince-and-Princess)/" itemprop="url">Uva(10635)(Prince-and-Princess)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
+                2018-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础dp/" itemprop="url" rel="index">
+                    <span itemprop="name">基础dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/17/Uva(10635)(Prince-and-Princess)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(10635)(Prince-and-Princess)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://vjudge.net/problem/UVA-10635#author=0" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-10635#author=0</a><br>思路：一开始用的是最普通的最长公共子序列去做，看错了范围（以为是p，q都小于250），结果是小于250*250，如果用二维数组明显会超内存。然后就不会做了，看了题解发现可以转换为最长上升子序列的问题（LIS），真的强啊这种转化，顺便学习了nlogn复杂度的上升子序列写法。复制一下：（感谢原博主 <a href="https://blog.csdn.net/u014800748/article/details/45749991）" target="_blank" rel="noopener">https://blog.csdn.net/u014800748/article/details/45749991）</a><br>考虑这样一个事实，给定两个下标a,b(注意，这里a,b大小未知)，如果它们满足Aa<ab且d(a)==d(b)。则对于所有的i>max{a,b},a并不会比b差。另外，如果b满足Ab&lt;Ai，那么对于a也满足这个性质，且二者的d值相同。但是，如果Aa&lt;Ai，却不一定有Ab&lt;Ai。</ab且d(a)==d(b)。则对于所有的i></p>
+<p>通过以上的事实，我们发现，对于某一个d’值，只要保留最小的那个Aa，使得d(a)==d‘即可。我们用g(i)表示d值为i的最小状态的编号（即i对应的最小的那个Aa，如果不存在设置为INF）。根据以上的推理有如下不等式：</p>
+<p>g(1)≤g(2)≤g(3)≤…≤g(n)</p>
+<p>注意，上述的g(i)是会动态改变的。对于一个给定的状态i，我们只考虑在i之前已经计算过的状态j(即j&lt;i)，上述的g值也是基于这些状态而改变的。随着i的增大，我们要考虑的状态也越来越多，g也随之发生改变。在给定状态i时，可以用二分查找得到满足g(k)≥Ai的第一个下标k（实际上是要找g(k’)&lt;Ai的最后一个下标k’,则d(i)=k’+1,令k=k’+1即可得到，这里用lower_bound省略了k’+1的操作）,则d(i)=k，此时Ai&lt;g(k).而d(i)=k，所以更新g(k)=Ai（此时正是利用了上述的事实！虽然这里的g(k)在变小，但仍然大于等于g(k-1)，满足上述的不等式）。</p>
+<p>附录：ologn最长上升子序列写法<br>int ans = 0;<br>    for(int i=1;i&lt;=x;i++) g[i] = INF;<br>    for(int i=0;i&lt;x;i++){<br>    int k = lower_bound(g+1,g+x+1,s[i])-g;//查找第一个大于等于s[i]值的下标<br>    d[i] = k; //更新前i个数最大上升子序列的值<br>    g[k] = s[i]; //更新最后一位的值<br>ans = max(ans,d[i]);// 更新一下之前有误，需要用一个ans记录最长的序列的长度<br>    }</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/17/Uva(10635)(Prince-and-Princess)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(10564)(Paths-through-the-Hourglass)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1720,164 +1882,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(1407)(Caves)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/17/Uva(1407)(Caves)/" itemprop="url">Uva(1407)(Caves)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
-                2018-11-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/树形dp/" itemprop="url" rel="index">
-                    <span itemprop="name">树形dp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/17/Uva(1407)(Caves)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(1407)(Caves)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://vjudge.net/problem/UVA-1407" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-1407</a><br>思路：树形dp，以前做过子节点与父节点有联系那种，而这种求最多多少个点的根本不会设计状态，看了题解，用dp[u][j][0/1]表示从u开始走j个节点需要走的最短距离，0/1表示最后在u点或者不在u点。首先为什么dp数组不保存点的个数呢，这样的话避免不了要判重，即哪些点走过，哪些没有。但这个图是无向图，且可以走回父节点，所以很难去设计判重的方法，而只好转换为距离最小值，然后比较与询问的q，找到比q的距离小中最大的那个对应的j就是答案，状态转移的话，如果最后在u的话，则沿途所有的边都要走两次，只有一种状态转移，如果不在的话则要考虑两种情况，一种是走其他子树回了u点，这一个子树可以不用回，另一种是这个子树要回，其他子树可以不用回= =<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(1407)(Caves)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1928,7 +1932,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">442</span>
+                  <span class="site-state-item-count">443</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1939,7 +1943,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">82</span>
+                  <span class="site-state-item-count">83</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
