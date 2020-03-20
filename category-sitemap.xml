@@ -169,13 +169,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/%E6%A0%91%E5%BD%A2dp/</loc>
-        <lastmod>2019-05-02T14:54:28.957Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/categories/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80/</loc>
         <lastmod>2019-05-04T04:33:34.945Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -484,13 +477,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/categories/%E5%90%8E%E7%BC%80%E8%87%AA%E5%8A%A8%E6%9C%BA/</loc>
-        <lastmod>2020-01-21T12:31:39.289Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/categories/%E5%9F%BA%E7%A1%80dp/</loc>
         <lastmod>2020-01-21T12:31:58.106Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -591,6 +577,20 @@
     <url>
         <loc>http://yoursite.com/categories/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/</loc>
         <lastmod>2020-03-16T15:36:06.218Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/%E5%90%8E%E7%BC%80%E8%87%AA%E5%8A%A8%E6%9C%BA/</loc>
+        <lastmod>2020-03-19T14:06:25.283Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/categories/%E6%A0%91%E5%BD%A2dp/</loc>
+        <lastmod>2020-03-20T15:52:52.944Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

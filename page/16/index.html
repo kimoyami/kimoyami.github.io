@@ -312,6 +312,322 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/P4149-IOI2011-Race/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/22/P4149-IOI2011-Race/" itemprop="url">P4149[IOI2011]-(Race)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T12:33:23+08:00">
+                2019-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/点分治/" itemprop="url" rel="index">
+                    <span itemprop="name">点分治</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/22/P4149-IOI2011-Race/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/22/P4149-IOI2011-Race/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接:<a href="https://www.luogu.org/problemnew/show/P4149" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P4149</a><br>思路:题目求树上路径长为k时最短的边数。考虑点分治，如果我们想要应用容斥，就不能直接更新最小值，因为取最小值不存在逆运算，这时候我们要把所有边数的方案都存下来，然后就可以容斥了，最后直接从小到大扫一遍看i为多少时方案不为0，即为最小值，这样做复杂度O(nlognlogn)，因为每棵子树里面还需要排序一下，然后O(n)统计答案。这是比较传统的做法<br>    考虑怎么样才能不重复计算，即每次更新最小值的两个端点都必须以你当前枚举的点为lca，因为之前是把所有子树的都统计了一起处理，再减去各个子树分开时的方案，从而得到横跨枚举点的方案，其实我们只用先统计方案再更新子树就可以避免子树内不合法的情况的更新。考虑维护一下t[x] = y，表示当距离为x时，最少经过y条边，每次我们先对子树内所有点都更新(此时t里面保存的信息是不包括这个子树的信息)，等所有子树的点都更新完后我们再把子树更新到t里面去，这样就可以避免不合法情况计算入内。完了后再清空即可(注意不要memset，直接再遍历一遍子树把访问到的点清空就行了)。这样复杂度为O(nlogn)，比上面复杂度稍好。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/05/22/P4149-IOI2011-Race/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/20/hdu-6532-Chessboard/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/20/hdu-6532-Chessboard/" itemprop="url">hdu-6532(Chessboard)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-20T22:22:05+08:00">
+                2019-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络流/" itemprop="url" rel="index">
+                    <span itemprop="name">网络流</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/20/hdu-6532-Chessboard/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/20/hdu-6532-Chessboard/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6532" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6532</a><br>思路：lls是真的强啊，一眼就看出来怎么建图了。首先把所有棋子的所在行列拿出来，然后离散化，对于所有行限制，二分找到离散化后的行结点中第一个大于他的位置(如果比最后一个还大则忽略)，然后该点向下一个点连一条容量为y，费用为0的边，同理列限制(只是改成向上连因为是流出，好像向下也可以这个没细想，我是向上的。)。然后所有棋子对应的行结点向列结点连一条容量为1，费用为-i的边，源点连向第一个行结点，第一个列结点连向汇点，跑一个最大费用流即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/05/20/hdu-6532-Chessboard/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/20/hdu-6534-Chika-and-Friendly-Pairs/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1562,322 +1878,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/MemSQL-Start-c-UP-3-0-Round-2-onsite-finalists-D-Buy-Low-Sell-High/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/05/MemSQL-Start-c-UP-3-0-Round-2-onsite-finalists-D-Buy-Low-Sell-High/" itemprop="url">MemSQL Start[c]UP 3.0 - Round 2 (onsite finalists)-D(Buy Low Sell High)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T22:24:12+08:00">
-                2019-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/贪心/" itemprop="url" rel="index">
-                    <span itemprop="name">贪心</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/05/05/MemSQL-Start-c-UP-3-0-Round-2-onsite-finalists-D-Buy-Low-Sell-High/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/05/MemSQL-Start-c-UP-3-0-Round-2-onsite-finalists-D-Buy-Low-Sell-High/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/problemset/problem/865/D" target="_blank" rel="noopener">https://codeforces.com/problemset/problem/865/D</a><br>思路：真的是非常好一个贪心题，我一直在想怎么配对，这个题其实就引入了一个新的思路。首先我们知道肯定买和卖的数量是一样的，怎么样才能一样呢，我们每天买一张并且卖一张就肯定一样了，但不一定是要买今天的，我们对于一个新股票，我们把它价值取负放进优先队列里，然后默认它要卖，再从优先队列里取一个出来当作买的(如果是同一个就相当于不买也不卖了)，这样优先队列就相当于一个中转站，给了贪心一个反悔的策略，但是可能整个股票还要作为买的，所以我们要把股票放入优先队列中两次即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/05/05/MemSQL-Start-c-UP-3-0-Round-2-onsite-finalists-D-Buy-Low-Sell-High/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/Codeforces-Round-334-Div-1-B-Lieges-of-Legendre/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/05/Codeforces-Round-334-Div-1-B-Lieges-of-Legendre/" itemprop="url">Codeforces Round 334 (Div.1)-B(Lieges of Legendre)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T16:56:39+08:00">
-                2019-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/博弈/" itemprop="url" rel="index">
-                    <span itemprop="name">博弈</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/05/05/Codeforces-Round-334-Div-1-B-Lieges-of-Legendre/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/05/Codeforces-Round-334-Div-1-B-Lieges-of-Legendre/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/problemset/problem/603/C" target="_blank" rel="noopener">https://codeforces.com/problemset/problem/603/C</a><br>思路：首先需要学习一下SG函数和SG定理，我们定义mex(x) = {后续状态的SG函数中最小未出现的非负整数}，比如mex(2) = {0, 1}, 那么mex(2) = 2。SG(x) = mex(x)。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于本题，如果k为偶数，对于偶数分解后全部异或起来一定为0，所以就直接向-1转移即可，前几项不符合规律，后面的就满足奇0偶1的结果。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于k为奇数，偶数我们考虑往-1和/2两个方向转移，排除前几项之外的奇数都是0，那么就是看/2的值，决定答案是1还是2即可，还是手算前几项就ok了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/05/05/Codeforces-Round-334-Div-1-B-Lieges-of-Legendre/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1928,7 +1928,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">448</span>
+                  <span class="site-state-item-count">450</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

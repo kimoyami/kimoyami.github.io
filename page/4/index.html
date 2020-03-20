@@ -312,6 +312,329 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/Educational-Codeforces-Round-7-F-The-Sum-of-the-k-th-Powers/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/30/Educational-Codeforces-Round-7-F-The-Sum-of-the-k-th-Powers/" itemprop="url">Educational Codeforces Round 7-F(The Sum of the k-th Powers)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T23:49:10+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/拉格朗日插值法/" itemprop="url" rel="index">
+                    <span itemprop="name">拉格朗日插值法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/30/Educational-Codeforces-Round-7-F-The-Sum-of-the-k-th-Powers/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/30/Educational-Codeforces-Round-7-F-The-Sum-of-the-k-th-Powers/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://codeforces.com/contest/622/problem/F" target="_blank" rel="noopener">https://codeforces.com/contest/622/problem/F</a><br>思路：咕咕咕了这么久重新回来了，一切重新开始吧。。</p>
+<h4 id="拉格朗日插值法"><a href="#拉格朗日插值法" class="headerlink" title="拉格朗日插值法"></a>拉格朗日插值法</h4><p>假设我们知道某个多项式最高项是n次的且知道n + 1个点，那么我们可以用如下公式构造多项式：</p>
+<script type="math/tex; mode=display">f(x) = \sum_{i = 0}^n\prod_{j \ne i}\frac{x - x_j}{x_i - x_j}y_i</script><p>复杂度是<script type="math/tex">O(n^2)</script>的，但如果<script type="math/tex">x_i</script>的值是连续的，我们可以预处理阶乘和逆元将它变为<script type="math/tex">O(n)</script></p>
+<h4 id="自然数k次幂前缀和"><a href="#自然数k次幂前缀和" class="headerlink" title="自然数k次幂前缀和"></a>自然数k次幂前缀和</h4><p>形如<script type="math/tex">1^k + 2^k + 3^k + \cdots + n^k</script>称为自然数k次幂前缀和，其处理方法一般有三种：伯努利数，拉格朗日插值，斯特林数。鉴于我现在只会拉格朗日插值的方法，剩下的就待补吧。。。<br>自然数k次幂前缀和可以表示为k + 1次多项式，这个证明在组合数学书的第7章卡特兰数的部分有介绍，那么我们就可以暴力算出k + 2项的值，因为满足连续性质，就可以预处理阶乘快速插值。当单组询问时，我们可以预处理分母的后缀积。<br>如果多组询问分母x变化怎么办呢，我们发现k + 1项中分母每次都只少了一个不同的部分，我们可以先求出所有部分的积，然后少的部分用逆元去掉即可，这样也可以做到单组O(k)的查询了。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/30/Educational-Codeforces-Round-7-F-The-Sum-of-the-k-th-Powers/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/05/The-2019-China-Collegiate-Programming-Contest-Harbin-Site-A-Artful-Paintings/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/05/The-2019-China-Collegiate-Programming-Contest-Harbin-Site-A-Artful-Paintings/" itemprop="url">The 2019 China Collegiate Programming Contest Harbin Site-A(Artful Paintings)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-05T23:30:41+08:00">
+                2019-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/差分约束系统/" itemprop="url" rel="index">
+                    <span itemprop="name">差分约束系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/05/The-2019-China-Collegiate-Programming-Contest-Harbin-Site-A-Artful-Paintings/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/05/The-2019-China-Collegiate-Programming-Contest-Harbin-Site-A-Artful-Paintings/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://codeforces.com/gym/102394/problem/A" target="_blank" rel="noopener">https://codeforces.com/gym/102394/problem/A</a><br>思路：很久没更了，最近实在太忙了，可能是icpc出征前最后一更？希望今年能有好成绩吧。。感觉自己以前都学了假的差分约束系统</p>
+<h4 id="差分约束系统"><a href="#差分约束系统" class="headerlink" title="差分约束系统"></a>差分约束系统</h4><p>现在有一堆不等式<script type="math/tex">x_i - x_j \leq k</script>或者<script type="math/tex">x_i - x_j \geq k</script>，最后我们要求<script type="math/tex">x_p - x_q</script>的最大值或者最小值，其中<script type="math/tex">x_q</script>的值已经给定。<br>考虑最短路模型，其实两点之间的最短路模型就满足<script type="math/tex">d_u + w >= d_v</script>，所以由此我们受到启发，可以用最短路解决这种约束问题。</p>
+<h4 id="建图方式"><a href="#建图方式" class="headerlink" title="建图方式"></a>建图方式</h4><p>这里有个结论，我们假设要求的是<script type="math/tex">x_n - x_1</script>，其中<script type="math/tex">x_1</script>已知，如果我们要求最大值，那么我们要跑最短路，如果求最小值，我们跑最长路（自行证明）。<br>最大值：<br>把所有约束整理成<script type="math/tex">d_u + w \geq d_v</script>的形式，然后从u到v连一条长度为w的边，最后跑最短路即可。<br>最小值：<br>把所有约束整理成<script type="math/tex">d_u + w \leq d_v</script>的形式，然后从u到v连一条长度为w的边，最后跑最长路即可。</p>
+<h4 id="一些技巧"><a href="#一些技巧" class="headerlink" title="一些技巧"></a>一些技巧</h4><p>如果是大于小于怎么办呢，很简单那就+1或者-1调整一下即可。<br>如果是等于号怎么办呢，考虑拆成一个大于等于和一个小于等于，建两条边即可。</p>
+<p>本题观察发现，涂的cube越多越容易满足，所以总数量满足二分性质。我们考虑构造数量的前缀，这样区间数量就变成两个前缀相减，就可以构造差分方程，由于是求sum[r] - sum[0]的最小值，我们要跑最长路。<br>对于第一种操作，我们从l - 1向r连一条长度为k的边<br>对于第二种操作，我们从r向l - 1连一条长度为k - mid的边（mid为二分值）<br>相邻两个的差在0和1之间，连两条边<br>特别特别别忘了，总的数量是mid，所以0到n连两条边，最后跑看是否有解即可。<br>本题还有没有log的做法，据说很难，就不补了。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/05/The-2019-China-Collegiate-Programming-Contest-Harbin-Site-A-Artful-Paintings/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/05/2018-2019-ACM-ICPC-Asia-Shenyang-Regional-Contest-M-Renaissance-Past-in-Nancy/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1575,333 +1898,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/2017-CCPC-HangZhou-G-Marriage/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/28/2017-CCPC-HangZhou-G-Marriage/" itemprop="url">2017-CCPC-HangZhou-G(Marriage)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-28T21:19:06+08:00">
-                2019-09-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/二项式反演/" itemprop="url" rel="index">
-                    <span itemprop="name">二项式反演</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/28/2017-CCPC-HangZhou-G-Marriage/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/28/2017-CCPC-HangZhou-G-Marriage/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6270" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6270</a><br>思路：学了一天二项式反演总算感觉入门了？其实二项式反演感觉跟容斥原理非常类似</p>
-<h4 id="二项式反演概念"><a href="#二项式反演概念" class="headerlink" title="二项式反演概念"></a>二项式反演概念</h4><p>反演即有两个函数f, g，如果知道其中一个函数和两个之间的关系，我们可以反演出另一个函数。<br>通常二项式反演有如下两个形式：（其实网上的形式都是0 - n，但这个更广泛，因为你可以把其他不用地方的值定义为0就行了）<br>1、<script type="math/tex">f_n = \sum_{i = s}^t(-1)^i * C_t^i * g_i \Longleftrightarrow g_n = \sum_{i = s}^t (-1)^i * C_t^i * f_i</script><br>2、<script type="math/tex">f_n = \sum_{i = s}^t C_t^i * g_i \Longleftrightarrow g_n = \sum_{i = s}^t (-1)^{t - i} * C_t^i * f_i</script></p>
-<h4 id="二项式反演套路"><a href="#二项式反演套路" class="headerlink" title="二项式反演套路"></a>二项式反演套路</h4><p>与充斥原理套路一样，一般来说我们直接算恰好k个的方案数不容易算出，但大于等于/小于等于k个的方案比较容易通过组合数/dp求出的时候，我们通过求出前缀/后缀和f，然后利用二项式反演得出恰好为k的答案g</p>
-<h4 id="一些例子"><a href="#一些例子" class="headerlink" title="一些例子"></a>一些例子</h4><p>1、错位排列<br>错位排列是一个经典的容斥原理问题，但也是一个经典的二项式反演。我们设f(i)为最多错位排列i个的方案数，容易得出f(i) = i!，令g(i)为恰好错位排列i个的方案数，我们可以得到：</p>
-<script type="math/tex; mode=display">f(k) = \sum_{i = 0}^kC_k^i * g(i)</script><p>根据二项式反演我们可以得出：</p>
-<script type="math/tex; mode=display">g(k) = \sum_{i = 0}^k (-1)^{k - i} * C_k^i * f(i) = \sum_{i = 0}^k (-1)^{k - i} * C_k^i * i!</script><p>考虑枚举k - i:</p>
-<script type="math/tex; mode=display">g(k) = \sum_{i = 0}^k(-1)^i\frac{k!}{i!} = k!\sum_{i = 0}^k\frac{(-1)^i}{i!}</script><p>2、球染色问题<br>问题：n个球，k种颜色，求满足相邻颜色不同，每种颜色至少出现一次的方案数。<br>设f(i)为至少用了i种颜色且满足相邻不同色的方案数，g(i)为用了i种颜色且满足相邻不同色的方案数，那么有：</p>
-<script type="math/tex; mode=display">f(p) = \sum_{i = p}^{k}C_i^p * g(i)</script><p>根据二项式反演：</p>
-<script type="math/tex; mode=display">g(p) = \sum_{i = p}^{k}(-1)^{i - p} * C_i^p * f(i)</script><p>容易得出<script type="math/tex">f(i) = i * (i - 1)^{n - 1}</script><br>那么得到：</p>
-<script type="math/tex; mode=display">g(p) = \sum_{i = p}^{k}(-1)^{i - p} * C_i^p * i * (i - 1) ^ {n - 1}</script><h4 id="本题"><a href="#本题" class="headerlink" title="本题"></a>本题</h4><p>在本题中，其实就是错位排列的推广版，我们考虑每个家庭内的近亲结婚方案，用f(i)表示至少有k对近亲结婚，g(i)表示恰好有k对近亲结婚，我们可以得到：</p>
-<script type="math/tex; mode=display">f(k) = \sum_{i = k}^nC_i^k * g(i)</script><p>根据二项式反演：</p>
-<script type="math/tex; mode=display">g(k) = \sum_{i = k}^n(-1)^{i - k} * C_i^k * f(i)(注意代码里因为所有的C_n^0 = 1，所以省略了。。)</script><p>考虑不同家庭直接方案组合是一个卷积的形式，ntt即可。<br>但最坏可能要卷积很多次，我们考虑按哈夫曼树的形式来卷积，即每次取两个长度最短的来卷积，这样证明过复杂度是<script type="math/tex">O(nlog^2n)</script>的。<br>或者分治ntt？（并不会。。）<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/09/28/2017-CCPC-HangZhou-G-Marriage/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/2017-CCPC-HangZhou-K-Master-of-Sequence/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/28/2017-CCPC-HangZhou-K-Master-of-Sequence/" itemprop="url">2017-CCPC-HangZhou-K(Master of Sequence)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-28T21:13:03+08:00">
-                2019-09-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/二分/" itemprop="url" rel="index">
-                    <span itemprop="name">二分</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/28/2017-CCPC-HangZhou-K-Master-of-Sequence/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/28/2017-CCPC-HangZhou-K-Master-of-Sequence/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6274" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6274</a><br>思路：一个对于整除题目很有启发性的题目：即把它分为整除部分和余数部分。考虑a最多1000，我们把每个数分为对a的整数部分和余数部分，那么对于询问3，我们二分一个t，可以得到他对每一个a的整数部分和余数部分，那么我们对于所有b维护一下他对所有a的余数个数的前缀和，这样我们在O(1)时间内可以查到某个t对于某个a需要减多少1。所以对于询问1和2我们暴力修改维护的前缀和，对于询问3，我们二分一个t，O(1000)内即可算出它的S答案。（这个题bit做询问3确实很容易T）<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/09/28/2017-CCPC-HangZhou-K-Master-of-Sequence/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1952,7 +1948,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">448</span>
+                  <span class="site-state-item-count">450</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

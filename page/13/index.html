@@ -312,6 +312,322 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/" itemprop="url">2019牛客暑期多校训练营(第一场)-H(XOR)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-19T22:07:09+08:00">
+                2019-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/线性基/" itemprop="url" rel="index">
+                    <span itemprop="name">线性基</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/881/H" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/881/H</a><br>思路：在下一篇的线性基模板题我再补充一下线性基的一些东西，本篇主要讲下知道了线性基怎么做这个题。考虑这个式子，看到某种合法方案 <em> 方案里的元素个数，自然想到转换为统计单点贡献，即每个数在多少种方案中出现。那么我们考虑某个元素必选，还剩下n - 1个元素，我们用这n - 1个元素来构造线性基，设秩为r，如果这个元素能被这n - 1个元素的线性基表示，那么方案数就是$2^{n - r - 1}$。简单证明一下，首先如果不能表示，说明线性基和该元素线性无关，则不可能异或和为0（异或和为0必须二者相等），所以贡献为0。如果能表示，考虑在非基元素中选一个子集，其基内元素必有唯一的子集与之对应使得整个的异或和为0（如果有两个，说明基内有两个不同的子集使得和相等，约掉后得到基内有两个不同子集的异或和相等，与线性基的定义矛盾），所以这样做出来保证了所有合法的方案都被统计到了。<br>剩下的就是考虑如何统计，每次暴力建基肯定不行，我们可以先把n个元素的线性基建出来，其秩最多为62，对于非基元素的贡献都一样，总的贡献是(n - r) </em> $2^{n - r - 1}$，那么剩下我们只用考虑基内元素即可。我们把非基元素建一个线性基，每次枚举一个基内元素，再将剩下元素和非基元素的线性基合并，如果合并后的线性基与整个的线性基秩相等，说明可以表示，就统计贡献，否则贡献为0。记得特判一下，当秩和总元素个数相等的时候答案为0即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/2019牛客暑期多校训练营-第一场-I-Points-Division/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/19/2019牛客暑期多校训练营-第一场-I-Points-Division/" itemprop="url">2019牛客暑期多校训练营(第一场)-I(Points Division)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-19T13:17:25+08:00">
+                2019-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/19/2019牛客暑期多校训练营-第一场-I-Points-Division/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/19/2019牛客暑期多校训练营-第一场-I-Points-Division/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/881/I" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/881/I</a><br>思路：按题意，我们可以找到一条折线把点划分为a，b两个集合，考虑在这个折线上dp，我们假设初始全是b集合的点，我们用dp[i]表示选的a集合的点种高度y最大为i的最大值，考虑转移：如果当前点要选为a，它的高度为y，那么只能从1-y-1的dp状态转移过来，那么需要把1-y-1的值都加上a-b的差值；如果当前点选b，那么可以由1-y转移过来，并且值为1-y里面的最大值。这个过程我们可以用线段树来维护。线段树上维护最大值，update表示区间加，这样就可以满足上述操作。注意如果有一些点是y值相同，我们需要从上到下处理，这是因为上面的y是不能由同x的下面的y转移过来的，所以从上到下处理就避免了这个问题。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/19/2019牛客暑期多校训练营-第一场-I-Points-Division/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/2019牛客暑期多校训练营-第一场-C-Euclidean-Distance/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1575,322 +1891,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/10/2018-2019-ACM-ICPC-Asia-Shenyang-Regional-Contest-I-Distance-Between-Sweethearts/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/10/2018-2019-ACM-ICPC-Asia-Shenyang-Regional-Contest-I-Distance-Between-Sweethearts/" itemprop="url">2018-2019 ACM-ICPC Asia Shenyang Regional Contest-I(Distance Between Sweethearts)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-10T13:08:03+08:00">
-                2019-07-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/FWT/" itemprop="url" rel="index">
-                    <span itemprop="name">FWT</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/10/2018-2019-ACM-ICPC-Asia-Shenyang-Regional-Contest-I-Distance-Between-Sweethearts/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/10/2018-2019-ACM-ICPC-Asia-Shenyang-Regional-Contest-I-Distance-Between-Sweethearts/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/gym/101955/problem/I" target="_blank" rel="noopener">https://codeforces.com/gym/101955/problem/I</a><br>思路：本题的难点在怎么处理这个max上，看一看数据范围，2000 emmmm，看来是要从小到大枚举最大值了。我们枚举最大值i，然后可以把三对boy与girl差距为i的方案记入cur数组，那么我们考虑，最大值为i的贡献有哪些，可能是其中1、2、3为最大值，我们当然可以把所有情况都列完求解，然后就喜题TLE了。。。。。我们用sum来记录最大值小于等于i的，那么其实当前最大值为i的贡献就是sum[i]做fwt的方案 - sum[i - 1]做fwt的方案。我们只用记录上一次fwt的结果，然后把cur数组累加到sum数组上，然后再fwt，两次的结果相减，就是最大值为i的方案，统计贡献即可。这样就可以少掉大量的常数，然后就可以过了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/10/2018-2019-ACM-ICPC-Asia-Shenyang-Regional-Contest-I-Distance-Between-Sweethearts/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/luogu-P3594-WIL-Wilcze-doly/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/09/luogu-P3594-WIL-Wilcze-doly/" itemprop="url">luogu-P3594(WIL-Wilcze doły)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-09T22:35:04+08:00">
-                2019-07-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/单调队列dp/" itemprop="url" rel="index">
-                    <span itemprop="name">单调队列dp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/09/luogu-P3594-WIL-Wilcze-doly/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/09/luogu-P3594-WIL-Wilcze-doly/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://www.luogu.org/problemnew/show/P3594" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P3594</a><br>思路：可以考虑尺取法，因为一定是把d用满是最优的，所以中间一段求长度为d的最大连续和可以考虑用数据结构维护一下，但这样会多个log不知道会不会被卡掉。当然这个是随l，r的移动而改变的，自然就想到了滑动窗口，也就可以用单调队列dp来优化，每次r移动到最右边不能满足的位置，然后每移动一下把一个可行的连续长度为d的区间放到单调队列里，check的时候取队首元素check即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/09/luogu-P3594-WIL-Wilcze-doly/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1941,7 +1941,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">448</span>
+                  <span class="site-state-item-count">450</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
