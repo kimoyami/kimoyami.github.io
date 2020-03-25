@@ -312,6 +312,485 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/Codeforces-Round-112-Div-2-E-Compatible-Numbers/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/31/Codeforces-Round-112-Div-2-E-Compatible-Numbers/" itemprop="url">Codeforces Round 112 (Div. 2)-E(Compatible Numbers)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-31T23:27:39+08:00">
+                2019-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/状压dp/" itemprop="url" rel="index">
+                    <span itemprop="name">状压dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/31/Codeforces-Round-112-Div-2-E-Compatible-Numbers/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/31/Codeforces-Round-112-Div-2-E-Compatible-Numbers/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://codeforces.com/contest/165/problem/E" target="_blank" rel="noopener">https://codeforces.com/contest/165/problem/E</a><br>思路：<br>cf教程链接：<a href="https://codeforces.com/blog/entry/45223" target="_blank" rel="noopener">https://codeforces.com/blog/entry/45223</a></p>
+<h4 id="SOS-dp概念"><a href="#SOS-dp概念" class="headerlink" title="SOS dp概念"></a>SOS dp概念</h4><p>SOS dp用来解决形如 </p>
+<script type="math/tex; mode=display">F[mask] = \sum_{i \subseteq mask} x</script><p>其中x可以是常数，也可以是跟i有关的函数。我们发现F维护的是一个状态及其对应的所有子集，这个通常也被成为高位前缀和。</p>
+<h4 id="SOS-dp求解"><a href="#SOS-dp求解" class="headerlink" title="SOS dp求解"></a>SOS dp求解</h4><p>考虑这个可以通过状压dp，也叫sosdp来求，考虑枚举一位，然后从小到大枚举状态，如果该状态存在该位，那么加上去掉这一位的状态（已经枚举过），这样我们求出来的就是mask状态对应的子集的和，也就是F函数。<br>有些题可能是需要F[mask]表示包含mask的所有所有状态的后缀和，换一下前缀和方向就变成后缀和了。</p>
+<h4 id="SOS-dp细节"><a href="#SOS-dp细节" class="headerlink" title="SOS dp细节"></a>SOS dp细节</h4><p>1、注意第一维一定是先枚举位数，因为每次更新是按照位的顺序更新的。看cf上那张图会更清楚。<br>2、初始化F的时候就是对应的i = mask时的x的值</p>
+<p>考虑本题，要求对于每个i，是否存在j使得<script type="math/tex">a_i \& a_j = 0</script>。考虑SOS dp求解，如果<script type="math/tex">a_i \& a_j = 0</script>，那么<script type="math/tex">a_j</script>取反一定包含<script type="math/tex">a_i</script>，那么我们考虑对解维护SOS dp，即一个解向所有包含它的状态更新，初始化所有mask = -1，<script type="math/tex">a_i</script>取反对应的状态为<script type="math/tex">a_i</script>，然后用SOS dp更新所有答案，最后只用查询每个<script type="math/tex">a_i</script>取反后是否有解即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/31/Codeforces-Round-112-Div-2-E-Compatible-Numbers/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/25/2019-Multi-University-Training-Contest-10-D-Play-Games-with-Rounddog/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/25/2019-Multi-University-Training-Contest-10-D-Play-Games-with-Rounddog/" itemprop="url">2019 Multi-University Training Contest 10-D(Play Games with Rounddog)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-25T21:57:31+08:00">
+                2019-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/后缀自动机/" itemprop="url" rel="index">
+                    <span itemprop="name">后缀自动机</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/25/2019-Multi-University-Training-Contest-10-D-Play-Games-with-Rounddog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/25/2019-Multi-University-Training-Contest-10-D-Play-Games-with-Rounddog/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6704" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6704</a><br>思路：考虑葫芦选的，一定是SAM的fail树某个点对应子树中点的，如果葫芦想赢，那么必须选出来的不能出现子集的异或和为0，换句话说他们都必须线性无关，那就是线性基了。考虑在有解的情况下我们要答案最大，我们考虑按w的大小向SAM的fail树上更新线性基，一直从该点沿着边更新到根节点。考虑复杂度，因为一个点最多被更新58次，更新一次代价58，所以这部分复杂度O(nlognlogn)。这样保证大的先更新，最后出来的总和一定是最大的，然后询问我们只用倍增找到那个串在SAM上对应的节点，查询其最大综合即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/25/2019-Multi-University-Training-Contest-10-D-Play-Games-with-Rounddog/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/25/2019-Multi-University-Training-Contest-10-G-Closest-Pair-of-Segments/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/25/2019-Multi-University-Training-Contest-10-G-Closest-Pair-of-Segments/" itemprop="url">2019 Multi-University Training Contest 10-G(Closest Pair of Segments)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-25T21:32:17+08:00">
+                2019-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算几何/" itemprop="url" rel="index">
+                    <span itemprop="name">计算几何</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/25/2019-Multi-University-Training-Contest-10-G-Closest-Pair-of-Segments/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/25/2019-Multi-University-Training-Contest-10-G-Closest-Pair-of-Segments/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6697" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6697</a><br>思路：二分是比较容易想到的一个思路，二分后的判断不太容易想到，首先发现二分后线段将会变成一个类似椭圆的东西（但上面是直线），我们需要维护这些类椭圆是否存在交点。考虑按x进行排序，维护一个y轴的扫描线，那么每次加入一个点只需判断跟上下两个线段是否相交，删除一个点只用判断上下它上下两个线段是否相交即可。我们用该x点在其他线段对应的y给线段排序即可。复杂度O(nlognlogn)。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/25/2019-Multi-University-Training-Contest-10-G-Closest-Pair-of-Segments/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/25/2019中国大学生程序设计竞赛（CCPC-网络选拔赛-C-K-th-occurrence/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1420,485 +1899,11 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/2019牛客暑期多校训练营-第八场-I-Inner-World/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/13/2019牛客暑期多校训练营-第八场-I-Inner-World/" itemprop="url">2019牛客暑期多校训练营(第八场)-I(Inner World)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-13T22:21:19+08:00">
-                2019-08-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/线段树/" itemprop="url" rel="index">
-                    <span itemprop="name">线段树</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/13/2019牛客暑期多校训练营-第八场-I-Inner-World/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/13/2019牛客暑期多校训练营-第八场-I-Inner-World/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/888/I" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/888/I</a><br>思路：大概是这段时间来做的最妙的一个题了吧？问题有很多约束，从而产生了很多性质，需要慢慢挖掘。首先每个点只会被加一次，那么意味着这些加的点其实可以构成一棵树。其次是所有点加完后才询问，也就是这是一个静态的问题。每次询问的是[l, r]的树中有多少子节点，我们换一个看法，因为每个点只会被加一次，我们把这些加入操作构成一棵树，每个点有一个区间[l, r]，那么产生贡献的点一定在这个树询问点的子树内，也就是子树内每一个点与[l, r]区间求交，再把大小计入贡献。这个时候最妙的来了，我们可以把这个构成的树的dfs序看作一维，把区间看作第二维，那么考虑进行dfs，并且按照每个点对应的[l, r]进行加点。假设询问点是u，我们在x1进入点u，x2点离开u点，那么我们要求的总和，在二维矩阵里是不是对应的就是(x1, l), (x2, r)这个矩阵。二维矩阵我们知道可以用容斥算，但很明显空间不够我们开二维，我们思考一下，假设我们把矩阵大小写成如下形式：[(x2, r), (1, l)] - [(x1, r), (1, l)]，即写为前缀和相减，我们惊奇的发现，我们可以维护一棵线段树，线段树上维护第二维，我们把所有询问记录到对应点上，进去的时候算一下公式后面的x1部分，然后更新，进入子树更新，出来的时候就刚好是x2状态，再算一下前面的贡献，二者之差就是这个点询问的答案了，这也非常巧妙的就甩掉了第一维。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/13/2019牛客暑期多校训练营-第八场-I-Inner-World/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/2019牛客暑期多校训练营-第八场-D-Distance/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/13/2019牛客暑期多校训练营-第八场-D-Distance/" itemprop="url">2019牛客暑期多校训练营(第八场)-D(Distance)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-13T22:16:45+08:00">
-                2019-08-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/bfs/" itemprop="url" rel="index">
-                    <span itemprop="name">bfs</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/13/2019牛客暑期多校训练营-第八场-D-Distance/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/13/2019牛客暑期多校训练营-第八场-D-Distance/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/888/D" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/888/D</a><br>思路：这个题说着是bfs，其实里面分块思想特别经典。考虑nmh总的是1e5，也就是说做一次bfs复杂度的上界是1e5，如果我们分块来做，也可以叫定期重构，即隔一段时间重新进行一次暴力bfs，期间插入的点我们都暴力访问。我们考虑复杂度，假设重构周期为T，那么总的复杂度就是<script type="math/tex">O(Tnmh + \frac{qnmh}{E})</script>，我们发现<script type="math/tex">T = \sqrt(nmh)</script>时总复杂度最小。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/13/2019牛客暑期多校训练营-第八场-D-Distance/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/bzoj-3223-文艺平衡树/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/12/bzoj-3223-文艺平衡树/" itemprop="url">bzoj-3223(文艺平衡树)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T23:22:41+08:00">
-                2019-08-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/splay/" itemprop="url" rel="index">
-                    <span itemprop="name">splay</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/12/bzoj-3223-文艺平衡树/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/12/bzoj-3223-文艺平衡树/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=3223" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=3223</a><br>思路：splay一个非常经典的题目，考虑按照中序遍历建立splay树，假设需要翻转区间[l, r]，我们把l - 1放根上，然后把r + 1放到根的右儿子，这样r + 1的左子树的中序遍历就是区间[l, r]，考虑中序遍历的性质，翻转是不是就是对于每个节点都把它的左右子树交换了一下？这样我们就可以模仿线段树的下传标记一样，在树上打翻转标记下传即可。最后我们只用dfs遍历这个splay树，按照中序遍历的顺序输出答案即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/12/bzoj-3223-文艺平衡树/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1944,7 +1949,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">450</span>
+                  <span class="site-state-item-count">453</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1955,7 +1960,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-count">85</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
