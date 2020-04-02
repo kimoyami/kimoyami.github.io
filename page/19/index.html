@@ -312,6 +312,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/The-Preliminary-Contest-for-ICPC-China-Nanchang-National-J-Distance-on-the-tree/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/21/The-Preliminary-Contest-for-ICPC-China-Nanchang-National-J-Distance-on-the-tree/" itemprop="url">The-Preliminary-Contest-for-ICPC-China-Nanchang-National-J(Distance on the tree)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T22:49:10+08:00">
+                2019-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/可持久化线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">可持久化线段树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/21/The-Preliminary-Contest-for-ICPC-China-Nanchang-National-J-Distance-on-the-tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/21/The-Preliminary-Contest-for-ICPC-China-Nanchang-National-J-Distance-on-the-tree/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://nanti.jisuanke.com/t/38229" target="_blank" rel="noopener">https://nanti.jisuanke.com/t/38229</a><br>思路：典型的树上主席树，开始想复杂了想用欧拉序把树给扒下来然后再建主席树，事实上直接在dfs的时候就可以建树了。先把所有边权离散化，然后dfs的时候把边权加进去，最后查询的时候找到两个点的lca，然后分别查询两边路径对应区间的值即可。有几个地方细节要注意，因为这种做法查询在线，所以要用upper_bound然后再-1，找到最后一个符合的位置，再者还要特判一下upper_bound求出来为0的情况，直接输出0即可。不然返回的是离散化后1对应边权的个数。 lls还写了一个超骚的离线树剖 + 树状数组，ddc给我说他可能写复杂了感觉会比主席树好写，不管了以后学了树剖再来补这个内容吧。</p>
+<p>树剖来了。还是先进行树剖，然后将询问和边都按从小到大进行排序，处理某一个询问时把小于等于当前k的边加入到bit中，然后树剖上进行查询更新答案即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/21/The-Preliminary-Contest-for-ICPC-China-Nanchang-National-J-Distance-on-the-tree/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/SP10707-COT2-Count-on-a-tree-II/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1720,164 +1879,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/Codeforces-Round-302-Div-1-B-Destroying-Roads/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/17/Codeforces-Round-302-Div-1-B-Destroying-Roads/" itemprop="url">Codeforces-Round-302-(Div.1)-B(Destroying Roads)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-17T08:18:43+08:00">
-                2019-04-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/最短路/" itemprop="url" rel="index">
-                    <span itemprop="name">最短路</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/17/Codeforces-Round-302-Div-1-B-Destroying-Roads/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/17/Codeforces-Round-302-Div-1-B-Destroying-Roads/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/problemset/problem/543/B" target="_blank" rel="noopener">https://codeforces.com/problemset/problem/543/B</a><br>思路：首先求出任意两点间的最短路，因为边权都是1所以直接bfs就可以解决，然后我们考虑如果答案不是两个最短路值相加，中间必有一段是重合的，且起点终点分别是到这一段两个端点的最短路，所以直接枚举重合的部分即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/17/Codeforces-Round-302-Div-1-B-Destroying-Roads/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1928,7 +1929,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">455</span>
+                  <span class="site-state-item-count">456</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

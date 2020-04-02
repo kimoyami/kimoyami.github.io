@@ -312,6 +312,164 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/05/2017-ACM-ICPC-World-Finals-D-Money-for-Nothing/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/05/2017-ACM-ICPC-World-Finals-D-Money-for-Nothing/" itemprop="url">2017 ACM-ICPC World Finals-D(Money for Nothing)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-05T17:46:30+08:00">
+                2019-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/决策单调性/" itemprop="url" rel="index">
+                    <span itemprop="name">决策单调性</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/05/2017-ACM-ICPC-World-Finals-D-Money-for-Nothing/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/05/2017-ACM-ICPC-World-Finals-D-Money-for-Nothing/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://codeforces.com/gym/101471/attachments" target="_blank" rel="noopener">https://codeforces.com/gym/101471/attachments</a><br>思路：问题可以转换为平面上给定两个点集A，B，从A中选一个作为矩形的左下角，从B中选一个作为矩形的右下角，问矩形最大面积是多少。<br>第一反应跟最近公共点对好像啊，似乎是个分支题，但对于分治中两边怎么合并答案一直找不到很好的方法。<br>结果这个题有一个很强的性质，但光看是不可能看出来的，也是提醒了自己，没有想法时候得写式子试着推一推。我们考虑一定存在一些点对是不可能作为答案的，否则这个题复杂度永远过不去。首先我们可以剔除一些点，在A集合中对于某个点，如果存在点在它左下方，那么它一定不会成为答案，B集合同理。最后我们得到一个新的A，B集合，使得按x排序后他们的y都是递减的。那么我们考虑对于点集A中的点i，它在B中的最优点是j，那么对于点i + 1，j以前的点一定不会成为答案！<br>考虑有<script type="math/tex">(x_j - x_i) * (y_j - y_i) > (x_{j - 1} - x_i) * (y_{j - 1} - y_i)</script><br>展开后可得：<script type="math/tex">x_jy_j - x_iy_j - x_jy_i > x_{j - 1}y_{j - 1} - x_iy_{j - 1} - x_{j - 1}y_i</script><br>假设有<script type="math/tex">(x_{j - 1} - x_{i + 1}) * (y_{j - 1} - y_{i + 1}) > (x_{j } - x_{i + 1}) * (y_{j} - y_{i + 1})</script><br>展开后可得: <script type="math/tex">x_{j - 1}y_{j - 1} - x_{i + 1}y_{j - 1} - x_{j - 1}y_{i + 1} > x_jy_j - x_{i + 1}y_{j} - x_{j}y_{i + 1}</script><br>两式相加可得：<script type="math/tex">x_iy_j + x_jy_i + x_{i + 1}y_{j - 1} + x_{j - 1}y_{i + 1} < x_iy_{j - 1} + x_{j - 1}y_i + x_{i + 1}y_j + x_jy_{i + 1}</script><br>合并可得：<script type="math/tex">x_i(y_j - y_{j - 1}) + x_j(y_i - y_{i + 1}) + x_{i + 1}(y_{j - 1} - y_j) + x_{j - 1}(y_{i + 1} - y_i) < 0</script><br>继续合并:<script type="math/tex">(x_i - x_{i + 1})(y_j - y_{j - 1}) + (x_j - x_{j + 1})(y_i - y_{i + 1}) < 0</script><br>发现这个式子在x和y成反比的时候显然矛盾，于是我们得出了一个性质：即如果把B点集看作dp中的待转移状态，A点集看作dp中的转移状态，那么他们之间转移具有决策单调性，直接分治即可。<br>但是可能分治的时候这一段B都没有A的决策能转移过来（必须满足A在B的左下角），这时候我们就把只分治到A点集的左半边就好了，因为右半边一定也无解。<br>确实是非常经典的好题！<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/10/05/2017-ACM-ICPC-World-Finals-D-Money-for-Nothing/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/05/2017-ACM-ICPC-World-Finals-C-Mission-Improbable/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1741,164 +1899,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/27/2017-CCPC-HangZhou-E-Master-of-Subgraph/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/27/2017-CCPC-HangZhou-E-Master-of-Subgraph/" itemprop="url">2017-CCPC-HangZhou-E(Master of Subgraph)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-27T21:16:32+08:00">
-                2019-09-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/点分治/" itemprop="url" rel="index">
-                    <span itemprop="name">点分治</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/27/2017-CCPC-HangZhou-E-Master-of-Subgraph/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/27/2017-CCPC-HangZhou-E-Master-of-Subgraph/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6268" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6268</a><br>思路：lls vp的时候给我说了个<script type="math/tex">O(nm)</script>，结果后来发现跟省赛的链合并想混了，链合并可以树形背包做到<script type="math/tex">O(nm)</script>，但这是两个背包合并普通做法就只能<script type="math/tex">O(nm)</script>了，所以我们只能考虑让链和背包合并，这时候就是点分治的作用域了。考虑每次处理某一个重心(必须选)及其子树，那么到子树内一个点更新一次背包，这样复杂度<script type="math/tex">O(nmlogn)</script>，但这样不太能通过，我们考虑这个背包是01背包，可以用bitset来优化，每次进去直接用移位运算更新背包，这样复杂度为<script type="math/tex">O(nlogn\frac{m}{w})</script>，就能通过了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/09/27/2017-CCPC-HangZhou-E-Master-of-Subgraph/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1949,7 +1949,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">455</span>
+                  <span class="site-state-item-count">456</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
