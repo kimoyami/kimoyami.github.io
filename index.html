@@ -299,6 +299,172 @@
   <section id="posts" class="posts-expand">
     
       
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/04/仙人掌-圆方树学习笔记/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/04/仙人掌-圆方树学习笔记/" itemprop="url">仙人掌 & 圆方树学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-04T23:33:41+08:00">
+                2020-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/圆方树/" itemprop="url" rel="index">
+                    <span itemprop="name">圆方树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/04/仙人掌-圆方树学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/04/仙人掌-圆方树学习笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>你敢信我学完基础的圆方树后理解最深的居然是tarjan？<br>不知道这玩意有啥用，但据说很有用，但好像icpc都不太考这个东西？但感觉这个东西跟什么树问题都能有关系，而且还都是大码量题。。</p>
+<h1 id="仙人掌"><a href="#仙人掌" class="headerlink" title="仙人掌"></a>仙人掌</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>仙人掌是一种特殊的无向图，具有如下性质：<br>1、图是连通的。<br>2、每条边最多属于一个简单环。<br><img src="/images/12.png" alt=""><br>因为有特殊性，所以也就有特殊的方法处理这一类题目。</p>
+<h2 id="仙人掌的dfs生成树"><a href="#仙人掌的dfs生成树" class="headerlink" title="仙人掌的dfs生成树"></a>仙人掌的dfs生成树</h2><p>仙人掌dfs生成树也有着特殊的性质，我们将它的dfs生成树看成一个序列，返祖边看成一个区间，那么所有的区间都是不相交的。这样在用dfs生成树处理仙人掌的时候就能简化很多种复杂的情况。</p>
+<h1 id="圆方树"><a href="#圆方树" class="headerlink" title="圆方树"></a>圆方树</h1><h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><p>圆方树是用来解决仙人掌问题的一种数据结构。<br>其实圆方树的原理不难想，考虑前面我们说过，仙人掌每条边只属于一个简单环，换言之各个环之间不会嵌套。那么我们在环上考虑问题是比较复杂的，我们喜欢转成树，我们想到给每个环新建一个点，把所有环上的点去掉，并且跟新点相连。这个新点就好像一个中转站一样，巧妙的把环变为了链，把一般图变为了树。树上解决问题，我们可以采用的方法就会更多。</p>
+<p>我们把新建的点叫做方点，原来的点叫做圆点。</p>
+<p>Upd:我发现我好像一直学的是广义圆方树，不过好像它应用更广泛，也可以直接用在仙人掌上。。。。</p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>圆方树有很多不错的性质：<br>1、方点和方点之间不会直接相连。<br>2、无论取哪个点为根，圆方树的形态是一样的。<br>3、<script type="math/tex">以r为根的仙人掌上p的子仙人掌就是圆方树中以r为根时，p子树中的所有圆点</script>（还没理解，先嫖着）。<br>4、方点儿子中的相邻的在原图环上也是相邻的（tarjan性质）。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/04/仙人掌-圆方树学习笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
             
 
   
@@ -1419,322 +1585,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/Codeforces-Round-286-Div-1-C-Mr-Kitayuta-vs-Bamboos/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/16/Codeforces-Round-286-Div-1-C-Mr-Kitayuta-vs-Bamboos/" itemprop="url">Codeforces Round 286 (Div. 1)-C(Mr. Kitayuta vs. Bamboos)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T23:26:44+08:00">
-                2020-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/贪心/" itemprop="url" rel="index">
-                    <span itemprop="name">贪心</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/16/Codeforces-Round-286-Div-1-C-Mr-Kitayuta-vs-Bamboos/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/16/Codeforces-Round-286-Div-1-C-Mr-Kitayuta-vs-Bamboos/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="https://codeforces.com/contest/506/problem/C" target="_blank" rel="noopener">题目链接</a><br>思路：因为有小于0就取0的限制，使得这个题非常不好做。考虑小于0取0，实际上是让你赚了一部分，如果二分答案mid，最后如果每一根都小于某个值，我们发现他最多赚了mid - x，我们将赚的这部分放到最后去，再倒过来做，那么这时我们发现整个过程就不能有小于0的时候，因为一旦有代表那个位置你必须变为0，最后结果一定会大于mid，所以我们发现这样做就把小于0取0的限制去掉了，原问题变成了从mid开始逆过程，不能有小于0的部分，最后结果要大于等于它给你的初始值，我们发现这样的话，每次我们选择最近快要到0的点进行拔高是最优的，一旦后面不需要再拔它就能满足要求了，我们就把它扔掉，最后看集合是否为空即可，用优先队列模拟一下就行了。思想就是通过放缩可以忽略掉某一种操作/某一维的限制。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/16/Codeforces-Round-286-Div-1-C-Mr-Kitayuta-vs-Bamboos/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/Codeforces-Round-310-Div-1-E-Case-of-Computer-Network/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/16/Codeforces-Round-310-Div-1-E-Case-of-Computer-Network/" itemprop="url">Codeforces Round 310 (Div. 1)-E(Case of Computer Network)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T23:19:02+08:00">
-                2020-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/tarjan强连通分量/" itemprop="url" rel="index">
-                    <span itemprop="name">tarjan强连通分量</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/16/Codeforces-Round-310-Div-1-E-Case-of-Computer-Network/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/16/Codeforces-Round-310-Div-1-E-Case-of-Computer-Network/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="https://codeforces.com/contest/555/problem/E" target="_blank" rel="noopener">题目链接</a><br>思路：考虑如果能形成环，我们肯定愿意形成环，而且环上两点可以任意到达，所以我们发现如果做双连通分量，同一个分量内的两个点一定能满足，问题变成了给一个森林，然后多对起点和终点，让你判断是否能给边定向使得能满足到达。一开始想树剖，后来发现不需要，直接用两个数组树上差分即可，只要不同时大于0就能满足，否则就不能满足。<br>马上要修一下tarjan的板子了。。。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/16/Codeforces-Round-310-Div-1-E-Case-of-Computer-Network/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1785,7 +1635,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">456</span>
+                  <span class="site-state-item-count">458</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1796,7 +1646,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-count">86</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
