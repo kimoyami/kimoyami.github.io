@@ -312,6 +312,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/05/The-2019-China-Collegiate-Programming-Contest-Harbin-Site-A-Artful-Paintings/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/05/The-2019-China-Collegiate-Programming-Contest-Harbin-Site-A-Artful-Paintings/" itemprop="url">The 2019 China Collegiate Programming Contest Harbin Site-A(Artful Paintings)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-05T23:30:41+08:00">
+                2019-11-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/差分约束系统/" itemprop="url" rel="index">
+                    <span itemprop="name">差分约束系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/05/The-2019-China-Collegiate-Programming-Contest-Harbin-Site-A-Artful-Paintings/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/05/The-2019-China-Collegiate-Programming-Contest-Harbin-Site-A-Artful-Paintings/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://codeforces.com/gym/102394/problem/A" target="_blank" rel="noopener">https://codeforces.com/gym/102394/problem/A</a><br>思路：很久没更了，最近实在太忙了，可能是icpc出征前最后一更？希望今年能有好成绩吧。。感觉自己以前都学了假的差分约束系统</p>
+<h4 id="差分约束系统"><a href="#差分约束系统" class="headerlink" title="差分约束系统"></a>差分约束系统</h4><p>现在有一堆不等式<script type="math/tex">x_i - x_j \leq k</script>或者<script type="math/tex">x_i - x_j \geq k</script>，最后我们要求<script type="math/tex">x_p - x_q</script>的最大值或者最小值，其中<script type="math/tex">x_q</script>的值已经给定。<br>考虑最短路模型，其实两点之间的最短路模型就满足<script type="math/tex">d_u + w >= d_v</script>，所以由此我们受到启发，可以用最短路解决这种约束问题。</p>
+<h4 id="建图方式"><a href="#建图方式" class="headerlink" title="建图方式"></a>建图方式</h4><p>这里有个结论，我们假设要求的是<script type="math/tex">x_n - x_1</script>，其中<script type="math/tex">x_1</script>已知，如果我们要求最大值，那么我们要跑最短路，如果求最小值，我们跑最长路（自行证明）。<br>最大值：<br>把所有约束整理成<script type="math/tex">d_u + w \geq d_v</script>的形式，然后从u到v连一条长度为w的边，最后跑最短路即可。<br>最小值：<br>把所有约束整理成<script type="math/tex">d_u + w \leq d_v</script>的形式，然后从u到v连一条长度为w的边，最后跑最长路即可。</p>
+<h4 id="一些技巧"><a href="#一些技巧" class="headerlink" title="一些技巧"></a>一些技巧</h4><p>如果是大于小于怎么办呢，很简单那就+1或者-1调整一下即可。<br>如果是等于号怎么办呢，考虑拆成一个大于等于和一个小于等于，建两条边即可。</p>
+<p>本题观察发现，涂的cube越多越容易满足，所以总数量满足二分性质。我们考虑构造数量的前缀，这样区间数量就变成两个前缀相减，就可以构造差分方程，由于是求sum[r] - sum[0]的最小值，我们要跑最长路。<br>对于第一种操作，我们从l - 1向r连一条长度为k的边<br>对于第二种操作，我们从r向l - 1连一条长度为k - mid的边（mid为二分值）<br>相邻两个的差在0和1之间，连两条边<br>特别特别别忘了，总的数量是mid，所以0到n连两条边，最后跑看是否有解即可。<br>本题还有没有log的做法，据说很难，就不补了。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/11/05/The-2019-China-Collegiate-Programming-Contest-Harbin-Site-A-Artful-Paintings/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/05/2018-2019-ACM-ICPC-Asia-Shenyang-Regional-Contest-M-Renaissance-Past-in-Nancy/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1744,164 +1906,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/28/2017-CCPC-HangZhou-K-Master-of-Sequence/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/28/2017-CCPC-HangZhou-K-Master-of-Sequence/" itemprop="url">2017-CCPC-HangZhou-K(Master of Sequence)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-28T21:13:03+08:00">
-                2019-09-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/二分/" itemprop="url" rel="index">
-                    <span itemprop="name">二分</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/09/28/2017-CCPC-HangZhou-K-Master-of-Sequence/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/28/2017-CCPC-HangZhou-K-Master-of-Sequence/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6274" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6274</a><br>思路：一个对于整除题目很有启发性的题目：即把它分为整除部分和余数部分。考虑a最多1000，我们把每个数分为对a的整数部分和余数部分，那么对于询问3，我们二分一个t，可以得到他对每一个a的整数部分和余数部分，那么我们对于所有b维护一下他对所有a的余数个数的前缀和，这样我们在O(1)时间内可以查到某个t对于某个a需要减多少1。所以对于询问1和2我们暴力修改维护的前缀和，对于询问3，我们二分一个t，O(1000)内即可算出它的S答案。（这个题bit做询问3确实很容易T）<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/09/28/2017-CCPC-HangZhou-K-Master-of-Sequence/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1952,7 +1956,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">458</span>
+                  <span class="site-state-item-count">459</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1963,7 +1967,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

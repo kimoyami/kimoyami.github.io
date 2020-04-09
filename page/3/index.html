@@ -312,6 +312,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/Codeforces-Round-616-Div-1-C-Prefix-Enlightenment/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/03/Codeforces-Round-616-Div-1-C-Prefix-Enlightenment/" itemprop="url">Codeforces Round 616 (Div. 1)-C(Prefix Enlightenment)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-03T22:47:10+08:00">
+                2020-02-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/并查集/" itemprop="url" rel="index">
+                    <span itemprop="name">并查集</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/03/Codeforces-Round-616-Div-1-C-Prefix-Enlightenment/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/03/Codeforces-Round-616-Div-1-C-Prefix-Enlightenment/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://codeforces.com/contest/1290/problem/C" target="_blank" rel="noopener">https://codeforces.com/contest/1290/problem/C</a><br>思路：很显然每个点最多两个灯、一开始想的是在这个点可以把两个点拆了合并成一个等价的新的，结果是对的，但复杂度不对。</p>
+<p>考虑每个点的两个灯根据该点灯亮的情况要嘛开关状态相同，要嘛相反，发现就是个可以用带权并查集维护的东西，并且维护每个点子树内选0需要选多少灯，选1需要选多少灯，那么如果一个点有两个灯，我们将他们在并查集上合并，并且更新两个数组。如果只有一个灯，就代表这个灯必选/必不选，相当于并查集上该点只能强制选其中一种情况，考虑如果在该点强制了，其实只有这个连通块内的信息改变了，我们又是维护的子树内的信息，所以我们只需要找到它的根，把对应的另一个的选灯个数设为inf即可，每次都是取min来求得新加入的贡献。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/02/03/Codeforces-Round-616-Div-1-C-Prefix-Enlightenment/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/矩阵树定理初探/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1757,164 +1916,6 @@ deg_i &&& {i = j}\\
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-B-萨博的方程式/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-B-萨博的方程式/" itemprop="url">2020 CCPC-Wannafly Winter Camp Day2 (Div.1&2)-B(萨博的方程式)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-16T00:34:27+08:00">
-                2020-01-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础dp/" itemprop="url" rel="index">
-                    <span itemprop="name">基础dp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-B-萨博的方程式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-B-萨博的方程式/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/4010/B" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/4010/B</a><br>思路：考虑从高到低位枚举，假设前面都贴着边界，那么该位所有本来上限为0的地方只能填0，上限为1的地方可以填0和1，我们发现如果填0，其他位可以按满足限制随便填，这样这一位一定能确定一个唯一解。如果有多个填0，那么有一个用来确定唯一解，其他都可以随便填。如果填1，后面可以按限制随便填，那么这里的这个过程我们可以用dp来计数。考虑如果所有的本来为1的位置都填了1，就得枚举下一位了，发现是一个子问题，同样方法计算即可。最后把和k在这一位奇偶相同的地方求和就是答案。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-B-萨博的方程式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1965,7 +1966,7 @@ deg_i &&& {i = j}\\
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">458</span>
+                  <span class="site-state-item-count">459</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1976,7 +1977,7 @@ deg_i &&& {i = j}\\
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">86</span>
+                  <span class="site-state-item-count">87</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
