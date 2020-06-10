@@ -312,6 +312,644 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/25/整体二分浅谈/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/25/整体二分浅谈/" itemprop="url">整体二分浅谈</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-25T16:03:05+08:00">
+                2020-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/整体二分/" itemprop="url" rel="index">
+                    <span itemprop="name">整体二分</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/25/整体二分浅谈/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/25/整体二分浅谈/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>家里蹲得无聊，趁机多学点新东西吧，好久前就看到这玩意，直接现在终于有机会看了。</p>
+<h3 id="整体二分概念"><a href="#整体二分概念" class="headerlink" title="整体二分概念"></a>整体二分概念</h3><p>整体二分讲的是个什么事情呢，我们考虑普通二分，二分一个值，然后我们去check它，对于单次询问可以非常容易解决。但如果有多组询问，我们对于每一个询问都来一次普通二分的话，复杂度就爆炸了。事实上考虑二分过程中有很多check操作是重复的，我们如果能把他们一起拿来二分，并且根据mid值将他们分为两组，一组到[l, mid]里面继续去check，一组到[mid + 1, r]里面继续去check，这样复杂度就被降下来了，这也是一个非常直观的想法，整体二分就是用来干这个的。</p>
+<h3 id="整体二分流程"><a href="#整体二分流程" class="headerlink" title="整体二分流程"></a>整体二分流程</h3><p>首先我们把操作分为插入操作和查询操作，我们假设原序列为空，所有的数都是需要插入进去的。查询操作就顾名思义了。</p>
+<p>整体二分我们考虑递归来做，用四元组(l, r, L, R)表示对于二分值域[l, r]，要处理操作序列[L, R]的结果。注意这里对于L以前的操作一定都被处理过了，具体原因见后。</p>
+<p>我们找到mid(mid = (l + r ) / 2)，我们查看序列[l, r]内所有操作，如果他是插入操作并且小于等于mid，我们把他分到左边，并且更新对应的值（bit/线段树/其他），否则我们把它分到右边。如果他是查询操作，我们看他是否达到要求（比如查询第k小就看是否已经大于第k小，根据情况分到左右两边去），最后我们就得到一个根据mid分出来的两个原来的操作序列。</p>
+<p>分出来以后，记得得把之前用来分序列时候在bit/线段树/其他上的更新给撤销回来，然后根据分出来的序列重新排一下原来操作序列，并且递归到左右两边去做即可。这里我们发现更新完右边区间一定在左边区间后面处理，所以之前说的l以前的序列操作一定都已经处理过了。</p>
+<p>当l == r的时候，我们对于[L, R]上的所有查询操作更新对应位置的答案即可。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/25/整体二分浅谈/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/21/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-F-采蘑菇的克拉莉丝/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/21/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-F-采蘑菇的克拉莉丝/" itemprop="url">2020 CCPC-Wannafly Winter Camp Day2 (Div.1&2)-F(采蘑菇的克拉莉丝)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-21T20:34:45+08:00">
+                2020-01-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/树链剖分/" itemprop="url" rel="index">
+                    <span itemprop="name">树链剖分</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/21/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-F-采蘑菇的克拉莉丝/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/21/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-F-采蘑菇的克拉莉丝/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/4010/F" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/4010/F</a><br>思路：非常好的利用了轻重链的思想，一开始想法是，一个点更新后，对除了它到根节点这条链上的点以外，对其他点的贡献都是他们父亲那条边的权值 * x，但是这条链上的就非常不好办了。事实上这个题的做法就非常有启发性，因为我们没法同时维护多个儿子的贡献和（因为他们边权不一样），我们考虑只维护重儿子的，这样我们可以用dfs序建树状数组，对于重儿子的贡献我们直接查子树内修改了多少即可。对于轻儿子的贡献我们考虑暴力更新。那么当一个点修改后，我们一直跳链，只要他不是父亲的重儿子，我们把贡献更新到父亲上，一直跳到根节点为止，这个过程是O(logn)的，所以总复杂度是O(nlogn)<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/21/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-F-采蘑菇的克拉莉丝/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-E-阔力梯的树/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-E-阔力梯的树/" itemprop="url">2020 CCPC-Wannafly Winter Camp Day2 (Div.1&2)-E(阔力梯的树)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-16T00:46:47+08:00">
+                2020-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/dsu-on-tree/" itemprop="url" rel="index">
+                    <span itemprop="name">dsu on tree</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-E-阔力梯的树/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-E-阔力梯的树/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/4010/E" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/4010/E</a><br>思路：南昌深受伤害后果然看到这个题第一反应就是拿数据结构维护下dsu on tree，这里用个set就行了，如果可能出现一样的点就用multiset，然后讨论下插入时在开头，结尾和中间三种情况即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-E-阔力梯的树/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-D-卡拉巴什的字符串/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-D-卡拉巴什的字符串/" itemprop="url">2020 CCPC-Wannafly Winter Camp Day2 (Div.1&2)-D(卡拉巴什的字符串)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-16T00:40:40+08:00">
+                2020-01-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/后缀自动机/" itemprop="url" rel="index">
+                    <span itemprop="name">后缀自动机</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-D-卡拉巴什的字符串/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-D-卡拉巴什的字符串/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/4010/D" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/4010/D</a><br>思路：考虑后缀自动机动态加字符，那么对于每个有子节点的点，说明这个节点代表的串一定有是某两个后缀串的公共后缀，考虑把期中某个延长到当前的加入节点，其实也就是两个后置的最长公共前缀，并且发现一个性质，后面再怎么加，这个点在SAM上的长度信息是不会改变的了。所以我们只需要在新建点的时候，只要他有子节点了，就把他的长度标记一下，然后看最短的没有标记过的长度是多少就行了。（注意点1因为是虚点，所以需要至少两个子节点才能成为两个串的前缀）。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-D-卡拉巴什的字符串/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/16/2020-CCPC-Wannafly-Winter-Camp-Day2-Div-1-2-B-萨博的方程式/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1246,650 +1884,11 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-M-XOR-Sum/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-M-XOR-Sum/" itemprop="url">2019 ICPC Asia Nanchang Onsite-M(XOR Sum)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-08T16:32:19+08:00">
-                2019-12-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/拉格朗日插值法/" itemprop="url" rel="index">
-                    <span itemprop="name">拉格朗日插值法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-M-XOR-Sum/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-M-XOR-Sum/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/gym/259514/problem/M" target="_blank" rel="noopener">https://codeforces.com/gym/259514/problem/M</a><br>思路：首先观察异或的前缀和跟4的余数有关：f(i) = i (i % 4 == 0), f(i) = 1 (i % 4 == 1), f(i) = i + 1 (i % 4 == 2), f(i) = 0 (i % 4 == 3)，然后我们变换一下公式求和顺序。</p>
-<script type="math/tex; mode=display">\sum_{i = x}^y\sum_{k = 1}^tf(i, k)</script><p>里面按4余数分类进行求和，发现余1和余3都是常数，余2多一个常数1，我们把2的倍数拉出来讨论，发现是一个等比数列求和。<br>考虑没有外面那一层求和，里面2的倍数的项显然是一个k次多项式。再对所有2的部分求前缀和，那么应该是一个t + 1次多项式（从生成函数的角度去看幂次可能更清楚一点，简而言之就是求一次前缀和次数增加一次）。那么我们用1 - t + 2个偶点去插值，求出所有2倍数项的等比数列的前缀和，其他项分类讨论即可得出答案。（注意插值板子，里面分母上不能直接乘了后再乘逆元，因为数比模数大，可能刚好是模数的倍数就取模等于0了，得搞个靠谱板子）。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-M-XOR-Sum/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-F-Dynamic-Suffix-Array/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-F-Dynamic-Suffix-Array/" itemprop="url">2019 ICPC Asia Nanchang Onsite-F(Dynamic Suffix Array)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-08T16:25:17+08:00">
-                2019-12-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/暴力/" itemprop="url" rel="index">
-                    <span itemprop="name">暴力</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-F-Dynamic-Suffix-Array/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-F-Dynamic-Suffix-Array/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/gym/259514/problem/F" target="_blank" rel="noopener">https://codeforces.com/gym/259514/problem/F</a><br>思路：现场想了个假性质，以为直接倒着删就完了。。。结果发现完全错的。<br>题目有强调数据随机生成，用概率算一下前15位都一样的概率基本为0，这样我们先把所有询问读进来，前十五位拉出来排序离散化，然后开bit动态维护所有后缀大于等于15的点，小于15的点手动暴力查询，这样对于每一个询问我们只用先把他的后缀串查一下在离散化里的排名，然后bit求一下前缀和，再和那些没有满15的后缀点进行暴力比较，统计有多少地方答案比他小即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-F-Dynamic-Suffix-Array/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-K-Tree/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-K-Tree/" itemprop="url">2019 ICPC Asia Nanchang Onsite-K(Tree)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-08T16:13:28+08:00">
-                2019-12-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/dsu-on-tree/" itemprop="url" rel="index">
-                    <span itemprop="name">dsu on tree</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-K-Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-K-Tree/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/gym/259514/problem/K" target="_blank" rel="noopener">https://codeforces.com/gym/259514/problem/K</a><br>思路：</p>
-<h4 id="dsu-on-tree"><a href="#dsu-on-tree" class="headerlink" title="dsu on tree"></a>dsu on tree</h4><p>dsu on tree又称树上启发式合并，统计的是树上 每一个子树内的某种信息，朴素的做法是枚举每个子树进行统计，复杂度是<script type="math/tex">O(n^2)</script>的，dsu on tree利用了树的特性，继承重儿子的信息，这样只有轻儿子的信息会被清除，可以证明如果没有其他额外操作的话，复杂度是<script type="math/tex">O(nlogn)</script></p>
-<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><p>1、统计每个轻儿子内部的答案，并清除这些点的影响。<br>2、统计重儿子内部的答案，保留重儿子的信息。<br>3、补充上轻儿子的信息，并同时统计当前树内需要的答案。<br>4、补上这个点的贡献<br>5、根据是否是父节点的重儿子决定是否清空这个树内的贡献</p>
-<h4 id="本题"><a href="#本题" class="headerlink" title="本题"></a>本题</h4><p>考虑本题，由于点对不能有辈分关系，那么我们考虑每一个点对我们都在他们的lca处统计。由于还要满足<script type="math/tex">w[u] + w[v] = 2 * w[lca]</script>，并且<script type="math/tex">d_{uv} \leq k</script>，这里可以用平衡树来维护（pbds真好用），同时进行dsu on tree，对于更新我们采用先统计某一个子树的对答案的贡献，再把整个子树更新上去的方法，复杂度<script type="math/tex">O(nlognlogn)</script>。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/12/08/2019-ICPC-Asia-Nanchang-Onsite-K-Tree/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/Educational-Codeforces-Round-7-F-The-Sum-of-the-k-th-Powers/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/30/Educational-Codeforces-Round-7-F-The-Sum-of-the-k-th-Powers/" itemprop="url">Educational Codeforces Round 7-F(The Sum of the k-th Powers)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T23:49:10+08:00">
-                2019-11-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/拉格朗日插值法/" itemprop="url" rel="index">
-                    <span itemprop="name">拉格朗日插值法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/11/30/Educational-Codeforces-Round-7-F-The-Sum-of-the-k-th-Powers/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/30/Educational-Codeforces-Round-7-F-The-Sum-of-the-k-th-Powers/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/contest/622/problem/F" target="_blank" rel="noopener">https://codeforces.com/contest/622/problem/F</a><br>思路：咕咕咕了这么久重新回来了，一切重新开始吧。。</p>
-<h4 id="拉格朗日插值法"><a href="#拉格朗日插值法" class="headerlink" title="拉格朗日插值法"></a>拉格朗日插值法</h4><p>假设我们知道某个多项式最高项是n次的且知道n + 1个点，那么我们可以用如下公式构造多项式：</p>
-<script type="math/tex; mode=display">f(x) = \sum_{i = 0}^n\prod_{j \ne i}\frac{x - x_j}{x_i - x_j}y_i</script><p>复杂度是<script type="math/tex">O(n^2)</script>的，但如果<script type="math/tex">x_i</script>的值是连续的，我们可以预处理阶乘和逆元将它变为<script type="math/tex">O(n)</script></p>
-<h4 id="自然数k次幂前缀和"><a href="#自然数k次幂前缀和" class="headerlink" title="自然数k次幂前缀和"></a>自然数k次幂前缀和</h4><p>形如<script type="math/tex">1^k + 2^k + 3^k + \cdots + n^k</script>称为自然数k次幂前缀和，其处理方法一般有三种：伯努利数，拉格朗日插值，斯特林数。鉴于我现在只会拉格朗日插值的方法，剩下的就待补吧。。。<br>自然数k次幂前缀和可以表示为k + 1次多项式，这个证明在组合数学书的第7章卡特兰数的部分有介绍，那么我们就可以暴力算出k + 2项的值，因为满足连续性质，就可以预处理阶乘快速插值。当单组询问时，我们可以预处理分母的后缀积。<br>如果多组询问分母x变化怎么办呢，我们发现k + 1项中分母每次都只少了一个不同的部分，我们可以先求出所有部分的积，然后少的部分用逆元去掉即可，这样也可以做到单组O(k)的查询了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/11/30/Educational-Codeforces-Round-7-F-The-Sum-of-the-k-th-Powers/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1935,7 +1934,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">459</span>
+                  <span class="site-state-item-count">463</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1946,7 +1945,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">88</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

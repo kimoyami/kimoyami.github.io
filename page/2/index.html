@@ -312,6 +312,488 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/25/XX-Open-Cup-named-after-E-V-Pankratiev-Grand-Prix-of-Korea-Division-1-I-Minimum-Diameter-Spanning-Tree/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/25/XX-Open-Cup-named-after-E-V-Pankratiev-Grand-Prix-of-Korea-Division-1-I-Minimum-Diameter-Spanning-Tree/" itemprop="url">XX Open Cup named after E.V. Pankratiev. Grand Prix of Korea, Division 1-I(Minimum Diameter Spanning Tree)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-25T22:03:49+08:00">
+                2020-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/最小生成树/" itemprop="url" rel="index">
+                    <span itemprop="name">最小生成树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/25/XX-Open-Cup-named-after-E-V-Pankratiev-Grand-Prix-of-Korea-Division-1-I-Minimum-Diameter-Spanning-Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/25/XX-Open-Cup-named-after-E-V-Pankratiev-Grand-Prix-of-Korea-Division-1-I-Minimum-Diameter-Spanning-Tree/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><a href="http://opentrains.snarknews.info/~ejudge/team.cgi?SID=31680f20e424e9b8&amp;action=2" target="_blank" rel="noopener">题目链接</a><br>思路：最小直径生成树也算是一个比较固定的东西了。考虑要求最小直径。一个比较容易想到的做法是求某个点，剩下点中最短路最大的两个点组成直径。但是发现显然是错的，因为最大的两个最短路可能共用了一些边，不符合直径的定义。最小直径生成树其实其实有一个等价的定义，图的绝对中心，就是图上到各点距离最大值最小的点，这个绝对中心可以在边上。很显然，绝对中心到其他点的距离最大值会出现两次。最小直径生成树的直径就是绝对中心到其他点的距离最大值*2。那么我们只要求出绝对中心，这题就解决了。<br>我们考虑枚举一条边(u, v)，找两个点x, y到u, v。首先我们可以发现，如果某个点到u, v的距离均大于另一个点到u, v的距离，那么另一个点就不可能成为x或者y，换言之，成为决策的点中，按到u距离从小到大排序，那么它们到v的距离一定是从大到小的。<br>那么考虑另一个问题，就是怎么判断x, y是否共用了一些边作为它们的最短路呢，我们发现，如果x到u的距离大于y到u的距离，x到v的距离却小于y到v的距离，那么它们一定是从边(u, v)两侧过来的，不会共用最短路边。而我们要求的是加起来最大的值，前面又说过，它们到u，v距离增减性是刚好反过来的。所以我们只需要枚举相邻的即可。<br>另一种理解可以看这个图：<br><img src="images/11.png" alt=""><br>这是已经删掉无用点后的图，其实也就是求每个峰对应的答案。<br>写代码的时候并不用真的删点，只需要记录一下上一次用过的在哪里就行了。<br>还有一个问题就是求出了最小直径生成树的直径，怎么求最小直径生成树呢？答案就是从<strong>绝对中心</strong>开始跑一边最短路径树就行了，记住是绝对中心不是u或者v开始跑。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/25/XX-Open-Cup-named-after-E-V-Pankratiev-Grand-Prix-of-Korea-Division-1-I-Minimum-Diameter-Spanning-Tree/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/25/深入浅出欧拉回路/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/25/深入浅出欧拉回路/" itemprop="url">深入浅出欧拉回路</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-25T21:42:36+08:00">
+                2020-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/欧拉回路/" itemprop="url" rel="index">
+                    <span itemprop="name">欧拉回路</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/25/深入浅出欧拉回路/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/25/深入浅出欧拉回路/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="欧拉回路"><a href="#欧拉回路" class="headerlink" title="欧拉回路"></a>欧拉回路</h3><p>欧拉回路简单来说就是一笔画问题，要求一条路径使得每条边都刚好经过一次。</p>
+<h4 id="无向图"><a href="#无向图" class="headerlink" title="无向图"></a>无向图</h4><p>无向图有欧拉回路当且仅当每个顶点度数为偶数</p>
+<h4 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h4><p>无向图有欧拉回路当且仅当每个点入度等于出度</p>
+<h3 id="Hierholzer算法"><a href="#Hierholzer算法" class="headerlink" title="Hierholzer算法"></a>Hierholzer算法</h3><p>Hierholzer算法是一种高效求解欧拉回路的算法，复杂度为<script type="math/tex">O(E)</script>。</p>
+<h4 id="Hierholzer算法流程"><a href="#Hierholzer算法流程" class="headerlink" title="Hierholzer算法流程"></a>Hierholzer算法流程</h4><p>1、随便选择一个点作为初始点。<br>2、进行dfs，将走过的点标记，只能走没有标记过的边（无向图需要来回都标记）。<br>3、当做完所有边后，将该点压栈。<br>4、将栈从栈底到栈顶输出，即是一条欧拉回路。</p>
+<p>感觉也没啥正确性证明的，因为算法本身模拟的路径就是欧拉回路。。。</p>
+<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><p>dfs的时候对边要进行当前弧优化！看了网上一半以上的板子都是错的，估计也是很少被卡。但是不进行弧优化的复杂度确实是错的。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/25/深入浅出欧拉回路/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/Codeforces-Round-290-Div-1-D-Fox-And-Travelling/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/20/Codeforces-Round-290-Div-1-D-Fox-And-Travelling/" itemprop="url">Codeforces Round 290 (Div. 1)-D(Fox And Travelling)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T23:47:40+08:00">
+                2020-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/树形dp/" itemprop="url" rel="index">
+                    <span itemprop="name">树形dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/20/Codeforces-Round-290-Div-1-D-Fox-And-Travelling/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/20/Codeforces-Round-290-Div-1-D-Fox-And-Travelling/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><a href="https://codeforces.com/contest/512/problem/D" target="_blank" rel="noopener">题目链接</a><br>思路：考虑能到的点抽出来构成一个森林，并且每个树分为两种，有根和无根。有根我们发现直接树形dp，树上背包合并一下即可。无根的考虑把每一个点当成根，我们发现，一种方案有x个点，会被统计sz - x次(x &lt; sz)，x = sz时刚好会被统计一次。所以我们把一整个树拿出来，每个点来树形dp，然后再合并到答案上去即可。关于合并时的方法数计算，可以用组合公式推，但一个更简单的方法是可以预处理f[i][j]表示i个和j个合并的方案数，这个非常好递推。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/20/Codeforces-Round-290-Div-1-D-Fox-And-Travelling/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/19/深入SAM-广义SAM/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1098,643 +1580,11 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/Grand-Prix-of-America-2017-F-Heaps-of-Fun/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/02/Grand-Prix-of-America-2017-F-Heaps-of-Fun/" itemprop="url">Grand Prix of America 2017-F(Heaps of Fun)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-02T18:02:05+08:00">
-                2020-03-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/积分/" itemprop="url" rel="index">
-                    <span itemprop="name">积分</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/02/Grand-Prix-of-America-2017-F-Heaps-of-Fun/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/02/Grand-Prix-of-America-2017-F-Heaps-of-Fun/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://opentrains.snarknews.info/~ejudge/team.cgi?SID=f418f8682e022867&amp;action=2" target="_blank" rel="noopener">题目链接</a><br>思路：看懂之后瞬间人都不好了，感觉自己被羞辱了一般。。。<br>先介绍两个函数：<br>$f_u(x)：当u的值为x时，u的子树能构成最小堆的概率$<br>$F_u(x)：点u的值小于等于x时，u的子树能构成最小堆的概率，等于\int_0^xf_u(x)$<br>设$mn[u]$代表u的子树内所有b限制中最小的，显然u的取值不能大于$mn[u]$<br>假设我们计算出了所有子节点的$f、F$，考虑如何往父节点合并。<br>根据概率式子我们可以得到<br>$f_u(x) = \frac{1}{b[u]}\int_x^{mn[u]} \prod f_v(x)dt$<br>我们惊奇的发现一个事情，f函数是关于x的一个多项式，合并过程就相当于是一个多项式的乘法，因为是多项式，积分就非常好求了，直接跟多项式的指数有关，剩下的模拟一下这个过程就行了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/02/Grand-Prix-of-America-2017-F-Heaps-of-Fun/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/24/NEERC-2017-G-The-Great-Wall/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/24/NEERC-2017-G-The-Great-Wall/" itemprop="url">NEERC-2017-G(The Great Wall)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-24T23:55:17+08:00">
-                2020-02-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/二分/" itemprop="url" rel="index">
-                    <span itemprop="name">二分</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/02/24/NEERC-2017-G-The-Great-Wall/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/24/NEERC-2017-G-The-Great-Wall/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://opentrains.snarknews.info/~ejudge/team.cgi?SID=4530cc9b572da9fb&amp;action=2" target="_blank" rel="noopener">题目链接</a><br>思路：首先很显然需要二分，然后问题变为了统计所有≤x的区间对数。考虑两种情况，第一种是两个没有重叠，第二个是两个有重叠。没有重叠的情况枚举第二个区间的起点，前面用平衡树维护，非常容易计算出来。考虑有重叠的部分，我们把式子写出来，首先令$b[i]−=a[i],c[i]−=a[i]$，用sa,sb,sc代表a，b，c的前缀和，那么式子就是$sb[y−1]−sb[x−1]+sb[y+r−1]−sb[x+r−1]+sc[x+r−1]−sc[y−1]$，分为x和y两个部分，枚举一个另一个用平衡树维护。需要非常注意一点是，当r = 1的时候没有重叠的部分，但是如果你的写法不优雅（比如我）就容易在这里需要特判，如果忘了就会被卡很久。。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/02/24/NEERC-2017-G-The-Great-Wall/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/24/NEERC-2017-L-Laminar-Family/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/24/NEERC-2017-L-Laminar-Family/" itemprop="url">NEERC-2017-L(Laminar Family)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-24T23:50:40+08:00">
-                2020-02-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/树链剖分/" itemprop="url" rel="index">
-                    <span itemprop="name">树链剖分</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/02/24/NEERC-2017-L-Laminar-Family/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/24/NEERC-2017-L-Laminar-Family/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://opentrains.snarknews.info/~ejudge/team.cgi?SID=4530cc9b572da9fb&amp;action=2" target="_blank" rel="noopener">题目链接</a><br>思路:比赛口胡了一个点分治，感觉多少有点问题但总是想不出问题在哪而且写起来很复杂。事实上这个题需要稍微转换下题意，我们按路径长度从大到小加入，给路径染色，加入当前某一条，要嘛经过所有点的颜色都一样，要嘛所有点都没被染过色（0其实也可以看成一种颜色，这样就统一了）。那么问题就变成了求路径上是否只有一种颜色，这个树剖 + 线段树维护最大最小值可以做，染色就是区间赋值，这个线段树也可以做，这个题就做完了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/02/24/NEERC-2017-L-Laminar-Family/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/24/NEERC-2017-A-Archery-Tournament/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/24/NEERC-2017-A-Archery-Tournament/" itemprop="url">NEERC-2017-A(Archery Tournament)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-24T23:41:28+08:00">
-                2020-02-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算几何/" itemprop="url" rel="index">
-                    <span itemprop="name">计算几何</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/02/24/NEERC-2017-A-Archery-Tournament/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/24/NEERC-2017-A-Archery-Tournament/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://opentrains.snarknews.info/~ejudge/team.cgi?SID=4530cc9b572da9fb&amp;action=137" target="_blank" rel="noopener">题目链接</a><br>思路：一个非常重要的性质，一条竖线最多会跟log个已经存在的圆相交。证明很好证，最坏就是贴着放，因为不相交，所以每次至少要放大一个倍数，下来就是log的。那么我们可以把每个插入的圆暴力插到每个点上面去，用set维护。但考虑如果遍历插，复杂度有问题，可能多次插入删除导致复杂度退化，所以用线段树维护set，区间修改，单点查询即可。<br>像这种线段树上维护其他玩意的，要嘛单点修改区间询问，单点就一路改到底，区间找到log个区间询问；要嘛区间修改单点询问，那么区间修改只放到log个区间，单点查询一路要查到底才行；暂时应该没想到能区间修改区间查询的办法？<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/02/24/NEERC-2017-A-Archery-Tournament/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1780,7 +1630,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">459</span>
+                  <span class="site-state-item-count">463</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1791,7 +1641,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">88</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

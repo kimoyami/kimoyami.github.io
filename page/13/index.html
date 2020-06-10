@@ -312,6 +312,643 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/2019牛客暑期多校训练营-第三场-G-Removing-Stones/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/26/2019牛客暑期多校训练营-第三场-G-Removing-Stones/" itemprop="url">2019牛客暑期多校训练营(第三场)-G(Removing Stones)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T16:06:13+08:00">
+                2019-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/笛卡尔树/" itemprop="url" rel="index">
+                    <span itemprop="name">笛卡尔树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/26/2019牛客暑期多校训练营-第三场-G-Removing-Stones/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/26/2019牛客暑期多校训练营-第三场-G-Removing-Stones/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/883/G" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/883/G</a><br>思路：场上觉得这个题如果固定左端点，然后右端点似乎并不能二分，因为后面可能出现更大的值。。。然后感觉就gg，如果固定最大值，又不知道怎么处理重复点。。。然后发现用笛卡尔树解决这个题就非常简单。还是笛卡尔树上对应的最大值区间，我们要求固定一个左/右端点情况下，另一边有多少点能够满足条件。首先我们很容易发现，只要最大堆的数量 &lt;= $\lfloor\frac{区间和}{2}\rfloor$，就一定能赢（比较简单的证明）。这样我们就统计另一边有多少点能满足，我们发现这个有单调性，可以二分。对于不跨越这个点的区间，我们递归到两边去做。为了保证复杂度正确，我们应该选择左右区间中较小的那一部分来枚举，然后在另一边二分，这样可以保证枚举的区间上届是$\lfloor\frac{区间长度}{2}\rfloor$，有人证明过这样总的枚举最多是nlogn次。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/26/2019牛客暑期多校训练营-第三场-G-Removing-Stones/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/luogu-P4755-Beautiful-Pair/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/26/luogu-P4755-Beautiful-Pair/" itemprop="url">luogu-P4755(Beautiful Pair)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T15:49:15+08:00">
+                2019-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/笛卡尔树/" itemprop="url" rel="index">
+                    <span itemprop="name">笛卡尔树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/26/luogu-P4755-Beautiful-Pair/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/26/luogu-P4755-Beautiful-Pair/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.luogu.org/problem/P4755" target="_blank" rel="noopener">https://www.luogu.org/problem/P4755</a><br>思路：我们把这个问题换一个问题，在以某个点为最大值的合法区间内，有多少对(l, r)满足$a_k$, $a_r$使得$a_l$ * $a_r$ &lt;= 最大值。看到最大值的合法区间，就想到单调栈或者笛卡尔树了。那么我们考虑枚举l，问题又变为了：在以某个点为最大值的合法区间内，固定l，区间[l, 某个点右边第一个比他大的值的下标 - 1]有多少个数 &lt;= $\lfloor\frac{最大值}{a_l}\rfloor$，但这个并不好处理，因为求区间小于等于某个数的值有多少个，是一个主席树的问题，勇的哥哥可以直接冲上去上主席树了。其实我们可以利用树剖中常用的一个思路，我们把这些询问存下来，然后按照值大小排序，把这些点依次加进去，最后询问树状数组上某段区间的值的和就行了。当然这个题还有一种做法，我们其实是统计区间小于等于某个数的数有多少，那么我们可以用r处的 - l-1处的答案，我们在r处询问某个数++， l-1处询问某个数—，那么我们对所有数从左到右加入树状数组，然后把这个点所有询问的贡献统计进去即可得到答案。<br>这是对于跨越某个最大值点的统计，剩下的递归到两边子树中去做即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/26/luogu-P4755-Beautiful-Pair/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/HDU-1506-Largest-Rectangle-in-a-Histogram/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/26/HDU-1506-Largest-Rectangle-in-a-Histogram/" itemprop="url">HDU-1506(Largest Rectangle in a Histogram)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T15:38:43+08:00">
+                2019-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/笛卡尔树/" itemprop="url" rel="index">
+                    <span itemprop="name">笛卡尔树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/26/HDU-1506-Largest-Rectangle-in-a-Histogram/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/26/HDU-1506-Largest-Rectangle-in-a-Histogram/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=1506" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1506</a><br>思路：还是用模板题来写介绍性质吧。。。。<br>给个lls的链接，构树方式很清楚了，单调栈好像就能解决一切了，这里不赘述构树方式：<a href="https://www.cnblogs.com/LiuRunky/p/Cartesian_Tree.html" target="_blank" rel="noopener">https://www.cnblogs.com/LiuRunky/p/Cartesian_Tree.html</a></p>
+<h4 id="笛卡尔树的一些性质："><a href="#笛卡尔树的一些性质：" class="headerlink" title="笛卡尔树的一些性质："></a>笛卡尔树的一些性质：</h4><p>1、以某点为根的子树中，该点的权值最大/最小（取决于需求），它的左子树在原序列都在它前面，它右子树在原序列都在他后面<br>2、一个子树中对应了该点在原系列中用单调栈求出来的左右第一个比它大/小的区间。<br>3、单调栈似乎没法处理因为值相同而带来的统计重复的问题，比如区间有两个相同的最大值，如果按最大值枚举 + 单调栈可能会被统计多次或者漏掉统计，而笛卡尔树不会。在笛卡尔树上都具有偏序关系（即使相等最后也变为一堆相同权值点中只有一个能作为根，所以极大的方便了我们的统计）。<br>4、笛卡尔树一般特别喜欢和分治问题结合。分治我们需要以某个点为中界，对于跨域中界的区间我们暴力统计，剩下的都分到两边递归处理，这跟笛卡尔树具有堆的性质非常吻合，所以某些统计问题就非常适合用笛卡尔树分治，后面会有题目。</p>
+<p>回到本题，我们只需要建树，然后确定每个点在笛卡尔树上作为根节点在原序列的左右边界点，更新答案即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/26/HDU-1506-Largest-Rectangle-in-a-Histogram/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/25/2019-Multi-University-Training-Contest-2-H-Harmonious-Army/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/25/2019-Multi-University-Training-Contest-2-H-Harmonious-Army/" itemprop="url">2019 Multi-University Training Contest 2-H(Harmonious Army)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-25T10:30:49+08:00">
+                2019-07-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络流/" itemprop="url" rel="index">
+                    <span itemprop="name">网络流</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/25/2019-Multi-University-Training-Contest-2-H-Harmonious-Army/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/25/2019-Multi-University-Training-Contest-2-H-Harmonious-Army/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6598" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6598</a><br>思路：看到n范围500就感觉是网络流，但不知道最大流怎么建图。其实这个题就说明了最大流和最小割只是在数值上相等，实际上没有其他联系。最小割往往是从实际意义上非常直接的考虑，在本题中，最大流不好做，我们考虑如果我们先把所有的贡献都算入，其中有一些不合法的，我们除去最小的不合法的代价使得它合法，不就是最大值了吗。那么我们可以用割代表不合法的代价，考虑如下建图：<br><img src="/images/1.png" alt=""><br>假设有一对pair(x, y), 考虑如下建图，如果割(s, u)，表示不选战士阵营，割(u, t)，表示不选法师阵营，我们可以看出，此图中的最小割可能有如下三种：<br>割掉两个A：表示两个人不是战士，都是法师，那么此时我们需要扣除的就是b和c的贡献和，那么得到第一个式子:</p>
+<script type="math/tex; mode=display">2A = b + c</script><p>割掉两个C：表示两个人不是法师，都是战士，那么此时我们需要扣除的就是a和b的贡献和，那么得到第二个式子：</p>
+<script type="math/tex; mode=display">2C = a + b</script><p>割掉一个A一个B一个C：表示两个人分别为法师和战士，那么此时我们要扣除的就是a和c的贡献和：那么得到第三个式子：</p>
+<script type="math/tex; mode=display">A + B + C = a + c</script><p>解除ABC后对没对pair建图跑最小割，最后用总贡献 - 最小割即可得到答案。注意本题有可能不能整除，可以放大倍数后跑完再缩小回来。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/25/2019-Multi-University-Training-Contest-2-H-Harmonious-Army/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/24/2019-Multi-University-Training-Contest-2-I-I-Love-Palindrome-String/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1247,648 +1884,11 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/23/2019牛客暑期多校训练营-第二场-D-Kth-Minimum-Clique/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/23/2019牛客暑期多校训练营-第二场-D-Kth-Minimum-Clique/" itemprop="url">2019牛客暑期多校训练营(第二场)-D(Kth Minimum Clique)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-23T22:56:51+08:00">
-                2019-07-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/bfs/" itemprop="url" rel="index">
-                    <span itemprop="name">bfs</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/23/2019牛客暑期多校训练营-第二场-D-Kth-Minimum-Clique/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/23/2019牛客暑期多校训练营-第二场-D-Kth-Minimum-Clique/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/882/D" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/882/D</a><br>思路：考虑从小到大开始向外拓展，一个大的团一定是其中任意一个子集都是团，也就是说可以从小的往大的拓展，那么我们考虑从空点开始拓展，为了不重复，我们按节点编号从小到大拓展，这样就可以不重复了，因为每100个点会有1个点出堆，所以堆中最多10000个状态，也不会炸。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/23/2019牛客暑期多校训练营-第二场-D-Kth-Minimum-Clique/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/23/2019牛客暑期多校训练营-第二场-B-Eddy-Walker-2/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/23/2019牛客暑期多校训练营-第二场-B-Eddy-Walker-2/" itemprop="url">2019牛客暑期多校训练营(第二场)-B(Eddy Walker 2)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-23T22:49:47+08:00">
-                2019-07-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/矩阵快速幂/" itemprop="url" rel="index">
-                    <span itemprop="name">矩阵快速幂</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/23/2019牛客暑期多校训练营-第二场-B-Eddy-Walker-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/23/2019牛客暑期多校训练营-第二场-B-Eddy-Walker-2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/882/B" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/882/B</a><br>思路：A的那个概率极其傻逼，没看到是前缀积一直以为结论错了，就不想写题解了。这个题首先讨论一下n无穷的情况，那么我们假设走k步，那么期望的步数就是1 + 2 + 3 + …. + k = $\frac{k * (k + 1)}{2}$，这之中踏过了k个点，那么某一个点踏过的概率就是$\frac{2}{k + 1}$，答案就是这个。如果不是无穷，我们就要考虑递推了，很明显的一个矩阵快速幂，但矩阵有1000大，普通矩阵快速幂要T，这个时候就要用BM了，具体原理看这里吧 <a href="https://www.cnblogs.com/LiuRunky/p/Berlekamp_Massey.html，" target="_blank" rel="noopener">https://www.cnblogs.com/LiuRunky/p/Berlekamp_Massey.html，</a> 反正只要是线性递推，多放几项进去就可以推出后面的了，就当收一个板子了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/23/2019牛客暑期多校训练营-第二场-B-Eddy-Walker-2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/HDU-3949-XOR/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/19/HDU-3949-XOR/" itemprop="url">HDU-3949(XOR)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-19T22:22:51+08:00">
-                2019-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/线性基/" itemprop="url" rel="index">
-                    <span itemprop="name">线性基</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/19/HDU-3949-XOR/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/19/HDU-3949-XOR/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=3949" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=3949</a><br>思路：<br>先推荐一篇博客，比较清楚 <a href="https://blog.csdn.net/SSimpLe_Y/article/details/79872441" target="_blank" rel="noopener">https://blog.csdn.net/SSimpLe_Y/article/details/79872441</a></p>
-<h4 id="线性基概念"><a href="#线性基概念" class="headerlink" title="线性基概念"></a>线性基概念</h4><p>拿这个模板题来讲讲线性基。回想线性代数中的极大无关组，即用极大无关组可以的线性组合可以表示出其他所有向量。在异或的运算下，线性基可以通过运算表示处其他所有的元素。</p>
-<h4 id="线性基构造算法的性质"><a href="#线性基构造算法的性质" class="headerlink" title="线性基构造算法的性质"></a>线性基构造算法的性质</h4><p>1、任何一个元素都可以被线性基表示，且表方法唯一。<br>前者是线性基的性质，后者采取反证法，考虑不唯一，那么有两个子集能表示，消掉元素后得到存在两个不同的子集的异或和相等，与线性基定一矛盾。<br>2、线性基构造出来所需的元素等于秩。<br>3、构造出来线性基呈上三角矩阵，通过高斯消元（rebuild）可以将其变换为对角矩阵。</p>
-<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4><p>构造方法很简单，直接从高位开始往低位枚举，如果当前这位没有元素且待插入元素这位为1，则把元素插入到这里，然后退出。否则将其与该位已经存在的元素异或。</p>
-<h4 id="几个经典问题"><a href="#几个经典问题" class="headerlink" title="几个经典问题"></a>几个经典问题</h4><p>1、求异或和最大:<br>如果是上三角矩阵，采取从高位到低位的贪心策略，即异或后变大就异或，否则不异或，最后返回结果。<br>如果是对角矩阵，直接把所有的线性基异或起来即可。<br>2、求异或和最小：<br>找到最小的位置存在的线性基即可<br>3、求第k小：<br>这时候用构造出的上三角矩阵就不能解决这个问题了，我们要把上三角矩阵变换成对角矩阵，然后再把不为零的都按顺序拿出来。这时候矩阵已经变成对角矩阵（至少是行最简形矩阵），我们异或上某一行的值，答案就会变大一点。我们可以想象，从一个数组 a = {8,4,2,1}中选出几个，求能组成第k小的值是多少，利用二进制的性质，如果k的二进制第i位为1，我们就加上数组里第i大的数。这里的异或上一个值也会变大一点，所以可以用同样的思想。<br>记得要特判是否存在0，方法是看n的大小和秩的大小是否相等，相等则说明线性无关，即不存在。<br>4、存在性：<br>看能否插入即可，不能插入则存在。</p>
-<p>本题就解决了。。。。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/19/HDU-3949-XOR/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/" itemprop="url">2019牛客暑期多校训练营(第一场)-H(XOR)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-19T22:07:09+08:00">
-                2019-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/线性基/" itemprop="url" rel="index">
-                    <span itemprop="name">线性基</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/881/H" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/881/H</a><br>思路：在下一篇的线性基模板题我再补充一下线性基的一些东西，本篇主要讲下知道了线性基怎么做这个题。考虑这个式子，看到某种合法方案 <em> 方案里的元素个数，自然想到转换为统计单点贡献，即每个数在多少种方案中出现。那么我们考虑某个元素必选，还剩下n - 1个元素，我们用这n - 1个元素来构造线性基，设秩为r，如果这个元素能被这n - 1个元素的线性基表示，那么方案数就是$2^{n - r - 1}$。简单证明一下，首先如果不能表示，说明线性基和该元素线性无关，则不可能异或和为0（异或和为0必须二者相等），所以贡献为0。如果能表示，考虑在非基元素中选一个子集，其基内元素必有唯一的子集与之对应使得整个的异或和为0（如果有两个，说明基内有两个不同的子集使得和相等，约掉后得到基内有两个不同子集的异或和相等，与线性基的定义矛盾），所以这样做出来保证了所有合法的方案都被统计到了。<br>剩下的就是考虑如何统计，每次暴力建基肯定不行，我们可以先把n个元素的线性基建出来，其秩最多为62，对于非基元素的贡献都一样，总的贡献是(n - r) </em> $2^{n - r - 1}$，那么剩下我们只用考虑基内元素即可。我们把非基元素建一个线性基，每次枚举一个基内元素，再将剩下元素和非基元素的线性基合并，如果合并后的线性基与整个的线性基秩相等，说明可以表示，就统计贡献，否则贡献为0。记得特判一下，当秩和总元素个数相等的时候答案为0即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1934,7 +1934,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">459</span>
+                  <span class="site-state-item-count">463</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1945,7 +1945,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">87</span>
+                  <span class="site-state-item-count">88</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
