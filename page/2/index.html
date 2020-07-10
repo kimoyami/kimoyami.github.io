@@ -299,6 +299,975 @@
   <section id="posts" class="posts-expand">
     
       
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/27/多项式，永远滴神/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/27/多项式，永远滴神/" itemprop="url">多项式，永远滴神</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-27T21:15:48+08:00">
+                2020-04-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/多项式/" itemprop="url" rel="index">
+                    <span itemprop="name">多项式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/27/多项式，永远滴神/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/27/多项式，永远滴神/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="FFT"><a href="#FFT" class="headerlink" title="FFT"></a>FFT</h1><p>先咕</p>
+<h1 id="NTT"><a href="#NTT" class="headerlink" title="NTT"></a>NTT</h1><p>先咕</p>
+<h1 id="FWT"><a href="#FWT" class="headerlink" title="FWT"></a>FWT</h1><p>FWT是解决形如<script type="math/tex">C_k = \sum_{i \ op \ j}A_i * B_j</script>，其中op可以是$\&amp;  | \bigoplus$等操作，普通方法肯定是$O(n^2)$的，考虑$FFT$是做了一种变化，然后变化后进行点乘，再逆变化回去，就可以把复杂度优化到$O(nlogn)$，$FWT$能不能采取类似的思路呢？答案是肯定的。<br>我们需要构造$FWT(A)$，使得$FWT(A  op  B) = FWT(A) * FWT(B)$<br>仔细观察，发现这个东西满足交换律：$FWT(A | B) = FWT(B | A)$<br>再观察，发现这玩意还满足结合律：$FWT((A + B) | C) = FWT(A | C) + FWT(B | C)$<br>我们对于一个多项式$A$，定义$A_0，A_1$，分别表示前一半和后一半多项式（二进制最高位为0和为1）。</p>
+<h2 id="or"><a href="#or" class="headerlink" title="or"></a>or</h2><p>$FWT(A) = (FWT(A_0), FWT(A_0 + A_1))$<br>你问括号里的加法是什么意思？就是可以把他们看成一个维度相同的向量，对应位置相加。<br>你问括号里一个逗号什么意思，就是两个多项式拼起来。前面是前一半的结果，后面是后一半的结果。</p>
+<p>考虑正确性，因为是或运算，FWT其实求的就是子集的前缀和（所有子集的和），首先前一半系数必然最高位都为0，所以只能是由$A_0$里面来产生的贡献。考虑后面，因为最高位必须为1，所以一部分贡献来自最高位为1的，同时考虑某个位置去掉最高位的1，会对应$A_0$中的某个位置，这部分贡献也会被包含，所以最终贡献就是$A_0 + A_1$<br>然后我们就可以递归去做求的$or的FWT$了（事实上实现的时候我们采用循环）</p>
+<p>考虑怎么反变换回来，其实很简单$IFWT(A) = (IFWT(A_0)，IFWT(A_1 - A_0))$</p>
+<h2 id="and"><a href="#and" class="headerlink" title="and"></a>and</h2><p>and刚好是跟or反过来的，or的$FWT$表示的是某个集合所有的子集的和，而and的$FWT$是表示的某个集合所有包含它的集合的和，相当于可以描述为后缀和？那么它的$FWT$我们考虑表示$FWT(A) = FWT(FWT(A_0 + A_1), FWT(A_1))$。</p>
+<p>考虑正确性证明，首先后一半的贡献必须全来自$A_1$，前一半$A_0$会产生贡献，$A_0$每一项加上最高位对应$A_1$中的每一项也会产生贡献，所以就是$A_0 + A_1$</p>
+<p>对应反变换也很好写$IFWT(A) = (IFWT(A_0 + A_1)，IFWT(A_1))$</p>
+<h2 id="xor"><a href="#xor" class="headerlink" title="xor"></a>xor</h2><p>异或的构造是最难的，也是唯一没法从$FMT$角度解释的一个，可以说是真正的$FWT$。<br>这里给出构造$FWT(A) = (FWT(A_0 + A_1), FWT(A_0 - A_1))$</p>
+<p>给出正确性证明：<br>$= FWT((A_0 \bigoplus B_0) + FWT(A_1 \bigoplus B_1), FWT(A_0 \bigoplus B_1) + FWT(A_1 \bigoplus B_0))$</p>
+<script type="math/tex; mode=display">= (FWT(A_0 \bigoplus B_0 + A_1 \bigoplus B_1 + A_1 \bigoplus B_0 + A_0 \bigoplus B_1),</script><script type="math/tex; mode=display">FWT(A_0 \bigoplus B_0 + A_1 \bigoplus B_1 - A_1 \bigoplus B_0 - A_0 \bigoplus B_1))</script><script type="math/tex; mode=display">= ((FWT(A_0) + FWT(A_1)) * (FWT(B_0) + FWT(B_1)),</script><script type="math/tex; mode=display">(FWT(A_0) - FWT(A_1)) * (FWT(B_0) - FWT(B_1)))</script><script type="math/tex; mode=display">= (FWT(A_0 + A_1) * FWT(B_0 + B_1),</script><script type="math/tex; mode=display">FWT(A_0 - A_1) * FWT(B_0 - B_1))</script><script type="math/tex; mode=display">= (FWT(A_0 + A_1), FWT(A_0 - A_1)) * (FWT(B_0 + B_1),</script><script type="math/tex; mode=display">FWT(B_0 - B_1)) = FWT(A) * FWT(B)</script>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/09/论一类x次方计数问题的求解/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/09/论一类x次方计数问题的求解/" itemprop="url">论一类x次方计数问题的求解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-09T11:56:46+08:00">
+                2020-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/组合数学/" itemprop="url" rel="index">
+                    <span itemprop="name">组合数学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/09/论一类x次方计数问题的求解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/09/论一类x次方计数问题的求解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文主要探究总结一类问题：统计某种情况下某个东西出现次数的x次方的问题的求解。</p>
+<h1 id="一次方"><a href="#一次方" class="headerlink" title="一次方"></a>一次方</h1><p>我们先看一看一次方的情况我们一般怎么思考问题：</p>
+<h2 id="CCPC-Wannafly-Winter-Camp-Day8-Div2-穗乃果的考试"><a href="#CCPC-Wannafly-Winter-Camp-Day8-Div2-穗乃果的考试" class="headerlink" title="CCPC-Wannafly Winter Camp Day8 Div2 穗乃果的考试"></a><a href="https://www.cometoj.com/contest/31/problem/G?problem_id=440" target="_blank" rel="noopener">CCPC-Wannafly Winter Camp Day8 Div2 穗乃果的考试</a></h2><p><strong>询问一个01矩形中，所有子矩形包含1的个数的总和。</strong><br>枚举子矩形需要一个左上角和一个右下角，发现复杂度非常高，故而不能直接枚举矩形。<br>考虑答案 = $\sum_{子矩形x}\sum a_{ij}$<br>我们变换求和顺序:$\sum_{原矩形中每一个元素a_{ij}且a_{ij} == 1}\sum_{子矩形x}[x包含a_{ij}]$<br>应该不难证明二者是等价的，我们发现枚举$a_{ij}$ 我们是可以接受的，且算有多少子矩形包含$a_{ij}$是非常容易的一件事情，那么问题就做完了。</p>
+<p>一次好像非常显然，但是这只是给你开心开心的。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/09/论一类x次方计数问题的求解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/04/仙人掌-圆方树学习笔记/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/04/仙人掌-圆方树学习笔记/" itemprop="url">仙人掌 & 圆方树学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-04T23:33:41+08:00">
+                2020-04-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/圆方树/" itemprop="url" rel="index">
+                    <span itemprop="name">圆方树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/04/仙人掌-圆方树学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/04/04/仙人掌-圆方树学习笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>你敢信我学完基础的圆方树后理解最深的居然是tarjan？<br>不知道这玩意有啥用，但据说很有用，但好像icpc都不太考这个东西？但感觉这个东西跟什么树问题都能有关系，而且还都是大码量题。。</p>
+<h1 id="仙人掌"><a href="#仙人掌" class="headerlink" title="仙人掌"></a>仙人掌</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>仙人掌是一种特殊的无向图，具有如下性质：<br>1、图是连通的。<br>2、每条边最多属于一个简单环。<br><img src="/images/12.png" alt=""><br>因为有特殊性，所以也就有特殊的方法处理这一类题目。</p>
+<h2 id="仙人掌的dfs生成树"><a href="#仙人掌的dfs生成树" class="headerlink" title="仙人掌的dfs生成树"></a>仙人掌的dfs生成树</h2><p>仙人掌dfs生成树也有着特殊的性质，我们将它的dfs生成树看成一个序列，返祖边看成一个区间，那么所有的区间都是不相交的。这样在用dfs生成树处理仙人掌的时候就能简化很多种复杂的情况。</p>
+<h1 id="圆方树"><a href="#圆方树" class="headerlink" title="圆方树"></a>圆方树</h1><h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><p>圆方树是用来解决仙人掌问题的一种数据结构。<br>其实圆方树的原理不难想，考虑前面我们说过，仙人掌每条边只属于一个简单环，换言之各个环之间不会嵌套。那么我们在环上考虑问题是比较复杂的，我们喜欢转成树，我们想到给每个环新建一个点，把所有环上的点去掉，并且跟新点相连。这个新点就好像一个中转站一样，巧妙的把环变为了链，把一般图变为了树。树上解决问题，我们可以采用的方法就会更多。</p>
+<p>我们把新建的点叫做方点，原来的点叫做圆点。</p>
+<p>Upd:我发现我好像一直学的是广义圆方树，不过好像它应用更广泛，也可以直接用在仙人掌上。。。。</p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>圆方树有很多不错的性质：<br>1、方点和方点之间不会直接相连。<br>2、无论取哪个点为根，圆方树的形态是一样的。<br>3、<script type="math/tex">以r为根的仙人掌上p的子仙人掌就是圆方树中以r为根时，p子树中的所有圆点</script>（还没理解，先嫖着）。<br>4、方点儿子中的相邻的在原图环上也是相邻的（tarjan性质）。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/04/仙人掌-圆方树学习笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/二分图通关全攻略/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/30/二分图通关全攻略/" itemprop="url">二分图通关全攻略</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-30T20:54:22+08:00">
+                2020-03-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/二分图/" itemprop="url" rel="index">
+                    <span itemprop="name">二分图</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/30/二分图通关全攻略/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/30/二分图通关全攻略/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="二分图概念"><a href="#二分图概念" class="headerlink" title="二分图概念"></a>二分图概念</h1><p>二分图简单来说，就是一个无向图，可以把点集分为两个，且边都是从一个点集指向另一个点集。<br><strong>二分图有另一个等价的定义：没有奇环。</strong>相对而言这个性质更加重要。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/30/二分图通关全攻略/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/28/Codeforces-Round-366-Div-1-B-Ant-Man/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/28/Codeforces-Round-366-Div-1-B-Ant-Man/" itemprop="url">Codeforces Round 366 (Div. 1)-B(Ant Man)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-28T23:32:48+08:00">
+                2020-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/贪心/" itemprop="url" rel="index">
+                    <span itemprop="name">贪心</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/28/Codeforces-Round-366-Div-1-B-Ant-Man/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/28/Codeforces-Round-366-Div-1-B-Ant-Man/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><a href="https://codeforces.com/contest/704/problem/B" target="_blank" rel="noopener">题目链接</a><br>思路：考虑按位置插入，原来位置是一个从小位置指向大位置的，插入后变成了两个小的指向一个大的，相当于有一个原来大的变成了小的。我们发现每次操作都是把一个原本是大的的转换为小的，所以我们每次取大的里面最大的，贪心即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/28/Codeforces-Round-366-Div-1-B-Ant-Man/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/28/Codeforces-Round-323-Div-1-D-Number-of-Binominal-Coefficients/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/28/Codeforces-Round-323-Div-1-D-Number-of-Binominal-Coefficients/" itemprop="url">Codeforces Round 323 (Div. 1)-D(Number of Binominal Coefficients)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-28T22:33:25+08:00">
+                2020-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/数位dp/" itemprop="url" rel="index">
+                    <span itemprop="name">数位dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/28/Codeforces-Round-323-Div-1-D-Number-of-Binominal-Coefficients/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/28/Codeforces-Round-323-Div-1-D-Number-of-Binominal-Coefficients/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><a href="https://codeforces.com/contest/582/problem/D" target="_blank" rel="noopener">题目链接</a><br>思路：<br>先介绍一个定理，不然这个题做不了。</p>
+<h3 id="库莫尔定理"><a href="#库莫尔定理" class="headerlink" title="库莫尔定理"></a>库莫尔定理</h3><p>设m, n为正整数，p为素数，则<script type="math/tex">C_{m + n}^m</script>喊p的幂次等于m + n在p进制下的进位次数。<br>证明：我们发现p是素数，我们知道<script type="math/tex">C_{m + n}^n = \frac{(m + n)!}{m!n!}</script>，那么<script type="math/tex">C_{m + n}^n</script>含有p的幂次等于<script type="math/tex">\sum_{i = 1}^{\infty}\lfloor\frac{n + m}{p^i}\rfloor - \lfloor\frac{n}{p^i}\rfloor - \lfloor\frac{m}{p^i}\rfloor</script><br>我们发现对于每一个i，答案不会超过1，考虑什么时候为1，可以发现是在p进制下第i位发生进位时取到。</p>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>这一类题目都是库莫尔定理 + 数位dp的，考虑dp[i][j][k][l]表示考虑了前i个位置，进了j次位，前面已经等于/小于边界，上一位是否需要进位。那么剩下的问题就是转移的时候的组合数，即我们要统计在这一位有多少对(k, n)满足条件（可能有进位，并且另一个位置还要在可行范围内），可以以p为边界分开计算，然后转移即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/28/Codeforces-Round-323-Div-1-D-Number-of-Binominal-Coefficients/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
             
 
   
@@ -620,971 +1589,11 @@
 
       
     
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/Codeforces-Round-290-Div-1-D-Fox-And-Travelling/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/20/Codeforces-Round-290-Div-1-D-Fox-And-Travelling/" itemprop="url">Codeforces Round 290 (Div. 1)-D(Fox And Travelling)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-20T23:47:40+08:00">
-                2020-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/树形dp/" itemprop="url" rel="index">
-                    <span itemprop="name">树形dp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/20/Codeforces-Round-290-Div-1-D-Fox-And-Travelling/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/20/Codeforces-Round-290-Div-1-D-Fox-And-Travelling/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="https://codeforces.com/contest/512/problem/D" target="_blank" rel="noopener">题目链接</a><br>思路：考虑能到的点抽出来构成一个森林，并且每个树分为两种，有根和无根。有根我们发现直接树形dp，树上背包合并一下即可。无根的考虑把每一个点当成根，我们发现，一种方案有x个点，会被统计sz - x次(x &lt; sz)，x = sz时刚好会被统计一次。所以我们把一整个树拿出来，每个点来树形dp，然后再合并到答案上去即可。关于合并时的方法数计算，可以用组合公式推，但一个更简单的方法是可以预处理f[i][j]表示i个和j个合并的方案数，这个非常好递推。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/20/Codeforces-Round-290-Div-1-D-Fox-And-Travelling/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/19/深入SAM-广义SAM/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/19/深入SAM-广义SAM/" itemprop="url">深入SAM & 广义SAM</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-19T21:02:39+08:00">
-                2020-03-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/后缀自动机/" itemprop="url" rel="index">
-                    <span itemprop="name">后缀自动机</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/19/深入SAM-广义SAM/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/19/深入SAM-广义SAM/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>一直想借个契机重新了解下认真学下SAM，终于板子出问题了不得不深入探究一下。</p>
-<h3 id="SAM"><a href="#SAM" class="headerlink" title="SAM"></a>SAM</h3><h4 id="SAM的构造"><a href="#SAM的构造" class="headerlink" title="SAM的构造"></a>SAM的构造</h4><p>基本内容先暂时不写吧，以后有空再补</p>
-<h4 id="fail树的性质"><a href="#fail树的性质" class="headerlink" title="fail树的性质"></a>fail树的性质</h4><p>fail树是SAM中最重要的东西（应该是一切自动机算法上最重要的东西）。所以熟悉掌握fail树的性质很有必要。<br>1、树上每个点代表了根据right集合划分出的一个等价类。<br>2、某个点的right集合等于他所有儿子的right集合或者他所有儿子的right集合 + 1（自身）（但广义SAM中不一定，广义SAM正确的写法一个点就可能有多次）。<br>3、两个串的最长公共后缀对应fail树上两节点的lca点内的某个串。<br>4、求某个字串出现了多少次，就是求该串对应点的子树的right集合的大小。<br>5、对于每个点都暴力跳fail链，总复杂度是$O(n\sqrt(n))$</p>
-<h3 id="广义SAM"><a href="#广义SAM" class="headerlink" title="广义SAM"></a>广义SAM</h3><p>其实本文的重点是广义SAM，因为广义SAM各种乱七八糟的写法，大多数都不能完全应对所有情况，主要分析每种写法的问题在哪里。</p>
-<h4 id="间隔符"><a href="#间隔符" class="headerlink" title="间隔符"></a>间隔符</h4><p>简而言之就是SA留下的后遗症，用间隔符把多个串串起来，然后就变成了单串SAM了。这个方法主要是可能会存在各种特判问题，所以非常不推荐，我写不会去写这玩意。。。</p>
-<h4 id="直接last-1"><a href="#直接last-1" class="headerlink" title="直接last = 1"></a>直接last = 1</h4><p>大多数都是直接在不同串插入以前，将last重置为1，然后就按照单串插入去做了，我们先来看看会有什么问题。<br>假设加入两个串：3201和0<br><img src="/images/8.png" alt=""><br>结束后last = 6，很明显我们发现不对，没有任何路径能到6。原因是因为单串SAM构造时，last点一定不可能通过当前加入的点转移到最新的点，因为整个串一定是最新的没有被加入过的，但是多串的时候可能就存在已经加入过的问题，那么当有不连续情况存在时，就会新建节点，将fail上所有关于c的转移全部给到新建节点上，最后就会得到如图情况。<br>如果要做right集合线段树合并等需要在树上对应点操作的事情，就会出问题了，你可能构造的时候做到了点6上，但是最后访问到的是点7，就会出错误。<br>怎么办呢，发现复制的新建点是我们想要的last点，所以特判一下last节点应该是哪个点即可。</p>
-<p>假设加入两个串：3201、0、0<br><img src="/images/9.png" alt=""><br>发现最后6、8都是多余的状态，所以还可能产生某些多余的状态。</p>
-<p>如果我们要统计各个点出现次数，只要我们不用基数排序，dfs或者拓扑排序都不会出现问题，因为他的链接是对的，只是出现了多余的状态，但不会有路径能走的到多余的状态。</p>
-<p>正确如下：<br><img src="/images/10.png" alt=""><br>last最后是7不是6，也不会产生多余状态，这样就需要在SAM里多两个特判就行了。</p>
-<p>好像还有关于bfs和dfs建广义SAM的区别，后面有空再补。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/Codeforces-Round-286-Div-1-C-Mr-Kitayuta-vs-Bamboos/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/16/Codeforces-Round-286-Div-1-C-Mr-Kitayuta-vs-Bamboos/" itemprop="url">Codeforces Round 286 (Div. 1)-C(Mr. Kitayuta vs. Bamboos)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T23:26:44+08:00">
-                2020-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/贪心/" itemprop="url" rel="index">
-                    <span itemprop="name">贪心</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/16/Codeforces-Round-286-Div-1-C-Mr-Kitayuta-vs-Bamboos/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/16/Codeforces-Round-286-Div-1-C-Mr-Kitayuta-vs-Bamboos/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="https://codeforces.com/contest/506/problem/C" target="_blank" rel="noopener">题目链接</a><br>思路：因为有小于0就取0的限制，使得这个题非常不好做。考虑小于0取0，实际上是让你赚了一部分，如果二分答案mid，最后如果每一根都小于某个值，我们发现他最多赚了mid - x，我们将赚的这部分放到最后去，再倒过来做，那么这时我们发现整个过程就不能有小于0的时候，因为一旦有代表那个位置你必须变为0，最后结果一定会大于mid，所以我们发现这样做就把小于0取0的限制去掉了，原问题变成了从mid开始逆过程，不能有小于0的部分，最后结果要大于等于它给你的初始值，我们发现这样的话，每次我们选择最近快要到0的点进行拔高是最优的，一旦后面不需要再拔它就能满足要求了，我们就把它扔掉，最后看集合是否为空即可，用优先队列模拟一下就行了。思想就是通过放缩可以忽略掉某一种操作/某一维的限制。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/16/Codeforces-Round-286-Div-1-C-Mr-Kitayuta-vs-Bamboos/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/Codeforces-Round-310-Div-1-E-Case-of-Computer-Network/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/16/Codeforces-Round-310-Div-1-E-Case-of-Computer-Network/" itemprop="url">Codeforces Round 310 (Div. 1)-E(Case of Computer Network)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T23:19:02+08:00">
-                2020-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/tarjan强连通分量/" itemprop="url" rel="index">
-                    <span itemprop="name">tarjan强连通分量</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/16/Codeforces-Round-310-Div-1-E-Case-of-Computer-Network/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/16/Codeforces-Round-310-Div-1-E-Case-of-Computer-Network/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="https://codeforces.com/contest/555/problem/E" target="_blank" rel="noopener">题目链接</a><br>思路：考虑如果能形成环，我们肯定愿意形成环，而且环上两点可以任意到达，所以我们发现如果做双连通分量，同一个分量内的两个点一定能满足，问题变成了给一个森林，然后多对起点和终点，让你判断是否能给边定向使得能满足到达。一开始想树剖，后来发现不需要，直接用两个数组树上差分即可，只要不同时大于0就能满足，否则就不能满足。<br>马上要修一下tarjan的板子了。。。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/16/Codeforces-Round-310-Div-1-E-Case-of-Computer-Network/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/16/Codeforces-Round-319-Div-1-D-Flights-for-Regular-Customers/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/16/Codeforces-Round-319-Div-1-D-Flights-for-Regular-Customers/" itemprop="url">Codeforces Round 319 (Div. 1)-D(Flights for Regular Customers)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-16T23:11:36+08:00">
-                2020-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/矩阵快速幂/" itemprop="url" rel="index">
-                    <span itemprop="name">矩阵快速幂</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/16/Codeforces-Round-319-Div-1-D-Flights-for-Regular-Customers/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/16/Codeforces-Round-319-Div-1-D-Flights-for-Regular-Customers/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="https://codeforces.com/contest/576/problem/D" target="_blank" rel="noopener">题目链接</a><br>思路：已经忘了最基本的邻接矩阵的性质了，真的服了自己了。。<br>可达矩阵中的$A_{ij}为1表示从i可以走到j$，$A^n_{ij}为1表示从i可以走恰好n步走到j$，如果是从某一些点出发，我们需要维护一个初始矩阵，能作为出发点的$i，base_{ii} = 1$，转移矩阵就是用来维护走x步后能从哪些点走到哪些点。<br>考虑本题，转移矩阵最多有m种，每种我们都可以得到从1开始能到达的位置，然后从这些位置bfs一下更新最小值，不同种转移矩阵用矩阵快速幂进行转移即可。考虑是可达矩阵，只有0/1两个值，所以可以用bitset优化，复杂度$O(\frac{n^3mlog(m)}{w})$<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/16/Codeforces-Round-319-Div-1-D-Flights-for-Regular-Customers/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/初探圆的反演/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/03/初探圆的反演/" itemprop="url">初探圆的反演</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-03T21:22:04+08:00">
-                2020-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算几何/" itemprop="url" rel="index">
-                    <span itemprop="name">计算几何</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/03/初探圆的反演/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/03/初探圆的反演/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><p>反演变换适用于题目中存在多个圆/直线之间的相切关系的情况。利用反演变换的性质，在反演空间求解问题，可以大幅简化计算。</p>
-<h3 id="圆的反演定义"><a href="#圆的反演定义" class="headerlink" title="圆的反演定义"></a>圆的反演定义</h3><p>给定反演中心O和反演半径R，平面上点$P和反演点P’$满足如下性质：<br>$P’在OP的射线上$<br>$|OP| \cdot |OP’| = R^2$<br>其中R可以任意指定。</p>
-<h3 id="圆的反演性质"><a href="#圆的反演性质" class="headerlink" title="圆的反演性质"></a>圆的反演性质</h3><p>1、$圆O外的点的反演点在圆O内，反之亦然；圆O上的点的反演点为其自身。$<br>2、$不过点O的圆，其反演图形也是不过点O的圆。$<br><strong>过点O的圆，其反演图形是不过点O的直线。</strong><br><strong>两个图形相切，则他们的反演图形也相切</strong><br>其中3、4点非常重要，是一般圆反演题目求解的核心。</p>
-<h3 id="变换"><a href="#变换" class="headerlink" title="变换"></a>变换</h3><p>记圆A半径为$r_1$，反演圆半径为$r_2$，则有：<br>$r_2 = \frac{r_1R^2}{|OA|^2 - r_1^2}$<br>$|OB| = \frac{|OA|r_b}{r_a}$<br>如反演点坐标为$O(x_0, y_0)$，A上一坐标为$x_1, y_1$，则反演圆B上对应坐标为<br>$x_2 = x_0 + \frac{|OB|}{|OA|}(x_1 - x_0)$<br>$y_2 = y_0 + \frac{|OB|}{|OA|}(y_1 - y_0)$<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/03/初探圆的反演/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1630,7 +1639,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">463</span>
+                  <span class="site-state-item-count">471</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
