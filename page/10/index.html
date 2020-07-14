@@ -181,7 +181,7 @@
   
 
   <div class="container sidebar-position-left 
-  page-home">
+  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -312,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/bzoj-3223-文艺平衡树/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/06/2019-Multi-University-Training-Contest-5-A-fraction/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -331,7 +331,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/12/bzoj-3223-文艺平衡树/" itemprop="url">bzoj-3223(文艺平衡树)</a></h1>
+                <a class="post-title-link" href="/2019/08/06/2019-Multi-University-Training-Contest-5-A-fraction/" itemprop="url">2019 Multi-University Training Contest 5-A(fraction)</a></h1>
         
 
         <div class="post-meta">
@@ -343,8 +343,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T23:22:41+08:00">
-                2019-08-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-06T19:27:45+08:00">
+                2019-08-06
               </time>
             
 
@@ -366,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/splay/" itemprop="url" rel="index">
-                    <span itemprop="name">splay</span>
+                  <a href="/categories/数论/" itemprop="url" rel="index">
+                    <span itemprop="name">数论</span>
                   </a>
                 </span>
 
@@ -384,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/12/bzoj-3223-文艺平衡树/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/12/bzoj-3223-文艺平衡树/" itemprop="commentCount"></span>
+                <a href="/2019/08/06/2019-Multi-University-Training-Contest-5-A-fraction/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/06/2019-Multi-University-Training-Contest-5-A-fraction/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,10 +414,12 @@
 
       
         
-          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=3223" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=3223</a><br>思路：splay一个非常经典的题目，考虑按照中序遍历建立splay树，假设需要翻转区间[l, r]，我们把l - 1放根上，然后把r + 1放到根的右儿子，这样r + 1的左子树的中序遍历就是区间[l, r]，考虑中序遍历的性质，翻转是不是就是对于每个节点都把它的左右子树交换了一下？这样我们就可以模仿线段树的下传标记一样，在树上打翻转标记下传即可。最后我们只用dfs遍历这个splay树，按照中序遍历的顺序输出答案即可。<br>
+          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6624" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6624</a><br>思路：题目求最小的b使得存在a &lt; b满足<script type="math/tex">a \equiv bx\ mod\ p</script><br>考虑换个形式写：<script type="math/tex">a = bx - cp</script><br>可以得到<script type="math/tex">0 < bx - cp < b</script><br>得到：</p>
+<script type="math/tex; mode=display">\frac{p}{x} < \frac{b}{c} < \frac{p}{x - 1}</script><p>这个问题可以用辗转相除法解决。<br>我们考虑先比较<script type="math/tex">\lfloor\frac{p}{x}\rfloor和\lfloor\frac{p}{x - 1}\rfloor</script>的值，如果不等，我们令b = <script type="math/tex">\lfloor\frac{p}{x}\rfloor + 1</script>，c = 1，即可得到最小的c。否则我们考虑同时减去一个<script type="math/tex">t = \lfloor\frac{p}{x}\rfloor</script>，变为两个真分数了，再把它倒过来，可以得到:</p>
+<script type="math/tex; mode=display">\frac{x - 1}{p - t * (x - 1)} < \frac{c}{b - t * c} < \frac{p}{p - t * (x - 1)}</script><p>我们可以递归解决即可。<br>考虑这样得到的是最小的吗，答案是一定的，假设上一次答案是最小的，根据等式传递即可得到这次答案也是最小的。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/12/bzoj-3223-文艺平衡树/#more" rel="contents">
+            <a class="btn" href="/2019/08/06/2019-Multi-University-Training-Contest-5-A-fraction/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -470,7 +472,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/bzoj-3224-普通平衡树/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/04/bzoj-2806-Cheat/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -489,7 +491,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/12/bzoj-3224-普通平衡树/" itemprop="url">bzoj-3224(普通平衡树)</a></h1>
+                <a class="post-title-link" href="/2019/08/04/bzoj-2806-Cheat/" itemprop="url">bzoj-2806(Cheat)</a></h1>
         
 
         <div class="post-meta">
@@ -501,8 +503,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T23:11:46+08:00">
-                2019-08-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-04T18:46:00+08:00">
+                2019-08-04
               </time>
             
 
@@ -524,8 +526,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/splay/" itemprop="url" rel="index">
-                    <span itemprop="name">splay</span>
+                  <a href="/categories/后缀自动机/" itemprop="url" rel="index">
+                    <span itemprop="name">后缀自动机</span>
                   </a>
                 </span>
 
@@ -542,8 +544,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/12/bzoj-3224-普通平衡树/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/12/bzoj-3224-普通平衡树/" itemprop="commentCount"></span>
+                <a href="/2019/08/04/bzoj-2806-Cheat/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/04/bzoj-2806-Cheat/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -572,10 +574,10 @@
 
       
         
-          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=3224" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=3224</a><br>思路：想最初萌新入坑的时候看wf，那时候好像jls就是在敲一个splay？然后对从此觉得splay是非常高深的东西。。。最近初看，发现能懂一部分原理，这篇文章写的挺不错的。后面还会继续仔细看：<br><a href="https://blog.csdn.net/a_comme_amour/article/details/79382104" target="_blank" rel="noopener">https://blog.csdn.net/a_comme_amour/article/details/79382104</a><br>然后放一个模板题在这里。<br>
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2806" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=2806</a><br>思路：明显要二分L值，不然后面都没法做。。考虑二分L值后，如何check。考虑枚举到一个点i，此时到达自动机上u结点，此时匹配的最长后缀串长为x，那么我们考虑当前dp[i]是从哪个j转移过来的，很明显j的范围是[i - x, i - L] (x &gt;= L)，考虑i往后移动，i - x的值是单调不减的（i稳定 + 1，x每次最多 + 1而且还可能因为找不到匹配而变小）， i - L的值也是稳定单调递增，这就变成了一个滑窗，可以用单调队列优化dp解决了。注意单调队列中在i时只放入i - x极以前的位置，保证单调队列中的值在队首check后都是合法可以转移到i点的值。然后还有就是注意求当前匹配的最长后缀的写法。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/12/bzoj-3224-普通平衡树/#more" rel="contents">
+            <a class="btn" href="/2019/08/04/bzoj-2806-Cheat/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -628,7 +630,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/bzoj-4025-二分图/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-B-Product/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -647,7 +649,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/12/bzoj-4025-二分图/" itemprop="url">bzoj-4025(二分图)</a></h1>
+                <a class="post-title-link" href="/2019/08/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-B-Product/" itemprop="url">The 2019 ACM-ICPC China Shannxi Provincial Programming Contest-B(Product)</a></h1>
         
 
         <div class="post-meta">
@@ -659,8 +661,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T22:32:51+08:00">
-                2019-08-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-04T14:17:27+08:00">
+                2019-08-04
               </time>
             
 
@@ -682,8 +684,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/线段树分治/" itemprop="url" rel="index">
-                    <span itemprop="name">线段树分治</span>
+                  <a href="/categories/杜教筛/" itemprop="url" rel="index">
+                    <span itemprop="name">杜教筛</span>
                   </a>
                 </span>
 
@@ -700,8 +702,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/12/bzoj-4025-二分图/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/12/bzoj-4025-二分图/" itemprop="commentCount"></span>
+                <a href="/2019/08/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-B-Product/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-B-Product/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -730,10 +732,15 @@
 
       
         
-          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=4025" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=4025</a><br>思路：和上一个题基本一样啊，不过多了一个二分图的判断，二分图就是没有奇环的图，考虑还是用并查集维护，出现奇环必然是两个点已经在同一个集合内了，我们考虑维护一个带权并查集，只用判断二者到根节点距离就可以判断出当前这次合并时候为产生奇环。有一个需要注意的地方是，并查集维护的不能是到根节点的距离。因为在线段树上分治时有撤销并查集的操作，这时候某一个点会断开成为根节点，这样子树内的点就遗失了它到它父亲点的距离的信息（因为之前的信息就作废了没有任何价值，又得不出新的情况下的距离）。所以我们按秩合并的时候维护的是它到它父亲节点的距离，到根节点的距离我们只用像找根节点那样再跳一次统计即可。这样即使撤销也不会遗失子树内的信息，可以重新统计出到新根节点的距离。<br>
+          <p>链接：<a href="https://nanti.jisuanke.com/t/39269" target="_blank" rel="noopener">https://nanti.jisuanke.com/t/39269</a><br>思路：考虑把东西全部拿到指数上面去，然后用欧拉降幂，令mod = p - 1，那么指数部分就变为了:</p>
+<script type="math/tex; mode=display">\sum_{i = 1}^n\sum_{j = 1}^n\sum_{k = 1}^ngcd(i, j)[k|gcd(i, j)]</script><p>枚举gcd(i, j):</p>
+<script type="math/tex; mode=display">\sum_{t = 1}^ntd(t)\sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor}\sum_{j = 1}^{\lfloor\frac{n}{t}\rfloor}[gcd(i, j) == 1]</script><p>后面是非常典型的套路，用欧拉函数前缀和去凑:</p>
+<script type="math/tex; mode=display">\sum_{t = 1}^ntd(t) * (2 * \sum_{i = 1}^{\lfloor\frac{n}{d}\rfloor}\phi(i) - 1)</script><p>考虑前面分块，后面欧拉函数前缀和我们可以用杜教筛解决，关键是求区间的$td(t)$。<br>既然直接不太好求，我们考虑一下它的前缀和形式：</p>
+<script type="math/tex; mode=display">f(n) = \sum_{i = 1}^nid(i) = \sum_{i = 1}^ni\sum_{j|i}1</script><p>考虑枚举j:</p>
+<script type="math/tex; mode=display">\sum_{j = 1}^nj\sum_{i = 1}^{\lfloor\frac{n}{j}\rfloor}i = \sum_{j = 1}^nj * \frac{(1 + \lfloor\frac{n}{j}\rfloor)\lfloor\frac{n}{j}\rfloor}{2}</script><p>发现它的前缀和也可以数论分块做，但是两个数论分块套在一起复杂度爆了。我们仔细观察发现，里面的数论分块和外面的数论分块的分块值是完全一样的，换句话说它们要用的是共同的<script type="math/tex">2 * \sqrt(n)</script>个点处的值，所以我们考虑里面记忆化搜索，这样总的数论分块的复杂度就变为了<script type="math/tex">O(\sqrt(n))</script>。<br>对于欧拉函数的杜教筛部分也是一样，杜教筛只会用到那$2 * \sqrt(n)$处点的值，所以整个分块中杜教筛的复杂度仍然是<script type="math/tex">O(n^\frac{2}{3})</script><br>注意上面的是模的phi(p) = p - 1，可能不存在逆元，所以不要直接就乱取逆元。。。。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/12/bzoj-4025-二分图/#more" rel="contents">
+            <a class="btn" href="/2019/08/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-B-Product/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -786,7 +793,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/03/2019牛客暑期多校训练营-第六场-C-Palindrome-Mouse/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -805,7 +812,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/" itemprop="url">2019牛客暑期多校训练营(第八场)-E(Explorer)</a></h1>
+                <a class="post-title-link" href="/2019/08/03/2019牛客暑期多校训练营-第六场-C-Palindrome-Mouse/" itemprop="url">2019牛客暑期多校训练营(第六场)-C(Palindrome Mouse)</a></h1>
         
 
         <div class="post-meta">
@@ -817,8 +824,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T22:14:12+08:00">
-                2019-08-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-03T23:43:17+08:00">
+                2019-08-03
               </time>
             
 
@@ -840,8 +847,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/线段树分治/" itemprop="url" rel="index">
-                    <span itemprop="name">线段树分治</span>
+                  <a href="/categories/回文自动机/" itemprop="url" rel="index">
+                    <span itemprop="name">回文自动机</span>
                   </a>
                 </span>
 
@@ -858,8 +865,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/" itemprop="commentCount"></span>
+                <a href="/2019/08/03/2019牛客暑期多校训练营-第六场-C-Palindrome-Mouse/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/03/2019牛客暑期多校训练营-第六场-C-Palindrome-Mouse/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -888,12 +895,10 @@
 
       
         
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/888/E" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/888/E</a><br>思路：咕咕咕了两天，研究线段树分治（ddc好像喜欢叫它时间分治），发现也是个很神奇的东西。</p>
-<h4 id="线段树分治"><a href="#线段树分治" class="headerlink" title="线段树分治"></a>线段树分治</h4><p>什么是线段树分治呢？考虑有些问题，某些范围可以看作是时间的限制，即在一个时间段内这个操作有效。同时这种操作一边比较容易但一边比较难（比如并查集合并容易，但分离就很难），但撤销前一个操作比较简单的时候（并查集撤销前一个操作比较简单）。我们就可以把所有的这些操作放在以时间（可能对应题目中不同的背景）为坐标的线段树下。考虑把这些操作放到线段树对应的区间里，然后我们按照线段树的dfs序进行处理，每次进去的时候把这个区间对应的操作加进去，然后根据题目进行某些统计，dfs完后出来的时候利用栈的性质把这些操作撤销掉。这样就避免了那些比较复杂的反面操作，从而做法变得非常优雅。</p>
-<p>考虑本题，每一条边对应一个[l, r]区间的人数，那么我们可以把人数看成线段树的下标（时间），把这些边插入到线段树中，考虑在dfs时维护一个并查集，到每个根节点后，check一下1和n是否在同一个集合中即可，然后出来的时候撤销之前的并查集合并操作即可。为了满足撤销操作，我们并查集需要按秩合并，那么这个题就没了。<br>
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/886/C" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/886/C</a><br>思路：又对回文自动机有了更进一步的认识。。。。<br>考虑对于回文树上的每一个点统计它的子回文串，我们考虑这些串一定是出现在它及它之前的后缀点的fail树上的（每个回文子串必定是某个后缀点的后缀回文子串），所以我们沿着一路下来，经过的每个点沿着fail树暴力标记，对于某个点的答案贡献就是它所标记的节点数量和。首先第一点：我们如果在fail树上遇到一个点标记过了，那么就停止。这个很好证明，因为之前来过这个点，那它更高的地方一定都被标记了。第二点：每次暴力跳最多不会超过两步。考虑我们每次移动后，新增加的串必定是以该点为结尾的回文串，我们先跳一步，跳到一个它的最长回文后缀的位置，这个点有可能没被计算过（只有结束点在中心点右边的位置的才算过，如果该长度小于之前一半对称过去就在中心点的左边，就可能没有计算过），这没关系，我们考虑再跳一步，它又是一个最长的回文后缀，这时候再在父亲的回文串上对称一下，它就变成了父亲的某个回文前缀，我们利用对称关系，一定可以找到起始点结束点都在中心点右边的该回文子串，这个串一定被统计过了。所以总体复杂度O(n)。<br>如果还不太懂可以看看这里： <a href="https://www.cnblogs.com/1625--H/p/11296121.html" target="_blank" rel="noopener">https://www.cnblogs.com/1625--H/p/11296121.html</a> 感谢原博主<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/#more" rel="contents">
+            <a class="btn" href="/2019/08/03/2019牛客暑期多校训练营-第六场-C-Palindrome-Mouse/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -946,7 +951,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/10/2019牛客暑期多校训练营-第八场-J-Just-Jump/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/03/bzoj-4916-神犇和蒟蒻/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -965,7 +970,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/10/2019牛客暑期多校训练营-第八场-J-Just-Jump/" itemprop="url">2019牛客暑期多校训练营(第八场)-J(Just Jump)</a></h1>
+                <a class="post-title-link" href="/2019/08/03/bzoj-4916-神犇和蒟蒻/" itemprop="url">bzoj-4916(神犇和蒟蒻)</a></h1>
         
 
         <div class="post-meta">
@@ -977,8 +982,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-10T22:37:35+08:00">
-                2019-08-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-03T23:35:39+08:00">
+                2019-08-03
               </time>
             
 
@@ -1000,8 +1005,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/计数dp/" itemprop="url" rel="index">
-                    <span itemprop="name">计数dp</span>
+                  <a href="/categories/杜教筛/" itemprop="url" rel="index">
+                    <span itemprop="name">杜教筛</span>
                   </a>
                 </span>
 
@@ -1018,8 +1023,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/10/2019牛客暑期多校训练营-第八场-J-Just-Jump/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/10/2019牛客暑期多校训练营-第八场-J-Just-Jump/" itemprop="commentCount"></span>
+                <a href="/2019/08/03/bzoj-4916-神犇和蒟蒻/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/03/bzoj-4916-神犇和蒟蒻/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1048,10 +1053,10 @@
 
       
         
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/888/J" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/888/J</a><br>思路：当时给ddc说的方法是对的，后来试了试发现真的是对的，但当时脑残了不会求把n分为某些数相加，每个数都必须大于等于d的方案数，后来发现直接前缀和dp优化就行了。。。。考虑我们先dp求出没有攻击限制的方案数，然后再减去不合法的。难点就在于不合法的不能减多了或者减少了，我们必须要确定一个计数状态，即每一种方案只会在某一个点上被计数，这也就不会重复。那么很容易想到如果我们枚举第一个被攻击的位置，那么后面是一个方案数的子问题，我们前面dp已经求过了，前面也是一个子问题，但是因为它是第一个点，所以前面还要减去从其它已经踩雷的地方转移过来的状态。我们令dp[i]表示第i个点是第一次被攻击的方案，那么在他前面的我们都求过了，转移过来又是一个之前求过的子问题。那么我们对于每一个点算出前面的总方案，再减去从前面已经作为第一次被攻击的点转移过来的方案，剩下的就是它第一次被攻击的方案，再乘以后面的转移方案数，就是以它为第一次被攻击点的不合法的方案数，在总方案中扣去所有点有限制点作为第一次被攻击点的不合法方案，就是最后的合法方案。考虑正确性：每一个不合法的点只会在第一次被攻击的时候计数一次，且第一次被攻击的每个点的方案扣去了前面不合法的转移，所以是正确的。 注意不要再计算组合数的时候爆掉了。。<br>
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=4916" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=4916</a><br>思路：求第一个就不说了，恒为1。<br>第二个考虑化简：<script type="math/tex">\sum_{i = 1}^n\phi(i^2)</script><br>由于是积性函数，并且根据欧拉函数的性质，i中的质因子一定在$\phi(i)$中计算过了，所以可以得到:<script type="math/tex">\sum_{i = 1}^n\ i * \phi(i)</script><br>我们把这个函数尝试跟$I$做狄利克雷卷积：<script type="math/tex">f * I = \sum_{d|i}d * \phi(d) * \frac{i}{d} = i ^ 2</script><br>发现特别好算，于是套用杜教筛：<script type="math/tex">S(n) = i ^ 2 - \sum_{i = 2} ^ niS(\lfloor\frac{n}{i}\rfloor)</script><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/10/2019牛客暑期多校训练营-第八场-J-Just-Jump/#more" rel="contents">
+            <a class="btn" href="/2019/08/03/bzoj-4916-神犇和蒟蒻/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1104,7 +1109,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/09/2019-Multi-University-Training-Contest-6-F-Faraway/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/CCPC-Wannafly-Winter-Camp-Day3-F-小清新数论/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1123,7 +1128,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/09/2019-Multi-University-Training-Contest-6-F-Faraway/" itemprop="url">2019 Multi-University Training Contest 6-F(Faraway)</a></h1>
+                <a class="post-title-link" href="/2019/08/02/CCPC-Wannafly-Winter-Camp-Day3-F-小清新数论/" itemprop="url">CCPC-Wannafly Winter Camp Day3-F(小清新数论)</a></h1>
         
 
         <div class="post-meta">
@@ -1135,8 +1140,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-09T22:20:44+08:00">
-                2019-08-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-02T23:23:36+08:00">
+                2019-08-02
               </time>
             
 
@@ -1158,8 +1163,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/思维/" itemprop="url" rel="index">
-                    <span itemprop="name">思维</span>
+                  <a href="/categories/杜教筛/" itemprop="url" rel="index">
+                    <span itemprop="name">杜教筛</span>
                   </a>
                 </span>
 
@@ -1176,8 +1181,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/09/2019-Multi-University-Training-Contest-6-F-Faraway/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/09/2019-Multi-University-Training-Contest-6-F-Faraway/" itemprop="commentCount"></span>
+                <a href="/2019/08/02/CCPC-Wannafly-Winter-Camp-Day3-F-小清新数论/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/02/CCPC-Wannafly-Winter-Camp-Day3-F-小清新数论/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1206,10 +1211,15 @@
 
       
         
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6639" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6639</a><br>思路：不知道放在什么标签下了。。这个题给人的感觉就是数据范围贼小，但却不知道怎么下手。。。其实这个题有个结论，就是把曼哈顿距离展开后，n个横纵坐标不相同的点会把平面分为$(n + 1)^2$份。我们发现模数很小，它们的lcm = 60，其实这个题就是分区域，然后暴力枚举横纵坐标对于60的余数，然后暴力check一下看是否可行，如果可行的话统计区域数量。注意为了不重复统计，我们考虑只统计右上边界，左下边界不统计。那么我们可以在给x，y下界设为-1，方便统计。以及我对于求l - r内模一个数等于t的个数居然懵了，不知道怎么求。。。最后是先把两个端点转到60的倍数上，然后强行判断的，感觉有点失了智了。。。。<br>
+          <p>链接：<a href="https://www.cometoj.com/contest/14/problem/F?problem_id=208" target="_blank" rel="noopener">https://www.cometoj.com/contest/14/problem/F?problem_id=208</a><br>思路：二话不说，先直接走一波公式。<br>我们要求</p>
+<script type="math/tex; mode=display">\sum_{i = 1}^n\sum_{j = 1}^n\mu(gcd(i, j))</script><p>枚举gcd(i, j):</p>
+<script type="math/tex; mode=display">\sum_{d = 1}^n\mu(d)\sum_{i = 1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j = 1}^{\lfloor\frac{n}{d}\rfloor}[gcd(i, j) == 1]</script><p>令</p>
+<script type="math/tex; mode=display">f(n) = \sum_{i = 1}^{n}\sum_{j = 1}^{n}[gcd(i, j) == 1]</script><p>考虑凑成欧拉函数的前缀和形式: </p>
+<script type="math/tex; mode=display">f(n) = 2 * \sum_{i = 1}^n\sum_{j = 1}^i - 1</script><p>我们知道欧拉函数可以用杜教筛求出来，那么原式就变为了：</p>
+<script type="math/tex; mode=display">\sum_{d = 1}^n\mu(d)f(\lfloor\frac{n}{d}\rfloor)</script><p>我们发现可以整除分块，两个莫比乌斯函数也可以用杜教筛来求解，总的复杂度为<script type="math/tex">O(\sqrt(n) + n^{\frac{2}{3}})</script><br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/09/2019-Multi-University-Training-Contest-6-F-Faraway/#more" rel="contents">
+            <a class="btn" href="/2019/08/02/CCPC-Wannafly-Winter-Camp-Day3-F-小清新数论/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1262,7 +1272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/09/VK-Cup-2015-Round-2-unofficial-online-mirror-Div-1-only-F-Encoding/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/luogu-P4213-杜教筛/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1281,7 +1291,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/09/VK-Cup-2015-Round-2-unofficial-online-mirror-Div-1-only-F-Encoding/" itemprop="url">VK Cup 2015 - Round 2 (unofficial online mirror, Div. 1 only)-F(Encoding)</a></h1>
+                <a class="post-title-link" href="/2019/08/02/luogu-P4213-杜教筛/" itemprop="url">luogu-P4213(杜教筛)</a></h1>
         
 
         <div class="post-meta">
@@ -1293,8 +1303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-09T22:11:28+08:00">
-                2019-08-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-02T16:26:26+08:00">
+                2019-08-02
               </time>
             
 
@@ -1316,8 +1326,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/hash/" itemprop="url" rel="index">
-                    <span itemprop="name">hash</span>
+                  <a href="/categories/杜教筛/" itemprop="url" rel="index">
+                    <span itemprop="name">杜教筛</span>
                   </a>
                 </span>
 
@@ -1334,8 +1344,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/09/VK-Cup-2015-Round-2-unofficial-online-mirror-Div-1-only-F-Encoding/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/09/VK-Cup-2015-Round-2-unofficial-online-mirror-Div-1-only-F-Encoding/" itemprop="commentCount"></span>
+                <a href="/2019/08/02/luogu-P4213-杜教筛/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/02/luogu-P4213-杜教筛/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1364,10 +1374,13 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/533/problem/F" target="_blank" rel="noopener">https://codeforces.com/contest/533/problem/F</a><br>思路：一开始想的kmp，但是可以有多组替换，所有kmp好像没法做。。。。考虑对两个串的26个字母分别变为01串，即如果为字符x该位为1，否则为0，然后做hash。我们对于一次匹配，找到26个串在某个i开头的后面第一次出现的位置，然后看t对应位置出现的是什么字符，然后把二者的hash串比较一下，如果不等则不行，否则建立对应关系，如果最终对应关系唯一，那么这个开头就是可以的，复杂度$O(26n)$<br>
+          <p>链接：<a href="https://www.luogu.org/problem/P4213" target="_blank" rel="noopener">https://www.luogu.org/problem/P4213</a><br>思路：</p>
+<h4 id="狄利克雷卷积"><a href="#狄利克雷卷积" class="headerlink" title="狄利克雷卷积"></a>狄利克雷卷积</h4><p>两个积性函数的狄利克雷卷积为<script type="math/tex">(f*g)(i) = \sum_{d|n}f(d)\cdot g(\frac{d}{n})</script><br>给出几个常见的狄利克雷卷积：<br>1、<script type="math/tex">\mu\ * I = \epsilon</script><br>2、<script type="math/tex">\phi\ * I = id(n)</script>（一个数的因子的欧拉函数和等于这个数本身，可以用归纳法证明）<br>3、<script type="math/tex">id\ * \mu = \phi(n)</script></p>
+<h4 id="杜教筛概念"><a href="#杜教筛概念" class="headerlink" title="杜教筛概念"></a>杜教筛概念</h4><p>杜教筛用来解决一系列积性函数的前缀和问题，例如本题中的$\sum_{i = 1}^n\phi(i)$以及$\sum_{i = 1}^n\mu(i)$，考虑n比较小的时候我们可以线性筛解决。但n例如到$10^{10}$的时候，线性筛就没法解决了，这个时候就需要上杜教筛了。<br>考虑$S(n) = \sum_{i = 1}^nf(i)$<br>我们两边分别用一个g走一个狄利克雷卷积:$\sum_{i = 1}^n f * g = \sum_{i = 1}^n\sum_{d|n}f(d)\cdot g(\frac{n}{d})$ = $\sum_{d = 1}^ng(d)\sum_{i = 1}^{\lfloor\frac{n}{d}\rfloor}f(i)$ = $\sum_{d = 1}^ng(d)S(\lfloor\frac{n}{d}\rfloor)$<br>考虑把第一项提出去，得到如下：</p>
+<script type="math/tex; mode=display">g(1)S(n) = \sum_{i = 1}^n(f * g)(i) - \sum_{i = 2}^ng(i)S(\lfloor\frac{n}{i}\rfloor)</script><p>如果f和g的狄利克雷卷积很好算，g的值也很好算，那么这个问题就可以递归记忆化搜索，可以证明复杂度为$O(n ^ {\frac{3}{4}})$。<br>如果我们预处理一些项，再记忆化搜索，可以证明当预处理为$O(n ^ {\frac{2}{3}})$的时候，复杂度为$O(n ^ {\frac{2}{3}})$。<br>对于本题，我们发现对于$\mu$函数和$\phi$函数，我们g都选择$I$函数，都变得非常好算，问题就解决了。<br>注意能不开long long的地方就不开long long，还要注意一般n都是10次方级别，所以小心爆long long<br>注意分块的时候r初始化。。。。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/09/VK-Cup-2015-Round-2-unofficial-online-mirror-Div-1-only-F-Encoding/#more" rel="contents">
+            <a class="btn" href="/2019/08/02/luogu-P4213-杜教筛/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1420,7 +1433,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/09/bzoj-4326-运输计划/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/2019牛客暑期多校训练营-第五场-E-independent-set-1/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1439,7 +1452,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/09/bzoj-4326-运输计划/" itemprop="url">bzoj-4326(运输计划)</a></h1>
+                <a class="post-title-link" href="/2019/08/02/2019牛客暑期多校训练营-第五场-E-independent-set-1/" itemprop="url">2019牛客暑期多校训练营(第五场)-E(independent set 1)</a></h1>
         
 
         <div class="post-meta">
@@ -1451,168 +1464,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-09T21:48:32+08:00">
-                2019-08-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/差分/" itemprop="url" rel="index">
-                    <span itemprop="name">差分</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/09/bzoj-4326-运输计划/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/09/bzoj-4326-运输计划/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=4326" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=4326</a><br>思路：树上差分题目。</p>
-<h4 id="树上差分"><a href="#树上差分" class="headerlink" title="树上差分"></a>树上差分</h4><p>序列上差分是非常简单的东西，考虑差分用到树上，一般问题是对u, v上的路径加减同一个数，这个跟序列上非常类似，分为两种。<br>1、路径上的点差分：如果是对点差分，假设操作是 + 1，我们需要在点u, v上+1，在他们的lca处-1，在他们lca的father再减1，最后dfs合并，保证路径上都加到了。<br>2、路径上的边差分：边的话我们还是得转移到点上：即点x代表的路径是x到x的father的那条边，这样我们需要点u, v上+1，在他们的lca处-2，最后dfs合并即可。</p>
-<p>本题就是一个树上差分的应用，有一定思维难度。首先发现时间具有单调性，即更长的时间结果不会更差，这个就可以二分。考虑二分一个时间后，如果某条路径比这个值短或者相等，说明无论怎么样都可行，我们不用管它，否则我们将它放到树上进行边差分，并且维护一个最大值。最后放到树上的肯定都是大于二分值—即必须要删边才能满足的，假设一共加了x条路径，我们只用看某一个边出现次数是否等于x并且加入的最长路经 - 这条路径 &lt;= 二分值，如果存在就满足，否则不满足。这一点不太容易想到。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/09/bzoj-4326-运输计划/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/08/2019-Multi-University-Training-Contest-6-B-Nonsense-Time/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/08/2019-Multi-University-Training-Contest-6-B-Nonsense-Time/" itemprop="url">2019 Multi-University Training Contest 6-B(Nonsense Time)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-08T22:43:00+08:00">
-                2019-08-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-02T11:46:47+08:00">
+                2019-08-02
               </time>
             
 
@@ -1652,8 +1505,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/08/2019-Multi-University-Training-Contest-6-B-Nonsense-Time/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/08/2019-Multi-University-Training-Contest-6-B-Nonsense-Time/" itemprop="commentCount"></span>
+                <a href="/2019/08/02/2019牛客暑期多校训练营-第五场-E-independent-set-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/02/2019牛客暑期多校训练营-第五场-E-independent-set-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1682,10 +1535,10 @@
 
       
         
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6635" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6635</a><br>思路：这个题有一个结论，一个随机序列的LIS期望是<script type="math/tex">O(\sqrt(n))</script>的，那么我们考虑每次加入一个数，我们要check序列的LIS是否增长，这个没办法快速check。那我们考虑倒过来，如果是删除一个数，如果删的数不在LIS中，那么肯定不影响。如果在的话，因为期望是<script type="math/tex">O(\sqrt(n))</script>，所以我们考虑重新再求一个LIS。这样期望复杂度是<script type="math/tex">O(n\sqrt(n)logn)</script>。<br>
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/885/E" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/885/E</a><br>思路：开始觉得不太可做啊，结果是没看n的范围。。。这范围明显可以状压dp，考虑dp[i]表示状态为i的最大独立集是多少。我们考虑枚举到一个i，他一定是由一个子状态转移过来的，我们不妨枚举最低位的点，那么转移过来的状态有两种：选它或者不选它，不选它的话我们就<br>找到去掉它的状态，这个肯定已经在之前处理过了。如果选它我们就找到不包含跟它有边的点的最大的状态，转移过来即可。最后取二者最大值就是当前状态的答案，最后把所有状态加起来就是最终答案了。<br>注意本题卡空间，一个状态的答案不会超过n，所以我们开个char就可以卡过去了。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/08/2019-Multi-University-Training-Contest-6-B-Nonsense-Time/#more" rel="contents">
+            <a class="btn" href="/2019/08/02/2019牛客暑期多校训练营-第五场-E-independent-set-1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1738,7 +1591,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/08/bzoj-5317-部落战争/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/2019牛客暑期多校训练营-第五场-C-generator-2/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1757,7 +1610,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/08/bzoj-5317-部落战争/" itemprop="url">bzoj-5317(部落战争)</a></h1>
+                <a class="post-title-link" href="/2019/08/02/2019牛客暑期多校训练营-第五场-C-generator-2/" itemprop="url">2019牛客暑期多校训练营(第五场)-C(generator 2)</a></h1>
         
 
         <div class="post-meta">
@@ -1769,8 +1622,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-08T22:18:35+08:00">
-                2019-08-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-02T10:36:51+08:00">
+                2019-08-02
               </time>
             
 
@@ -1792,8 +1645,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算几何/" itemprop="url" rel="index">
-                    <span itemprop="name">计算几何</span>
+                  <a href="/categories/bsgs/" itemprop="url" rel="index">
+                    <span itemprop="name">bsgs</span>
                   </a>
                 </span>
 
@@ -1810,8 +1663,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/08/bzoj-5317-部落战争/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/08/bzoj-5317-部落战争/" itemprop="commentCount"></span>
+                <a href="/2019/08/02/2019牛客暑期多校训练营-第五场-C-generator-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/02/2019牛客暑期多校训练营-第五场-C-generator-2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1840,13 +1693,176 @@
 
       
         
-          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=5317" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=5317</a><br>思路：闵可夫斯基和。</p>
-<h4 id="闵可夫斯基和概念"><a href="#闵可夫斯基和概念" class="headerlink" title="闵可夫斯基和概念"></a>闵可夫斯基和概念</h4><p>给定点集A，点集B，闵可夫斯基和求的是点集C，其中点C是A，B中任取一点相加。</p>
-<h4 id="闵可夫斯基和求法"><a href="#闵可夫斯基和求法" class="headerlink" title="闵可夫斯基和求法"></a>闵可夫斯基和求法</h4><p><a href="https://www.cnblogs.com/xzyxzy/p/10229921.html" target="_blank" rel="noopener">https://www.cnblogs.com/xzyxzy/p/10229921.html</a><br>可以看这里，就是按照两个凸包的所有向量排序，然后依次连接起来，就得到两个凸包的闵可夫斯基和了。</p>
-<p>本题考虑求的是点集B + 向量v与A是否有交，即v = A - B，后面是一个闵可夫斯基和的形式。我们将B取反，然后把A凸包和B凸包求一个闵可夫斯基和。如果原来有交，那么v向量一定在二者的闵可夫斯基和图形的凸包中，只用判断点是否在凸包内就行了。<br>
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/885/C" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/885/C</a><br>思路：感觉是一个复习场啊，那就再来写写bsgs的东西吧，以前就只过了一个模板。</p>
+<h4 id="bsgs概念"><a href="#bsgs概念" class="headerlink" title="bsgs概念"></a>bsgs概念</h4><p>bsgs是解决形如$a^x \equiv b  (mod c)，求一个最小的x$的问题，通过鸽巢原理我们可以知道，当a，p互质的时候，答案一定在p以内</p>
+<h4 id="bsgs算法"><a href="#bsgs算法" class="headerlink" title="bsgs算法"></a>bsgs算法</h4><p>我们不可能每次都枚举x，试想一下如果生活中我们从一堆东西中找我们需要的东西，我们怎么找？一个比较好的方法是把东西先分成几等分，每一份的数量最好可以让我们一眼就找到，这样你一眼搜索的效率就比一件一件高太多了。 bsgs也是这个思想，我们先算出一部分的值作为底，假设我们算出的底为0-m，剩下如果存在一个数y在0-p内满足上式，他一定可以写成</p>
+<script type="math/tex; mode=display">a^{i*m - j} \equiv b \ (mod\ c)</script><p>其中m就是我们的底，j是一个0 - (m - 1)内的数，我们就是枚举i，然后对于这些基底我们全都放到一个hash表内，这样每次查询是否出现过就可以做到O(1)了，注意对于同模，我们取较大的那个下标，因为后面求答案是减，所以减去最大的就是最小的答案。<br>考虑复杂度，假设基底大小为m，p的大小为n，那么总复杂度就是$O(m + \frac{n}{m})$，如果是一次处理的话，我们由均值不等式得到，基底大小取$\sqrt(n)$的时候复杂度最小。</p>
+<p>回到这个题，我们先来推一推公式：<br>已知$x_i = ax_{i - 1} + b$<br>考虑构造我们可以得到：$x_i + t =  a(x_{i - 1} + t)$<br>解得$t = \frac{b}{a - 1}$，其中$a \neq 1 并且 a \neq 0$<br>得到通项公式：$x_n = a^n(x_0 + t) - t$<br>将t, v带入并化简：$a^n \equiv((a - 1)v + b) * ((a - 1)x_0 + b)^{-1}$<br>就变成了一个bsgs的问题。但很容易就直接上了，然后T掉。<br>观察这个题，只有v是询问中变化的。这时候就不要死板的觉得bsgs的底一定要选$\sqrt(p)$了，我们来算一算。假设基底选的大小为m<br>考虑bs部分的复杂度为$O(m)$，gs部分的复杂度为$O(\frac{pq}{m})$，这样总复杂度为$O(m + \frac{pq}{m})$，这样根据均值不等式可以看出m选$\sqrt(pq)$的时候最好，其实本题直接选$\frac{p}{1000}$作为基底就好了。<br>当然本题还要特判一下a等于0和1的情况，讨论一下就可以得出答案，在这里不再赘述了。<br>建议手写hash表哦，发现unorder_map比手写还是慢个5-6倍。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/08/bzoj-5317-部落战争/#more" rel="contents">
+            <a class="btn" href="/2019/08/02/2019牛客暑期多校训练营-第五场-C-generator-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/2019牛客暑期多校训练营-第五场-F-maximum-clique-1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/01/2019牛客暑期多校训练营-第五场-F-maximum-clique-1/" itemprop="url">2019牛客暑期多校训练营(第五场)-F(maximum clique 1)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-01T21:33:29+08:00">
+                2019-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络流/" itemprop="url" rel="index">
+                    <span itemprop="name">网络流</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/01/2019牛客暑期多校训练营-第五场-F-maximum-clique-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/01/2019牛客暑期多校训练营-第五场-F-maximum-clique-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/885/F" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/885/F</a><br>思路：怎么就没想到是二分图呢，怎么就没想到是二分图呢，怎么就没想到是二分图呢？<br>借着这个机会来复习一下二分图最大匹配，最小点覆盖和最大独立集。</p>
+<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>1、二分图最大匹配：指二分图最大的匹配对数，每个点只能匹配最多一次。<br>2、二分图最小点覆盖：求一个数目最小的点集，使得每一条边连的两点都至少有一个点在点集内。<br>3、二分图的最大独立集：求一个数目最多的点集，使得任意两个点之间都没有边相连。</p>
+<h4 id="定理（不加证明）"><a href="#定理（不加证明）" class="headerlink" title="定理（不加证明）"></a>定理（不加证明）</h4><p>1、最大匹配数 = 最小点覆盖数<br>2、最大独立集数 = 点数 - 最小点覆盖数 = 点数 - 最大匹配数</p>
+<h4 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h4><p>可以用匈牙利或者网络流算法，跑出最大匹配数。<br>如果需要求最小点覆盖方案，或者最大独立集方案，采取如下方式：我们从右边没有匹配的点开始出发，沿着匹配边 - 非匹配边 - 匹配点一直走，直到走不动为止，把路上的点都标记，这样左边集合中标记的点和右边集合中没有标记的点就构成了一个最小点覆盖集。<br>考虑对于左边集合中标记的点和右边集合没标记的点，都是匹配点，这个点集就可以覆盖所有的边。为什么？考虑如果有一条边没有覆盖，那么它必然是左边没标记而右边有标记，说明这两个点都没匹配，这必然不可能，说明这不是最大匹配，出现矛盾！所以所有边都在里面了。<br>除去最小点覆盖的集合外的点，就可以构成最大独立集。</p>
+<p>回到本题，考虑想问题的反面，即从那些不能共存的数对中，选一个最大集合，使得他们能共存，这不就是独立集问题吗，主要是要看出这是一个二分图。<br>首先我们得想办法把点集分到两边去，可以按二进制中1的个数来分，为奇的在一边，为偶的在另一边。因为奇和奇之间，一定不会有边，然后跑网络流，按照上述方法标记后，取左边没标记的点和右边有标记的点即可构成最大独立集。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/01/2019牛客暑期多校训练营-第五场-F-maximum-clique-1/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1889,7 +1905,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1935,7 +1951,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">471</span>
+                  <span class="site-state-item-count">472</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

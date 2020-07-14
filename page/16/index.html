@@ -181,7 +181,7 @@
   
 
   <div class="container sidebar-position-left 
-  page-home">
+  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -312,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/13/Codeforces-Round-503-by-SIS-Div-1-D-Large-Triangle/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/30/luogu-P3384-树链剖分/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -331,7 +331,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/13/Codeforces-Round-503-by-SIS-Div-1-D-Large-Triangle/" itemprop="url">Codeforces Round 503 (by SIS, Div.1)-D(Large Triangle)</a></h1>
+                <a class="post-title-link" href="/2019/06/30/luogu-P3384-树链剖分/" itemprop="url">luogu-P3384(树链剖分)</a></h1>
         
 
         <div class="post-meta">
@@ -343,8 +343,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-13T23:30:08+08:00">
-                2019-07-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-30T14:16:50+08:00">
+                2019-06-30
               </time>
             
 
@@ -366,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算几何/" itemprop="url" rel="index">
-                    <span itemprop="name">计算几何</span>
+                  <a href="/categories/树链剖分/" itemprop="url" rel="index">
+                    <span itemprop="name">树链剖分</span>
                   </a>
                 </span>
 
@@ -384,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/13/Codeforces-Round-503-by-SIS-Div-1-D-Large-Triangle/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/13/Codeforces-Round-503-by-SIS-Div-1-D-Large-Triangle/" itemprop="commentCount"></span>
+                <a href="/2019/06/30/luogu-P3384-树链剖分/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/30/luogu-P3384-树链剖分/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,10 +414,10 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/1019/problem/D" target="_blank" rel="noopener">https://codeforces.com/contest/1019/problem/D</a><br>思路：非常好一个计算几何题，求最大最小三角形面积，三角形以及四边形面积存在性问题都可以用这个方法解决。方法的核心是枚举一个向量，然后维护一个序列，使得在这个向量左边的点随着下标变大离向量越近，在这个向量右边的点随着下标变大离向量越远。我们先将点按先x后y的顺序排序，然后枚举向量，并且把向量按斜率排序(最好是第一个点是排序较小的点，这样向量排序后第一个向量是斜率最小的)。然后我们考虑两个相邻斜率的向量，其序列中哪些点的相对位置要发生变化，我们发现只有第一个向量的两个点的相对位置要发生变化，其他的都不会变，这个可以画图直观感受一下。这样我们每次枚举完向量后将这两个点在序列中的位置交换一下即可维护序列的单调性。考虑初始情况，相当于是按照向量y轴排序的，而第一个又是斜率最小的，一定是y轴后的第一个，所以满足情况（排序按叉积逆时针排最好）。这样我们就可以考虑在每一个向量上对序列进行二分寻找是否存在面积为S的三角形，如果是求最大最小，只用求最远点和最近点即可解决。<br>
+          <p>链接：<a href="https://www.luogu.org/problemnew/show/P3384" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P3384</a><br>思路：总算是苟活着学到了树剖了，具体推荐这个博客<a href="https://www.cnblogs.com/ivanovcraft/p/9019090.html。" target="_blank" rel="noopener">https://www.cnblogs.com/ivanovcraft/p/9019090.html。</a> 感觉学完点分治后树剖其实入门挺容易的，后面再补几个相关题目。树剖其实就是按照dfs序，然后转成线性的，可能需要查询路径上的东西，那么我们可以往上跳，直到跳到二者在一条重链上为止，由于重链的序号是连续的，可以直接在线段树上查询，暴力跳的过程我们就暴力查询或者修改即可。如果是要统计子树的信息我们可以得到子树进去和出来时的序号（对应线段树上的一段连续的序列），查询对应区间即可。<br>本题中，路径上的值加上一个z，就是先暴力跳到一条重链上，暴力跳的过程中暴力修改，然后重链连续的区间修改。查询类似。子树就是查其对应的一段区间，修改类似。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/13/Codeforces-Round-503-by-SIS-Div-1-D-Large-Triangle/#more" rel="contents">
+            <a class="btn" href="/2019/06/30/luogu-P3384-树链剖分/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -470,7 +470,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/10/2018-2019-ACM-ICPC-Asia-Shenyang-Regional-Contest-I-Distance-Between-Sweethearts/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/30/洛谷-P4195-exBSGS/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -489,7 +489,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/10/2018-2019-ACM-ICPC-Asia-Shenyang-Regional-Contest-I-Distance-Between-Sweethearts/" itemprop="url">2018-2019 ACM-ICPC Asia Shenyang Regional Contest-I(Distance Between Sweethearts)</a></h1>
+                <a class="post-title-link" href="/2019/06/30/洛谷-P4195-exBSGS/" itemprop="url">洛谷-P4195(exBSGS)</a></h1>
         
 
         <div class="post-meta">
@@ -501,8 +501,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-10T13:08:03+08:00">
-                2019-07-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-30T13:59:45+08:00">
+                2019-06-30
               </time>
             
 
@@ -524,8 +524,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/FWT/" itemprop="url" rel="index">
-                    <span itemprop="name">FWT</span>
+                  <a href="/categories/bsgs/" itemprop="url" rel="index">
+                    <span itemprop="name">bsgs</span>
                   </a>
                 </span>
 
@@ -542,8 +542,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/10/2018-2019-ACM-ICPC-Asia-Shenyang-Regional-Contest-I-Distance-Between-Sweethearts/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/10/2018-2019-ACM-ICPC-Asia-Shenyang-Regional-Contest-I-Distance-Between-Sweethearts/" itemprop="commentCount"></span>
+                <a href="/2019/06/30/洛谷-P4195-exBSGS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/30/洛谷-P4195-exBSGS/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -572,10 +572,10 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/gym/101955/problem/I" target="_blank" rel="noopener">https://codeforces.com/gym/101955/problem/I</a><br>思路：本题的难点在怎么处理这个max上，看一看数据范围，2000 emmmm，看来是要从小到大枚举最大值了。我们枚举最大值i，然后可以把三对boy与girl差距为i的方案记入cur数组，那么我们考虑，最大值为i的贡献有哪些，可能是其中1、2、3为最大值，我们当然可以把所有情况都列完求解，然后就喜题TLE了。。。。。我们用sum来记录最大值小于等于i的，那么其实当前最大值为i的贡献就是sum[i]做fwt的方案 - sum[i - 1]做fwt的方案。我们只用记录上一次fwt的结果，然后把cur数组累加到sum数组上，然后再fwt，两次的结果相减，就是最大值为i的方案，统计贡献即可。这样就可以少掉大量的常数，然后就可以过了。<br>
+          <p>链接：<a href="https://www.luogu.org/problemnew/show/P4195" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P4195</a><br>思路：bsgs算法以及拓展bsgs算法都用来解决形如$a^x$ = b (mod c)这类问题，如果gcd(a, c) = 1,那么就可以用bsgs算法。bsgs算法其实非常好理解，就可以理解为一种变向的分块，我们将x写为形如i * m - j的形式，容易证明m = $c ^ {0.5}$的时候，复杂度最低，我们将a的0 - m次幂放入hash表中，然后从1 - m枚举i，然后查找hash表中是否有对应的值，如果有则有答案，如果所有的都没搜索到就无解，注意一个小细节，当j有多个值时，肯定取最大的一个，所以从前到后建立hash表即可。<br>当gcd(a, c) != 1的时候，这个时候就要用拓展bsgs算法了，其实也就是在前面同时除以一下gcd(a, c)，一直到二者的gcd为1，再用朴素的bsgs算法即可，这里不再赘述了。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/10/2018-2019-ACM-ICPC-Asia-Shenyang-Regional-Contest-I-Distance-Between-Sweethearts/#more" rel="contents">
+            <a class="btn" href="/2019/06/30/洛谷-P4195-exBSGS/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -628,7 +628,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/luogu-P3594-WIL-Wilcze-doly/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-J-And-And-And/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -647,7 +647,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/09/luogu-P3594-WIL-Wilcze-doly/" itemprop="url">luogu-P3594(WIL-Wilcze doły)</a></h1>
+                <a class="post-title-link" href="/2019/06/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-J-And-And-And/" itemprop="url">The 2019 ACM-ICPC China Shannxi Provincial Programming Contest-J(And And And)</a></h1>
         
 
         <div class="post-meta">
@@ -659,8 +659,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-09T22:35:04+08:00">
-                2019-07-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T23:24:48+08:00">
+                2019-06-04
               </time>
             
 
@@ -682,8 +682,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/单调队列dp/" itemprop="url" rel="index">
-                    <span itemprop="name">单调队列dp</span>
+                  <a href="/categories/点分治/" itemprop="url" rel="index">
+                    <span itemprop="name">点分治</span>
                   </a>
                 </span>
 
@@ -700,8 +700,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/09/luogu-P3594-WIL-Wilcze-doly/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/09/luogu-P3594-WIL-Wilcze-doly/" itemprop="commentCount"></span>
+                <a href="/2019/06/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-J-And-And-And/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-J-And-And-And/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -730,10 +730,10 @@
 
       
         
-          <p>链接：<a href="https://www.luogu.org/problemnew/show/P3594" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P3594</a><br>思路：可以考虑尺取法，因为一定是把d用满是最优的，所以中间一段求长度为d的最大连续和可以考虑用数据结构维护一下，但这样会多个log不知道会不会被卡掉。当然这个是随l，r的移动而改变的，自然就想到了滑动窗口，也就可以用单调队列dp来优化，每次r移动到最右边不能满足的位置，然后每移动一下把一个可行的连续长度为d的区间放到单调队列里，check的时候取队首元素check即可。<br>
+          <p>链接：<a href="https://nanti.jisuanke.com/t/39277" target="_blank" rel="noopener">https://nanti.jisuanke.com/t/39277</a><br>思路：一开始没想清楚点分治上的细节，因为维护的是点对的子树大小，所以我们要用个map计数，每次对一条链统计完贡献后再全部更新，这样就保证了贡献一定是跨过了当前枚举的这个点。但有个问题，不能每次枚举点就dfs求以该点为根的各点的子树大小，但统计贡献时可能子树大小是上面的部分(排开路径外的部分可能在上侧)，怎么办呢？可以用lca来判断两点关系，如果是祖孙关系那么深度浅的那个点统计的就是上面的部分，否则就是下面的部分。这样就做完了，复杂度O(nlognlogn)<br>然后qls的做法就显得又简单又好做，考虑定根并统计各点子树大小，如果点对不是祖孙关系则贡献为两个sz相乘，否则为深的sz乘(n - 浅的那个点到深的那个点路径上第二个点的子树的sz)，这时候我们第一遍dfs先全部按照非祖孙关系算，每次走到一个点统计贡献后就塞到map里，第二遍dfs考虑把一条链上的点贡献更改正确，那么就树上差分一下，进去的时候更新，统计贡献，出来的时候把更新删除，这样就保证所有统计的都是一条链上的。这个方法显得非常容易。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/09/luogu-P3594-WIL-Wilcze-doly/#more" rel="contents">
+            <a class="btn" href="/2019/06/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-J-And-And-And/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -786,7 +786,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/HDU-2462-The-Luckiest-number/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/23/ACM-ICPC-World-Finals-2019-G-First-of-Her-Name/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -805,7 +805,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/08/HDU-2462-The-Luckiest-number/" itemprop="url">HDU-2462(The Luckiest number)</a></h1>
+                <a class="post-title-link" href="/2019/05/23/ACM-ICPC-World-Finals-2019-G-First-of-Her-Name/" itemprop="url">ACM-ICPC World Finals 2019-G(First of Her Name)</a></h1>
         
 
         <div class="post-meta">
@@ -817,8 +817,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T22:18:01+08:00">
-                2019-07-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T20:28:07+08:00">
+                2019-05-23
               </time>
             
 
@@ -840,8 +840,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/同余/" itemprop="url" rel="index">
-                    <span itemprop="name">同余</span>
+                  <a href="/categories/后缀自动机/" itemprop="url" rel="index">
+                    <span itemprop="name">后缀自动机</span>
                   </a>
                 </span>
 
@@ -858,8 +858,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/08/HDU-2462-The-Luckiest-number/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/08/HDU-2462-The-Luckiest-number/" itemprop="commentCount"></span>
+                <a href="/2019/05/23/ACM-ICPC-World-Finals-2019-G-First-of-Her-Name/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/23/ACM-ICPC-World-Finals-2019-G-First-of-Her-Name/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -888,17 +888,10 @@
 
       
         
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=2462" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=2462</a><br>思路：假设最终答案是n个8，运用等比数列求和公式可以得出t = $\frac{8}{9}*(10^x - 1)$。<br>那么由t % n == 0可以得出：</p>
-<script type="math/tex; mode=display">8*(10^x - 1) \equiv 0 \ (mod \ 9n)</script><p>两边同时除以d = gcd(8, 9n):</p>
-<script type="math/tex; mode=display">10^x \equiv 1 \ (mod \ \frac{9n}{d})</script><p>接下来两种方法都可以做了，一种是典型的exbsgs，套上板子就行。<br>第二种就是欧拉定理，首先在这里给出一个结论，最小的x一定是$\phi(\frac{9n}{d})$的因子，证明如下：<br>假设最小的$x_0$有:</p>
-<script type="math/tex; mode=display">\phi(\frac{n}{d}) = qx_0 + r(0 \leq r < x_0)</script><p>我们可以得到:</p>
-<script type="math/tex; mode=display">10^{\phi(\frac{9n}{d})}\equiv 1 \ (mod \ \frac{9n}{d})</script><p>即:</p>
-<script type="math/tex; mode=display">10^{\phi(qx_0 + r)}\equiv 1 \ (mod \ \frac{9n}{d})</script><p>由于:</p>
-<script type="math/tex; mode=display">10^{x_0}\equiv 1 \ (mod \ \frac{9n}{d})</script><p>得到:</p>
-<script type="math/tex; mode=display">10^r\equiv 1 \ (mod \ \frac{9n}{d})</script><p>这样的$x_0$不是最小的，矛盾，所以一定是因子。<br>所以我们只用枚举因子，快速幂检验结果是否符合，并更新最小值即可。<br>两种方法都要注意一下，中间取模的时候可能会爆long long<br>
+          <p>链接：<a href="https://vjudge.net/problem/Kattis-firstofhername" target="_blank" rel="noopener">https://vjudge.net/problem/Kattis-firstofhername</a><br>思路：给出了一棵倒序的trie树，然后给你一些询问串，问能跟trie树上多少前缀匹配。首先因为每次只在trie上增加一个字符，并且所有串都不一样，所以trie上每一个点都对应了一个串，那么原问题变为了，将询问串倒置，问在trie树上有多少子串等于这个倒置后的串。那么这就是广义SAM的模板题了，直接对trie树建广义SAM，然后拓扑排序后累加字串出现次数，然后直接拿倒置的询问串在上面跑即可，如果跑不到就中断了答案为0，否则为最终状态的子串数目。<br>第二种做法，也是标程给出的做法，用AC自动机来做，不知道还记得之前的套路与否：对于这种一堆询问串，问在一堆串的出现次数的统计，我们拿询问串建AC自动机，拿串在自动机上去跑，并且沿途计数++，最后沿着fail树拓扑排序累加答案，最后访问询问串对应的节点的答案即可。本题还是，由于trie上每个点都对应着唯一一个串，原问题就是相当于在trie上找询问串出线了多少次，我们将trie类比为一个串一样，拿trie在自动机上面去跑，沿途经过的点计数++，然后把自动机按fail拓扑序累加，最后更新每个询问串位置的答案即可。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/08/HDU-2462-The-Luckiest-number/#more" rel="contents">
+            <a class="btn" href="/2019/05/23/ACM-ICPC-World-Finals-2019-G-First-of-Her-Name/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -951,7 +944,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/luogu-P3327-约数个数和/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/23/bzoj-3172-单词/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -970,7 +963,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/08/luogu-P3327-约数个数和/" itemprop="url">luogu-P3327(约数个数和)</a></h1>
+                <a class="post-title-link" href="/2019/05/23/bzoj-3172-单词/" itemprop="url">bzoj-3172(单词)</a></h1>
         
 
         <div class="post-meta">
@@ -982,8 +975,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T18:20:01+08:00">
-                2019-07-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T20:20:44+08:00">
+                2019-05-23
               </time>
             
 
@@ -1005,8 +998,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/莫比乌斯反演/" itemprop="url" rel="index">
-                    <span itemprop="name">莫比乌斯反演</span>
+                  <a href="/categories/AC自动机/" itemprop="url" rel="index">
+                    <span itemprop="name">AC自动机</span>
                   </a>
                 </span>
 
@@ -1023,8 +1016,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/08/luogu-P3327-约数个数和/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/08/luogu-P3327-约数个数和/" itemprop="commentCount"></span>
+                <a href="/2019/05/23/bzoj-3172-单词/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/23/bzoj-3172-单词/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1053,17 +1046,10 @@
 
       
         
-          <p>链接：<a href="https://www.luogu.org/problemnew/show/P3327" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P3327</a><br>思路：这个题有一个非常重要的点，必须知道才能做，就是:</p>
-<script type="math/tex; mode=display">d(ij) = \sum_{x|i}\sum_{y|j}[gcd(x, y) = 1]</script><p>简单证明一下：考虑对于某个质因子t，i有p个t质因子，j有q个t质因子，那么他俩合起来能提供p + q + 1种可能，做如下变化：</p>
-<script type="math/tex; mode=display">p + q + 1 = \sum_{x = 1}^p\sum_{y = 1}^q[gcd(t^x, t^y) = 1]</script><p>这个变化不好想，但正确性是显而易见的。那么对于每一个质因子我们都有如下的式子，把他们乘起来就变成了上述的结论。<br>那么我们就开始推公式：</p>
-<script type="math/tex; mode=display">Ans = \sum_{i = 1}^N\sum_{j = 1}^Md(ij) = \sum_{i = 1}^N\sum_{j = 1}^M\sum_{x|i}\sum_{y|j}[gcd(x, y) = 1]</script><p>$根据莫比乌斯函数\sum_{d|n}\mu(d) = [n = 1]$可以得到</p>
-<script type="math/tex; mode=display">Ans = \sum_{i = 1}^N\sum_{j = 1}^Md(ij) = \sum_{i = 1}^N\sum_{j = 1}^M\sum_{x|i}\sum_{y|j}\sum_{d|gcd(x, y)}\mu(d)</script><p>改成枚举d:</p>
-<script type="math/tex; mode=display">Ans = \sum_{i = 1}^N\sum_{j = 1}^Md(ij) = \sum_{i = 1}^N\sum_{j = 1}^M\sum_{x|i}\sum_{y|j}\sum_{d = 1}^{min(x, y)}\mu(d) * [d | gcd(x, y)]</script><p>由枚举i, j的约数x, y改为直接枚举x, y：</p>
-<script type="math/tex; mode=display">Ans = \sum_{x = 1}^N\sum_{y = 1}^M\sum_{d = 1} ^ {min(x, y)}\mu(d) * [d|gcd(x, y)] * \lfloor\frac{N}{x}\rfloor\lfloor\frac{M}{y}\rfloor</script><p>更改x，y为dx，dy，消去[d|gcd(x, y)]：</p>
-<script type="math/tex; mode=display">Ans = \sum_{d = 1}^{min(N, M)}\mu(d)(\sum_{x = 1}^{\lfloor\frac{N}{d}\rfloor}\lfloor\frac{N}{dx}\rfloor)(\sum_{y = 1}^{\lfloor\frac{M}{d}\rfloor}\lfloor\frac{M}{dy}\rfloor)</script><p>之后对于里面的求和我们可以运用整除分块预处理答案，然后前缀和处理，对于多组询问外面再用整除分块求解答案即可。<br>
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=3172" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=3172</a><br>思路：学到一种新思路，以前都是用父亲节点信息更新子节点，这样可以维护出trie树上某点包括那些单词节点。这次的是先拿询问串来建AC自动机，注意插入trie树时经过的路径都计数++，然后我们按照fail树的拓扑序从下到上累加，因为一个点指向的点一定是它的某个前缀，一个串有几个能与该前缀匹配的点就会产生多少个链接过去。这样累加后查询下在该点的累加值就是出现次数的答案。<br>所以套路就是：对于给出一些串和询问串，把询问串拿来建trie，然后串拿到trie上去跑，并将跑过的点计数++，然后拓扑序在fail累加，最后看询问串的单词节点处的计数值就是出现的次数。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/08/luogu-P3327-约数个数和/#more" rel="contents">
+            <a class="btn" href="/2019/05/23/bzoj-3172-单词/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1116,7 +1102,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/luogu-P2569-股票交易/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/23/bzoj-3926-诸神眷顾的幻想乡/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1135,7 +1121,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/08/luogu-P2569-股票交易/" itemprop="url">luogu-P2569(股票交易)</a></h1>
+                <a class="post-title-link" href="/2019/05/23/bzoj-3926-诸神眷顾的幻想乡/" itemprop="url">bzoj-3926(诸神眷顾的幻想乡)</a></h1>
         
 
         <div class="post-meta">
@@ -1147,8 +1133,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T17:57:27+08:00">
-                2019-07-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T20:15:15+08:00">
+                2019-05-23
               </time>
             
 
@@ -1170,8 +1156,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/单调队列dp/" itemprop="url" rel="index">
-                    <span itemprop="name">单调队列dp</span>
+                  <a href="/categories/后缀自动机/" itemprop="url" rel="index">
+                    <span itemprop="name">后缀自动机</span>
                   </a>
                 </span>
 
@@ -1188,8 +1174,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/08/luogu-P2569-股票交易/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/08/luogu-P2569-股票交易/" itemprop="commentCount"></span>
+                <a href="/2019/05/23/bzoj-3926-诸神眷顾的幻想乡/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/23/bzoj-3926-诸神眷顾的幻想乡/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1218,10 +1204,10 @@
 
       
         
-          <p>链接：<a href="https://www.luogu.org/problemnew/show/P2569" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P2569</a><br>思路：很不错一个题，这个题其实难点在限制有两个，一个是天数上的限制，一个是买的物品上的限制，如果没弄清单调队列(像我一样)，就不知道怎么处理。我们先来看看，天数大于符号，不是从前面当当前的一段区间，所以这段是没法用单调队列优化的，那么我们就必须用dp来记录这一维度。首先dp[i][j]表示第i天，手上有j张股票的时候所能赚的最多的钱。考虑转移，如果什么都不做，dp[i][j] = max(dp[i][j], dp[i - 1][j])，那么当j确定的时候，我们需要的是前i天的最大值，由于有这个转移，所以保证了满足限制的最后一天的结果是最优的，这样天数的限制就被消除了，我们只用直接看dp[i - w - 1][j]处的值就可以找到最大的值了。如果买或者卖，把方程展开后都可以用单调队列优化，这里就不再详细写了。<br>
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=3926" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=3926</a><br>思路：广义后缀自动机的模板题，反正建议以后广义后缀自动机都直接拓扑排序，不要用基数排序，基数排序非常容易出现翻车事故。这个题就是将20个叶子节点拿来暴力dfs插入SAM中，记得插的时候子节点要接着父节点插，最后dfs或者拓扑排序统计答案即可。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/08/luogu-P2569-股票交易/#more" rel="contents">
+            <a class="btn" href="/2019/05/23/bzoj-3926-诸神眷顾的幻想乡/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1274,7 +1260,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/luogu-P2254-瑰丽华尔兹/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/Codeforces-Round-221-Div-1-D-Tree-and-Queries/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1293,7 +1279,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/08/luogu-P2254-瑰丽华尔兹/" itemprop="url">luogu-P2254(瑰丽华尔兹)</a></h1>
+                <a class="post-title-link" href="/2019/05/22/Codeforces-Round-221-Div-1-D-Tree-and-Queries/" itemprop="url">Codeforces Round 221 (Div.1)-D(Tree and Queries)</a></h1>
         
 
         <div class="post-meta">
@@ -1305,8 +1291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T17:51:56+08:00">
-                2019-07-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T12:44:06+08:00">
+                2019-05-22
               </time>
             
 
@@ -1328,8 +1314,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/单调队列dp/" itemprop="url" rel="index">
-                    <span itemprop="name">单调队列dp</span>
+                  <a href="/categories/莫队/" itemprop="url" rel="index">
+                    <span itemprop="name">莫队</span>
                   </a>
                 </span>
 
@@ -1346,8 +1332,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/08/luogu-P2254-瑰丽华尔兹/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/08/luogu-P2254-瑰丽华尔兹/" itemprop="commentCount"></span>
+                <a href="/2019/05/22/Codeforces-Round-221-Div-1-D-Tree-and-Queries/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/22/Codeforces-Round-221-Div-1-D-Tree-and-Queries/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1376,10 +1362,10 @@
 
       
         
-          <p>链接：<a href="https://www.luogu.org/problemnew/show/P2254" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P2254</a><br>思路：对于每一个移动方向，相当于一段区间，后面的可以从前面的一段区间转移过来，这不正好是单调队列所要解决的问题吗，所以我们顺着方向dp，用单调队列优化即可。注意如果碰到障碍，前面所有已经放入的状态都不可能转移到之后的状态了，这时候只需要把队列清空就好了。<br>
+          <p>链接：<a href="https://codeforces.com/contest/375/problem/D" target="_blank" rel="noopener">https://codeforces.com/contest/375/problem/D</a><br>思路：看了lls的博客，发现了这个题，以前做的树上都是两点间路径上的某些统计问题，对于一个子树的突然愣了不知道怎么搞。其实后来发现很简单，如果是树上路径，我们是dfs序，进出都要记录一下，这样可以恰好容斥去掉中间进去又出来过的节点。但是子树就只需要复制一遍，记录进入时就行，出来时不需要再复制只需要记录位置即可。这样也就是等同于在序列上的一段。至于大于等于某个k的节点数，我们用个数组记录某个颜色出现多少次，再用某个数组记录至少出现x次的有多少个即可。然后就可以很明显的更新了。 思考一下如果要求子树小于等于(转为大于对立面)，出现的种类(维护出现次数)等怎么做。<br>    总结一下，树上莫队，如果求两点间路径，则要复制两边，dfs序进入和出来都要复制；如果是求一个子树内的，那么只要复制一遍，且进去和出来都记录一下位置即可。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/08/luogu-P2254-瑰丽华尔兹/#more" rel="contents">
+            <a class="btn" href="/2019/05/22/Codeforces-Round-221-Div-1-D-Tree-and-Queries/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1432,7 +1418,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/luogu-P1776-宝物筛选/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/22/P4149-IOI2011-Race/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1451,7 +1437,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/08/luogu-P1776-宝物筛选/" itemprop="url">luogu-P1776(宝物筛选)</a></h1>
+                <a class="post-title-link" href="/2019/05/22/P4149-IOI2011-Race/" itemprop="url">P4149[IOI2011]-(Race)</a></h1>
         
 
         <div class="post-meta">
@@ -1463,8 +1449,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T17:33:38+08:00">
-                2019-07-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-22T12:33:23+08:00">
+                2019-05-22
               </time>
             
 
@@ -1486,8 +1472,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/单调队列dp/" itemprop="url" rel="index">
-                    <span itemprop="name">单调队列dp</span>
+                  <a href="/categories/点分治/" itemprop="url" rel="index">
+                    <span itemprop="name">点分治</span>
                   </a>
                 </span>
 
@@ -1504,8 +1490,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/08/luogu-P1776-宝物筛选/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/08/luogu-P1776-宝物筛选/" itemprop="commentCount"></span>
+                <a href="/2019/05/22/P4149-IOI2011-Race/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/22/P4149-IOI2011-Race/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1534,12 +1520,10 @@
 
       
         
-          <p>链接：<a href="https://www.luogu.org/problemnew/show/P1776" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P1776</a><br>思路：裸的多重背包，我们考虑朴素的算法，首先枚举第几个物品，再枚举重量，再枚举当前需要用几个，这样是O(nmW)的。这个优化方法就非常特别了，考虑单调队列是对于一段限定的区间里面取最大值，那么在这个问题中哪些状态是属于一段区间的呢，突然发现必须要余数相同的那些状态才有可能属于一个区间，余数相同的这些状态就可以用单调队列优化。所以我们按照余数分类，余数相同的那些状态我们一起转移。<br>原来我们有转移方程：</p>
-<script type="math/tex; mode=display">dp[i] = max(dp[j] + (i - j) / w * v), (i - j) \% w = 0</script><p>我们按照余数改写：</p>
-<script type="math/tex; mode=display">dp[d + i * w] = max(dp[d + j * w] + (i - j) * v), (i - j) <= c</script><p>这个方程展开后就可以用单调队列来优化了<br>
+          <p>链接:<a href="https://www.luogu.org/problemnew/show/P4149" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P4149</a><br>思路:题目求树上路径长为k时最短的边数。考虑点分治，如果我们想要应用容斥，就不能直接更新最小值，因为取最小值不存在逆运算，这时候我们要把所有边数的方案都存下来，然后就可以容斥了，最后直接从小到大扫一遍看i为多少时方案不为0，即为最小值，这样做复杂度O(nlognlogn)，因为每棵子树里面还需要排序一下，然后O(n)统计答案。这是比较传统的做法<br>    考虑怎么样才能不重复计算，即每次更新最小值的两个端点都必须以你当前枚举的点为lca，因为之前是把所有子树的都统计了一起处理，再减去各个子树分开时的方案，从而得到横跨枚举点的方案，其实我们只用先统计方案再更新子树就可以避免子树内不合法的情况的更新。考虑维护一下t[x] = y，表示当距离为x时，最少经过y条边，每次我们先对子树内所有点都更新(此时t里面保存的信息是不包括这个子树的信息)，等所有子树的点都更新完后我们再把子树更新到t里面去，这样就可以避免不合法情况计算入内。完了后再清空即可(注意不要memset，直接再遍历一遍子树把访问到的点清空就行了)。这样复杂度为O(nlogn)，比上面复杂度稍好。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/08/luogu-P1776-宝物筛选/#more" rel="contents">
+            <a class="btn" href="/2019/05/22/P4149-IOI2011-Race/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1592,7 +1576,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/07/luogu-P2257-YY的GCD/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/20/hdu-6532-Chessboard/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1611,7 +1595,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/07/luogu-P2257-YY的GCD/" itemprop="url">luogu-P2257(YY的GCD)</a></h1>
+                <a class="post-title-link" href="/2019/05/20/hdu-6532-Chessboard/" itemprop="url">hdu-6532(Chessboard)</a></h1>
         
 
         <div class="post-meta">
@@ -1623,8 +1607,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-07T21:33:30+08:00">
-                2019-07-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-20T22:22:05+08:00">
+                2019-05-20
               </time>
             
 
@@ -1646,8 +1630,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/莫比乌斯反演/" itemprop="url" rel="index">
-                    <span itemprop="name">莫比乌斯反演</span>
+                  <a href="/categories/网络流/" itemprop="url" rel="index">
+                    <span itemprop="name">网络流</span>
                   </a>
                 </span>
 
@@ -1664,8 +1648,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/07/luogu-P2257-YY的GCD/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/07/luogu-P2257-YY的GCD/" itemprop="commentCount"></span>
+                <a href="/2019/05/20/hdu-6532-Chessboard/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/20/hdu-6532-Chessboard/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1694,15 +1678,10 @@
 
       
         
-          <p>链接:<a href="https://www.luogu.org/problemnew/show/P2257" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P2257</a><br>思路：给定N, M,求1&lt;=x&lt;=N, 1&lt;=y&lt;=M且gcd(x, y)为质数的(x, y)有多少对。<br>我们设</p>
-<script type="math/tex; mode=display">f(d) = \sum_{i = 1}^n\sum_{j = 1}^m[gcd(i, j) = d]</script><script type="math/tex; mode=display">F(n) = \sum_{n|d}f(d) = \lfloor\frac{N}{n}\rfloor\lfloor\frac{M}{n}\rfloor</script><script type="math/tex; mode=display">f(n) = \sum_{n|d}\mu(\frac{d}{n})F(d)</script><p>得出：</p>
-<script type="math/tex; mode=display">Ans = \sum_{p\in{prime}}f(p)</script><p>莫比乌斯反演得到：</p>
-<script type="math/tex; mode=display">Ans = \sum_{p\in{prime}}\sum_{p|d}\mu(\frac{d}{p})F(d)</script><p>$我们更改枚举项，枚举\lfloor\frac{d}{p}\rfloor$：</p>
-<script type="math/tex; mode=display">Ans = \sum_{p\in{prime}}\sum_{d = 1}^{min(\lfloor\frac{n}{p}\rfloor, \lfloor\frac{m}{p}\rfloor)}\mu(d)\lfloor\frac{n}{dp}\rfloor\lfloor\frac{m}{dp}\rfloor</script><p>我们将dp换成T：</p>
-<script type="math/tex; mode=display">Ans = \sum_{T = 1}^{min(n, m)}\lfloor\frac{n}{T}\rfloor\lfloor\frac{m}{T}\rfloor(\sum_{t|T, t\in{prime}}\mu(\frac{T}{t}))</script><p>推到这里就可以解决了，由于是多组数据，我们需要预处理。后面的对$\mu$求和我们可以事先预处理出来，剩下的就是整除分块求答案即可。<br>
+          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6532" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6532</a><br>思路：lls是真的强啊，一眼就看出来怎么建图了。首先把所有棋子的所在行列拿出来，然后离散化，对于所有行限制，二分找到离散化后的行结点中第一个大于他的位置(如果比最后一个还大则忽略)，然后该点向下一个点连一条容量为y，费用为0的边，同理列限制(只是改成向上连因为是流出，好像向下也可以这个没细想，我是向上的。)。然后所有棋子对应的行结点向列结点连一条容量为1，费用为-i的边，源点连向第一个行结点，第一个列结点连向汇点，跑一个最大费用流即可。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/07/luogu-P2257-YY的GCD/#more" rel="contents">
+            <a class="btn" href="/2019/05/20/hdu-6532-Chessboard/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1755,7 +1734,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/07/luogu-P3455-ZAP-Queries/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/20/hdu-6534-Chika-and-Friendly-Pairs/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1774,7 +1753,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/07/luogu-P3455-ZAP-Queries/" itemprop="url">luogu-P3455(ZAP-Queries)</a></h1>
+                <a class="post-title-link" href="/2019/05/20/hdu-6534-Chika-and-Friendly-Pairs/" itemprop="url">hdu-6534(Chika and Friendly Pairs)</a></h1>
         
 
         <div class="post-meta">
@@ -1786,8 +1765,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-07T20:52:23+08:00">
-                2019-07-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-20T22:13:39+08:00">
+                2019-05-20
               </time>
             
 
@@ -1809,8 +1788,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/莫比乌斯反演/" itemprop="url" rel="index">
-                    <span itemprop="name">莫比乌斯反演</span>
+                  <a href="/categories/莫队/" itemprop="url" rel="index">
+                    <span itemprop="name">莫队</span>
                   </a>
                 </span>
 
@@ -1827,8 +1806,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/07/luogu-P3455-ZAP-Queries/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/07/luogu-P3455-ZAP-Queries/" itemprop="commentCount"></span>
+                <a href="/2019/05/20/hdu-6534-Chika-and-Friendly-Pairs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/20/hdu-6534-Chika-and-Friendly-Pairs/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1857,14 +1836,10 @@
 
       
         
-          <p>链接：<a href="https://www.luogu.org/problemnew/show/P3455" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P3455</a><br>思路：求$\sum_{i = 1} ^ a\sum_{j = 1} ^ b[gcd(i, j) = d]$。我们设:</p>
-<script type="math/tex; mode=display">f(k) = \sum_{i = 1} ^ a\sum_{j = 1} ^ b[gcd(i, j) = k]</script><p>那么有:</p>
-<script type="math/tex; mode=display">F(n) = \sum_{n|k}f(k) = \lfloor\frac{a}{n}\rfloor\lfloor\frac{b}{n}\rfloor</script><p>从而有：</p>
-<script type="math/tex; mode=display">f(n) = \sum_{n|k}\mu(\lfloor\frac{k}{n}\rfloor)F(k)</script><p>$将枚举项 \lfloor\frac{k}{d}\rfloor 变为t$：</p>
-<script type="math/tex; mode=display">ans = \sum_{t = 1}^{min(\lfloor\frac{a}{d}\rfloor, \lfloor\frac{b}{d}\rfloor)}\mu(t)\lfloor\frac{a}{td}\rfloor\lfloor\frac{b}{td}\rfloor</script><p>然后有多组数据，用一下整除分块求前缀和就可以解决了。<br>
+          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6534" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6534</a><br>思路：时常在怀疑自己为这么菜呜呜呜，比赛前才学了莫队比赛上就懵了，然后队友慢慢写过了我只能回来补题，补的时候我也没咋多想啊十五分钟就写完了。。。为啥比赛的时候就是想不清楚呢。 回到题目，就是一个普通的莫队，每次更新的时候用树状数组维护一下就好了，注意先在外面预处理好每个离散化后的数左右最远能到的位置，这样总复杂度O($n ^ {\frac{3}{2}} logn$)，事实上好像有去掉log的离线做法我暂时还不太会，后面学了来补吧。这个题是真的对不起队友系列，导致后面没时间做一个很简单的费用流了。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/07/luogu-P3455-ZAP-Queries/#more" rel="contents">
+            <a class="btn" href="/2019/05/20/hdu-6534-Chika-and-Friendly-Pairs/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1907,7 +1882,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1953,7 +1928,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">471</span>
+                  <span class="site-state-item-count">472</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

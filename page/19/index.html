@@ -181,7 +181,7 @@
   
 
   <div class="container sidebar-position-left 
-  page-home">
+  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -312,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/Codeforces-Round-187-Div-1-C-Sereja-and-Subsequences/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/22/bzoj-2588-Count-on-a-tree/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -331,7 +331,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/05/05/Codeforces-Round-187-Div-1-C-Sereja-and-Subsequences/" itemprop="url">Codeforces Round 187 (Div.1)-C(Sereja and Subsequences)</a></h1>
+                <a class="post-title-link" href="/2019/04/22/bzoj-2588-Count-on-a-tree/" itemprop="url">bzoj-2588(Count on a tree)</a></h1>
         
 
         <div class="post-meta">
@@ -343,8 +343,641 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T22:29:15+08:00">
-                2019-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-22T22:02:02+08:00">
+                2019-04-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/可持久化线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">可持久化线段树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/22/bzoj-2588-Count-on-a-tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/22/bzoj-2588-Count-on-a-tree/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2588" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=2588</a><br>思路：树上主席树，之前做的对边建主席树就非常好写，可以分成两段求和，这个在整合信息时必须整合成 sum[u] + sum[v] - sum[lca(u,  v)] - sum[fa[lca(u, v)]]，而且之前的是在转移的时候update，对点权建的话就必须在转移外面update，我就是因为把根节点update漏掉了然后一直wa，后来发现按照边那样update的话根节点没有update，然后就是转化为静态主席树的经典问题了。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/22/bzoj-2588-Count-on-a-tree/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/The-Preliminary-Contest-for-ICPC-China-Nanchang-National-J-Distance-on-the-tree/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/21/The-Preliminary-Contest-for-ICPC-China-Nanchang-National-J-Distance-on-the-tree/" itemprop="url">The-Preliminary-Contest-for-ICPC-China-Nanchang-National-J(Distance on the tree)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T22:49:10+08:00">
+                2019-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/可持久化线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">可持久化线段树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/21/The-Preliminary-Contest-for-ICPC-China-Nanchang-National-J-Distance-on-the-tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/21/The-Preliminary-Contest-for-ICPC-China-Nanchang-National-J-Distance-on-the-tree/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://nanti.jisuanke.com/t/38229" target="_blank" rel="noopener">https://nanti.jisuanke.com/t/38229</a><br>思路：典型的树上主席树，开始想复杂了想用欧拉序把树给扒下来然后再建主席树，事实上直接在dfs的时候就可以建树了。先把所有边权离散化，然后dfs的时候把边权加进去，最后查询的时候找到两个点的lca，然后分别查询两边路径对应区间的值即可。有几个地方细节要注意，因为这种做法查询在线，所以要用upper_bound然后再-1，找到最后一个符合的位置，再者还要特判一下upper_bound求出来为0的情况，直接输出0即可。不然返回的是离散化后1对应边权的个数。 lls还写了一个超骚的离线树剖 + 树状数组，ddc给我说他可能写复杂了感觉会比主席树好写，不管了以后学了树剖再来补这个内容吧。</p>
+<p>树剖来了。还是先进行树剖，然后将询问和边都按从小到大进行排序，处理某一个询问时把小于等于当前k的边加入到bit中，然后树剖上进行查询更新答案即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/21/The-Preliminary-Contest-for-ICPC-China-Nanchang-National-J-Distance-on-the-tree/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/21/SP10707-COT2-Count-on-a-tree-II/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/21/SP10707-COT2-Count-on-a-tree-II/" itemprop="url">SP10707-COT2(Count on a tree II)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-21T22:43:27+08:00">
+                2019-04-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/莫队/" itemprop="url" rel="index">
+                    <span itemprop="name">莫队</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/21/SP10707-COT2-Count-on-a-tree-II/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/21/SP10707-COT2-Count-on-a-tree-II/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.luogu.org/problemnew/show/SP10707" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/SP10707</a><br>思路：树上莫队的比较基础的题目，但是第一次写还是到处出错，一来是路径判断的条件不太熟悉，二来是lca点因为不包括在路径中，所以要单独考虑，而且如果点访问过就-，没访问过就+，这样可以抵消掉了欧拉序中进入某个子树路径的问题，就完美去掉了重复计数和遗漏计数，最后记得把lca的贡献再还回去即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/21/SP10707-COT2-Count-on-a-tree-II/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/19/bzoj-2120-数颜色/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/19/bzoj-2120-数颜色/" itemprop="url">bzoj-2120(数颜色)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-19T23:47:57+08:00">
+                2019-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/莫队/" itemprop="url" rel="index">
+                    <span itemprop="name">莫队</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/19/bzoj-2120-数颜色/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/19/bzoj-2120-数颜色/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2120" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=2120</a><br>思路：带修改的莫队，也就是在普通莫队上加一维表示时间，然后多一个时间指针，跟左右端点一样排序后暴力移动修改即可，注意修改时间后要把当前点颜色和储存修改颜色的值swap一下，因为离开这个时间点的时候就可以swap改回来。带修改莫队的块大小取n的2/3次方，总的复杂度为n的5/3次方。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/19/bzoj-2120-数颜色/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/19/Codeforces-Round-225-Div-1-D-Antimatter/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/19/Codeforces-Round-225-Div-1-D-Antimatter/" itemprop="url">Codeforces-Round-225-(Div.1)-D(Antimatter)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-19T23:41:58+08:00">
+                2019-04-19
               </time>
             
 
@@ -384,8 +1017,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/05/05/Codeforces-Round-187-Div-1-C-Sereja-and-Subsequences/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/05/Codeforces-Round-187-Div-1-C-Sereja-and-Subsequences/" itemprop="commentCount"></span>
+                <a href="/2019/04/19/Codeforces-Round-225-Div-1-D-Antimatter/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/19/Codeforces-Round-225-Div-1-D-Antimatter/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,10 +1047,10 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/problemset/problem/314/C" target="_blank" rel="noopener">https://codeforces.com/problemset/problem/314/C</a><br>思路：令dp[i]表示以元素值为i的元素结尾的方案数，那么转移就是从$\sum_{j=1}^i  dp[i] * (a[i] + 1)$，这个可以用前缀和来维护，但是本题最难的问题是重复怎么去除，其实也很简单，我们记录一下前一个这个值得到的值，那么本次更新的贡献就是二者之差，由于前缀和需要更新，树状数组维护一下即可。<br>
+          <p>链接：<a href="https://codeforces.com/problemset/problem/383/D" target="_blank" rel="noopener">https://codeforces.com/problemset/problem/383/D</a><br>思路：dp[i][j]表示前i个数，和为j的方案数，可以由前面的方案转移过来，也可以从这里开始产生新的方案，然后统计贡献和即可。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/05/05/Codeforces-Round-187-Div-1-C-Sereja-and-Subsequences/#more" rel="contents">
+            <a class="btn" href="/2019/04/19/Codeforces-Round-225-Div-1-D-Antimatter/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -470,7 +1103,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/MemSQL-Start-c-UP-3-0-Round-2-onsite-finalists-D-Buy-Low-Sell-High/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/Codeforces-Round-317-AimFund-Thanks-Round-Div-1-B-Minimization/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -489,7 +1122,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/05/05/MemSQL-Start-c-UP-3-0-Round-2-onsite-finalists-D-Buy-Low-Sell-High/" itemprop="url">MemSQL Start[c]UP 3.0 - Round 2 (onsite finalists)-D(Buy Low Sell High)</a></h1>
+                <a class="post-title-link" href="/2019/04/18/Codeforces-Round-317-AimFund-Thanks-Round-Div-1-B-Minimization/" itemprop="url">Codeforces-Round-317-[AimFund-Thanks-Round]-(Div.1)-B(Minimization)</a></h1>
         
 
         <div class="post-meta">
@@ -501,798 +1134,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T22:24:12+08:00">
-                2019-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/贪心/" itemprop="url" rel="index">
-                    <span itemprop="name">贪心</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/05/05/MemSQL-Start-c-UP-3-0-Round-2-onsite-finalists-D-Buy-Low-Sell-High/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/05/MemSQL-Start-c-UP-3-0-Round-2-onsite-finalists-D-Buy-Low-Sell-High/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/problemset/problem/865/D" target="_blank" rel="noopener">https://codeforces.com/problemset/problem/865/D</a><br>思路：真的是非常好一个贪心题，我一直在想怎么配对，这个题其实就引入了一个新的思路。首先我们知道肯定买和卖的数量是一样的，怎么样才能一样呢，我们每天买一张并且卖一张就肯定一样了，但不一定是要买今天的，我们对于一个新股票，我们把它价值取负放进优先队列里，然后默认它要卖，再从优先队列里取一个出来当作买的(如果是同一个就相当于不买也不卖了)，这样优先队列就相当于一个中转站，给了贪心一个反悔的策略，但是可能整个股票还要作为买的，所以我们要把股票放入优先队列中两次即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/05/05/MemSQL-Start-c-UP-3-0-Round-2-onsite-finalists-D-Buy-Low-Sell-High/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/Codeforces-Round-334-Div-1-B-Lieges-of-Legendre/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/05/Codeforces-Round-334-Div-1-B-Lieges-of-Legendre/" itemprop="url">Codeforces Round 334 (Div.1)-B(Lieges of Legendre)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T16:56:39+08:00">
-                2019-05-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/博弈/" itemprop="url" rel="index">
-                    <span itemprop="name">博弈</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/05/05/Codeforces-Round-334-Div-1-B-Lieges-of-Legendre/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/05/Codeforces-Round-334-Div-1-B-Lieges-of-Legendre/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/problemset/problem/603/C" target="_blank" rel="noopener">https://codeforces.com/problemset/problem/603/C</a><br>思路：首先需要学习一下SG函数和SG定理，我们定义mex(x) = {后续状态的SG函数中最小未出现的非负整数}，比如mex(2) = {0, 1}, 那么mex(2) = 2。SG(x) = mex(x)。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于本题，如果k为偶数，对于偶数分解后全部异或起来一定为0，所以就直接向-1转移即可，前几项不符合规律，后面的就满足奇0偶1的结果。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对于k为奇数，偶数我们考虑往-1和/2两个方向转移，排除前几项之外的奇数都是0，那么就是看/2的值，决定答案是1还是2即可，还是手算前几项就ok了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/05/05/Codeforces-Round-334-Div-1-B-Lieges-of-Legendre/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/04/Codeforces-Round-285-Div-2-D-Misha-and-Permutations-Summation/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/04/Codeforces-Round-285-Div-2-D-Misha-and-Permutations-Summation/" itemprop="url">Codeforces Round 285 (Div.2)-D(Misha and Permutations Summation)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-04T12:20:59+08:00">
-                2019-05-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/康拓展开/" itemprop="url" rel="index">
-                    <span itemprop="name">康拓展开</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/05/04/Codeforces-Round-285-Div-2-D-Misha-and-Permutations-Summation/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/04/Codeforces-Round-285-Div-2-D-Misha-and-Permutations-Summation/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/problemset/problem/501/D" target="_blank" rel="noopener">https://codeforces.com/problemset/problem/501/D</a><br>思路：首先看一下康拓展开的表达式，排列的序列数X与排列的关系：<br>    x = <script type="math/tex">a_0 * (n - 1)! + a_1 * (n - 2)! + ... + a_{n - 1} * 0!</script><br>其中$a_i$指的是位置i后面小于$a_i$值的个数<br>那么我们可以算出两个排列的康拓展开，因为要对n!取模，好像必须要高精度了，这时候一个巧妙的方法来了，我们可以模拟进制的高精度取模方法，不断进位然后取模，给阶乘也弄一个类似的，不必算出两个排列对应x的和，而是算出每一项的系数，然后从最低位开始向上加，进位(最后一个进位舍掉，相当于取模)，最后结果的系数就是最终排列的每一项了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/05/04/Codeforces-Round-285-Div-2-D-Misha-and-Permutations-Summation/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/04/Educational-Codeforces-Round-64-Rated-for-Div-2-E-Special-Segments-of-Permutation/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/04/Educational-Codeforces-Round-64-Rated-for-Div-2-E-Special-Segments-of-Permutation/" itemprop="url">Educational Codeforces Round 64 (Rated for Div.2)-E(Special Segments of Permutation)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-04T12:14:23+08:00">
-                2019-05-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/暴力/" itemprop="url" rel="index">
-                    <span itemprop="name">暴力</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/05/04/Educational-Codeforces-Round-64-Rated-for-Div-2-E-Special-Segments-of-Permutation/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/04/Educational-Codeforces-Round-64-Rated-for-Div-2-E-Special-Segments-of-Permutation/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/contest/1156/problem/E" target="_blank" rel="noopener">https://codeforces.com/contest/1156/problem/E</a><br>思路：用单调栈求出一个数左右第一个比他大的数，然后需要证明一个结论，如果我们每次枚举左右中小的那个区间，那么每个数枚举次数不会超过logn次，因为每次都枚举的小的一边，所以每次都至少要除以2，最后不会超过logn次，然后暴力枚举答案即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/05/04/Educational-Codeforces-Round-64-Rated-for-Div-2-E-Special-Segments-of-Permutation/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/04/Codeforces-Round-345-Div-1-C-Table-Compression/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/04/Codeforces-Round-345-Div-1-C-Table-Compression/" itemprop="url">Codeforces Round 345 (Div.1)-C(Table Compression)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-04T10:54:00+08:00">
-                2019-05-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/并查集/" itemprop="url" rel="index">
-                    <span itemprop="name">并查集</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/05/04/Codeforces-Round-345-Div-1-C-Table-Compression/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/04/Codeforces-Round-345-Div-1-C-Table-Compression/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/problemset/problem/650/C" target="_blank" rel="noopener">https://codeforces.com/problemset/problem/650/C</a><br>思路：之前在cf做过一个类似的题，本题思路跟之前那个差不多，把行和列拉出来排序，然后从前往后相同的并查集一下，不同的建边，然后就变为了关于并查集的一个DAG，拓扑排序然后dp一下即可<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/05/04/Codeforces-Round-345-Div-1-C-Table-Compression/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/02/Educational-Codeforces-Round-64-Rated-for-Div-2-F-Card-Bag/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/02/Educational-Codeforces-Round-64-Rated-for-Div-2-F-Card-Bag/" itemprop="url">Educational Codeforces Round 64 (Rated for Div.2)-F(Card Bag)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-02T23:04:58+08:00">
-                2019-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-18T22:41:51+08:00">
+                2019-04-18
               </time>
             
 
@@ -1332,8 +1175,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/05/02/Educational-Codeforces-Round-64-Rated-for-Div-2-F-Card-Bag/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/02/Educational-Codeforces-Round-64-Rated-for-Div-2-F-Card-Bag/" itemprop="commentCount"></span>
+                <a href="/2019/04/18/Codeforces-Round-317-AimFund-Thanks-Round-Div-1-B-Minimization/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/18/Codeforces-Round-317-AimFund-Thanks-Round-Div-1-B-Minimization/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1362,10 +1205,10 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/1156/problem/F" target="_blank" rel="noopener">https://codeforces.com/contest/1156/problem/F</a><br>思路：问题就是求有多少排列满足$a_1 &lt; a_2 &lt; a_3….. &lt; a_k = a_{k+1}$ ，考虑把原数组排序并去重，记录每个数出线了多少次，类似于背包一样dp。令dp[i][j]表示第i个数是最后一个选的，选了j个的方案数，sum[i][j]表示前i个数中选了j个的方案，然后对于每个i更新完后统计一下对答案的贡献，然后前缀和优化转移一下即可。<br>
+          <p>链接：<a href="https://codeforces.com/problemset/problem/571/B" target="_blank" rel="noopener">https://codeforces.com/problemset/problem/571/B</a><br>思路：又是自己想了个假贪心想了半天，事实上贪心如果很难想到能满足方法的时候应该就是个dp题了，我们考虑其实可以看成k条链，并且每条连上一定放的是排序后的连续的一段，那么问题转化为了排序后序列划分为k条链，每条的长度必须为n / k或者n / k + 1，那么用dp[i][j]表示选了i个n / k的链，选了j个n / k + 1的链，然后每次代价为链上最后一个数 - 第一个数，更新即可。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/05/02/Educational-Codeforces-Round-64-Rated-for-Div-2-F-Card-Bag/#more" rel="contents">
+            <a class="btn" href="/2019/04/18/Codeforces-Round-317-AimFund-Thanks-Round-Div-1-B-Minimization/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1418,7 +1261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/02/Educational-Codeforces-Round-64-Rated-for-Div-2-D-0-1-Tree/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/Codeforces-Round-250-Div-1-D-The-Child-and-Sequence/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1437,7 +1280,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/05/02/Educational-Codeforces-Round-64-Rated-for-Div-2-D-0-1-Tree/" itemprop="url">Educational Codeforces Round 64(Rated for Div.2)-D(0-1-Tree)</a></h1>
+                <a class="post-title-link" href="/2019/04/17/Codeforces-Round-250-Div-1-D-The-Child-and-Sequence/" itemprop="url">Codeforces-Round-250-(Div.1)-D(The Child and Sequence)</a></h1>
         
 
         <div class="post-meta">
@@ -1449,8 +1292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-02T22:59:44+08:00">
-                2019-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-17T18:12:49+08:00">
+                2019-04-17
               </time>
             
 
@@ -1472,8 +1315,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/并查集/" itemprop="url" rel="index">
-                    <span itemprop="name">并查集</span>
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
                   </a>
                 </span>
 
@@ -1490,8 +1333,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/05/02/Educational-Codeforces-Round-64-Rated-for-Div-2-D-0-1-Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/02/Educational-Codeforces-Round-64-Rated-for-Div-2-D-0-1-Tree/" itemprop="commentCount"></span>
+                <a href="/2019/04/17/Codeforces-Round-250-Div-1-D-The-Child-and-Sequence/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/17/Codeforces-Round-250-Div-1-D-The-Child-and-Sequence/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1520,10 +1363,10 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/1156/problem/D" target="_blank" rel="noopener">https://codeforces.com/contest/1156/problem/D</a><br>思路：考虑一条路径必然是形如0000000011111111的，那么我们发现一条路径可以通过中转点来计数，这样就不重不漏，这样我们想到可以建两个并查集，一个是由0边组成的一个是由1边组成的，然后维护并查集的大小，最后答案就是所有点的0里面的个数 * 1里面的个数 - 1。<br>
+          <p>链接：<a href="https://codeforces.com/problemset/problem/438/D" target="_blank" rel="noopener">https://codeforces.com/problemset/problem/438/D</a><br>思路：看到这个题就想起了camp讲过这个题，主要是区间取模怎么处理，我们考虑一个数取模，如果比他大就不用变，比他小我们可以分为两个情况考虑：大于它一半和小于它一半，如果大于说明至少要减去一半，如果小于说明余数肯定小于一半，所以怎么最后都至少小于一半，所以最多取模logx次，那么整个2操作最多取模nlogx次，加上3操作因为是单点修改，所以一共最多nlogxlogx次，这个题就做完了。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/05/02/Educational-Codeforces-Round-64-Rated-for-Div-2-D-0-1-Tree/#more" rel="contents">
+            <a class="btn" href="/2019/04/17/Codeforces-Round-250-Div-1-D-The-Child-and-Sequence/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1576,7 +1419,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/02/Codeforces-Round-210-Div-1-B-Levko-and-Array/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/Codeforces-Round-526-Div-1-B-The-Fair-Nut-and-Strings/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1595,7 +1438,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/05/02/Codeforces-Round-210-Div-1-B-Levko-and-Array/" itemprop="url">Codeforces-Round-210-(Div.1)-B(Levko and Array)</a></h1>
+                <a class="post-title-link" href="/2019/04/17/Codeforces-Round-526-Div-1-B-The-Fair-Nut-and-Strings/" itemprop="url">Codeforces-Round-526-(Div.1)-B(The Fair Nut and Strings)</a></h1>
         
 
         <div class="post-meta">
@@ -1607,8 +1450,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-02T22:55:22+08:00">
-                2019-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-17T08:38:04+08:00">
+                2019-04-17
               </time>
             
 
@@ -1630,8 +1473,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础dp/" itemprop="url" rel="index">
-                    <span itemprop="name">基础dp</span>
+                  <a href="/categories/思维/" itemprop="url" rel="index">
+                    <span itemprop="name">思维</span>
                   </a>
                 </span>
 
@@ -1648,8 +1491,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/05/02/Codeforces-Round-210-Div-1-B-Levko-and-Array/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/02/Codeforces-Round-210-Div-1-B-Levko-and-Array/" itemprop="commentCount"></span>
+                <a href="/2019/04/17/Codeforces-Round-526-Div-1-B-The-Fair-Nut-and-Strings/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/17/Codeforces-Round-526-Div-1-B-The-Fair-Nut-and-Strings/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1678,10 +1521,10 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/360/problem/B" target="_blank" rel="noopener">https://codeforces.com/contest/360/problem/B</a><br>思路：这个题dp思路就比较巧妙，首先先二分最后的答案，然后令dp[i]表示i是最后一个不同的元素，此时前i个元素相邻的差的绝对值小于二分值时所需要的最小的更改次数，那么转移就是dp[i] = min{dp[j] + i - j - 1} (j &lt; i)。最后找所有的i，看是否存在dp[i] + n - i &lt;= k即可。<br>
+          <p>链接：<a href="https://codeforces.com/contest/1083/problem/B" target="_blank" rel="noopener">https://codeforces.com/contest/1083/problem/B</a><br>思路：按位统计，相当于看以这个前缀作为二进制数之间有多少个数，然后和k取一个最小值加入统计答案即可(因为如果大于k只能取k个，贪心取不同的前缀即可，否则二进制数只有那么多只能取数量个)。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/05/02/Codeforces-Round-210-Div-1-B-Levko-and-Array/#more" rel="contents">
+            <a class="btn" href="/2019/04/17/Codeforces-Round-526-Div-1-B-The-Fair-Nut-and-Strings/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1734,7 +1577,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/02/Codeforces-Round-551-Div-2-D-Serval-and-Rooted-Tree/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/Codeforces-Round-277-Div-2-D-Valid-Sets/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1753,7 +1596,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/05/02/Codeforces-Round-551-Div-2-D-Serval-and-Rooted-Tree/" itemprop="url">Codeforces-Round-551-(Div.2)-D(Serval and Rooted Tree)</a></h1>
+                <a class="post-title-link" href="/2019/04/17/Codeforces-Round-277-Div-2-D-Valid-Sets/" itemprop="url">Codeforces-Round-277-(Div.2)-D(Valid Sets)</a></h1>
         
 
         <div class="post-meta">
@@ -1765,8 +1608,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-02T22:51:09+08:00">
-                2019-05-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-17T08:33:07+08:00">
+                2019-04-17
               </time>
             
 
@@ -1788,8 +1631,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/树形dp/" itemprop="url" rel="index">
-                    <span itemprop="name">树形dp</span>
+                  <a href="/categories/思维/" itemprop="url" rel="index">
+                    <span itemprop="name">思维</span>
                   </a>
                 </span>
 
@@ -1806,8 +1649,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/05/02/Codeforces-Round-551-Div-2-D-Serval-and-Rooted-Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/02/Codeforces-Round-551-Div-2-D-Serval-and-Rooted-Tree/" itemprop="commentCount"></span>
+                <a href="/2019/04/17/Codeforces-Round-277-Div-2-D-Valid-Sets/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/17/Codeforces-Round-277-Div-2-D-Valid-Sets/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1836,10 +1679,168 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/1153/problem/D" target="_blank" rel="noopener">https://codeforces.com/contest/1153/problem/D</a><br>思路：令dp[u]表示u的子树中传上来的数是第k大的数，那么如果边是min，dp[u] = sum{dp[v]}， 如果是max，dp[u] = min{dp[v]}, 最后k - dp[1] + 1就是答案。<br>
+          <p>链接：<a href="https://codeforces.com/problemset/problem/486/D" target="_blank" rel="noopener">https://codeforces.com/problemset/problem/486/D</a><br>思路：考虑以每个点为根，并为最大值，然后进行dfs统计，遇到比他大的就停止，好像这样就可以避免重复了，但是如果有些点位置相等怎么办呢？有个很巧妙的做法，定向即可，即比较一下根结点的大小，因为一堆相等点中编号最大值只有一个，这样也就只会被统计一次，就非常完美解决了计数重复的问题了。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/05/02/Codeforces-Round-551-Div-2-D-Serval-and-Rooted-Tree/#more" rel="contents">
+            <a class="btn" href="/2019/04/17/Codeforces-Round-277-Div-2-D-Valid-Sets/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/17/Codeforces-Round-340-Div-2-E-XOR-and-Favorite-Number/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/17/Codeforces-Round-340-Div-2-E-XOR-and-Favorite-Number/" itemprop="url">Codeforces-Round-340-(Div.2)-E(XOR and Favorite Number)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-17T08:26:48+08:00">
+                2019-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/莫队/" itemprop="url" rel="index">
+                    <span itemprop="name">莫队</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/17/Codeforces-Round-340-Div-2-E-XOR-and-Favorite-Number/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/17/Codeforces-Round-340-Div-2-E-XOR-and-Favorite-Number/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://codeforces.com/problemset/problem/617/E" target="_blank" rel="noopener">https://codeforces.com/problemset/problem/617/E</a><br>思路：学习了一波莫队，我们先对所有a求一个异或的前缀和，考虑如果删除一个点，删除的是a[r] ^ a[l - 1] = k中符合条件的r的个数，转换一下就是删除cnt[k ^ a[l - 1]]的个数，加的话直接正常加上去就行了,注意下奇偶排序可以优化一大笔时间。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/17/Codeforces-Round-340-Div-2-E-XOR-and-Favorite-Number/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1882,7 +1883,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/18/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="extend next" rel="next" href="/page/20/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/18/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/20/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1928,7 +1929,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">471</span>
+                  <span class="site-state-item-count">472</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

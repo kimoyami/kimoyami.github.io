@@ -181,7 +181,7 @@
   
 
   <div class="container sidebar-position-left 
-  page-home">
+  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -312,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/09/Codeforces-Round-106-Div2-E-Martian-Strings/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/02/CCPC-Wannafly-Winter-Camp-Day3-D-精简改良/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -331,7 +331,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/09/Codeforces-Round-106-Div2-E-Martian-Strings/" itemprop="url">Codeforces-Round-106-(Div2)-E(Martian-Strings)</a></h1>
+                <a class="post-title-link" href="/2019/02/02/CCPC-Wannafly-Winter-Camp-Day3-D-精简改良/" itemprop="url">CCPC-Wannafly-Winter-Camp-Day3-D(精简改良)</a></h1>
         
 
         <div class="post-meta">
@@ -343,8 +343,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-09T15:19:16+08:00">
-                2019-02-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-02T21:05:39+08:00">
+                2019-02-02
               </time>
             
 
@@ -366,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/kmp/" itemprop="url" rel="index">
-                    <span itemprop="name">kmp</span>
+                  <a href="/categories/状压dp/" itemprop="url" rel="index">
+                    <span itemprop="name">状压dp</span>
                   </a>
                 </span>
 
@@ -384,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/09/Codeforces-Round-106-Div2-E-Martian-Strings/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/09/Codeforces-Round-106-Div2-E-Martian-Strings/" itemprop="commentCount"></span>
+                <a href="/2019/02/02/CCPC-Wannafly-Winter-Camp-Day3-D-精简改良/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/02/CCPC-Wannafly-Winter-Camp-Day3-D-精简改良/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,10 +414,10 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/149/problem/E" target="_blank" rel="noopener">https://codeforces.com/contest/149/problem/E</a><br>思路：kmp第二发，这个题跟之前做的一个dp在思路上一模一样，正着来一遍倒着来一遍，枚举中间断开的点。这个题就是正着来一次kmp，把两个串倒过来再来一次，然后枚举中间点，前面最大匹配长度 + 后面最大匹配长度 &gt;= 串长就可以找到，注意要特判串长为1的情况，这个直接就是不合法的。<br>
+          <p>链接：<a href="https://www.zhixincode.com/contest/12/problem/D?problem_id=186" target="_blank" rel="noopener">https://www.zhixincode.com/contest/12/problem/D?problem_id=186</a><br>思路：还是自己没有想出来，但是已经无限接近了。首先树上统计任意两点贡献的总和我们一般都是转换为统计边的贡献，一条边的贡献就是边两边的点数相乘。我想的是枚举两个集合，然后合并，但这样没有限制怎么样合并，所以无法统计贡献。后来才想起吉老师上课讲过这个，说这个是一个非常经典的dp套路(貌似叫生成树dp？)，dp[S][u]表示集合S，以u为根节点的子树的距离和，我们考虑对一个集合，我们枚举其子集T，并且枚举子集的根节点为v，那么将从子集到当前状态的转移便是dp[S][u] = dp[S - T][u] + dp[T][v] + dist[u][v] <em> num[T] </em> (n - num[T])。因为连接只会发生在根节点，所以之前算过的贡献后续不会再因为其他加边而改变(经典套路需要领悟一下)。关于复杂度，枚举集合加上子集的复杂度总的为3^n(用一个二项式定理就可以证明)，再加上u，v，总复杂度为O(3^n * n^2)，算一下已经接近1e9了，所以我们要把一些无效的状态优化一下，预处理每个集合中有那些点以及点的个数，存起来，枚举的时候只枚举他们即可。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/02/09/Codeforces-Round-106-Div2-E-Martian-Strings/#more" rel="contents">
+            <a class="btn" href="/2019/02/02/CCPC-Wannafly-Winter-Camp-Day3-D-精简改良/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -470,7 +470,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/09/ZeptoLab-Code-Rush-D-Om-Nom-and-Necklace/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/01/CCPC-Wannafly-Winter-Camp-Day1-B-吃豆豆/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -489,7 +489,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/09/ZeptoLab-Code-Rush-D-Om-Nom-and-Necklace/" itemprop="url">ZeptoLab-Code-Rush-D(Om-Nom-and-Necklace)</a></h1>
+                <a class="post-title-link" href="/2019/02/01/CCPC-Wannafly-Winter-Camp-Day1-B-吃豆豆/" itemprop="url">CCPC-Wannafly-Winter-Camp-Day1-B(吃豆豆)</a></h1>
         
 
         <div class="post-meta">
@@ -501,8 +501,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-09T15:11:37+08:00">
-                2019-02-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-01T11:21:17+08:00">
+                2019-02-01
               </time>
             
 
@@ -524,8 +524,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/kmp/" itemprop="url" rel="index">
-                    <span itemprop="name">kmp</span>
+                  <a href="/categories/矩阵快速幂/" itemprop="url" rel="index">
+                    <span itemprop="name">矩阵快速幂</span>
                   </a>
                 </span>
 
@@ -542,8 +542,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/09/ZeptoLab-Code-Rush-D-Om-Nom-and-Necklace/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/09/ZeptoLab-Code-Rush-D-Om-Nom-and-Necklace/" itemprop="commentCount"></span>
+                <a href="/2019/02/01/CCPC-Wannafly-Winter-Camp-Day1-B-吃豆豆/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/01/CCPC-Wannafly-Winter-Camp-Day1-B-吃豆豆/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -572,10 +572,10 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/526/problem/D" target="_blank" rel="noopener">https://codeforces.com/contest/526/problem/D</a><br>思路：明明点的后缀数组题，为什么要给我来kmp二连啊。。。这个题我们可以分情况讨论一下，如果包含空串，那么那个前缀串就是某个子串的k或者k+1倍，否则的话，就是某个前缀串k倍 + 一部分，前者非常好处理，用循环节就可以处理了，后者我们要考虑一下，其实只要保证k的完整部分比后面长就行了(因为求这个过程中已经保证了是一个循环的)，其实这个题就做完了，算是一个kmp思维好题。<br>
+          <p>链接：<a href="https://www.zhixincode.com/contest/2/problem/B?problem_id=24" target="_blank" rel="noopener">https://www.zhixincode.com/contest/2/problem/B?problem_id=24</a><br>思路：做过了div2的版本，直接简单倍增一下即可，div1版本我们考虑豆子出现的周期最多是2520，所以我们在2520步内dp，然后开始用矩阵倍增，dp[i][j][k][z]表示从(i,j)到(k,z)在周期内能获得豆子的最大值，我们重新定义矩阵的乘法，将原来的乘法变为加法，将原来的加法变为取max(想一想这是为什么)，这样我们一直倍增，直到dp[sx][sy][ex][ey]刚好大于c，我们再反向倍增回来，然后可以到达一个能在2520步内到达的状态，最后我们最后再暴力一下就可以得到答案了。(叙述起来不是很难但是写起来超级烦，需要非常细心，注意答案可能会爆ll，还有就是如果一个周期都走不到的情况需要特判一下)。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/02/09/ZeptoLab-Code-Rush-D-Om-Nom-and-Necklace/#more" rel="contents">
+            <a class="btn" href="/2019/02/01/CCPC-Wannafly-Winter-Camp-Day1-B-吃豆豆/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -628,7 +628,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/08/Codeforces-Global-Round-1-D-Jongmah/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/01/Codeforces-Round-536-Div-2-E-Lunar-New-Year-and-Red-Envelopes/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -647,7 +647,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/08/Codeforces-Global-Round-1-D-Jongmah/" itemprop="url">Codeforces-Global-Round-1-D(Jongmah)</a></h1>
+                <a class="post-title-link" href="/2019/02/01/Codeforces-Round-536-Div-2-E-Lunar-New-Year-and-Red-Envelopes/" itemprop="url">Codeforces-Round-536-(Div.2)-E(Lunar-New-Year-and-Red-Envelopes)</a></h1>
         
 
         <div class="post-meta">
@@ -659,8 +659,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-08T21:29:19+08:00">
-                2019-02-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-01T11:13:28+08:00">
+                2019-02-01
               </time>
             
 
@@ -700,8 +700,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/08/Codeforces-Global-Round-1-D-Jongmah/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/08/Codeforces-Global-Round-1-D-Jongmah/" itemprop="commentCount"></span>
+                <a href="/2019/02/01/Codeforces-Round-536-Div-2-E-Lunar-New-Year-and-Red-Envelopes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/01/Codeforces-Round-536-Div-2-E-Lunar-New-Year-and-Red-Envelopes/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -730,10 +730,10 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/1110/problem/D" target="_blank" rel="noopener">https://codeforces.com/contest/1110/problem/D</a><br>思路：dp确实是很看思维的啊，特别这种如果把问题转化一下就变得特别简单的，我们考虑如果存在3个及以上同样的顺子，我们可以把它变成3个对子，所以我们只用考虑顺子在3个以内的情况，对于一个点，组成顺子可能来自三个方向，但它作为末尾的那一种情况，我们可以直接在递推的时候去掉，那么状态就出来了,dp[i][j][k]表示第i个点，以它为中心的顺子有j个，以它为起点的顺子有k个的最大tuple数，那它可能来自于dp[i - 1][x][j] + k，我们枚举所有状态转移过去即可，最后dp[m][0][0]就是答案。对于杭电<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6188" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6188</a> 这个题也完全一样，状态改一改就行了。<br>
+          <p>链接：<a href="https://codeforces.com/contest/1106/problem/E" target="_blank" rel="noopener">https://codeforces.com/contest/1106/problem/E</a><br>思路：看到有时间线想着肯定跟时间线有关，又因为m最大为200所以想到对时间线dp，状态就很简单出来了dp[i][j]表示i时刻结束时，已经打扰了j次时Bob所能获得红包的最小值。那我们怎么知道当前会得到哪个红包呢，这时候我们就要根据Bob的策略预处理出所有时间点Bob会抢哪个红包，这一定是确定的，所以不用记录Bob抢过哪个红包，最后进行状态转移即可。转移后一定要在所有满足的答案中寻找一个最大值（切记切记，一直wa在这里，因为m次不一定能够用完）<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/02/08/Codeforces-Global-Round-1-D-Jongmah/#more" rel="contents">
+            <a class="btn" href="/2019/02/01/Codeforces-Round-536-Div-2-E-Lunar-New-Year-and-Red-Envelopes/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -786,7 +786,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/08/Codeforces-Round-244-Div2-D-Match-Catch/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/29/CCPC-Wannafly-Winter-Camp-Day1-G-双重矩阵/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -805,7 +805,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/08/Codeforces-Round-244-Div2-D-Match-Catch/" itemprop="url">Codeforces-Round-244-(Div2)-D(Match-&-Catch)</a></h1>
+                <a class="post-title-link" href="/2019/01/29/CCPC-Wannafly-Winter-Camp-Day1-G-双重矩阵/" itemprop="url">CCPC-Wannafly-Winter-Camp-Day1-G(双重矩阵)</a></h1>
         
 
         <div class="post-meta">
@@ -817,8 +817,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-08T18:00:11+08:00">
-                2019-02-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-29T23:19:51+08:00">
+                2019-01-29
               </time>
             
 
@@ -840,8 +840,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/后缀数组/" itemprop="url" rel="index">
-                    <span itemprop="name">后缀数组</span>
+                  <a href="/categories/悬线法/" itemprop="url" rel="index">
+                    <span itemprop="name">悬线法</span>
                   </a>
                 </span>
 
@@ -858,8 +858,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/08/Codeforces-Round-244-Div2-D-Match-Catch/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/08/Codeforces-Round-244-Div2-D-Match-Catch/" itemprop="commentCount"></span>
+                <a href="/2019/01/29/CCPC-Wannafly-Winter-Camp-Day1-G-双重矩阵/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/29/CCPC-Wannafly-Winter-Camp-Day1-G-双重矩阵/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -888,10 +888,10 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/427/problem/D" target="_blank" rel="noopener">https://codeforces.com/contest/427/problem/D</a><br>思路：考虑把两个串中间拿个字符隔开，然后后缀数组一波，对于每一个h[i]，如果他比相邻两个都要大且两个前缀出现在两个串中，那么我们可以取它相邻两个中的最小值+1更新答案即可(首先如果比相邻两个的某一个小，说明有连续当前这个lcp至少出现3次，肯定不满足题意，当比两边都大时，我们取最小的那一个+1，这样肯定他们只出现两次)<br>
+          <p>链接：<a href="https://www.zhixincode.com/contest/2/problem/G?problem_id=29" target="_blank" rel="noopener">https://www.zhixincode.com/contest/2/problem/G?problem_id=29</a><br>思路：这个题最后我用了两种方法做，一种线段树维护，复杂度O(n^3lognlogA)，一种悬线法，复杂度O(n^2logA)，都挺有启发的所以准备都写写。<br>    线段树就是枚举上下边界，然后把上下边界之间的所有1数按竖列求gcd，然后横着建立线段树，枚举左起点，比较左到右刚好为当前最大值区间长度的区间的gcd是否为1，不为就往右移动并且更新最大值，这也所有的右边界点最多只会被求一次，整个左到右复杂度是nlognlogA的，比较好想但常数有点大，如果写的不好容易超时。<br>    还有一种就是悬线法，悬线法最奇妙的地方就是复杂度只跟矩阵中1的个数有关，所以如果事先知道1的个数就好了。我们考虑对每个元素枚举其素因子，整个矩阵最多有n^2logA个素因子，也就是最多有n^2logA个1，我们对每个素因子记录其对应元素的位置，每次枚举素因子，然后找到这些对应的位置，用悬线法求一次最大全1子矩阵即可，然后再把这些位置清空即可。枚举素因子的时候注意一下细节。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/02/08/Codeforces-Round-244-Div2-D-Match-Catch/#more" rel="contents">
+            <a class="btn" href="/2019/01/29/CCPC-Wannafly-Winter-Camp-Day1-G-双重矩阵/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -944,7 +944,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/08/Codeforces-Round-344-Div2-D-Messenger/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/28/Educational-Codeforces-Round-59-Div-2-E-Vasya-and-Binary-String/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -963,7 +963,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/02/08/Codeforces-Round-344-Div2-D-Messenger/" itemprop="url">Codeforces-Round-344-(Div2)-D(Messenger)</a></h1>
+                <a class="post-title-link" href="/2019/01/28/Educational-Codeforces-Round-59-Div-2-E-Vasya-and-Binary-String/" itemprop="url">Educational-Codeforces-Round-59-(Div.2)-E(Vasya-and-Binary-String)</a></h1>
         
 
         <div class="post-meta">
@@ -975,798 +975,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-08T17:50:51+08:00">
-                2019-02-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/kmp/" itemprop="url" rel="index">
-                    <span itemprop="name">kmp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/08/Codeforces-Round-344-Div2-D-Messenger/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/08/Codeforces-Round-344-Div2-D-Messenger/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/contest/631/problem/D" target="_blank" rel="noopener">https://codeforces.com/contest/631/problem/D</a><br>思路：好题！感觉自己已经快想到正解了，但是还是忍不住看了下题解。首先我们可以先把相邻相同的先合并了，那么除了头和尾，中间必须要求完全相同，这时候我们就可以用kmp了(之前是将首尾拿进来一起匹配，重新定义一下等于号，结果发现并不行，这样有些在最后匹配的然后跳转后其实是不匹配了，但还是计算入匹配中(吐槽一下这个假的居然是挂在了最后一个点)，说明kmp中间的等于是不能乱重新定义的)，对于中间匹配的我们看两端是否满足匹配即可。对于t只有1或者2的情况我们暴力计算就好，注意细节我这份代码写的有点丑。。。。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/08/Codeforces-Round-344-Div2-D-Messenger/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/07/Manthan-Codefest-16-C-Spy-Syndrome-2/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/07/Manthan-Codefest-16-C-Spy-Syndrome-2/" itemprop="url">Manthan-Codefest-16-C(Spy-Syndrome-2)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-07T20:18:45+08:00">
-                2019-02-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/trie/" itemprop="url" rel="index">
-                    <span itemprop="name">trie</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/07/Manthan-Codefest-16-C-Spy-Syndrome-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/07/Manthan-Codefest-16-C-Spy-Syndrome-2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/contest/633/problem/C" target="_blank" rel="noopener">https://codeforces.com/contest/633/problem/C</a><br>思路：好像有dp的方法，我直接建一个trie树然后上面跑dfs，对于非单词结点直接往下跑，如果是单词结点可以考虑回到0点(开始一个新单词)，或者继续向下跑(另一个单词)，最后用一个栈保存结果输出即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/07/Manthan-Codefest-16-C-Spy-Syndrome-2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/06/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-E-Eva-and-Euro-coins/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/06/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-E-Eva-and-Euro-coins/" itemprop="url">2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-E(Eva-and-Euro-coins)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-06T15:47:38+08:00">
-                2019-02-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/构造/" itemprop="url" rel="index">
-                    <span itemprop="name">构造</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/06/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-E-Eva-and-Euro-coins/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/06/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-E-Eva-and-Euro-coins/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/gym/101981/attachments" target="_blank" rel="noopener">https://codeforces.com/gym/101981/attachments</a><br>思路：容易观察得知，如果有k个连续相同我们可以删除它(换句话说他后面的可以任意前后移动)，所以这个题就变成了一个类似消消乐的题目，只要存在k个一样的就可以消，比较两个序列消完的最终态是否相同即可，如果不相同可以证明一定不能变成相同的。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/06/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-E-Eva-and-Euro-coins/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/06/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-M-Mediocre-String-Problem/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/06/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-M-Mediocre-String-Problem/" itemprop="url">2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-M(Mediocre-String-Problem)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-06T15:39:36+08:00">
-                2019-02-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/exkmp/" itemprop="url" rel="index">
-                    <span itemprop="name">exkmp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/06/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-M-Mediocre-String-Problem/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/06/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-M-Mediocre-String-Problem/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/gym/101981/attachments" target="_blank" rel="noopener">https://codeforces.com/gym/101981/attachments</a><br>思路：题目求s1串取一个子串，s2取一个前缀串，要求前者比后者长，求能组成回文串的数目。因为有前者比后者长的限制，我们考虑把回文串可以看作前者与后者对称的一部分和一个短的回文组成的，那么我们考虑把s1倒过来，每个后缀跟s2求lcp，然后以当前点结束的回文的个数 * lcp长度就是当前点的答案，最后所有点加起来即可。那么我们可以用manacher预处理每个点的回文，然后差分一下，在回文中心++，右端点+1处—，最后合并一下就可以得到每个点前面有多少个以它前面那个点结束的回文，然后我们用exkmp求出每个后缀与s2的lcp，最后统计一下答案即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/06/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-M-Mediocre-String-Problem/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/05/Codeforces-Round-324-Div2-E-Anton-and-Ira/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/05/Codeforces-Round-324-Div2-E-Anton-and-Ira/" itemprop="url">Codeforces-Round-324-(Div2)-E(Anton-and-Ira)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-05T21:41:28+08:00">
-                2019-02-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/贪心/" itemprop="url" rel="index">
-                    <span itemprop="name">贪心</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/02/05/Codeforces-Round-324-Div2-E-Anton-and-Ira/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/05/Codeforces-Round-324-Div2-E-Anton-and-Ira/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/contest/584/problem/E" target="_blank" rel="noopener">https://codeforces.com/contest/584/problem/E</a><br>思路：我们考虑从左到右枚举，然后找当前点需要放的位置到当前点区间范围内，需要放的位置在交换元素右边的点，让他们交换，一直交换到不可交换位置，复杂度O(n^2)<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/05/Codeforces-Round-324-Div2-E-Anton-and-Ira/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/05/Codeforces-Round-277-Div2-E-LIS-of-Sequence/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/05/Codeforces-Round-277-Div2-E-LIS-of-Sequence/" itemprop="url">Codeforces-Round-277-(Div2)-E(LIS-of-Sequence)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-05T21:28:18+08:00">
-                2019-02-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-28T23:40:52+08:00">
+                2019-01-28
               </time>
             
 
@@ -1806,8 +1016,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/05/Codeforces-Round-277-Div2-E-LIS-of-Sequence/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/05/Codeforces-Round-277-Div2-E-LIS-of-Sequence/" itemprop="commentCount"></span>
+                <a href="/2019/01/28/Educational-Codeforces-Round-59-Div-2-E-Vasya-and-Binary-String/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/28/Educational-Codeforces-Round-59-Div-2-E-Vasya-and-Binary-String/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1836,10 +1046,800 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/486/problem/E" target="_blank" rel="noopener">https://codeforces.com/contest/486/problem/E</a><br>思路：算是见识了一个新套路吧，首先我们考虑一个位置是哪种情况，我们把它拆开，拆成刚好包含它的前缀的LIS-f1和刚好包含它后缀的LIS-f2，我们只用比较一下f1 + f2 - 1 是否等于l，如果等于，说明f1，f2中都包含了当前点，那么他就肯定处在一个LIS的情况中，否则就一定不在。那么怎么判断是否必需呢，如果必需，说明它不可替换，那么它前缀的LIS和后缀的LIS的组合一定只有一种，如果有多种就可以用另外的替换，就不是必需的了，所以我们只需要对整个统计一下组合，然后先判断是否满足f1 + f2 - 1 == l，如果不满足则一定没有，否则再看它的组合是否只有一种，如果只有一种则是必需的，否则不是必需的。<br>
+          <p>链接：<a href="https://codeforces.com/contest/1107/problem/E" target="_blank" rel="noopener">https://codeforces.com/contest/1107/problem/E</a><br>思路：这个题感觉跟在北大上课时讲的消方块的题基本一样，然后和陈松杨在camp时讲的zuma题也有类似的地方，我们考虑对于一个区间l到r，考虑最右边的一个块我们应该怎么消除，有可能是跟左边的合并有可能自己消，为了表示和左边合并的情况我们需要多开一维表示右边之后有多少块，那么我们枚举跟最后一块位置相同的点，把最后一块给并上去，同时或者消除最后一块，向这两个方向转移即可。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/02/05/Codeforces-Round-277-Div2-E-LIS-of-Sequence/#more" rel="contents">
+            <a class="btn" href="/2019/01/28/Educational-Codeforces-Round-59-Div-2-E-Vasya-and-Binary-String/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/28/洛谷P1169-ZJOI2007-棋盘制作/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/28/洛谷P1169-ZJOI2007-棋盘制作/" itemprop="url">洛谷P1169[ZJOI2007]棋盘制作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-28T19:51:25+08:00">
+                2019-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/悬线法/" itemprop="url" rel="index">
+                    <span itemprop="name">悬线法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/28/洛谷P1169-ZJOI2007-棋盘制作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/28/洛谷P1169-ZJOI2007-棋盘制作/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.luogu.org/problemnew/show/P1169" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P1169</a><br>思路：悬线法具体讲解见<a href="https://www.cnblogs.com/Absolute-Zero/p/5862577.html" target="_blank" rel="noopener">https://www.cnblogs.com/Absolute-Zero/p/5862577.html</a> ，主要是用于求最大子矩阵，用dp可以优化到矩阵大小的复杂度<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/28/洛谷P1169-ZJOI2007-棋盘制作/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/28/CCPC-Wannafly-Winter-Camp-Day1-H-我爱割葱/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/28/CCPC-Wannafly-Winter-Camp-Day1-H-我爱割葱/" itemprop="url">CCPC-Wannafly-Winter-Camp-Day1-H(我爱割葱)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-28T19:32:12+08:00">
+                2019-01-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/笛卡尔树/" itemprop="url" rel="index">
+                    <span itemprop="name">笛卡尔树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/28/CCPC-Wannafly-Winter-Camp-Day1-H-我爱割葱/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/28/CCPC-Wannafly-Winter-Camp-Day1-H-我爱割葱/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.zhixincode.com/contest/2/problem/H?problem_id=30" target="_blank" rel="noopener">https://www.zhixincode.com/contest/2/problem/H?problem_id=30</a><br>思路：这道题就是一道很典型利用笛卡尔树结构的题，虽然并不用将笛卡尔树构建出来。我们建立dp[cur][p][k]表示当前在笛卡尔树上的cur结点，最近的祖先节点割到了p，还剩k刀要割的情况。我们考虑状态怎么转移，首先我们找到cur子树中最小的节点（因为没有构树所以需要手动找一下），那么就转移到他的左右子树上进行切割，我们枚举切x刀，并且还要考虑当前切或者不切，向两棵子树上转移即可。 思考一下本题与区间dp的相似处和不同处在哪，区间dp最后的状态一定是一个，即每一个子区间都会被用到，但这个题不太一样，有些子区间可以不用切，所以本题要利用笛卡尔树来解决。<br>学了笛卡尔树来补一下新的想法：如果建树出来，我们可以发现，我们如果给定要让这个树里面割x刀，我们得分配到两边去，并且还要决定该区间是否割，该区间割的收益就是这个（节点的值 - 最近割过祖先的值） * 区间长度，然后就可以递归到两边去做，在这个过程中，当前节点需要记录，当前节点割几刀需要记录，它在笛卡尔树的祖先上最近割过的是哪一个祖先节点需要记录，然后还需要枚举一下给两边子树怎么分配割的刀数，n4的dp，可以除一个比较大的常数，所以跑的飞快。。。。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/28/CCPC-Wannafly-Winter-Camp-Day1-H-我爱割葱/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/27/Codeforces-Round-406-Div-1-B-Legacy/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/27/Codeforces-Round-406-Div-1-B-Legacy/" itemprop="url">Codeforces-Round-406-(Div.1)-B(Legacy)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-27T11:20:23+08:00">
+                2019-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/27/Codeforces-Round-406-Div-1-B-Legacy/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/27/Codeforces-Round-406-Div-1-B-Legacy/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://codeforces.com/contest/786/problem/B" target="_blank" rel="noopener">https://codeforces.com/contest/786/problem/B</a><br>思路：这是另外一种线段树优化建图，此时因为需要跑最短路，各个节点需要又上又下，此时我们就需要建两棵线段树，第一棵表示入树（节点向子节点连边），第二棵表示出树（节点向父节点连边），所有入树对应叶节点到出树对应节点连一条为0的边，然后对于询问，单点有边我们找一下对应叶节点即可；点到区间我们找到出树中对应叶节点，入树中对应区间节点，然后连边即可；区间到点在出树中找到对应区间节点，在入树中找到对应叶节点，连边即可。最后从s对应的叶节点的标号开始跑一边最短路即可完成。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/27/Codeforces-Round-406-Div-1-B-Legacy/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/27/CCPC-Wannafly-Winter-Camp-Day7-E-线性探测法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/27/CCPC-Wannafly-Winter-Camp-Day7-E-线性探测法/" itemprop="url">CCPC-Wannafly-Winter-Camp-Day7-E(线性探测法)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-27T11:12:47+08:00">
+                2019-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/27/CCPC-Wannafly-Winter-Camp-Day7-E-线性探测法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/27/CCPC-Wannafly-Winter-Camp-Day7-E-线性探测法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.zhixincode.com/contest/24/problem/E?problem_id=353" target="_blank" rel="noopener">https://www.zhixincode.com/contest/24/problem/E?problem_id=353</a><br>思路：学习了线段树优化建图的方法，现在总结一下单树的优化。单树适用于像本题这样拓扑排序，不同于最短路，如果没有限制条件的话父区间是不需要向子区间走的(如果是最短路既需要上又需要下寻找路径，所以需要两棵树)。所以本题只用一棵向上连边的线段树即可。对于某段区间到某个点，我们只需要找到那段区间对应的结点，连向限制点的节点即可。然后我们从所有入度为0的叶节点开始走，用优先队列做一遍拓扑排序即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/27/CCPC-Wannafly-Winter-Camp-Day7-E-线性探测法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/25/CCPC-Wannafly-Winter-Camp-Day3-B-集合/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/01/25/CCPC-Wannafly-Winter-Camp-Day3-B-集合/" itemprop="url">CCPC-Wannafly-Winter-Camp-Day3-B(集合)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-25T16:52:40+08:00">
+                2019-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算几何/" itemprop="url" rel="index">
+                    <span itemprop="name">计算几何</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/01/25/CCPC-Wannafly-Winter-Camp-Day3-B-集合/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/25/CCPC-Wannafly-Winter-Camp-Day3-B-集合/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.zhixincode.com/contest/12/problem/B?problem_id=184" target="_blank" rel="noopener">https://www.zhixincode.com/contest/12/problem/B?problem_id=184</a><br>思路：如果两点连线穿过圆，那么做法跟ec的一样，就是直线加一段圆弧，否则的话一定是找到一个点，使得入射角等于出射角相等的时候距离最小(证明咕咕咕了，不会，直观感受即可)，那么我们在两点与圆心连线的区间上二分即可。这个题卡了acos和asin的精度(可能会有莫名的溢出导致无穷大，所以以后要强制判定一下定义域是否满足！顺手改一下模板)。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/25/CCPC-Wannafly-Winter-Camp-Day3-B-集合/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1882,7 +1882,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/28/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="extend next" rel="next" href="/page/30/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/28/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/30/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1928,7 +1928,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">471</span>
+                  <span class="site-state-item-count">472</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

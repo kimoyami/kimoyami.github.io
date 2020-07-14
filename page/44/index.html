@@ -181,7 +181,7 @@
   
 
   <div class="container sidebar-position-left 
-  page-home">
+  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -312,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Points-and-Powers-of-Two/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/HDU4578(Transformation)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -331,7 +331,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/Points-and-Powers-of-Two/" itemprop="url">Points-and-Powers-of-Two</a></h1>
+                <a class="post-title-link" href="/2018/11/17/HDU4578(Transformation)/" itemprop="url">HDU4578(Transformation)</a></h1>
         
 
         <div class="post-meta">
@@ -366,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/状压dp/" itemprop="url" rel="index">
-                    <span itemprop="name">状压dp</span>
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
                   </a>
                 </span>
 
@@ -384,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/Points-and-Powers-of-Two/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Points-and-Powers-of-Two/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/HDU4578(Transformation)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/HDU4578(Transformation)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,11 +414,10 @@
 
       
         
-          <p>题目链接：<a href="http://codeforces.com/contest/988/problem/D" target="_blank" rel="noopener">http://codeforces.com/contest/988/problem/D</a><br>意思：从一堆数中选一个最大子集，使得任意两个数相减的绝对值都是2的幂。<br>思考：首先很难的一点，需要想到子集最多只能有三个，四个及以上的子集一定不存在（可以下去证明一下），有了这一条，我们可以考虑从三个的开始搜索，用set集合储存并对齐进行遍历。当有三个元素时，则必有其中两对元素之差相等（自行证明），那么可以对set中元素加上2的某次幂，减去2的某次幂，然后判断是否再set中，是的话即可输出。   对于两个元素和一个元素类比。（注意如果集合中只有一个元素不管是否为2的幂都要输出。）</p>
-<p>注意：&lt;&lt;位运算优先级比+低，需要打括号。<br>
+          <p>链接：<a href="https://vjudge.net/problem/HDU-4578" target="_blank" rel="noopener">https://vjudge.net/problem/HDU-4578</a><br>思路：之前做过一个平方的，这次多了一个立方，操作一样不过立方要比平方先更新，平方比和先更新，最后更新tag，然后惯例的先更新乘法后更新加法，然后注意变数时不能直接更新到节点否则会超时，这时候先用一个清空标记记录要变的值，push下去时清空下面的加法和乘法标记同时将清空标记传下去，随后再更新加法和乘法标记，注意因为取模不要爆范围，中间一直因为爆范围导致WA。。。。。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Points-and-Powers-of-Two/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/HDU4578(Transformation)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -471,7 +470,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Openjudge(课程大作业)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/HDU4553(约会安排)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -490,7 +489,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/Openjudge(课程大作业)/" itemprop="url">Openjudge(课程大作业)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/HDU4553(约会安排)/" itemprop="url">HDU4553(约会安排)</a></h1>
         
 
         <div class="post-meta">
@@ -525,8 +524,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/状压dp/" itemprop="url" rel="index">
-                    <span itemprop="name">状压dp</span>
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
                   </a>
                 </span>
 
@@ -543,8 +542,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/Openjudge(课程大作业)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Openjudge(课程大作业)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/HDU4553(约会安排)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/HDU4553(约会安排)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -573,11 +572,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/OpenJ_Bailian-4149" target="_blank" rel="noopener">https://vjudge.net/problem/OpenJ_Bailian-4149</a></p>
-<p>思路：dp+状态压缩，首先最小扣分只跟选什么课程有关，一旦课程选定那么最小扣分也就选定了。所以状态压缩可以用二进制01;来表示是否选这门课。<br>
+          <p>链接：<a href="https://vjudge.net/contest/260644#problem/M" target="_blank" rel="noopener">https://vjudge.net/contest/260644#problem/M</a><br>思路：这道题题目意思很好懂，就是屌丝和女神有相同的安排时间的方法，但是如果女神没法安排时可以占用屌丝的时间，然后包含一个清空操作。一开始拿到题目无从下手，我们还是慢慢解剖整个思路，我们对于一个安排时间的操作我们需要知道哪一个时间段刚好有连续的长度为t的时间，这不跟前面一个询问某个点的最长连续区间是一样的道理嘛，对于每个区间维护一个左连续区间，右连续区间和最大连续区间，然后寻找区间时优先看左子树的最大连续区间长度是否大于等于t，如果否的话就看中间合并的一段，如果还否的话就看右子树，这样就可以解决安排的问题。对于女神和屌丝的不同操作，首先屌丝是不能占用之前屌丝的安排时间，所以屌丝和女神的区间信息我们考虑单独维护，屌丝就直接按上述步骤查看屌丝区间即可，女神的话先查看屌丝区间，如果有空的话优先占用屌丝区间（这样不冲突），否则再查看女神区间，如果有空的话占用并更新屌丝区间信息。注意处理女神区间时所有的屌丝标记也要随之改变，所以我们应该优先处理清空标记，然后是屌丝标记，最后才是女神标记，还是跟之前一样的思路，因为区间内信息是离散的，所以我们要通过和去确定唯一的确定区间，然后update直接覆盖整个区间并打上标记。细节问题很多看注释。还是那句总结：对于离散的区间信息我们可以通过维护一些总体信息（比如区间和）来确定出准确的区间位置，然后再把整个区间直接更新，这样可以避免离散区间信息没法维护的问题。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Openjudge(课程大作业)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/HDU4553(约会安排)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -630,7 +628,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/OpenJudge(硬币)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/HDU4370(0-or-1)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -649,7 +647,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/OpenJudge(硬币)/" itemprop="url">OpenJudge(硬币)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/HDU4370(0-or-1)/" itemprop="url">HDU4370(0-or-1)</a></h1>
         
 
         <div class="post-meta">
@@ -684,8 +682,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础dp/" itemprop="url" rel="index">
-                    <span itemprop="name">基础dp</span>
+                  <a href="/categories/最短路/" itemprop="url" rel="index">
+                    <span itemprop="name">最短路</span>
                   </a>
                 </span>
 
@@ -702,8 +700,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/OpenJudge(硬币)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/OpenJudge(硬币)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/HDU4370(0-or-1)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/HDU4370(0-or-1)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -732,10 +730,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/OpenJ_Bailian-4120" target="_blank" rel="noopener">https://vjudge.net/problem/OpenJ_Bailian-4120</a><br>思路：首先分析，如果一种硬币必须，那么除开这种硬币，就没法达到预期x的值，所以想着遍历所有硬币，除开当前硬币进行dp，如果能得到最后x值则不是必须的，反之为必须的，这样的复杂度为O（mn^2），超时，及时加了优化也不行。后来发现，其实很多部分重新计算了，不如计算出每种钱j选法的次数g[j]，如果g[x]=0，那么当前硬币就是必需的。这种方法的复杂度O（mn）<br>
+          <p>链接：<a href="https://vjudge.net/contest/254476#problem/R" target="_blank" rel="noopener">https://vjudge.net/contest/254476#problem/R</a><br>思路：这道题很巧妙，我以为是模拟建图，没有看出来新矩阵可以看作一个1-n的邻接矩阵，且保证1的出度为1，n的入度为1，相当于求一个1-n的最短路，或者是一个1出发的自环+一个n出发的自环，只要看出来了这个题就很简单了，按思路建图跑两遍最短路即可。（注意1开始的距离并不是0，所以迪杰斯特拉不适用，这时候用spfa比较好）<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/OpenJudge(硬币)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/HDU4370(0-or-1)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -788,7 +786,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/OpenJudge(复杂整数的划分问题)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/HDU4027(Can-you-answer-these-queries)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -807,7 +805,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/OpenJudge(复杂整数的划分问题)/" itemprop="url">OpenJudge(复杂整数的划分问题)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/HDU4027(Can-you-answer-these-queries)/" itemprop="url">HDU4027(Can-you-answer-these-queries)</a></h1>
         
 
         <div class="post-meta">
@@ -842,8 +840,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础dp/" itemprop="url" rel="index">
-                    <span itemprop="name">基础dp</span>
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
                   </a>
                 </span>
 
@@ -860,8 +858,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/OpenJudge(复杂整数的划分问题)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/OpenJudge(复杂整数的划分问题)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/HDU4027(Can-you-answer-these-queries)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/HDU4027(Can-you-answer-these-queries)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -890,10 +888,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/OpenJ_Bailian-4119" target="_blank" rel="noopener">https://vjudge.net/problem/OpenJ_Bailian-4119</a><br>思路：这个题一共有三个小问，均可以用同一个类似的状态转移，即如果分的数里面有1，则减去1，如果没有，则减去数字的个数（相当于每个数减一），从而有dp[i][j]=dp[i-j][j]+dp[i-1][j-1]<br>
+          <p>链接：<a href="https://vjudge.net/contest/260644#problem/H" target="_blank" rel="noopener">https://vjudge.net/contest/260644#problem/H</a><br>思路：我们考虑1e18内的数据可以在常数次以内开根号变为1，所以我们维护区间信息时考虑维护区间最大值，如果区间最大值为1的话那么当前区间所有值都为1不用再递归，否则递归左右子树一直到叶节点或者到区间最大值为1的地方，在叶节点更新值，同时pushup回去合并区间信息。注意本题有些很无聊的坑点，输入需要特判一下。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/OpenJudge(复杂整数的划分问题)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/HDU4027(Can-you-answer-these-queries)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -946,7 +944,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/OpenJudge(上机)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/HDU3974(Assign-the-task)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -965,7 +963,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/OpenJudge(上机)/" itemprop="url">OpenJudge(上机)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/HDU3974(Assign-the-task)/" itemprop="url">HDU3974(Assign-the-task)</a></h1>
         
 
         <div class="post-meta">
@@ -1000,8 +998,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础dp/" itemprop="url" rel="index">
-                    <span itemprop="name">基础dp</span>
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
                   </a>
                 </span>
 
@@ -1018,8 +1016,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/OpenJudge(上机)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/OpenJudge(上机)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/HDU3974(Assign-the-task)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/HDU3974(Assign-the-task)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1048,10 +1046,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/OpenJ_Bailian-4150" target="_blank" rel="noopener">https://vjudge.net/problem/OpenJ_Bailian-4150</a><br>思路：状态设计非常的重要，我们考虑某一个位置与左右坐人的顺序，则设计状态dp[][]，dp[0][i]表示i在i+1之前入座，dp[1][i]表示i在i-1之后入座，则有<br>  dp[0][i] = max(dp[0][i-1]+b[i],dp[1][i-1]+a[i])<br>  dp[1][i] = max(dp[0][i-1]+c[i],dp[1][i-1]+b[i])<br>
+          <p>链接：<a href="https://vjudge.net/problem/HDU-3974" target="_blank" rel="noopener">https://vjudge.net/problem/HDU-3974</a><br>思路：终于明白了dfs序建线段树是什么意思了，能听懂蔡队讲话了- -，对于更新一个结点及其子节点的操作，我们在树上没办法直接操作，我们可以考虑利用dfs给所有点编一个开始点号和结束点号，这样在开始和结束点号间的点号都是该结点的子结点，所以只要对这个区间的数操作即可完成对所有子节点的操作，就成功将树给序列化了，然后进行正常线段树操作就行，访问的话访问l或者r查询其标记值即可。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/OpenJudge(上机)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/HDU3974(Assign-the-task)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1104,7 +1102,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/OpenJudge(Zipper)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/HDU3642(Get-The-Treasury)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1123,7 +1121,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/OpenJudge(Zipper)/" itemprop="url">OpenJudge(Zipper)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/HDU3642(Get-The-Treasury)/" itemprop="url">HDU3642(Get-The-Treasury)</a></h1>
         
 
         <div class="post-meta">
@@ -1158,8 +1156,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础dp/" itemprop="url" rel="index">
-                    <span itemprop="name">基础dp</span>
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
                   </a>
                 </span>
 
@@ -1176,8 +1174,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/OpenJudge(Zipper)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/OpenJudge(Zipper)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/HDU3642(Get-The-Treasury)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/HDU3642(Get-The-Treasury)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1206,10 +1204,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/OpenJ_Bailian-2192" target="_blank" rel="noopener">https://vjudge.net/problem/OpenJ_Bailian-2192</a><br>思路：用dp[i][j]表示第一个字符串使用前i个字符，第二个字符串使用j个字符能否与后面的长串匹配，那么下一个字符匹配要嘛和dp[i+1][j]相同，要嘛和dp[i][j+1]相同，所以建立状态转移。<br>
+          <p>链接：<a href="https://vjudge.net/problem/HDU-3642" target="_blank" rel="noopener">https://vjudge.net/problem/HDU-3642</a><br>思路：三维立方体体积并，考虑二维面积并，体积并就等于高度差*面积并。我们枚举离散化x，然后y上构造线段树，用扫描线进行。三维的话就类比了，离散化x和z，然后枚举x和z，还是在y轴上构造线段树，注意枚举两个z之间的面积并的时候，我们要先把所有在两个z范围之内的扫描线提出来，再进行扫描(这样才能知道后面是哪一个)，然后面积并再乘以z坐标之差，最后求出来的就是答案<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/OpenJudge(Zipper)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/HDU3642(Get-The-Treasury)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1262,7 +1260,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/OpenJudge(C16H)(Magical-Balls)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/HDU3038(How-Many-Answers-Are-Wrong)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1281,7 +1279,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/OpenJudge(C16H)(Magical-Balls)/" itemprop="url">OpenJudge(C16H)(Magical-Balls)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/HDU3038(How-Many-Answers-Are-Wrong)/" itemprop="url">HDU3038(How-Many-Answers-Are-Wrong)</a></h1>
         
 
         <div class="post-meta">
@@ -1316,8 +1314,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/矩阵快速幂/" itemprop="url" rel="index">
-                    <span itemprop="name">矩阵快速幂</span>
+                  <a href="/categories/并查集/" itemprop="url" rel="index">
+                    <span itemprop="name">并查集</span>
                   </a>
                 </span>
 
@@ -1334,8 +1332,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/OpenJudge(C16H)(Magical-Balls)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/OpenJudge(C16H)(Magical-Balls)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/HDU3038(How-Many-Answers-Are-Wrong)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/HDU3038(How-Many-Answers-Are-Wrong)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1364,10 +1362,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/OpenJ_POJ-C16H" target="_blank" rel="noopener">https://vjudge.net/problem/OpenJ_POJ-C16H</a><br>思路：借着这个题把矩阵快速幂学了，其实原理跟快速幂一样只是把数换成了矩阵而已，首先我们推出公式如下：<br><img src="https://upload-images.jianshu.io/upload_images/11236160-017a23f224096a5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>引用自(<a href="https://www.cnblogs.com/niwatori1217/p/5689633.html" target="_blank" rel="noopener">https://www.cnblogs.com/niwatori1217/p/5689633.html</a>)<br>由于是周期重复，考虑把一个周期的变化能写成矩阵，那么我们算出这一个周期内的矩阵的对应值，然后m/n个周期内快速幂一下，最后剩余的m%n个直接硬算过去即可得到最终答案。<br>
+          <p>链接：<a href="https://vjudge.net/problem/HDU-3038" target="_blank" rel="noopener">https://vjudge.net/problem/HDU-3038</a><br>思路：带权并查集，首先我们要考虑在什么情况下会出错，当且仅当某个区间开头和位置以及和都确定并且产生矛盾的时候，于是我们建立一个带权并查集，每个区间查询其左端点-1的节点(因为左端点也要算在和内)与右端点的节点的祖先节点，如果相同说明通过其他的操作已经可以推算出这个区间的值了(自行思考推理一下)，只需要比对一下前后到祖先节点距离的差值是否等于给定的值即可，如果不等则说明没法推断出，则不会产生矛盾，此时将两个端点合并，并且更新各节点到祖先节点的距离。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/OpenJudge(C16H)(Magical-Balls)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/HDU3038(How-Many-Answers-Are-Wrong)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1420,7 +1418,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/OpenJudge(4121)(股票买卖)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/HDU1542(Atlantis)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1439,7 +1437,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/OpenJudge(4121)(股票买卖)/" itemprop="url">OpenJudge(4121)(股票买卖)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/HDU1542(Atlantis)/" itemprop="url">HDU1542(Atlantis)</a></h1>
         
 
         <div class="post-meta">
@@ -1474,8 +1472,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础dp/" itemprop="url" rel="index">
-                    <span itemprop="name">基础dp</span>
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
                   </a>
                 </span>
 
@@ -1492,8 +1490,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/OpenJudge(4121)(股票买卖)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/OpenJudge(4121)(股票买卖)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/HDU1542(Atlantis)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/HDU1542(Atlantis)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1522,10 +1520,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/OpenJ_Bailian-4121" target="_blank" rel="noopener">https://vjudge.net/problem/OpenJ_Bailian-4121</a><br>思路：题目的意思可以囊括为，从序列中取出四个数a1,a2,a3,a4，要求a4-a3+a2-a1的值最大。后一个数的下标大于等于前一个数，也就是可以选同一个数。不妨用a2，a3之间某个数（也可能是a2，a3本身）来描述状态，前一部分选两个数相减的最大值还有后面两个数的最大值，所以可以考虑从前面来一次dp再从后面来一次dp，最后取一个前面+后面的最大值。<br>
+          <p>链接：<a href="https://vjudge.net/problem/HDU-1542" target="_blank" rel="noopener">https://vjudge.net/problem/HDU-1542</a><br>思路：做了之前矩形面积的覆盖和周长的题目后，这个题就容易多了，十几分钟就写完了，但之所以还要写一份题解是有个地方想要提醒一下。还是从头说起，因为端点是小数所以必须要经过离散化，然后每个区间记录被覆盖的次数和区间覆盖长度总和，因为只用求sum[1]所以只需要把下面的信息向上整合即可，问题在于离散化后端点到底表示的是什么，一开始一直没想清楚理所当然的写，后面细细考虑了一下，对于某个端点l，他表示的是l到l+1这个区间的长度，这样的话叶节点本身也才具有意义，所以我们的每个叶节点应该是保存的某个区间，只是用区间的左边界来代替表示区间罢了，所以更新的时候找出来的右端点要-1，里面查询的时候不用再减即可。（注意输出格式，最近一直吃pe就很难受~）<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/OpenJudge(4121)(股票买卖)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/HDU1542(Atlantis)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1578,7 +1576,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/ICPC2017北京J题(Pangu-and-Stones)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/HDU1540(Tunnel-Warfare-)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1597,7 +1595,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/ICPC2017北京J题(Pangu-and-Stones)/" itemprop="url">ICPC2017北京J题(Pangu-and-Stones)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/HDU1540(Tunnel-Warfare-)/" itemprop="url">HDU1540(Tunnel-Warfare-)</a></h1>
         
 
         <div class="post-meta">
@@ -1632,8 +1630,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/区间dp/" itemprop="url" rel="index">
-                    <span itemprop="name">区间dp</span>
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
                   </a>
                 </span>
 
@@ -1650,8 +1648,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/ICPC2017北京J题(Pangu-and-Stones)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/ICPC2017北京J题(Pangu-and-Stones)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/HDU1540(Tunnel-Warfare-)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/HDU1540(Tunnel-Warfare-)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1680,10 +1678,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/HihoCoder-1636" target="_blank" rel="noopener">https://vjudge.net/problem/HihoCoder-1636</a><br>思路：区间dp，可以说是石子合并的加强版，只是因为由相邻合并改为了一个范围合并，所以我们要在原来dp上多加一维，dp[l][r][k]表示从l到r区间被分成k堆所需要的最小值，k=1时表示整个区间合并完成，状态表示如下：<br>k&gt;2  dp[l][r][k] = min(dp[l][r][k],dp[l][d][1]+dp[d+1][r][k-1])<br>k=1   dp[l][r][1] = min(dp[l][r][1],dp[l][r][k]+sum(r)-sum(l-1))<br>巧妙的地方就是把答案放到k=1的地方去，这样我们只用在合并的时候加上前缀和，也算是一个套路吧，分解区间的时候不加前缀和，因为之前的都已经算好了，合并的时候更新当前状态的最优解，加上前缀和。<br>
+          <p>链接：<a href="https://vjudge.net/problem/HDU-1540" target="_blank" rel="noopener">https://vjudge.net/problem/HDU-1540</a><br>思路：这个题真的想透我感觉能明白线段树很多本质，首先我们要思考区间合并信息时我们需要什么，因为是左区间的右端点和右区间的左端点进行合并，所以我们需要记录左区间的最大长度和右区间的最大长度，再维护一个当前区间的最大长度用于求合并的最大长度(合并后的最大长度可能是左右区间中某一个不含端点的区间)，合并的时候注意判断。因为是单点更新，我们考虑直接更新到叶节点，查询的时候我们考虑对于需要查询的点，往左右两个区间转移，如果在左子树且在右区间范围，那么结果就是左子树的右区间长度+右子树的左区间长度，如果在左子树但是不在其右区间范围内，那么查询左子树，如果在右子树同理可推(在这里wa了两个小时，我直接查询的左右区间，这样当查询点不在当前区间内也会有返回值)。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/ICPC2017北京J题(Pangu-and-Stones)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/HDU1540(Tunnel-Warfare-)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1736,7 +1734,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/HDU5517(Triple)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/HDU1255(覆盖的面积)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1755,7 +1753,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/HDU5517(Triple)/" itemprop="url">HDU5517(Triple)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/HDU1255(覆盖的面积)/" itemprop="url">HDU1255(覆盖的面积)</a></h1>
         
 
         <div class="post-meta">
@@ -1790,8 +1788,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/树状数组/" itemprop="url" rel="index">
-                    <span itemprop="name">树状数组</span>
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
                   </a>
                 </span>
 
@@ -1808,8 +1806,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/HDU5517(Triple)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/HDU5517(Triple)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/HDU1255(覆盖的面积)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/HDU1255(覆盖的面积)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1838,10 +1836,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/HDU-5517" target="_blank" rel="noopener">https://vjudge.net/problem/HDU-5517</a><br>思路：之前没写过二维树状数组啊，不过大概知道原理，这个题也是，比较三维的话，我们可以先把一维排好序，然后变为剩下二维，正好这二维数据范围较小，可以用前缀来维护，只要前面的和等于0，就说明前面没有完全被覆盖的(因为a是按排序大小来的)，此时把当前加入集合中。注意有几个优化，首先当原来b相同的二元组时，我们只需要取最大的a即可，因为此时小的a合并后一定会被大的a囊括，不会属于新的集合，那么对于相同最大b对应的最大a我们记录下他的个数，合并成新的三元组也对应这么多个数，最后可能不同b会产生相同三元组，我们先对新集合按a，b，c排序，如果相邻项相等的话则我们把它合并，然后最后用二维树状数组维护b，c，当前缀和为0满足的元素加1，求出答案即可。<br>
+          <p>链接：<a href="https://vjudge.net/contest/260644#problem/O" target="_blank" rel="noopener">https://vjudge.net/contest/260644#problem/O</a><br>思路：本来以为只用维护一个tag表示该区间被覆盖了几次就完事了，后来怎么调试都不对，经过gay一指导可能存在先把子区间全部覆盖完全，再把父区间覆盖，这样的话父区间已经被覆盖了两次但是由于tag没法表示离散的覆盖一整段所以没法实现，没办法看了题解，用len0表示区间长度，len1表示区间被覆盖一次的长度，len2表示区间被覆盖两次的长度，tag表示区间覆盖的次数，这样分类讨论一下就不会存在离散区间覆盖不了的问题。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/HDU5517(Triple)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/HDU1255(覆盖的面积)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1884,7 +1882,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/43/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><span class="page-number current">44</span><a class="page-number" href="/page/45/">45</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="extend next" rel="next" href="/page/45/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/43/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><span class="page-number current">44</span><a class="page-number" href="/page/45/">45</a><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/45/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1930,7 +1928,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">471</span>
+                  <span class="site-state-item-count">472</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

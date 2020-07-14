@@ -181,7 +181,7 @@
   
 
   <div class="container sidebar-position-left 
-  page-home">
+  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -312,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/19/2015-ACM-ICPC-World-Finals-J-Tile-Cutting/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/16/2019牛客暑期多校训练营-第九场-I-KM-and-M/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -331,7 +331,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/19/2015-ACM-ICPC-World-Finals-J-Tile-Cutting/" itemprop="url">2015 ACM-ICPC World Finals-J(Tile Cutting)</a></h1>
+                <a class="post-title-link" href="/2019/08/16/2019牛客暑期多校训练营-第九场-I-KM-and-M/" itemprop="url">2019牛客暑期多校训练营(第九场)-I(KM and M)</a></h1>
         
 
         <div class="post-meta">
@@ -343,8 +343,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-19T22:11:10+08:00">
-                2019-09-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-16T17:55:23+08:00">
+                2019-08-16
               </time>
             
 
@@ -366,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/FFT/" itemprop="url" rel="index">
-                    <span itemprop="name">FFT</span>
+                  <a href="/categories/类欧/" itemprop="url" rel="index">
+                    <span itemprop="name">类欧</span>
                   </a>
                 </span>
 
@@ -384,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/19/2015-ACM-ICPC-World-Finals-J-Tile-Cutting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/19/2015-ACM-ICPC-World-Finals-J-Tile-Cutting/" itemprop="commentCount"></span>
+                <a href="/2019/08/16/2019牛客暑期多校训练营-第九场-I-KM-and-M/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/16/2019牛客暑期多校训练营-第九场-I-KM-and-M/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,10 +414,11 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/gym/101239/attachments" target="_blank" rel="noopener">https://codeforces.com/gym/101239/attachments</a><br>思路：感觉这个题一开始看到很容易没思路，然后就容易放弃。仔细分析观察后发现并不难。首先我们假设四个角的两种三角形边长分别为<script type="math/tex">(a, b)和(c, d)(a + c = x, b + d = y)</script>，那么我们发现中间的面积等于<script type="math/tex">(a + c) * (b + d) - ac - bd = ad + bc = res</script>，发现ad和bc是同种方案数，我们可以通过枚举因子在O(nlogn)处理出来，对于res的方案数，就是求所有<script type="math/tex">\sum(方案数ad) * (方案数bc) (ad + bc = res)</script>，发现这不就是xy方案数的多项式跟自己做一次卷积吗，然后求<script type="math/tex">x^{res}</script>的系数就好了。<br>区间最大值就随便拿什么维护一下就好了吧，这里用的st表。。。<br>
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/889/I" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/889/I</a><br>思路：按位考虑贡献，那么如果M的这一位为1，我们考虑有多少K使得KM的这一位也为1，也就是求<script type="math/tex">\sum_{i = 1}^N[\frac{KM}{2^x} \% 2 == 1]</script>，这个明显是类欧的问题，而判奇偶又有着一个经典套路，我们把判断奇偶转化为一个差值，即:</p>
+<script type="math/tex; mode=display">\sum_{i = 1}^N \frac{KM}{2^x} - \lfloor\frac{KM}{2^{x + 1}}\rfloor * 2</script><p>发现变成了两个类欧的经典问题，统计出来个数的贡献后乘以该位的值，最后求和就是答案了。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/09/19/2015-ACM-ICPC-World-Finals-J-Tile-Cutting/#more" rel="contents">
+            <a class="btn" href="/2019/08/16/2019牛客暑期多校训练营-第九场-I-KM-and-M/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -470,7 +471,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/19/2015-ACM-ICPC-World-Finals-I-Ship-Traffic/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/16/bzoj-3817-Sum/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -489,7 +490,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/19/2015-ACM-ICPC-World-Finals-I-Ship-Traffic/" itemprop="url">2015 ACM-ICPC World Finals-I(Ship Traffic)</a></h1>
+                <a class="post-title-link" href="/2019/08/16/bzoj-3817-Sum/" itemprop="url">bzoj-3817(Sum)</a></h1>
         
 
         <div class="post-meta">
@@ -501,8 +502,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-19T22:04:26+08:00">
-                2019-09-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-16T14:46:06+08:00">
+                2019-08-16
               </time>
             
 
@@ -524,8 +525,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/差分/" itemprop="url" rel="index">
-                    <span itemprop="name">差分</span>
+                  <a href="/categories/类欧/" itemprop="url" rel="index">
+                    <span itemprop="name">类欧</span>
                   </a>
                 </span>
 
@@ -542,8 +543,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/19/2015-ACM-ICPC-World-Finals-I-Ship-Traffic/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/19/2015-ACM-ICPC-World-Finals-I-Ship-Traffic/" itemprop="commentCount"></span>
+                <a href="/2019/08/16/bzoj-3817-Sum/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/16/bzoj-3817-Sum/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -572,10 +573,16 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/gym/101239/attachments" target="_blank" rel="noopener">https://codeforces.com/gym/101239/attachments</a><br>思路：对于我方船的出发时间为基准时间，考虑每个船都对应了时间数轴上一段区间不可行，我们把这些时间点以及它前后增加eps点（用以区分区间）拉出来离散化，然后对于某个航道的船按顺序排序，然后两船之间可能存在一段区间是可行的，我们把它在数轴上差分一下，最后找到所有数轴上和 = 航道数的区间，求最大连续的就是答案（注意可能船贯穿两侧，所以有一侧一定是无效的，可以直接舍去）。<br>
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=3817" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=3817</a><br>思路：类欧几里得</p>
+<h4 id="无理数类欧"><a href="#无理数类欧" class="headerlink" title="无理数类欧"></a>无理数类欧</h4><p>我们先来看一个简单的问题：<br>求<script type="math/tex">\sum_{i = 0}^ndi</script>，其中d是一个无理数。<br>没法写成分数形式，好像我们就没法用代数形式推导了。。我们考虑先观察一下无理数有哪些性质：我们发现，如果我们用几何意义来解释，那么一定不会有整点在直线上，而有理数是会有整点存在于整点上的。<br>我们考虑d &gt; 1的情况：</p>
+<script type="math/tex; mode=display">\sum_{i = 1}^ndi = \sum_{i = 0}^n\lfloor\ d\rfloor i + (d - \lfloor d\rfloor)i = \lfloor d\rfloor \frac{n(n + 1)}{2} + \sum_{i = 1}^n(d - \lfloor d\rfloor)i</script><p>我们很愉快的发现后面是个子问题，可以递归去做。<br>几何解释就是如下，黑色部分是现在计算的，白色是递归去做的<br><img src="/images/2.png" alt=""><br>考虑 d &lt;= 1的情况：<br>考虑将上图白色部分逆时针旋转90度，然后再关于y轴对称：<br><img src="/images/3.png" alt=""><br>这时候两个对称，我们只用总的矩形 - 黑色部分就是白色部分，因为无理数直线上没有整数点的性质，我们用总的减黑色的，发现黑色又是d &gt; 1的情况，也可以递归去做了</p>
+<p>回到本题，我们先把式子化简一下，我们假设<script type="math/tex">x = \sqrt(r)</script><br>原来问题就变成了:<script type="math/tex">\sum_{d = 1}^n(-1)^{\lfloor dx \rfloor}</script><br>我们发现取值只与dx的奇偶性有关，我们考虑可以写为：<script type="math/tex">\sum_{d = 1}^n 1 - 2[dx \% 2 == 1]</script><br>下面是类欧里面比较经典常用的变换，即我们可以将是否为奇数的判断是改写成：</p>
+<script type="math/tex; mode=display">\sum_{d = 1}^n 1 - 2(dx - \lfloor\frac{dx}{2}\rfloor *2)</script><p>这样我们最终要求的就是:</p>
+<script type="math/tex; mode=display">n + \sum_{d = 1}^n 4 * \lfloor\frac{dx}{2}\rfloor - 2dx</script><p>如果r不是平方数，那么它的根号就是无理数，我们采用无理数的类欧，否则要吗特判要吗用有理数类欧进行解决。</p>
+<p>注意本题如果直接带着无理数搞精度可能不够，我们需要利用根号的性质，用三个变量a, b, c，表示d，初始的时候a = 1, b = 0, c = 1。然后考虑取倒数，原来我们的形式为<script type="math/tex">k = \frac{ax + b}{c}</script>，倒过来后变为<script type="math/tex">k = \frac{c}{ax + b}</script>，我们把它凑成对应的形式：<script type="math/tex">\frac{acx - bc}{a^2x^2 - b^2}</script>，那么新的a = ac，新的b = -bc，新的<script type="math/tex">c = a^2x^2 - b^2</script>。这样基本不会损失精度。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/09/19/2015-ACM-ICPC-World-Finals-I-Ship-Traffic/#more" rel="contents">
+            <a class="btn" href="/2019/08/16/bzoj-3817-Sum/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -628,7 +635,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/17/Codeforces-Round-585-Div-2-E-Marbles/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/16/luogu-P5170-类欧几里得算法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -647,7 +654,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/17/Codeforces-Round-585-Div-2-E-Marbles/" itemprop="url">Codeforces Round 585 (Div. 2)-E(Marbles)</a></h1>
+                <a class="post-title-link" href="/2019/08/16/luogu-P5170-类欧几里得算法/" itemprop="url">luogu-P5170(类欧几里得算法)</a></h1>
         
 
         <div class="post-meta">
@@ -659,8 +666,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-17T23:41:55+08:00">
-                2019-09-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-16T14:23:15+08:00">
+                2019-08-16
               </time>
             
 
@@ -682,8 +689,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/状压dp/" itemprop="url" rel="index">
-                    <span itemprop="name">状压dp</span>
+                  <a href="/categories/类欧/" itemprop="url" rel="index">
+                    <span itemprop="name">类欧</span>
                   </a>
                 </span>
 
@@ -700,8 +707,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/17/Codeforces-Round-585-Div-2-E-Marbles/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/17/Codeforces-Round-585-Div-2-E-Marbles/" itemprop="commentCount"></span>
+                <a href="/2019/08/16/luogu-P5170-类欧几里得算法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/16/luogu-P5170-类欧几里得算法/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -730,10 +737,172 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/1215/problem/E" target="_blank" rel="noopener">https://codeforces.com/contest/1215/problem/E</a><br>思路：一开始想了个错误的结论，以为只要确定每个块走到每个点开始的步数总数，最后除2就是答案，后来发现不对，有可能有些操作右移多，有些左移多，会造成额外的代价。其实我们考虑，如果知道了之前放过哪些数字了，那么就知道下一位从哪里开始，那么枚举下一个移动的是哪个数字，然后他需要移动的步数只跟还有哪些没有移动过有关，换句话说，我们只需要预处理出每个数字全部移动到另外一个数字之前需要多少步（忽略中间其他数字的影响），所以我们只用在根据没移动过的点进行统计当前需要多少步，加入贡献即可。<br>
+          <p>链接：<a href="https://www.luogu.org/problem/P5170" target="_blank" rel="noopener">https://www.luogu.org/problem/P5170</a><br>思路：类欧几里得问题</p>
+<h4 id="类欧几里得"><a href="#类欧几里得" class="headerlink" title="类欧几里得"></a>类欧几里得</h4><p>f = <script type="math/tex">\sum_{i = 0}^n\lfloor\frac{ai + b}{c}\rfloor</script><br>g = <script type="math/tex">\sum_{i = 0}^n\lfloor\frac{ai + b}{c}\rfloor^2</script><br>h = <script type="math/tex">\sum_{i = 0}^ni\lfloor\frac{ai + b}{c}\rfloor</script><br>类欧就是解决这三个问题。</p>
+<h4 id="证明与推导"><a href="#证明与推导" class="headerlink" title="证明与推导"></a>证明与推导</h4><p><a href="https://blog.csdn.net/WorldWide_D/article/details/54730588" target="_blank" rel="noopener">https://blog.csdn.net/WorldWide_D/article/details/54730588</a><br>本文不详细证明</p>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>令m = <script type="math/tex">\lfloor\frac{an + b}{c}\rfloor</script></p>
+<script type="math/tex; mode=display">f(a, b, c, n) = f(a \% c, b \% c, c, n) + \frac{n(n + 1)}{2}\lfloor\frac{a}{c}\rfloor + (n + 1)\lfloor\frac{b}{c}\rfloor (a >= c \ ||\  b >= c)</script><script type="math/tex; mode=display">f(a, b, c, n) = nm - f(c, c - b - 1, a, m - 1) (a < c \ \&\& \ b < c)</script><script type="math/tex; mode=display">g(a, b, c, n) = g(a \%c, b \%c, c, n) + \frac{n(n + 1)(2n + 1)}{6}\lfloor\frac{a}{c}\rfloor + \frac{n(n + 1)}{2}\lfloor\frac{b}{c}\rfloor(a >= c \ ||\  b >= c)</script><script type="math/tex; mode=display">g(a, b, c, n) = \frac{nm(n + 1) - f(c, c - b - 1, a, m - 1) - h(c, c - b - 1, a, m - 1)}{2}(a < c \ \&\& \ b < c)</script><script type="math/tex; mode=display">h(a, b, c, d) = h(a \%c, b \%c, c, n) + \frac{n(n + 1)(2n + 1)}{6}\lfloor\frac{a}{c}^2\rfloor + (n + 1)\lfloor\frac{b}{c}\rfloor^2 \\ + 2\lfloor\frac{b}{c}\rfloor f(a \%c, b \%c, c, n) + 2\lfloor\frac{a}{c}\rfloor g(a \%c, b \%c, c, n) + \lfloor\frac{a}{c}\rfloor\lfloor\frac{b}{c}\rfloor n(n + 1) (a >= c \ ||\  b >= c)</script><script type="math/tex; mode=display">h(a, b, c, d) = m(m + 1)n - 2g(c, c - b - 1, a, m - 1) - 2f(c, c - b - 1, a, m - 1) - f(a, b, c, n)</script><h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><p>类欧在斜率是有理数和无理数的做法是不同的，因为无理数不能表示成分数形式的形式，且直线上不存在整点，所以有理数的类欧问题不能用无理数解决，无理数的类欧问题也不能用有理数解决。</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/09/17/Codeforces-Round-585-Div-2-E-Marbles/#more" rel="contents">
+            <a class="btn" href="/2019/08/16/luogu-P5170-类欧几里得算法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/2019牛客暑期多校训练营-第八场-F-Flower-Dance/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/13/2019牛客暑期多校训练营-第八场-F-Flower-Dance/" itemprop="url">2019牛客暑期多校训练营(第八场)-F(Flower Dance)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-13T22:40:36+08:00">
+                2019-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算几何/" itemprop="url" rel="index">
+                    <span itemprop="name">计算几何</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/13/2019牛客暑期多校训练营-第八场-F-Flower-Dance/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/13/2019牛客暑期多校训练营-第八场-F-Flower-Dance/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/888/F" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/888/F</a><br>思路：好像一直不太能写对这种极角排序后统计数量的题目？这个题我们从反面考虑，枚举一个点后，我们找不合法的另外三个点有哪些情况，很明显：四点能构成凸包，三点共线，四点共线。考虑四点构成凸包，我们定了一个点，那么跟它相连的有两条边，所以我们只用定一侧进行选择就可以（假设是左侧）。剩下两种情况也好处理，所以方法就出来了，我们枚举一个点，然后极角排序，枚举一个向量，先找出跟这个向量方向相同的向量，假设$p_1$条。然后找到在它左侧的向量数目，假设$p_2$条。三点共线数目就是<script type="math/tex">\frac{p_1 * (p_1 - 1)}{2} * p_2</script>，四点共线就是<script type="math/tex">\frac{p_1 * (p_1 - 1) * (p_1 - 2)}{6}</script>，凸包就是<script type="math/tex">\frac{p_2 * (p_2 - 1)}{2} * p_1</script>。但发现还有算少的，四点共线，还有可能有点在另一侧，我们再单独扣掉就好了。注意旋转时候的边界判断，叉积的大于/小于 和等于最好分开写，因为等于需要和内积一起使用来判断，不然可能出现转过了的情况。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/13/2019牛客暑期多校训练营-第八场-F-Flower-Dance/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -786,7 +955,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-E-K-Sum/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/2019牛客暑期多校训练营-第八场-I-Inner-World/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -805,7 +974,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/13/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-E-K-Sum/" itemprop="url">The Preliminary Contest for ICPC Asia Nanjing 2019-E(K Sum)</a></h1>
+                <a class="post-title-link" href="/2019/08/13/2019牛客暑期多校训练营-第八场-I-Inner-World/" itemprop="url">2019牛客暑期多校训练营(第八场)-I(Inner World)</a></h1>
         
 
         <div class="post-meta">
@@ -817,8 +986,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-13T11:12:56+08:00">
-                2019-09-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-13T22:21:19+08:00">
+                2019-08-13
               </time>
             
 
@@ -840,8 +1009,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/杜教筛/" itemprop="url" rel="index">
-                    <span itemprop="name">杜教筛</span>
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
                   </a>
                 </span>
 
@@ -858,8 +1027,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/13/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-E-K-Sum/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/13/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-E-K-Sum/" itemprop="commentCount"></span>
+                <a href="/2019/08/13/2019牛客暑期多校训练营-第八场-I-Inner-World/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/13/2019牛客暑期多校训练营-第八场-I-Inner-World/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -888,17 +1057,10 @@
 
       
         
-          <p>链接：<a href="https://nanti.jisuanke.com/t/41302" target="_blank" rel="noopener">https://nanti.jisuanke.com/t/41302</a><br>思路：令<script type="math/tex">f_n(k) = \sum_{l_1 = 1}^n\sum_{l_2 = 1}^n\cdots\sum_{l_k = 1}^n(gcd(l_1, l_2, \cdots, l_k))^2</script>，求<script type="math/tex">\sum_{i = 2}^kf_n(i) mod (1e9 + 7)</script><br>我们先来推一推公式:</p>
-<script type="math/tex; mode=display">f_n(k) = \sum_{l_1 = 1}^n\sum_{l_2 = 1}^n\cdots\sum_{l_k = 1}^n(gcd(l_1, l_2, \cdots, l_k))^2</script><p>考虑枚举gcd:</p>
-<script type="math/tex; mode=display">f_n(k) = \sum_{i = 1}^n\sum_{l_1 = 1}^n\sum_{l_2 = 1}^n\cdots\sum_{l_k = 1}^ni^2[gcd(l_1, l_2, \cdots, l_k) == i]</script><p>转换一下：</p>
-<script type="math/tex; mode=display">f_n(k) = \sum_{i = 1}^n\sum_{l_1 = 1}^{\lfloor\frac{n}{i}\rfloor}\sum_{l_2 = 1}^{\lfloor\frac{n}{i}\rfloor}\cdots\sum_{l_k = 1}^{\lfloor\frac{n}{i}\rfloor}i^2[gcd(l_1, l_2, \cdots, l_k) == 1]</script><p>来一波莫比乌斯反演：</p>
-<script type="math/tex; mode=display">f_n(k) = \sum_{i = 1}^n\sum_{d = 1}^n\mu(d)i^2\lfloor\frac{n}{id}\rfloor^k</script><p>考虑枚举T = id:</p>
-<script type="math/tex; mode=display">f_n(k) = \sum_{T = 1}^n\lfloor\frac{n}{T}\rfloor^k\sum_{d | T}d^2\mu(\frac{T}{d})</script><p>那么对于<script type="math/tex">\sum_{i = 2}^kf_n(i)</script>有：</p>
-<script type="math/tex; mode=display">\sum_{i = 2}^kf_n(i) = \sum_{i = 2}^k\sum_{T = 1}^n\lfloor\frac{n}{T}\rfloor^i\sum_{d | T}d^2\mu(\frac{T}{d})</script><p>交换次序：</p>
-<script type="math/tex; mode=display">\sum_{i = 2}^kf_n(i) = \sum_{T = 1}^n\sum_{i = 2}^k\lfloor\frac{n}{T}\rfloor^i\sum_{d | T}d^2\mu(\frac{T}{d})</script><p>我们令<script type="math/tex">h(T) = \sum_{d | T}d^2 \mu(\frac{T}{d})</script><br>我们发现这个函数等于<script type="math/tex">id^2 * \mu</script><br>考虑杜教筛，给他卷积上一个I，我们知道<script type="math/tex">\mu * I = e</script>，<script type="math/tex">id^2 * e = id^2</script><br>前面部分我们用数论分块，中间部分是一个等比数列求和，因为k比较大，当k不等于1时我们欧拉降幂算，k = 1时直接算（所以读入的时候要记录一下k mod 1e9 + 7和mod 1e9 + 6的值），后面部分杜教筛即可。<br>
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/888/I" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/888/I</a><br>思路：大概是这段时间来做的最妙的一个题了吧？问题有很多约束，从而产生了很多性质，需要慢慢挖掘。首先每个点只会被加一次，那么意味着这些加的点其实可以构成一棵树。其次是所有点加完后才询问，也就是这是一个静态的问题。每次询问的是[l, r]的树中有多少子节点，我们换一个看法，因为每个点只会被加一次，我们把这些加入操作构成一棵树，每个点有一个区间[l, r]，那么产生贡献的点一定在这个树询问点的子树内，也就是子树内每一个点与[l, r]区间求交，再把大小计入贡献。这个时候最妙的来了，我们可以把这个构成的树的dfs序看作一维，把区间看作第二维，那么考虑进行dfs，并且按照每个点对应的[l, r]进行加点。假设询问点是u，我们在x1进入点u，x2点离开u点，那么我们要求的总和，在二维矩阵里是不是对应的就是(x1, l), (x2, r)这个矩阵。二维矩阵我们知道可以用容斥算，但很明显空间不够我们开二维，我们思考一下，假设我们把矩阵大小写成如下形式：[(x2, r), (1, l)] - [(x1, r), (1, l)]，即写为前缀和相减，我们惊奇的发现，我们可以维护一棵线段树，线段树上维护第二维，我们把所有询问记录到对应点上，进去的时候算一下公式后面的x1部分，然后更新，进入子树更新，出来的时候就刚好是x2状态，再算一下前面的贡献，二者之差就是这个点询问的答案了，这也非常巧妙的就甩掉了第一维。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/09/13/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-E-K-Sum/#more" rel="contents">
+            <a class="btn" href="/2019/08/13/2019牛客暑期多校训练营-第八场-I-Inner-World/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -951,7 +1113,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/13/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-I-Washing-clothes/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/2019牛客暑期多校训练营-第八场-D-Distance/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -970,7 +1132,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/13/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-I-Washing-clothes/" itemprop="url">The Preliminary Contest for ICPC Asia Nanjing 2019-I(Washing clothes)</a></h1>
+                <a class="post-title-link" href="/2019/08/13/2019牛客暑期多校训练营-第八场-D-Distance/" itemprop="url">2019牛客暑期多校训练营(第八场)-D(Distance)</a></h1>
         
 
         <div class="post-meta">
@@ -982,8 +1144,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-13T10:42:15+08:00">
-                2019-09-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-13T22:16:45+08:00">
+                2019-08-13
               </time>
             
 
@@ -1005,8 +1167,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/斜率优化dp/" itemprop="url" rel="index">
-                    <span itemprop="name">斜率优化dp</span>
+                  <a href="/categories/bfs/" itemprop="url" rel="index">
+                    <span itemprop="name">bfs</span>
                   </a>
                 </span>
 
@@ -1023,8 +1185,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/13/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-I-Washing-clothes/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/13/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-I-Washing-clothes/" itemprop="commentCount"></span>
+                <a href="/2019/08/13/2019牛客暑期多校训练营-第八场-D-Distance/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/13/2019牛客暑期多校训练营-第八场-D-Distance/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1053,14 +1215,10 @@
 
       
         
-          <p>链接：<a href="https://nanti.jisuanke.com/t/41306" target="_blank" rel="noopener">https://nanti.jisuanke.com/t/41306</a><br>思路：首先要观察出几个性质：<br>1、最终答案一定可以将人分为两部分，使得前一半用手洗，后一半用机洗，且答案最后一个手洗结束时间和机洗结束时间之间的最大值。<br>2、随着x增大，这个分界点会向前。<br>3、我们将每个人机洗时间的结束时间表示为<script type="math/tex">t_i + (n - i + 1) * x</script>，那么最终机洗结束时间就为这些当中的最大值，这些我们可以看作二维平面上的直线，他们构成了一个凸包。<br>4、随着x增大，最大值取点会靠后。<br>综上，我写的时候采取的是在凸包上二分，从后往前扫，每次找到那个机洗和人洗的分界点，然后把直线加入凸包中，找到分界点后我们在凸包上二分，找到最优点，再判断前一个分界点对应的结束时间，取其中小的一个更新答案即可。</p>
-<p>我们来推一下凸包上斜率优化的式子：</p>
-<script type="math/tex; mode=display">res = max(t_i + (n - i + 1) * x) (1 \leq i \leq n)</script><p>假设有个j点取到最大值，同时存在其他点k：</p>
-<script type="math/tex; mode=display">t_j - t_k - (j - k) * x \geq 0</script><p>有：</p>
-<script type="math/tex; mode=display">x \leq \frac{t_j - t_k}{j - k} (j > k)</script><script type="math/tex; mode=display">x \geq \frac{t_j - t_k}{j - k} (j < k)</script><p>维护这个凸包，在上面二分找到答案即可。<br>
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/888/D" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/888/D</a><br>思路：这个题说着是bfs，其实里面分块思想特别经典。考虑nmh总的是1e5，也就是说做一次bfs复杂度的上界是1e5，如果我们分块来做，也可以叫定期重构，即隔一段时间重新进行一次暴力bfs，期间插入的点我们都暴力访问。我们考虑复杂度，假设重构周期为T，那么总的复杂度就是<script type="math/tex">O(Tnmh + \frac{qnmh}{E})</script>，我们发现<script type="math/tex">T = \sqrt(nmh)</script>时总复杂度最小。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/09/13/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-I-Washing-clothes/#more" rel="contents">
+            <a class="btn" href="/2019/08/13/2019牛客暑期多校训练营-第八场-D-Distance/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1113,7 +1271,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/Codeforces-Round-225-Div-1-E-Vowels/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/bzoj-3223-文艺平衡树/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1132,7 +1290,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/03/Codeforces-Round-225-Div-1-E-Vowels/" itemprop="url">Codeforces Round 225 (Div. 1)-E(Vowels)</a></h1>
+                <a class="post-title-link" href="/2019/08/12/bzoj-3223-文艺平衡树/" itemprop="url">bzoj-3223(文艺平衡树)</a></h1>
         
 
         <div class="post-meta">
@@ -1144,8 +1302,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-03T20:41:36+08:00">
-                2019-09-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T23:22:41+08:00">
+                2019-08-12
               </time>
             
 
@@ -1167,8 +1325,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/状压dp/" itemprop="url" rel="index">
-                    <span itemprop="name">状压dp</span>
+                  <a href="/categories/splay/" itemprop="url" rel="index">
+                    <span itemprop="name">splay</span>
                   </a>
                 </span>
 
@@ -1185,8 +1343,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/03/Codeforces-Round-225-Div-1-E-Vowels/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/03/Codeforces-Round-225-Div-1-E-Vowels/" itemprop="commentCount"></span>
+                <a href="/2019/08/12/bzoj-3223-文艺平衡树/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/12/bzoj-3223-文艺平衡树/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1215,10 +1373,10 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/383/problem/E" target="_blank" rel="noopener">https://codeforces.com/contest/383/problem/E</a><br>思路：字符一共24种，那么就有<script type="math/tex">2^{24}</script>种可能的元音子集，考虑对于每一个单词并更新子集，这里需要用到容斥。有x个元素的状态的个数 = 有1个 - 有2个 + 有3个…. + <script type="math/tex">(-1)^{x - 1}</script>，那么我们可以用sosdp来计算这个前缀和，最后统计一下答案即可。<br>
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=3223" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=3223</a><br>思路：splay一个非常经典的题目，考虑按照中序遍历建立splay树，假设需要翻转区间[l, r]，我们把l - 1放根上，然后把r + 1放到根的右儿子，这样r + 1的左子树的中序遍历就是区间[l, r]，考虑中序遍历的性质，翻转是不是就是对于每个节点都把它的左右子树交换了一下？这样我们就可以模仿线段树的下传标记一样，在树上打翻转标记下传即可。最后我们只用dfs遍历这个splay树，按照中序遍历的顺序输出答案即可。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/09/03/Codeforces-Round-225-Div-1-E-Vowels/#more" rel="contents">
+            <a class="btn" href="/2019/08/12/bzoj-3223-文艺平衡树/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1271,7 +1429,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/03/Manthan-Codefest-19-open-for-everyone-rated-Div-1-Div-2-F-Bits-And-Pieces/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/bzoj-3224-普通平衡树/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1290,7 +1448,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/03/Manthan-Codefest-19-open-for-everyone-rated-Div-1-Div-2-F-Bits-And-Pieces/" itemprop="url">Manthan, Codefest 19 (open for everyone, rated, Div. 1 + Div. 2)-F(Bits And Pieces)</a></h1>
+                <a class="post-title-link" href="/2019/08/12/bzoj-3224-普通平衡树/" itemprop="url">bzoj-3224(普通平衡树)</a></h1>
         
 
         <div class="post-meta">
@@ -1302,8 +1460,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-03T20:18:42+08:00">
-                2019-09-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T23:11:46+08:00">
+                2019-08-12
               </time>
             
 
@@ -1325,8 +1483,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/状压dp/" itemprop="url" rel="index">
-                    <span itemprop="name">状压dp</span>
+                  <a href="/categories/splay/" itemprop="url" rel="index">
+                    <span itemprop="name">splay</span>
                   </a>
                 </span>
 
@@ -1343,8 +1501,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/03/Manthan-Codefest-19-open-for-everyone-rated-Div-1-Div-2-F-Bits-And-Pieces/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/03/Manthan-Codefest-19-open-for-everyone-rated-Div-1-Div-2-F-Bits-And-Pieces/" itemprop="commentCount"></span>
+                <a href="/2019/08/12/bzoj-3224-普通平衡树/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/12/bzoj-3224-普通平衡树/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1373,10 +1531,10 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/1208/problem/F" target="_blank" rel="noopener">https://codeforces.com/contest/1208/problem/F</a><br>思路：考虑如果我们枚举<script type="math/tex">a_i</script>，如果按位枚举，我们需要知道前面是否存在两个数的&amp;运算等于某个数，这个可以用sosdp来做。只是这个sosdp不是一开始就递推出来的，而是动态插数的，一个数如果被更新了两次就可以不用再更新了（它的子集也一定被更新了两次及以上）。接下来我们从大到小按位取，如果<script type="math/tex">a_i</script>存在这一位，那么我们记入答案，否则我们看sosdp的这个mask是否被两个数更新过，如果是我们贪心的把它取出来，然后mask往上转移，否则继续枚举，最后更新答案，并且把当前位置插入sosdp中即可。<br>
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=3224" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=3224</a><br>思路：想最初萌新入坑的时候看wf，那时候好像jls就是在敲一个splay？然后对从此觉得splay是非常高深的东西。。。最近初看，发现能懂一部分原理，这篇文章写的挺不错的。后面还会继续仔细看：<br><a href="https://blog.csdn.net/a_comme_amour/article/details/79382104" target="_blank" rel="noopener">https://blog.csdn.net/a_comme_amour/article/details/79382104</a><br>然后放一个模板题在这里。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/09/03/Manthan-Codefest-19-open-for-everyone-rated-Div-1-Div-2-F-Bits-And-Pieces/#more" rel="contents">
+            <a class="btn" href="/2019/08/12/bzoj-3224-普通平衡树/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1429,7 +1587,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/01/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-D-Robots/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/bzoj-4025-二分图/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1448,7 +1606,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/01/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-D-Robots/" itemprop="url">The Preliminary Contest for ICPC Asia Nanjing 2019-D(Robots)</a></h1>
+                <a class="post-title-link" href="/2019/08/12/bzoj-4025-二分图/" itemprop="url">bzoj-4025(二分图)</a></h1>
         
 
         <div class="post-meta">
@@ -1460,8 +1618,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-01T23:40:56+08:00">
-                2019-09-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T22:32:51+08:00">
+                2019-08-12
               </time>
             
 
@@ -1483,8 +1641,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础dp/" itemprop="url" rel="index">
-                    <span itemprop="name">基础dp</span>
+                  <a href="/categories/线段树分治/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树分治</span>
                   </a>
                 </span>
 
@@ -1501,8 +1659,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/01/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-D-Robots/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/01/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-D-Robots/" itemprop="commentCount"></span>
+                <a href="/2019/08/12/bzoj-4025-二分图/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/12/bzoj-4025-二分图/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1531,12 +1689,10 @@
 
       
         
-          <p>链接：<a href="https://nanti.jisuanke.com/t/41301" target="_blank" rel="noopener">https://nanti.jisuanke.com/t/41301</a><br>思路：考虑一个基础问题，DAG从s到t期望步数计算。直到今天我才知道这种期望是要倒着算，正着算看起来式子是对的，但是有问题：概率和不等于1，转移没法解释。倒着的话，我们每次从某个点沿着反向边转移，我们发现所有点转移过来的概率和为1，就能解释得通了。写成式子就是：</p>
-<script type="math/tex; mode=display">dp[u] = \frac{1}{out[u] + 1}dp[u] + \sum_{(u, v)\subseteq E}\frac{1}{out[u] + 1}dp[v] + 1</script><p>移过去可以得到递推式，我们就可以倒着递推出起点到终点的期望了。<br>那么本题是求代价，考虑先求期望步数，一个点的代价其实就是它的期望步数，那么代价的g函数递推就是：</p>
-<script type="math/tex; mode=display">g[u] = \frac{1}{out[u] + 1}g[u] + \sum_{(u, v)\subseteq E}\frac{1}{out[u] + 1}g[v] + f[u]</script><p>类比着倒着拓扑序做就可以了。<br>
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=4025" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=4025</a><br>思路：和上一个题基本一样啊，不过多了一个二分图的判断，二分图就是没有奇环的图，考虑还是用并查集维护，出现奇环必然是两个点已经在同一个集合内了，我们考虑维护一个带权并查集，只用判断二者到根节点距离就可以判断出当前这次合并时候为产生奇环。有一个需要注意的地方是，并查集维护的不能是到根节点的距离。因为在线段树上分治时有撤销并查集的操作，这时候某一个点会断开成为根节点，这样子树内的点就遗失了它到它父亲点的距离的信息（因为之前的信息就作废了没有任何价值，又得不出新的情况下的距离）。所以我们按秩合并的时候维护的是它到它父亲节点的距离，到根节点的距离我们只用像找根节点那样再跳一次统计即可。这样即使撤销也不会遗失子树内的信息，可以重新统计出到新根节点的距离。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/09/01/The-Preliminary-Contest-for-ICPC-Asia-Nanjing-2019-D-Robots/#more" rel="contents">
+            <a class="btn" href="/2019/08/12/bzoj-4025-二分图/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1589,7 +1745,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/31/Codeforces-Round-112-Div-2-E-Compatible-Numbers/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1608,7 +1764,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/08/31/Codeforces-Round-112-Div-2-E-Compatible-Numbers/" itemprop="url">Codeforces Round 112 (Div. 2)-E(Compatible Numbers)</a></h1>
+                <a class="post-title-link" href="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/" itemprop="url">2019牛客暑期多校训练营(第八场)-E(Explorer)</a></h1>
         
 
         <div class="post-meta">
@@ -1620,8 +1776,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-31T23:27:39+08:00">
-                2019-08-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T22:14:12+08:00">
+                2019-08-12
               </time>
             
 
@@ -1643,8 +1799,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/状压dp/" itemprop="url" rel="index">
-                    <span itemprop="name">状压dp</span>
+                  <a href="/categories/线段树分治/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树分治</span>
                   </a>
                 </span>
 
@@ -1661,8 +1817,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/31/Codeforces-Round-112-Div-2-E-Compatible-Numbers/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/31/Codeforces-Round-112-Div-2-E-Compatible-Numbers/" itemprop="commentCount"></span>
+                <a href="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1691,173 +1847,12 @@
 
       
         
-          <p>链接：<a href="https://codeforces.com/contest/165/problem/E" target="_blank" rel="noopener">https://codeforces.com/contest/165/problem/E</a><br>思路：<br>cf教程链接：<a href="https://codeforces.com/blog/entry/45223" target="_blank" rel="noopener">https://codeforces.com/blog/entry/45223</a></p>
-<h4 id="SOS-dp概念"><a href="#SOS-dp概念" class="headerlink" title="SOS dp概念"></a>SOS dp概念</h4><p>SOS dp用来解决形如 </p>
-<script type="math/tex; mode=display">F[mask] = \sum_{i \subseteq mask} x</script><p>其中x可以是常数，也可以是跟i有关的函数。我们发现F维护的是一个状态及其对应的所有子集，这个通常也被成为高位前缀和。</p>
-<h4 id="SOS-dp求解"><a href="#SOS-dp求解" class="headerlink" title="SOS dp求解"></a>SOS dp求解</h4><p>考虑这个可以通过状压dp，也叫sosdp来求，考虑枚举一位，然后从小到大枚举状态，如果该状态存在该位，那么加上去掉这一位的状态（已经枚举过），这样我们求出来的就是mask状态对应的子集的和，也就是F函数。<br>有些题可能是需要F[mask]表示包含mask的所有所有状态的后缀和，换一下前缀和方向就变成后缀和了。</p>
-<h4 id="SOS-dp细节"><a href="#SOS-dp细节" class="headerlink" title="SOS dp细节"></a>SOS dp细节</h4><p>1、注意第一维一定是先枚举位数，因为每次更新是按照位的顺序更新的。看cf上那张图会更清楚。<br>2、初始化F的时候就是对应的i = mask时的x的值</p>
-<p>考虑本题，要求对于每个i，是否存在j使得<script type="math/tex">a_i \& a_j = 0</script>。考虑SOS dp求解，如果<script type="math/tex">a_i \& a_j = 0</script>，那么<script type="math/tex">a_j</script>取反一定包含<script type="math/tex">a_i</script>，那么我们考虑对解维护SOS dp，即一个解向所有包含它的状态更新，初始化所有mask = -1，<script type="math/tex">a_i</script>取反对应的状态为<script type="math/tex">a_i</script>，然后用SOS dp更新所有答案，最后只用查询每个<script type="math/tex">a_i</script>取反后是否有解即可。<br>
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/888/E" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/888/E</a><br>思路：咕咕咕了两天，研究线段树分治（ddc好像喜欢叫它时间分治），发现也是个很神奇的东西。</p>
+<h4 id="线段树分治"><a href="#线段树分治" class="headerlink" title="线段树分治"></a>线段树分治</h4><p>什么是线段树分治呢？考虑有些问题，某些范围可以看作是时间的限制，即在一个时间段内这个操作有效。同时这种操作一边比较容易但一边比较难（比如并查集合并容易，但分离就很难），但撤销前一个操作比较简单的时候（并查集撤销前一个操作比较简单）。我们就可以把所有的这些操作放在以时间（可能对应题目中不同的背景）为坐标的线段树下。考虑把这些操作放到线段树对应的区间里，然后我们按照线段树的dfs序进行处理，每次进去的时候把这个区间对应的操作加进去，然后根据题目进行某些统计，dfs完后出来的时候利用栈的性质把这些操作撤销掉。这样就避免了那些比较复杂的反面操作，从而做法变得非常优雅。</p>
+<p>考虑本题，每一条边对应一个[l, r]区间的人数，那么我们可以把人数看成线段树的下标（时间），把这些边插入到线段树中，考虑在dfs时维护一个并查集，到每个根节点后，check一下1和n是否在同一个集合中即可，然后出来的时候撤销之前的并查集合并操作即可。为了满足撤销操作，我们并查集需要按秩合并，那么这个题就没了。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/08/31/Codeforces-Round-112-Div-2-E-Compatible-Numbers/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/25/2019-Multi-University-Training-Contest-10-D-Play-Games-with-Rounddog/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/25/2019-Multi-University-Training-Contest-10-D-Play-Games-with-Rounddog/" itemprop="url">2019 Multi-University Training Contest 10-D(Play Games with Rounddog)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-25T21:57:31+08:00">
-                2019-08-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/后缀自动机/" itemprop="url" rel="index">
-                    <span itemprop="name">后缀自动机</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/25/2019-Multi-University-Training-Contest-10-D-Play-Games-with-Rounddog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/25/2019-Multi-University-Training-Contest-10-D-Play-Games-with-Rounddog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6704" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6704</a><br>思路：考虑葫芦选的，一定是SAM的fail树某个点对应子树中点的，如果葫芦想赢，那么必须选出来的不能出现子集的异或和为0，换句话说他们都必须线性无关，那就是线性基了。考虑在有解的情况下我们要答案最大，我们考虑按w的大小向SAM的fail树上更新线性基，一直从该点沿着边更新到根节点。考虑复杂度，因为一个点最多被更新58次，更新一次代价58，所以这部分复杂度O(nlognlogn)。这样保证大的先更新，最后出来的总和一定是最大的，然后询问我们只用倍增找到那个串在SAM上对应的节点，查询其最大综合即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/25/2019-Multi-University-Training-Contest-10-D-Play-Games-with-Rounddog/#more" rel="contents">
+            <a class="btn" href="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1900,7 +1895,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1946,7 +1941,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">471</span>
+                  <span class="site-state-item-count">472</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

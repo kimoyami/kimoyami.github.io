@@ -181,7 +181,7 @@
   
 
   <div class="container sidebar-position-left 
-  page-home">
+  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -312,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/HDU-3949-XOR/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/luogu-P3327-约数个数和/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -331,7 +331,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/19/HDU-3949-XOR/" itemprop="url">HDU-3949(XOR)</a></h1>
+                <a class="post-title-link" href="/2019/07/08/luogu-P3327-约数个数和/" itemprop="url">luogu-P3327(约数个数和)</a></h1>
         
 
         <div class="post-meta">
@@ -343,1122 +343,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-19T22:22:51+08:00">
-                2019-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/线性基/" itemprop="url" rel="index">
-                    <span itemprop="name">线性基</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/19/HDU-3949-XOR/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/19/HDU-3949-XOR/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=3949" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=3949</a><br>思路：<br>先推荐一篇博客，比较清楚 <a href="https://blog.csdn.net/SSimpLe_Y/article/details/79872441" target="_blank" rel="noopener">https://blog.csdn.net/SSimpLe_Y/article/details/79872441</a></p>
-<h4 id="线性基概念"><a href="#线性基概念" class="headerlink" title="线性基概念"></a>线性基概念</h4><p>拿这个模板题来讲讲线性基。回想线性代数中的极大无关组，即用极大无关组可以的线性组合可以表示出其他所有向量。在异或的运算下，线性基可以通过运算表示处其他所有的元素。</p>
-<h4 id="线性基构造算法的性质"><a href="#线性基构造算法的性质" class="headerlink" title="线性基构造算法的性质"></a>线性基构造算法的性质</h4><p>1、任何一个元素都可以被线性基表示，且表方法唯一。<br>前者是线性基的性质，后者采取反证法，考虑不唯一，那么有两个子集能表示，消掉元素后得到存在两个不同的子集的异或和相等，与线性基定一矛盾。<br>2、线性基构造出来所需的元素等于秩。<br>3、构造出来线性基呈上三角矩阵，通过高斯消元（rebuild）可以将其变换为对角矩阵。</p>
-<h4 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h4><p>构造方法很简单，直接从高位开始往低位枚举，如果当前这位没有元素且待插入元素这位为1，则把元素插入到这里，然后退出。否则将其与该位已经存在的元素异或。</p>
-<h4 id="几个经典问题"><a href="#几个经典问题" class="headerlink" title="几个经典问题"></a>几个经典问题</h4><p>1、求异或和最大:<br>如果是上三角矩阵，采取从高位到低位的贪心策略，即异或后变大就异或，否则不异或，最后返回结果。<br>如果是对角矩阵，直接把所有的线性基异或起来即可。<br>2、求异或和最小：<br>找到最小的位置存在的线性基即可<br>3、求第k小：<br>这时候用构造出的上三角矩阵就不能解决这个问题了，我们要把上三角矩阵变换成对角矩阵，然后再把不为零的都按顺序拿出来。这时候矩阵已经变成对角矩阵（至少是行最简形矩阵），我们异或上某一行的值，答案就会变大一点。我们可以想象，从一个数组 a = {8,4,2,1}中选出几个，求能组成第k小的值是多少，利用二进制的性质，如果k的二进制第i位为1，我们就加上数组里第i大的数。这里的异或上一个值也会变大一点，所以可以用同样的思想。<br>记得要特判是否存在0，方法是看n的大小和秩的大小是否相等，相等则说明线性无关，即不存在。<br>4、存在性：<br>看能否插入即可，不能插入则存在。</p>
-<p>本题就解决了。。。。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/19/HDU-3949-XOR/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/" itemprop="url">2019牛客暑期多校训练营(第一场)-H(XOR)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-19T22:07:09+08:00">
-                2019-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/线性基/" itemprop="url" rel="index">
-                    <span itemprop="name">线性基</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/881/H" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/881/H</a><br>思路：在下一篇的线性基模板题我再补充一下线性基的一些东西，本篇主要讲下知道了线性基怎么做这个题。考虑这个式子，看到某种合法方案 <em> 方案里的元素个数，自然想到转换为统计单点贡献，即每个数在多少种方案中出现。那么我们考虑某个元素必选，还剩下n - 1个元素，我们用这n - 1个元素来构造线性基，设秩为r，如果这个元素能被这n - 1个元素的线性基表示，那么方案数就是$2^{n - r - 1}$。简单证明一下，首先如果不能表示，说明线性基和该元素线性无关，则不可能异或和为0（异或和为0必须二者相等），所以贡献为0。如果能表示，考虑在非基元素中选一个子集，其基内元素必有唯一的子集与之对应使得整个的异或和为0（如果有两个，说明基内有两个不同的子集使得和相等，约掉后得到基内有两个不同子集的异或和相等，与线性基的定义矛盾），所以这样做出来保证了所有合法的方案都被统计到了。<br>剩下的就是考虑如何统计，每次暴力建基肯定不行，我们可以先把n个元素的线性基建出来，其秩最多为62，对于非基元素的贡献都一样，总的贡献是(n - r) </em> $2^{n - r - 1}$，那么剩下我们只用考虑基内元素即可。我们把非基元素建一个线性基，每次枚举一个基内元素，再将剩下元素和非基元素的线性基合并，如果合并后的线性基与整个的线性基秩相等，说明可以表示，就统计贡献，否则贡献为0。记得特判一下，当秩和总元素个数相等的时候答案为0即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/19/2019牛客暑期多校训练营-第一场-H-XOR/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/2019牛客暑期多校训练营-第一场-I-Points-Division/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/19/2019牛客暑期多校训练营-第一场-I-Points-Division/" itemprop="url">2019牛客暑期多校训练营(第一场)-I(Points Division)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-19T13:17:25+08:00">
-                2019-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/线段树/" itemprop="url" rel="index">
-                    <span itemprop="name">线段树</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/19/2019牛客暑期多校训练营-第一场-I-Points-Division/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/19/2019牛客暑期多校训练营-第一场-I-Points-Division/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/881/I" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/881/I</a><br>思路：按题意，我们可以找到一条折线把点划分为a，b两个集合，考虑在这个折线上dp，我们假设初始全是b集合的点，我们用dp[i]表示选的a集合的点种高度y最大为i的最大值，考虑转移：如果当前点要选为a，它的高度为y，那么只能从1-y-1的dp状态转移过来，那么需要把1-y-1的值都加上a-b的差值；如果当前点选b，那么可以由1-y转移过来，并且值为1-y里面的最大值。这个过程我们可以用线段树来维护。线段树上维护最大值，update表示区间加，这样就可以满足上述操作。注意如果有一些点是y值相同，我们需要从上到下处理，这是因为上面的y是不能由同x的下面的y转移过来的，所以从上到下处理就避免了这个问题。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/19/2019牛客暑期多校训练营-第一场-I-Points-Division/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/19/2019牛客暑期多校训练营-第一场-C-Euclidean-Distance/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/19/2019牛客暑期多校训练营-第一场-C-Euclidean-Distance/" itemprop="url">2019牛客暑期多校训练营(第一场)-C(Euclidean Distance)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-19T12:46:45+08:00">
-                2019-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/贪心/" itemprop="url" rel="index">
-                    <span itemprop="name">贪心</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/19/2019牛客暑期多校训练营-第一场-C-Euclidean-Distance/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/19/2019牛客暑期多校训练营-第一场-C-Euclidean-Distance/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/881#question" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/881#question</a><br>思路：题解说的什么拉格朗日乘子法完全忘了啊，，，后面有空再补吧，其实仔细分析这个题贪心是能做的。考虑对于$a_i$ &lt; 0的部分其实是没用的，用0去匹配最小代价，而且不消耗贡献，肯定选0，那么问题就变成了$a_i &gt; 0$的部分怎么匹配是最好的，很容易发现，假设我们把每个$p_i$放到对应的$a_i$上再调整，大的$a_i$调整相同距离需要的代价更大，也就是说如果不得不离一定距离，我们希望大的$a_i$差的距离更小，那么其实我们就只用从大到小匹配到最多的位置，把m全部分配到这一段位置内，所有点$p_i$相等，为这一段的平均点，后面的点都放在0处即可。<br>顺便从hs那里收获一枚分数运算的板子<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/19/2019牛客暑期多校训练营-第一场-C-Euclidean-Distance/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/18/bzoj-2780-Sevenk-Love-Oimaster/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/18/bzoj-2780-Sevenk-Love-Oimaster/" itemprop="url">bzoj-2780(Sevenk Love Oimaster)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-18T23:39:33+08:00">
-                2019-07-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/后缀自动机/" itemprop="url" rel="index">
-                    <span itemprop="name">后缀自动机</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/18/bzoj-2780-Sevenk-Love-Oimaster/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/18/bzoj-2780-Sevenk-Love-Oimaster/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2780" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=2780</a><br>思路：喜闻乐见SAM, SA, AC都可以做的题，而且每种都是非常有代表性的，挨个讲一讲，篇幅比较长。</p>
-<h4 id="1-后缀自动机"><a href="#1-后缀自动机" class="headerlink" title="1.后缀自动机:"></a>1.后缀自动机:</h4><p>这个好像其实就算是广义后缀自动机？每次插完一个串后把last置为root，然后继续插下一个串。考虑询问串在SAM上跑，跑到最终节点，那么它fail树的子树上都是该子串的后缀，那么问询问串在多少个模板串中出现过，其实就是问最终节点的子树中有多少不同种类的模板串。这里一共有如下三种方法：<br>1.1:树上莫队：区间不同种类数，那么dfs序后转树上莫队是个比较常见的做法，复杂度O(n$\sqrt{n}$)<br>1.2:SAM上暴力跳：在每次插模板串的每个字符后，都从该点开始沿fail树暴力跳到根节点，然后路上更新每个点是否出现过该种串，以及总的出现次数，最后找到询问串对应最终节点，访问答案即可。暴力跳的复杂度已经证明过也是O(n$\sqrt{n}$)的。<br>1.3:dfs序 + 树状数组：区间种类数还有树状数组的做法，按右端点排序，然后统计出每种串相同的最近前面出现的位置，离线树状数组统计答案即可。复杂度O(nlogn)。</p>
-<h4 id="2-后缀数组："><a href="#2-后缀数组：" class="headerlink" title="2.后缀数组："></a>2.后缀数组：</h4><p>后缀数组就是老套路，把所有串拼起来，中间用一个没出现过的字符分割来，然后找到每一个询问串对应的位置，两边二分找到最远的lcp &gt;= 当前len的位置，在这个l到r区间里统计模板串不同出现次数，两种做法：<br>2.1:莫队：变成了区间里的莫队，统计即可。<br>2.2：dfs序 + 树状数组：同上</p>
-<h4 id="3-AC自动机："><a href="#3-AC自动机：" class="headerlink" title="3.AC自动机："></a>3.AC自动机：</h4><p>AC自动机可能是最容易错的一种做法，因为它的fail树和SAM的fail树实在是容易混淆。AC自动机的fail树是最长后缀与前缀相同。我们对询问串建立AC自动机，拿模板串在上面跑，跑过的所有点都要++，然后再统计子树信息即可，方法同上。<br>3.1:莫队：变成了区间里的莫队，统计即可。<br>3.2：dfs序 + 树状数组：同上<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/18/bzoj-2780-Sevenk-Love-Oimaster/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/bzoj-1878-HH的项链/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/17/bzoj-1878-HH的项链/" itemprop="url">bzoj-1878(HH的项链)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-17T20:10:57+08:00">
-                2019-07-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/莫队/" itemprop="url" rel="index">
-                    <span itemprop="name">莫队</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/17/bzoj-1878-HH的项链/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/17/bzoj-1878-HH的项链/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=1878" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=1878</a><br>思路：莫队模板题，不说了，重点说一下另一种离线的树状数组的做法。<br>考虑从左到右扫，对于某个询问的区间，一个数可能出现多次，而我们只计算一次即可，也就是说只有最右边出现的一次是有效的。那么我们考虑对于所有询问按右端点排序，预处理出每个数前面出现的位置，然后处理每个询问，当前面出现过的时候，把前面最近一次出现的位置上-1（如果没有就不操作），该位置+1，然后该组询问的答案就变成了l-r的区间和，复杂度O(nlogn)。<br>这个题就这样做完了，重点其实不在这个题上，对于树链并(一个子树内统计不同出现的次数)，我们可以把数按dfs序压成数列，然后就可以把一个子树上的统计变为与该题完全类似的区间上的统计了，这样就可以完全树链并的操作了，后面有题目会体现的。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/17/bzoj-1878-HH的项链/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/HDU-6562-Lovers/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/17/HDU-6562-Lovers/" itemprop="url">HDU-6562(Lovers)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-17T11:49:46+08:00">
-                2019-07-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/线段树/" itemprop="url" rel="index">
-                    <span itemprop="name">线段树</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/17/HDU-6562-Lovers/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/17/HDU-6562-Lovers/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6562" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6562</a><br>思路：说是硬核线段树，感觉没有某些神仙扫描线的线段树硬核，不过场上要想出这个题不是一件容易的事情，这里主要理一下当时想的思路。<br>首先搞清楚题目要求什么，询问是区间和，那好，维护区间和肯定少不了。考虑拼一个串上去，需要哪些信息才能维护区间和，首先拼在后面，那么直接加上拼的这个串的值，其次拼在前面，贡献是v * $\sum10^{每个点位数}$，那么我们发现我们需要知道每个点的位数，要维护一个区间$10^{位数}$的和，这样第二个维护的信息出来了。一共1e5次操作，所以位数不会超过2e5，预处理出10的2e5次幂。考虑线段树还要满足标记之间能够拼接，这样复杂度才是正确的。考虑两个标记拼接，前面和后面情况是反着的，可以分开维护，然后还需要知道标记的长度，所以第三个维护的信息出来了—标记长度。这样这个题其实思路就结束了，剩下的就是慢慢把pushdown的部分写完这个题就结束了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/17/HDU-6562-Lovers/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/bzoj-2154-Crash的数字表格/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/17/bzoj-2154-Crash的数字表格/" itemprop="url">bzoj-2154(Crash的数字表格)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-17T11:31:53+08:00">
-                2019-07-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T18:20:01+08:00">
+                2019-07-08
               </time>
             
 
@@ -1498,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/17/bzoj-2154-Crash的数字表格/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/17/bzoj-2154-Crash的数字表格/" itemprop="commentCount"></span>
+                <a href="/2019/07/08/luogu-P3327-约数个数和/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/08/luogu-P3327-约数个数和/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1528,14 +414,17 @@
 
       
         
-          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2154" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=2154</a><br>思路：求$\sum_{i = 1}^{n}\sum_{j = 1}^{m}lcm(i, j)$<br>老规矩推公式：</p>
-<script type="math/tex; mode=display">\sum_{i = 1}^{n}\sum_{j = 1}^{m}\frac{ij}{gcd(i, j)}</script><p>考虑枚举gcd(i, j):</p>
-<script type="math/tex; mode=display">\sum_{d = 1}^{min(n, m)}d\sum_{i = 1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j = 1}^{\lfloor\frac{m}{d}\rfloor}ij\ [gcd(i, j) == 1]</script><p>根据莫比乌斯函数性质：</p>
-<script type="math/tex; mode=display">\sum_{d = 1}^{min(n, m)}d\sum_{i = 1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j = 1}^{\lfloor\frac{m}{d}\rfloor}ij\sum_{g | gcd(i, j)}\mu(g)</script><p>枚举g:</p>
-<script type="math/tex; mode=display">\sum_{d = 1}^{min(n, m)}d\sum_{g = 1}^{min(\lfloor\frac{n}{d}\rfloor, \lfloor\frac{m}{d}\rfloor)}g^2\mu(g)\sum_{i = 1}^{\lfloor\frac{n}{gd}\rfloor}\sum_{j = 1}^{\lfloor\frac{m}{gd}\rfloor}ij</script><p>发现后面那一块求和是两个等差数列求和，O(1)可以算出来，中间那个可以预处理$g^2\mu(g)$的前缀和，然后可以整除分块做，前面求和也可以整除分块做，相当于对于d * (常数)，对d求一次等差数列即可。<br>注：能不取模的地方就别取模，1e7取模也是要T的啊。。。。<br>
+          <p>链接：<a href="https://www.luogu.org/problemnew/show/P3327" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P3327</a><br>思路：这个题有一个非常重要的点，必须知道才能做，就是:</p>
+<script type="math/tex; mode=display">d(ij) = \sum_{x|i}\sum_{y|j}[gcd(x, y) = 1]</script><p>简单证明一下：考虑对于某个质因子t，i有p个t质因子，j有q个t质因子，那么他俩合起来能提供p + q + 1种可能，做如下变化：</p>
+<script type="math/tex; mode=display">p + q + 1 = \sum_{x = 1}^p\sum_{y = 1}^q[gcd(t^x, t^y) = 1]</script><p>这个变化不好想，但正确性是显而易见的。那么对于每一个质因子我们都有如下的式子，把他们乘起来就变成了上述的结论。<br>那么我们就开始推公式：</p>
+<script type="math/tex; mode=display">Ans = \sum_{i = 1}^N\sum_{j = 1}^Md(ij) = \sum_{i = 1}^N\sum_{j = 1}^M\sum_{x|i}\sum_{y|j}[gcd(x, y) = 1]</script><p>$根据莫比乌斯函数\sum_{d|n}\mu(d) = [n = 1]$可以得到</p>
+<script type="math/tex; mode=display">Ans = \sum_{i = 1}^N\sum_{j = 1}^Md(ij) = \sum_{i = 1}^N\sum_{j = 1}^M\sum_{x|i}\sum_{y|j}\sum_{d|gcd(x, y)}\mu(d)</script><p>改成枚举d:</p>
+<script type="math/tex; mode=display">Ans = \sum_{i = 1}^N\sum_{j = 1}^Md(ij) = \sum_{i = 1}^N\sum_{j = 1}^M\sum_{x|i}\sum_{y|j}\sum_{d = 1}^{min(x, y)}\mu(d) * [d | gcd(x, y)]</script><p>由枚举i, j的约数x, y改为直接枚举x, y：</p>
+<script type="math/tex; mode=display">Ans = \sum_{x = 1}^N\sum_{y = 1}^M\sum_{d = 1} ^ {min(x, y)}\mu(d) * [d|gcd(x, y)] * \lfloor\frac{N}{x}\rfloor\lfloor\frac{M}{y}\rfloor</script><p>更改x，y为dx，dy，消去[d|gcd(x, y)]：</p>
+<script type="math/tex; mode=display">Ans = \sum_{d = 1}^{min(N, M)}\mu(d)(\sum_{x = 1}^{\lfloor\frac{N}{d}\rfloor}\lfloor\frac{N}{dx}\rfloor)(\sum_{y = 1}^{\lfloor\frac{M}{d}\rfloor}\lfloor\frac{M}{dy}\rfloor)</script><p>之后对于里面的求和我们可以运用整除分块预处理答案，然后前缀和处理，对于多组询问外面再用整除分块求解答案即可。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/17/bzoj-2154-Crash的数字表格/#more" rel="contents">
+            <a class="btn" href="/2019/07/08/luogu-P3327-约数个数和/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1588,7 +477,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/bzoj-1396-识别子串/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/luogu-P2569-股票交易/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1607,7 +496,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/15/bzoj-1396-识别子串/" itemprop="url">bzoj-1396(识别子串)</a></h1>
+                <a class="post-title-link" href="/2019/07/08/luogu-P2569-股票交易/" itemprop="url">luogu-P2569(股票交易)</a></h1>
         
 
         <div class="post-meta">
@@ -1619,8 +508,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-15T18:51:12+08:00">
-                2019-07-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T17:57:27+08:00">
+                2019-07-08
               </time>
             
 
@@ -1642,8 +531,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/后缀自动机/" itemprop="url" rel="index">
-                    <span itemprop="name">后缀自动机</span>
+                  <a href="/categories/单调队列dp/" itemprop="url" rel="index">
+                    <span itemprop="name">单调队列dp</span>
                   </a>
                 </span>
 
@@ -1660,8 +549,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/15/bzoj-1396-识别子串/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/15/bzoj-1396-识别子串/" itemprop="commentCount"></span>
+                <a href="/2019/07/08/luogu-P2569-股票交易/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/08/luogu-P2569-股票交易/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1690,10 +579,10 @@
 
       
         
-          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=1396" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=1396</a><br>思路：挺好的一个SAM题目。首先因为是要求跟的字串出现次数有关的问题，很容易就想到SAM，那么只出现一次就肯定是找那些right集合为1的状态。考虑这个状态需要更新哪些位置。我们假设这个状态对于的位置为r, 最长串为maxlen, 最短串为minlen,那么对于[r - maxlen + 1, r - minlen + 1]这个区间上某个位置i，我们用r - i + 1来更新最小值。但还没结束，考虑如果这个状态的fail树的上一个状态的size不为1，那么就无法更新后面点的答案，后面点的答案有可能就是前面一个状态的最短串长，也就是说对于[r - minlen, r]这个区间上的某个位置i，我们用minlen来更新。这样我们发现两种情况可以用两个线段树来维护，第一种把i提出去就好了。最后取两种情况的最小值就是答案。<br>
+          <p>链接：<a href="https://www.luogu.org/problemnew/show/P2569" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P2569</a><br>思路：很不错一个题，这个题其实难点在限制有两个，一个是天数上的限制，一个是买的物品上的限制，如果没弄清单调队列(像我一样)，就不知道怎么处理。我们先来看看，天数大于符号，不是从前面当当前的一段区间，所以这段是没法用单调队列优化的，那么我们就必须用dp来记录这一维度。首先dp[i][j]表示第i天，手上有j张股票的时候所能赚的最多的钱。考虑转移，如果什么都不做，dp[i][j] = max(dp[i][j], dp[i - 1][j])，那么当j确定的时候，我们需要的是前i天的最大值，由于有这个转移，所以保证了满足限制的最后一天的结果是最优的，这样天数的限制就被消除了，我们只用直接看dp[i - w - 1][j]处的值就可以找到最大的值了。如果买或者卖，把方程展开后都可以用单调队列优化，这里就不再详细写了。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/15/bzoj-1396-识别子串/#more" rel="contents">
+            <a class="btn" href="/2019/07/08/luogu-P2569-股票交易/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1746,7 +635,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/bzoj-3529-数表/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/luogu-P2254-瑰丽华尔兹/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1765,7 +654,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/07/15/bzoj-3529-数表/" itemprop="url">bzoj-3529(数表)</a></h1>
+                <a class="post-title-link" href="/2019/07/08/luogu-P2254-瑰丽华尔兹/" itemprop="url">luogu-P2254(瑰丽华尔兹)</a></h1>
         
 
         <div class="post-meta">
@@ -1777,8 +666,326 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-15T16:13:47+08:00">
-                2019-07-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T17:51:56+08:00">
+                2019-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/单调队列dp/" itemprop="url" rel="index">
+                    <span itemprop="name">单调队列dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/08/luogu-P2254-瑰丽华尔兹/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/08/luogu-P2254-瑰丽华尔兹/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.luogu.org/problemnew/show/P2254" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P2254</a><br>思路：对于每一个移动方向，相当于一段区间，后面的可以从前面的一段区间转移过来，这不正好是单调队列所要解决的问题吗，所以我们顺着方向dp，用单调队列优化即可。注意如果碰到障碍，前面所有已经放入的状态都不可能转移到之后的状态了，这时候只需要把队列清空就好了。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/08/luogu-P2254-瑰丽华尔兹/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/luogu-P1776-宝物筛选/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/08/luogu-P1776-宝物筛选/" itemprop="url">luogu-P1776(宝物筛选)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T17:33:38+08:00">
+                2019-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/单调队列dp/" itemprop="url" rel="index">
+                    <span itemprop="name">单调队列dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/08/luogu-P1776-宝物筛选/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/08/luogu-P1776-宝物筛选/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.luogu.org/problemnew/show/P1776" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P1776</a><br>思路：裸的多重背包，我们考虑朴素的算法，首先枚举第几个物品，再枚举重量，再枚举当前需要用几个，这样是O(nmW)的。这个优化方法就非常特别了，考虑单调队列是对于一段限定的区间里面取最大值，那么在这个问题中哪些状态是属于一段区间的呢，突然发现必须要余数相同的那些状态才有可能属于一个区间，余数相同的这些状态就可以用单调队列优化。所以我们按照余数分类，余数相同的那些状态我们一起转移。<br>原来我们有转移方程：</p>
+<script type="math/tex; mode=display">dp[i] = max(dp[j] + (i - j) / w * v), (i - j) \% w = 0</script><p>我们按照余数改写：</p>
+<script type="math/tex; mode=display">dp[d + i * w] = max(dp[d + j * w] + (i - j) * v), (i - j) <= c</script><p>这个方程展开后就可以用单调队列来优化了<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/08/luogu-P1776-宝物筛选/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/07/luogu-P2257-YY的GCD/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/07/luogu-P2257-YY的GCD/" itemprop="url">luogu-P2257(YY的GCD)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-07T21:33:30+08:00">
+                2019-07-07
               </time>
             
 
@@ -1818,8 +1025,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/15/bzoj-3529-数表/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/15/bzoj-3529-数表/" itemprop="commentCount"></span>
+                <a href="/2019/07/07/luogu-P2257-YY的GCD/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/07/luogu-P2257-YY的GCD/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1848,16 +1055,809 @@
 
       
         
-          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=3529" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=3529</a><br>思路：定义f(i)为i的因子和，题目求$\sum_{i = 1}^n\sum_{j = 1}^mf(gcd(i, j)) (f(gcd(i, j)) &lt;= a)的和$，关于a的限制比较麻烦，我们先考虑没有a的限制怎么做。即：</p>
-<script type="math/tex; mode=display">\sum_{i = 1}^n\sum_{j = 1}^mf(gcd(i, j))</script><p>考虑枚举gcd(i, j)：</p>
-<script type="math/tex; mode=display">\sum_{d = 1}^{min(n, m)}f(d)\sum_{i = 1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j = 1}^{\lfloor\frac{m}{d}\rfloor}[gcd(i, j) == 1]</script><p>利用莫比乌斯函数的性质可变为：</p>
-<script type="math/tex; mode=display">\sum_{d = 1}^{min(n, m)}f(d)\sum_{i = 1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j = 1}^{\lfloor\frac{m}{d}\rfloor}\sum_{t|gcd(i, j)}\mu(t)</script><p>考虑枚举t:</p>
-<script type="math/tex; mode=display">\sum_{d = 1}^{min(n, m)}f(d)\sum_{t = 1}^{min(\lfloor\frac{n}{d}\rfloor, \lfloor\frac{m}{d}\rfloor)}\mu(t)\lfloor\frac{n}{dt}\rfloor\lfloor\frac{m}{dt}\rfloor</script><p>改为枚举p = dt:</p>
-<script type="math/tex; mode=display">\sum_{d = 1}^{min(n, m)}f(d)\sum_{p = 1}^{min(n, m)}\mu(\frac{p}{d})\lfloor\frac{n}{p}\rfloor\lfloor\frac{m}{p}\rfloor</script><p>将p提前：</p>
-<script type="math/tex; mode=display">\sum_{p = 1}^{min(n, m)}\lfloor\frac{n}{p}\rfloor\lfloor\frac{m}{p}\rfloor\sum_{d|p}f(d)\mu(\frac{p}{d})</script><p>这样我们可以nlogn预处理出后面的卷积，前面可以用整除分块来做。<br>但现在有a的限制，在新式子中是f(d)，我们考虑离线来处理这个问题。按a从小到大排序，每次把f(d) &lt;= a的贡献用bit维护一下，然后整除分块求解即可。复杂度O((q + n)logn)<br>注意一个取模可以让他对int自然溢出，然后最后答案和2147483647与一下即可。<br>
+          <p>链接:<a href="https://www.luogu.org/problemnew/show/P2257" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P2257</a><br>思路：给定N, M,求1&lt;=x&lt;=N, 1&lt;=y&lt;=M且gcd(x, y)为质数的(x, y)有多少对。<br>我们设</p>
+<script type="math/tex; mode=display">f(d) = \sum_{i = 1}^n\sum_{j = 1}^m[gcd(i, j) = d]</script><script type="math/tex; mode=display">F(n) = \sum_{n|d}f(d) = \lfloor\frac{N}{n}\rfloor\lfloor\frac{M}{n}\rfloor</script><script type="math/tex; mode=display">f(n) = \sum_{n|d}\mu(\frac{d}{n})F(d)</script><p>得出：</p>
+<script type="math/tex; mode=display">Ans = \sum_{p\in{prime}}f(p)</script><p>莫比乌斯反演得到：</p>
+<script type="math/tex; mode=display">Ans = \sum_{p\in{prime}}\sum_{p|d}\mu(\frac{d}{p})F(d)</script><p>$我们更改枚举项，枚举\lfloor\frac{d}{p}\rfloor$：</p>
+<script type="math/tex; mode=display">Ans = \sum_{p\in{prime}}\sum_{d = 1}^{min(\lfloor\frac{n}{p}\rfloor, \lfloor\frac{m}{p}\rfloor)}\mu(d)\lfloor\frac{n}{dp}\rfloor\lfloor\frac{m}{dp}\rfloor</script><p>我们将dp换成T：</p>
+<script type="math/tex; mode=display">Ans = \sum_{T = 1}^{min(n, m)}\lfloor\frac{n}{T}\rfloor\lfloor\frac{m}{T}\rfloor(\sum_{t|T, t\in{prime}}\mu(\frac{T}{t}))</script><p>推到这里就可以解决了，由于是多组数据，我们需要预处理。后面的对$\mu$求和我们可以事先预处理出来，剩下的就是整除分块求答案即可。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/07/15/bzoj-3529-数表/#more" rel="contents">
+            <a class="btn" href="/2019/07/07/luogu-P2257-YY的GCD/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/07/luogu-P3455-ZAP-Queries/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/07/luogu-P3455-ZAP-Queries/" itemprop="url">luogu-P3455(ZAP-Queries)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-07T20:52:23+08:00">
+                2019-07-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/莫比乌斯反演/" itemprop="url" rel="index">
+                    <span itemprop="name">莫比乌斯反演</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/07/luogu-P3455-ZAP-Queries/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/07/luogu-P3455-ZAP-Queries/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.luogu.org/problemnew/show/P3455" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P3455</a><br>思路：求$\sum_{i = 1} ^ a\sum_{j = 1} ^ b[gcd(i, j) = d]$。我们设:</p>
+<script type="math/tex; mode=display">f(k) = \sum_{i = 1} ^ a\sum_{j = 1} ^ b[gcd(i, j) = k]</script><p>那么有:</p>
+<script type="math/tex; mode=display">F(n) = \sum_{n|k}f(k) = \lfloor\frac{a}{n}\rfloor\lfloor\frac{b}{n}\rfloor</script><p>从而有：</p>
+<script type="math/tex; mode=display">f(n) = \sum_{n|k}\mu(\lfloor\frac{k}{n}\rfloor)F(k)</script><p>$将枚举项 \lfloor\frac{k}{d}\rfloor 变为t$：</p>
+<script type="math/tex; mode=display">ans = \sum_{t = 1}^{min(\lfloor\frac{a}{d}\rfloor, \lfloor\frac{b}{d}\rfloor)}\mu(t)\lfloor\frac{a}{td}\rfloor\lfloor\frac{b}{td}\rfloor</script><p>然后有多组数据，用一下整除分块求前缀和就可以解决了。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/07/luogu-P3455-ZAP-Queries/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/07/hdu-5909-Tree-Cutting/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/07/hdu-5909-Tree-Cutting/" itemprop="url">hdu-5909(Tree Cutting)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-07T10:08:58+08:00">
+                2019-07-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/FWT/" itemprop="url" rel="index">
+                    <span itemprop="name">FWT</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/07/hdu-5909-Tree-Cutting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/07/hdu-5909-Tree-Cutting/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接:<a href="http://acm.hdu.edu.cn/showproblem.php?pid=5909" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=5909</a><br>思路：相当于求树上某个连通块异或和为x的有多少个，很容易想到dp，先将无根树转换为有根树，dp[u][i]表示以u为根节点的子树异或和为i的方案数，然后向上合并，合并过程中父节点必选，跟子节点的方案进行卷积，用fwt加速卷积过程即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/07/hdu-5909-Tree-Cutting/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/06/Codeforces-Round-296-Div-1-D-Fuzzy-Search/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/06/Codeforces-Round-296-Div-1-D-Fuzzy-Search/" itemprop="url">Codeforces Round 296 (Div.1)-D(Fuzzy Search)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-06T10:50:19+08:00">
+                2019-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/FFT/" itemprop="url" rel="index">
+                    <span itemprop="name">FFT</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/06/Codeforces-Round-296-Div-1-D-Fuzzy-Search/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/06/Codeforces-Round-296-Div-1-D-Fuzzy-Search/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://codeforces.com/contest/528/problem/D" target="_blank" rel="noopener">https://codeforces.com/contest/528/problem/D</a><br>思路：从lls那里顺来的一个FFT的题目，结果题目我居然看了快半h才明白是什么意思？？？给定母串和模式串，字符集大小为4，给定k，模式串在某个位置匹配当且仅当任意位置模式串的这个字符所对应的母串的位置的左右k个字符之内有一个与它相同的，求匹配次数。我们考虑匹配某个字符，我们可以将能匹配的位置为1，不能匹配的位置为0，然后卷积，看最后结果不为0的点。这个题就是四个字符分开匹配，对于S串我们先倒置，然后如果某个位置字符相同，前后k个内都可以匹配，这个时候我们可以差分处理一下，然后卷积，卷积的结果就表示这个点能和模式串中几个点匹配，最终把四个字符的结果合起来，能匹配数量等于模式串长度的点就可以作为答案，统计一下答案有多少即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/06/Codeforces-Round-296-Div-1-D-Fuzzy-Search/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/04/bzoj-4589-Hard-Nim/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/04/bzoj-4589-Hard-Nim/" itemprop="url">bzoj-4589(Hard Nim)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-04T22:01:24+08:00">
+                2019-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/FWT/" itemprop="url" rel="index">
+                    <span itemprop="name">FWT</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/04/bzoj-4589-Hard-Nim/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/04/bzoj-4589-Hard-Nim/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=4589" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=4589</a><br>思路：首先了解FWT解决的是$C_k$ = $A_i$ op $B_j$ (i op j = k)(op可为&amp; | ^ 三种运算)。复杂度是O(nlogn)。其实这个东西并不需要掌握原理，只需要知道怎么用即可。本题中，相当于选出n个素数，使得他们的异或和等于0。考虑如果选两个，就是两个a序列卷积一下，三个就是两个的结果再和a序列卷积一下。我们知道，卷积通过变化后可以转化位乘法，那么多次相同的数列卷积转为幂运算，这样我们就可以快速幂解决，然后再还原回来即可。注意代码中有些小细节。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/04/bzoj-4589-Hard-Nim/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/03/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-E-Tree/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/03/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-E-Tree/" itemprop="url">The 2019 ACM-ICPC China Shannxi Provincial Programming Contest-E(Tree)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-03T22:31:19+08:00">
+                2019-07-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/树链剖分/" itemprop="url" rel="index">
+                    <span itemprop="name">树链剖分</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/03/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-E-Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/03/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-E-Tree/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://nanti.jisuanke.com/t/39272" target="_blank" rel="noopener">https://nanti.jisuanke.com/t/39272</a><br>思路：这个题树链剖分的部分是很基础的，其实重点是线段树上怎么维护。首先我们需要两个标记，一个与标记一个或标记，通过按位分析，我们可以发现与运算与异或满足分配律，或运算不满足，推一推规律我们知道一堆异或和 和一个数与，结果跟这堆数的数量的奇偶性有关。于是我们可以推出规律，然后根据奇偶分情况维护即可。最重要的一个问题是两个标记间怎么更新才能消除顺序的影响。我们联想到之前一个线段树的题，就是既有乘法标记又有加法标记，更新乘法标记的时候需要顺带把加法标记也更新了，然后加法标记就只用更新自己即可。这里也是如此，我们更新与运算的时候把或运算的标记更新即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/03/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-E-Tree/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1900,7 +1900,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1946,7 +1946,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">471</span>
+                  <span class="site-state-item-count">472</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

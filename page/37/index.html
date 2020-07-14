@@ -181,7 +181,7 @@
   
 
   <div class="container sidebar-position-left 
-  page-home">
+  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -312,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11600)(Masud-Rana-)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(10881)(Piotr's-Ants)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -331,161 +331,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/Uva(11600)(Masud-Rana-)/" itemprop="url">Uva(11600)(Masud-Rana-)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
-                2018-11-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础dp/" itemprop="url" rel="index">
-                    <span itemprop="name">基础dp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/17/Uva(11600)(Masud-Rana-)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11600)(Masud-Rana-)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>链接：<a href="https://vjudge.net/problem/UVA-11600" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11600</a><br>思路：主要是状态的考虑，因为每两个点都有路，所以只用区分有没有怪兽即可，我们可以算从一个点开始走到全部两两连通的时候的概率，这时候我们需要用一个数来表示当前已经两两连通的点的集合，状态转移就是枚举不在集合中的点，dp[u][s] += DP(i,(s|(1&lt;<i)) *="" num[i]="" (n-have)="" ，表示选一个没在集合中的点的期望的总和，由于期望是概率的倒数，所以一开始我们计算的时候就可以入上倒过来计算，需要预处理一下原图，将各个已经连通块的数目统计出来即可。="" <!--more--=""><br>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int t,n,m;</span><br><span class="line">const int maxn = 105;</span><br><span class="line">const int maxm = maxn*maxn;</span><br><span class="line">map&lt;int,double&gt; dp[maxn];</span><br><span class="line">vector&lt;int&gt; G[maxn];</span><br><span class="line">int vis[maxn];</span><br><span class="line">int num[maxn];</span><br><span class="line">int _num;</span><br><span class="line"></span><br><span class="line">int dfs(int u)&#123;</span><br><span class="line">    vis[u] = 1;</span><br><span class="line">   int ans = 1;</span><br><span class="line">    for(int i=0;i&lt;G[u].size();i++)&#123;</span><br><span class="line">        if(!vis[G[u][i]])ans+=dfs(G[u][i]);</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">double DP(int u,int s)&#123;</span><br><span class="line">    if(dp[u].count(s))return dp[u][s];</span><br><span class="line">    int have = 0,i;</span><br><span class="line">    for(i=0;i&lt;_num;i++)&#123;</span><br><span class="line">        if(s&amp;(1&lt;&lt;i))have+=num[i];</span><br><span class="line">    &#125;</span><br><span class="line">    if(have==n)return dp[u][s] = 0;</span><br><span class="line">    dp[u][s] = (n-1)*1.0/(n-have);</span><br><span class="line">    for(int i=0;i&lt;_num;i++)&#123;</span><br><span class="line">        if(s&amp;(1&lt;&lt;i))continue;</span><br><span class="line">        dp[u][s] += DP(i,s|(1&lt;&lt;i))*num[i]/(n-have);</span><br><span class="line">    &#125;</span><br><span class="line">    return dp[u][s];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;t);</span><br><span class="line">    int kase = 0;</span><br><span class="line">    while(t--)&#123;</span><br><span class="line">        memset(num,0,sizeof(num));</span><br><span class="line">        memset(vis,0,sizeof(vis));</span><br><span class="line">        for(int i=0;i&lt;=n;i++)&#123;</span><br><span class="line">            G[i].clear();</span><br><span class="line">        dp[i].clear();</span><br><span class="line">        &#125;</span><br><span class="line">        _num = 0;</span><br><span class="line">        scanf(&quot;%d%d&quot;,&amp;n,&amp;m);</span><br><span class="line">        for(int i=0;i&lt;m;i++)&#123;</span><br><span class="line">            int a,b;</span><br><span class="line">            scanf(&quot;%d%d&quot;,&amp;a,&amp;b);</span><br><span class="line">            G[a].push_back(b);</span><br><span class="line">            G[b].push_back(a);</span><br><span class="line">        &#125;</span><br><span class="line">       for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">           if(!vis[i])&#123;</span><br><span class="line">               num[_num++] = dfs(i);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       printf(&quot;Case %d %.6lf\n&quot;,++kase,DP(0,1));</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></i))></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11552)(Fewest-Flops)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/17/Uva(11552)(Fewest-Flops)/" itemprop="url">Uva(11552)(Fewest-Flops)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/Uva(10881)(Piotr's-Ants)/" itemprop="url">Uva(10881)(Piotr's-Ants)</a></h1>
         
 
         <div class="post-meta">
@@ -538,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/Uva(11552)(Fewest-Flops)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11552)(Fewest-Flops)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/Uva(10881)(Piotr's-Ants)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(10881)(Piotr's-Ants)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -568,10 +414,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/UVA-11552" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11552</a><br>思路：就动态规划加枚举就完事了，有以下贪心在里面：当上一个结尾为k时，则下一个的结尾肯定不为j，且一个大块中所有相同的要连在一起，注意动态规划时第一块要拿出来单独处理，因为他左边没有块所以跟其他的处理方式不太一样，复杂度的话O(n)，后面枚举的时候枚举前一块的结尾和后一块的结尾，如果二者相等则跳过，不等则查询一下后一块中是否有前一块结尾，有的话就可以把加的长度-1，否则不行，然后遍历最后一块的结尾即可得到最大值<br>
+          <p>链接：<a href="https://vjudge.net/problem/UVA-10881" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-10881</a><br>思路：这个题之前做过类似，不过这个更复杂。首先，蚂蚁碰撞并掉头可以等效看为他们擦肩然后继续前进，但是这样会打乱顺序，因为题目要求按照输入顺序输出对应的蚂蚁，我们注意到，由于有掉头存在，所以所有蚂蚁从左到右的相对顺序是不会变的，由于初始输入不一定是按照从左到右输入的，我们需要给蚂蚁一个编号，然后从左到右排序，用一个数组记录j对应id的蚂蚁从左到右排在第几个，然后用等效擦肩进行计算，最后再排序，最后用j还原顺序，输出各个蚂蚁的情况。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(11552)(Fewest-Flops)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/Uva(10881)(Piotr's-Ants)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -624,7 +470,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11549)(Calculator-Conundrum)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(10859)(Placing-Lampposts-)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -643,7 +489,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/Uva(11549)(Calculator-Conundrum)/" itemprop="url">Uva(11549)(Calculator-Conundrum)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/Uva(10859)(Placing-Lampposts-)/" itemprop="url">Uva(10859)(Placing-Lampposts-)</a></h1>
         
 
         <div class="post-meta">
@@ -678,8 +524,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数论/" itemprop="url" rel="index">
-                    <span itemprop="name">数论</span>
+                  <a href="/categories/树形dp/" itemprop="url" rel="index">
+                    <span itemprop="name">树形dp</span>
                   </a>
                 </span>
 
@@ -696,8 +542,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/Uva(11549)(Calculator-Conundrum)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11549)(Calculator-Conundrum)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/Uva(10859)(Placing-Lampposts-)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(10859)(Placing-Lampposts-)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -726,10 +572,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/UVA-11549" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11549</a><br>思路：首先很容易猜到这个平方最后一定会循环，不然的话最大值就根本没法确定了，具体证明暂时没想到但很容易猜到，既然循环，自然而然想到应该用一个set来判断是否重复，于是很容易写出如下的循环版本<br>
+          <p>链接：<a href="https://vjudge.net/problem/UVA-10859" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-10859</a><br>思路：还是一开始一点思路都没有啊，找不到状态转移，看了老刘的思路突然就感觉很清晰，这就是差距吧。到一个点有两种决策，放或者不放，如果不放必须是父节点有灯或者它本身为根节点（因为根节点不放的话他的子节点就一定会放，所以不存在照不到的情况），那么我们就用i表示当前节点，j表示父节点是否放灯，f表示他的父节点，那么先看能否不放，如果能遍历一遍他的子节点然后算出总和（这里注意可以让放一盏灯的权重高一点，按照老刘的书为2000，这样又可以记录下被两个灯都照到的路的数量，一举两得），然后再算放灯，遍历一遍然后算出总和，比较两个总和的大小取小的一个即可。注意要用一个vis数组记录当前状态是否已经查看过，用一个dp数组记录这个状态的值避免重复计算！<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(11549)(Calculator-Conundrum)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/Uva(10859)(Placing-Lampposts-)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -782,7 +628,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11525)(Permutation)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(10817)(Headmaster's-Headache)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -801,7 +647,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/Uva(11525)(Permutation)/" itemprop="url">Uva(11525)(Permutation)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/Uva(10817)(Headmaster's-Headache)/" itemprop="url">Uva(10817)(Headmaster's-Headache)</a></h1>
         
 
         <div class="post-meta">
@@ -836,8 +682,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/二分/" itemprop="url" rel="index">
-                    <span itemprop="name">二分</span>
+                  <a href="/categories/状压dp/" itemprop="url" rel="index">
+                    <span itemprop="name">状压dp</span>
                   </a>
                 </span>
 
@@ -854,8 +700,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/Uva(11525)(Permutation)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11525)(Permutation)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/Uva(10817)(Headmaster's-Headache)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(10817)(Headmaster's-Headache)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -884,10 +730,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/UVA-11525" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11525</a><br>思路：一开始看到式子头皮发麻，后来查了一下是康拓展开的逆式，没学过正好学习了一下，Sk就表示当前位置排的是还剩下的数字中第k小的数，看到这里自然想到了树状数组求前缀和了，然后对于位置应该二分求解，二分注意一下跟普通的二分有些不同，还需记录当前位置的数字是否使用过。需要对二分相等的情况进行特殊处理一下<br>
+          <p>链接：<a href="https://vjudge.net/problem/UVA-10817" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-10817</a><br>思路：有些日子没做dp了，上手做一个，一开始想的是用一个数来表示集合，后来发现拆为两个更方便一些，一个表示已经有一个老师的，一个表示有两个老师的，然后进行状态转移，对当前老师选或者不选，如果选的话更新集合状态，然后加上钱。本题坑点有点多，一个是输入，最好是用getline读入一行，然后用stringstream进行重定向。然后就是要注意位运算的优先级，以后所有位运算最好打上括号保证得到想要的顺序。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(11525)(Permutation)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/Uva(10817)(Headmaster's-Headache)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -940,7 +786,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11427)(Expect-the-Expected)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(10765)(Doves-and-bombs)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -959,165 +805,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/Uva(11427)(Expect-the-Expected)/" itemprop="url">Uva(11427)(Expect-the-Expected)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
-                2018-11-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/期望-概率/" itemprop="url" rel="index">
-                    <span itemprop="name">期望/概率</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/17/Uva(11427)(Expect-the-Expected)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11427)(Expect-the-Expected)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://vjudge.net/problem/UVA-11427" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11427</a><br>思路：由于每天是独立的，所以期望就是一天概率的倒数（很好证明），关键是一天的概率不太好算，因为涉及到当前的状态的判断（即总比例是否超过p），所以我们考虑到了概率中的动态规划。用pp[i][j]表示一共玩了i天赢了j天的状态，i&gt;j是不存在的所以全部为0，然后概率大于p的也全都为0，如果当前i，j概率小于p，那么状态转移pp[i][j] = pp[i-1][j]<em>(1-p) + pp[i-1][j-1]</em>p，注意j=0的时候要特殊处理一下即可，最后算0-n的总和，表示这n天总共失败的概率，即可算出成功概率，倒一下就是期望。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(11427)(Expect-the-Expected)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11404)(Palindromic-Subsequence)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/17/Uva(11404)(Palindromic-Subsequence)/" itemprop="url">Uva(11404)(Palindromic-Subsequence)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/Uva(10765)(Doves-and-bombs)/" itemprop="url">Uva(10765)(Doves-and-bombs)</a></h1>
         
 
         <div class="post-meta">
@@ -1170,8 +858,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/Uva(11404)(Palindromic-Subsequence)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11404)(Palindromic-Subsequence)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/Uva(10765)(Doves-and-bombs)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(10765)(Doves-and-bombs)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1200,10 +888,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/UVA-11404" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11404</a><br>思路：因为最大回文串，也就是前后两端相等，那么很容易想到把原串倒过来然后求最长公共子序列，求出来的值就刚好是最大回文串的长度（因为是和倒置的串求最长公共子序列，所以求出来一定是回文串），关键是如何输出这个回文串。因为有字典序，所以为了方便起见我们用string(重载了min函数可求字段序，虽然比较慢一点)，然后动态规划中条件要改，详见代码<br>
+          <p>链接：<a href="https://vjudge.net/problem/UVA-10765" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-10765</a><br>思路：本质上还是个求双连通分量的问题，因为是点双，所以每个割点所属的双连通分量是不确定的，如何判断缩点后一个点周围的双连通分量个数就成了一直卡住我的问题，后来发现其实特别简单，只需要在tarjan算法弹出双连通分量是用一个数组每次+1即可！！！！，因为每次求出新连通块是在割点的基础上做的tarjan算法。砍点后的连通块个数分情况讨论：若为割点则为他周围不同的双连通分量的个数，若不为割点则还是为一个连通块。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(11404)(Palindromic-Subsequence)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/Uva(10765)(Doves-and-bombs)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1256,7 +944,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11396)(Claw-Decomposition)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(10635)(Prince-and-Princess)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1275,7 +963,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/Uva(11396)(Claw-Decomposition)/" itemprop="url">Uva(11396)(Claw-Decomposition)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/Uva(10635)(Prince-and-Princess)/" itemprop="url">Uva(10635)(Prince-and-Princess)</a></h1>
         
 
         <div class="post-meta">
@@ -1310,8 +998,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/二分图/" itemprop="url" rel="index">
-                    <span itemprop="name">二分图</span>
+                  <a href="/categories/基础dp/" itemprop="url" rel="index">
+                    <span itemprop="name">基础dp</span>
                   </a>
                 </span>
 
@@ -1328,8 +1016,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/Uva(11396)(Claw-Decomposition)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11396)(Claw-Decomposition)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/Uva(10635)(Prince-and-Princess)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(10635)(Prince-and-Princess)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1358,10 +1046,172 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/UVA-11396" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11396</a><br>思路：二分图匹配，哎看不出来啊，说一下思路吧，如果确定某个点为爪点，那么它身边的三个点一定是附点，附点之间又不可能相连，所以附点连接的又一定是爪点，这不就是二分图匹配吗………<br>
+          <p>链接：<a href="https://vjudge.net/problem/UVA-10635#author=0" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-10635#author=0</a><br>思路：一开始用的是最普通的最长公共子序列去做，看错了范围（以为是p，q都小于250），结果是小于250*250，如果用二维数组明显会超内存。然后就不会做了，看了题解发现可以转换为最长上升子序列的问题（LIS），真的强啊这种转化，顺便学习了nlogn复杂度的上升子序列写法。复制一下：（感谢原博主 <a href="https://blog.csdn.net/u014800748/article/details/45749991）" target="_blank" rel="noopener">https://blog.csdn.net/u014800748/article/details/45749991）</a><br>考虑这样一个事实，给定两个下标a,b(注意，这里a,b大小未知)，如果它们满足Aa<ab且d(a)==d(b)。则对于所有的i>max{a,b},a并不会比b差。另外，如果b满足Ab&lt;Ai，那么对于a也满足这个性质，且二者的d值相同。但是，如果Aa&lt;Ai，却不一定有Ab&lt;Ai。</ab且d(a)==d(b)。则对于所有的i></p>
+<p>通过以上的事实，我们发现，对于某一个d’值，只要保留最小的那个Aa，使得d(a)==d‘即可。我们用g(i)表示d值为i的最小状态的编号（即i对应的最小的那个Aa，如果不存在设置为INF）。根据以上的推理有如下不等式：</p>
+<p>g(1)≤g(2)≤g(3)≤…≤g(n)</p>
+<p>注意，上述的g(i)是会动态改变的。对于一个给定的状态i，我们只考虑在i之前已经计算过的状态j(即j&lt;i)，上述的g值也是基于这些状态而改变的。随着i的增大，我们要考虑的状态也越来越多，g也随之发生改变。在给定状态i时，可以用二分查找得到满足g(k)≥Ai的第一个下标k（实际上是要找g(k’)&lt;Ai的最后一个下标k’,则d(i)=k’+1,令k=k’+1即可得到，这里用lower_bound省略了k’+1的操作）,则d(i)=k，此时Ai&lt;g(k).而d(i)=k，所以更新g(k)=Ai（此时正是利用了上述的事实！虽然这里的g(k)在变小，但仍然大于等于g(k-1)，满足上述的不等式）。</p>
+<p>附录：ologn最长上升子序列写法<br>int ans = 0;<br>    for(int i=1;i&lt;=x;i++) g[i] = INF;<br>    for(int i=0;i&lt;x;i++){<br>    int k = lower_bound(g+1,g+x+1,s[i])-g;//查找第一个大于等于s[i]值的下标<br>    d[i] = k; //更新前i个数最大上升子序列的值<br>    g[k] = s[i]; //更新最后一位的值<br>ans = max(ans,d[i]);// 更新一下之前有误，需要用一个ans记录最长的序列的长度<br>    }</p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(11396)(Claw-Decomposition)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/Uva(10635)(Prince-and-Princess)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(10564)(Paths-through-the-Hourglass)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/17/Uva(10564)(Paths-through-the-Hourglass)/" itemprop="url">Uva(10564)(Paths-through-the-Hourglass)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
+                2018-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础dp/" itemprop="url" rel="index">
+                    <span itemprop="name">基础dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/17/Uva(10564)(Paths-through-the-Hourglass)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(10564)(Paths-through-the-Hourglass)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://vjudge.net/problem/UVA-10564" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-10564</a><br>思路：dp题，有点像数字三角形，但是因为要涉及路径输出我们不能把它拆为两个来做，还是直接记忆式搜索吧，以n为边界，上下采取不同的状态转移方程。。记住记忆式搜索不要用dp数组的值是否为0来判断是否查询过，因为本题很多点都为0（表示无解），养成好习惯用vis来判重，我就是这种不好习惯导致这道题一开始tl了。然后枚举第一排所有起点，第一个找到的解一定是题目要求最优的！<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/17/Uva(10564)(Paths-through-the-Hourglass)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1414,7 +1264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11367)(Full-Tank)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(10534)(waviosequence)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1433,7 +1283,165 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/Uva(11367)(Full-Tank)/" itemprop="url">Uva(11367)(Full-Tank)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/Uva(10534)(waviosequence)/" itemprop="url">Uva(10534)(waviosequence)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
+                2018-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础dp/" itemprop="url" rel="index">
+                    <span itemprop="name">基础dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/17/Uva(10534)(waviosequence)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(10534)(waviosequence)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://vjudge.net/problem/UVA-10534" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-10534</a><br>思路：这可以转换为一个最长上升子序列的问题，一开始我先枚举的终点再算，复杂度是o(n^2logn)，后来发现子序列的值算一遍就可以了，可以先算然后再枚举，复杂度就是o(nlogn)了，注意这个题因为上升子序列终点和下降子序列的起点必须是相同的，所以不用记录用一个ans去记录最长子序列的最大值，直接枚举终点（起点）即可，也不用判断子序列长度是否相等，直接取最小的那一个拿去更新最大值即可，因为大的那一个可以扔掉一些元素标为小的那个的长度。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/17/Uva(10534)(waviosequence)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(10269)(Adventure-of-Super-Mario-)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/17/Uva(10269)(Adventure-of-Super-Mario-)/" itemprop="url">Uva(10269)(Adventure-of-Super-Mario-)</a></h1>
         
 
         <div class="post-meta">
@@ -1486,8 +1494,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/Uva(11367)(Full-Tank)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11367)(Full-Tank)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/Uva(10269)(Adventure-of-Super-Mario-)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(10269)(Adventure-of-Super-Mario-)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1516,10 +1524,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/UVA-11367" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11367</a><br>思路：这是一个dijkstra+dp的问题，将dijkstra中的d改为二维，并以花费作为排序目标，然后进行dp，dp的时候可以回忆一下01背包滚动数组的dp方式，从右往左进行选择，即以单位油为状态进行选择。代码中我会详细解释<br>
+          <p>链接：<a href="https://vjudge.net/problem/UVA-10269" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-10269</a><br>思路：不得不说自己真的菜，不等号打反了看了大半个小时，这个题首先要用flyod预处理，中间有城堡的就不进行处理，保证处理后的最短路上都可以用魔法鞋，然后用dijstkra进行最短路，将d变二维进行dp即可，floyd预处理要学会！！！<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(11367)(Full-Tank)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/Uva(10269)(Adventure-of-Super-Mario-)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1572,7 +1580,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11324)(The-Largest-Clique)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(1513)(Movie-collection)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1591,7 +1599,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/Uva(11324)(The-Largest-Clique)/" itemprop="url">Uva(11324)(The-Largest-Clique)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/Uva(1513)(Movie-collection)/" itemprop="url">Uva(1513)(Movie-collection)</a></h1>
         
 
         <div class="post-meta">
@@ -1626,8 +1634,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/tarjan强连通分量/" itemprop="url" rel="index">
-                    <span itemprop="name">tarjan强连通分量</span>
+                  <a href="/categories/树状数组/" itemprop="url" rel="index">
+                    <span itemprop="name">树状数组</span>
                   </a>
                 </span>
 
@@ -1644,8 +1652,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/Uva(11324)(The-Largest-Clique)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11324)(The-Largest-Clique)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/Uva(1513)(Movie-collection)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(1513)(Movie-collection)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1674,10 +1682,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/UVA-11324" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11324</a><br>思路：还是一道有向图的强连通分量+缩点+DAG动态规划问题，首先主要还是熟悉tarjan的强连通分量，双连通分量（点双，边双）的不同写法。这道题有所不同，缩点的时候还要统计每个强连通分量有多少个点，把点数作为权值在新图上进行DAG的动态规划，顺便补了一下DAG的动态规划的写法，如果不清楚tarjan写法的可以看我其他几篇tarjan的题的博客，有详解<br>
+          <p>链接：<a href="https://vjudge.net/problem/UVA-1513" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-1513</a><br>思路：有几天没写了，今天来一个树状数组的。求一个盘子上面的盘子数目。首先我们要明白树状数组求的东西都要跟前缀有关，而盘子上面的数目正好就是前缀，恰好满足我们的条件，但是我们随即发现，抽出来之后还要将盘子放上面，我们是无法在树状数组的前端插入一个新值的，也不可能让整个数组移动，怎么办呢？我们想到只能在后端插值，那么此时前缀和的意义就变为了他下面盘子的数目，其实只需要用n减一下就可以转化为上面盘子的个数，将拿出位置的值设为0即可。需要把数组开大一点。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(11324)(The-Largest-Clique)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/Uva(1513)(Movie-collection)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1730,7 +1738,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11300)(Spreading-the-Wealth)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(1452)(Jump)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1749,7 +1757,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/Uva(11300)(Spreading-the-Wealth)/" itemprop="url">Uva(11300)(Spreading-the-Wealth)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/Uva(1452)(Jump)/" itemprop="url">Uva(1452)(Jump)</a></h1>
         
 
         <div class="post-meta">
@@ -1784,8 +1792,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/贪心/" itemprop="url" rel="index">
-                    <span itemprop="name">贪心</span>
+                  <a href="/categories/约瑟夫环/" itemprop="url" rel="index">
+                    <span itemprop="name">约瑟夫环</span>
                   </a>
                 </span>
 
@@ -1802,8 +1810,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/Uva(11300)(Spreading-the-Wealth)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11300)(Spreading-the-Wealth)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/Uva(1452)(Jump)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(1452)(Jump)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1832,10 +1840,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/UVA-11300" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11300</a><br>思路：一道很巧妙的数学思路的贪心题，设xi为i到i-1的金币传递数量，可以推导出如下结论：<br><img src="http://upload-images.jianshu.io/upload_images/11236160-3e65ea83a181721e.jpg" alt="图片发自简书App"><br>
+          <p>链接：<a href="https://vjudge.net/problem/UVA-1452" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-1452</a><br>思路：约瑟夫环问题的变形，之前一直对约瑟夫环的递推没搞太懂，现在大概看懂了。约瑟夫环是可以分解成子问题，即如果现在有n人，出列一人后就变成n-1人的子问题，同时建立一个映射关系，而求最后一人的则是从1个人推回n人的情况。求最后三人的可以看作先求最后一人，然后把最后一人除去，变成n-1个人求最后一人，然后再除去，变成n-2个人求最后一人。<br>附上约瑟夫环问题的递推公式：f（n） =（ f（n-1）+k）% n<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(11300)(Spreading-the-Wealth)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/Uva(1452)(Jump)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1878,7 +1886,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/36/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="extend next" rel="next" href="/page/38/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/36/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/38/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1924,7 +1932,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">471</span>
+                  <span class="site-state-item-count">472</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

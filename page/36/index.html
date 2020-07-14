@@ -181,7 +181,7 @@
   
 
   <div class="container sidebar-position-left 
-  page-home">
+  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -312,7 +312,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/回文自动机/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11427)(Expect-the-Expected)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -331,7 +331,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/回文自动机/" itemprop="url">回文自动机</a></h1>
+                <a class="post-title-link" href="/2018/11/17/Uva(11427)(Expect-the-Expected)/" itemprop="url">Uva(11427)(Expect-the-Expected)</a></h1>
         
 
         <div class="post-meta">
@@ -366,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/回文自动机/" itemprop="url" rel="index">
-                    <span itemprop="name">回文自动机</span>
+                  <a href="/categories/期望-概率/" itemprop="url" rel="index">
+                    <span itemprop="name">期望/概率</span>
                   </a>
                 </span>
 
@@ -384,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/回文自动机/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/回文自动机/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/Uva(11427)(Expect-the-Expected)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11427)(Expect-the-Expected)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,10 +414,10 @@
 
       
         
-          <p>写一篇文章来详解一下回文自动机吧，之前没弄懂吃了大亏。<br>
+          <p>链接：<a href="https://vjudge.net/problem/UVA-11427" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11427</a><br>思路：由于每天是独立的，所以期望就是一天概率的倒数（很好证明），关键是一天的概率不太好算，因为涉及到当前的状态的判断（即总比例是否超过p），所以我们考虑到了概率中的动态规划。用pp[i][j]表示一共玩了i天赢了j天的状态，i&gt;j是不存在的所以全部为0，然后概率大于p的也全都为0，如果当前i，j概率小于p，那么状态转移pp[i][j] = pp[i-1][j]<em>(1-p) + pp[i-1][j-1]</em>p，注意j=0的时候要特殊处理一下即可，最后算0-n的总和，表示这n天总共失败的概率，即可算出成功概率，倒一下就是期望。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/回文自动机/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/Uva(11427)(Expect-the-Expected)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -470,7 +470,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/ZOJ3261(Connections-in-Galaxy-War)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11404)(Palindromic-Subsequence)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -489,323 +489,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/ZOJ3261(Connections-in-Galaxy-War)/" itemprop="url">ZOJ3261(Connections-in-Galaxy-War)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
-                2018-11-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/并查集/" itemprop="url" rel="index">
-                    <span itemprop="name">并查集</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/17/ZOJ3261(Connections-in-Galaxy-War)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/ZOJ3261(Connections-in-Galaxy-War)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://vjudge.net/problem/ZOJ-3261" target="_blank" rel="noopener">https://vjudge.net/problem/ZOJ-3261</a><br>思路：有几天没做并查集了，这个题我们先按权值合并，小的向大的合并，如果权值相等我们考虑编号，我们将所有命令先读入，然后在从末态开始输出询问，destroy就变成了建边，每次合并时同上合并方式，询问时检查一下当前点的权值和父节点权值是否相等，如果相等则无解，否则记录答案（一定要先getroot一下啊不然上次更新的并没有传递上去，这个地方已经错了很多次了长点记性啊拜托！！！！）<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/ZOJ3261(Connections-in-Galaxy-War)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/ZOJ1610(Count-the-Colors)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/17/ZOJ1610(Count-the-Colors)/" itemprop="url">ZOJ1610(Count-the-Colors)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
-                2018-11-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/线段树/" itemprop="url" rel="index">
-                    <span itemprop="name">线段树</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/17/ZOJ1610(Count-the-Colors)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/ZOJ1610(Count-the-Colors)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://vjudge.net/contest/260644#problem/F" target="_blank" rel="noopener">https://vjudge.net/contest/260644#problem/F</a><br>思路：题目求的是每种颜色覆盖的段数，因为区间段数只有8000，所以我们可以考虑暴力，对于每个区间我们用tag表示当前区间覆盖的颜色，-1表示已经传递完了不需要再向下传递，最后找到所有的叶结点统计颜色即可。（注意我们要用左区间端点l来表示l,l+1是某种颜色，所以右区间r是开区间）<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/ZOJ1610(Count-the-Colors)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/UVA-1025（A-Spy-in-the-Metro）（动态规划dp）/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/17/UVA-1025（A-Spy-in-the-Metro）（动态规划dp）/" itemprop="url">UVA-1025（A-Spy-in-the-Metro）（动态规划dp）</a></h1>
+                <a class="post-title-link" href="/2018/11/17/Uva(11404)(Palindromic-Subsequence)/" itemprop="url">Uva(11404)(Palindromic-Subsequence)</a></h1>
         
 
         <div class="post-meta">
@@ -858,8 +542,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/UVA-1025（A-Spy-in-the-Metro）（动态规划dp）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/UVA-1025（A-Spy-in-the-Metro）（动态规划dp）/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/Uva(11404)(Palindromic-Subsequence)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11404)(Palindromic-Subsequence)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -888,171 +572,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/UVA-1025" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-1025</a><br>思考：纯暴力搜索复杂度太大，考虑使用动态规划，首先考虑用一个三维数组记录火车信息<br>int train[i][j][k];<br>i表示时刻t，j表示某个车站，k表示向左或者向右。</p>
-<p>int dp[i][j]<br>i表示时刻t，j表示车站，用于记录各个状态最短停留时间</p>
-<p>然后考虑从终点开始回推，每个时刻有三种状态：<br>1、停留1个单位时间<br>2、坐开向左的车<br>3、坐开向右的车</p>
-<p>dp[i][j] = dp[i+1][j]+1;<br>if(j<n&&train[i][j][0]&&i+time[j]<=t) dp[i][j]="min(dp[i][j],dp[i+time[j]][j+1]);" if(j="">1&amp;&amp;train[i][j][1]&amp;&amp;i+time[j-1]&lt;=T)<br>dp[i][j] = min(dp[i][j],dp[i+time[j-1]][j-1]);<br>三个状态都运行一次，从而更新出当前最小的停留时间<br>每个最小的停留时间叠加并且回推，就可以得到最终的最短停留时间。<br>
+          <p>链接：<a href="https://vjudge.net/problem/UVA-11404" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11404</a><br>思路：因为最大回文串，也就是前后两端相等，那么很容易想到把原串倒过来然后求最长公共子序列，求出来的值就刚好是最大回文串的长度（因为是和倒置的串求最长公共子序列，所以求出来一定是回文串），关键是如何输出这个回文串。因为有字典序，所以为了方便起见我们用string(重载了min函数可求字段序，虽然比较慢一点)，然后动态规划中条件要改，详见代码<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/UVA-1025（A-Spy-in-the-Metro）（动态规划dp）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </n&&train[i][j][0]&&i+time[j]<=t)></p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(12235)(helpbubu)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/17/Uva(12235)(helpbubu)/" itemprop="url">Uva(12235)(helpbubu)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
-                2018-11-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/基础dp/" itemprop="url" rel="index">
-                    <span itemprop="name">基础dp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/17/Uva(12235)(helpbubu)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(12235)(helpbubu)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://vjudge.net/problem/UVA-12235" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-12235</a><br>思路：状态表示dp[i][j][k][m],前i本中拿j本且拿出的集合为k最后一本为m的状态，转移就很简单了见代码，注意有两个点，需要一个特殊的值表示最后没放的情况，其次最后需要比较一下最后的集合和原集合元素差，差几答案就需要加几（无论放哪里混乱度都会+1）<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(12235)(helpbubu)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/Uva(11404)(Palindromic-Subsequence)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1105,7 +628,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(12167)(Proving-Equivalences)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11396)(Claw-Decomposition)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1124,7 +647,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/Uva(12167)(Proving-Equivalences)/" itemprop="url">Uva(12167)(Proving-Equivalences)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/Uva(11396)(Claw-Decomposition)/" itemprop="url">Uva(11396)(Claw-Decomposition)</a></h1>
         
 
         <div class="post-meta">
@@ -1159,8 +682,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/tarjan强连通分量/" itemprop="url" rel="index">
-                    <span itemprop="name">tarjan强连通分量</span>
+                  <a href="/categories/二分图/" itemprop="url" rel="index">
+                    <span itemprop="name">二分图</span>
                   </a>
                 </span>
 
@@ -1177,8 +700,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/Uva(12167)(Proving-Equivalences)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(12167)(Proving-Equivalences)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/Uva(11396)(Claw-Decomposition)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11396)(Claw-Decomposition)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1207,10 +730,10 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/UVA-12167" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-12167</a><br>思路：强连通分量+缩点。最后统计出度和入度为0的点，取最大值即可<br>
+          <p>链接：<a href="https://vjudge.net/problem/UVA-11396" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11396</a><br>思路：二分图匹配，哎看不出来啊，说一下思路吧，如果确定某个点为爪点，那么它身边的三个点一定是附点，附点之间又不可能相连，所以附点连接的又一定是爪点，这不就是二分图匹配吗………<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(12167)(Proving-Equivalences)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/Uva(11396)(Claw-Decomposition)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1263,7 +786,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(12124)(Assemble-)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11367)(Full-Tank)/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="kimoyami">
@@ -1282,481 +805,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/11/17/Uva(12124)(Assemble-)/" itemprop="url">Uva(12124)(Assemble-)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
-                2018-11-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/二分/" itemprop="url" rel="index">
-                    <span itemprop="name">二分</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/17/Uva(12124)(Assemble-)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(12124)(Assemble-)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://vjudge.net/problem/UVA-12124" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-12124</a><br>思路：求最小值最大的题目，一般采取二分的方法，注意本题目输入配件的时候不一定是按照分类顺序输入的，所以需要一个map给每种配件分配一个编号，然后注意二分时新建一个map并赋值为原来map的值，不要直接用原map修改(又错在这种很细节的小地方了)<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(12124)(Assemble-)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11997)(K-Smallest-Sums)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/17/Uva(11997)(K-Smallest-Sums)/" itemprop="url">Uva(11997)(K-Smallest-Sums)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
-                2018-11-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/贪心/" itemprop="url" rel="index">
-                    <span itemprop="name">贪心</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/17/Uva(11997)(K-Smallest-Sums)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11997)(K-Smallest-Sums)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://vjudge.net/problem/UVA-11997" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11997</a><br>思路：这虽然是一个优先队列的题，但其中的思想却远超过优先队列，原来是二个数组的，现在拓展成了n个。方法基本完全一样，首先我们要解决n行的前k个最小值，我们如果知道前n-1行的前k个值再加上最后一行就可以了，这样原问题可以拆分为子问题，然后在考虑状态更新之前我们先考虑一个问题，就是一行中第k个值最早被选也只能总的第k个值（因为他前k-1个都比他小），所以我们考虑到给每组和一个下标，是他最后更新的那个值在数组中的下标，用于确定前k个值是否选完。<br>说的不是很清楚，要靠自己领悟一下。。。。。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(11997)(K-Smallest-Sums)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11825)(hackerscrackdown)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/17/Uva(11825)(hackerscrackdown)/" itemprop="url">Uva(11825)(hackerscrackdown)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
-                2018-11-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/状压dp/" itemprop="url" rel="index">
-                    <span itemprop="name">状压dp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/11/17/Uva(11825)(hackerscrackdown)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11825)(hackerscrackdown)/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://vjudge.net/problem/UVA-11825" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11825</a><br>思路：首先要把题意抽象出来，可以理解为题目给你n个集合，让你尽可能合并成多个集合，使得每个集合都是电脑的全集，最后集合数就是答案，那么我们可以考虑把题目给的每个集合都表示成一个二进制的数，然后求出这些集合的所有子集，f(s) = max(f(s0)+1(其中s0是s的子集且s和s0的差集是一个全集)，接下来就可以用动态规划解决问题<br>附录：求所有i的子集：for(int j=i;j;j=(j-1)&amp;i)<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(11825)(hackerscrackdown)/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11820)(Flying-to-Fredericton)/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/17/Uva(11820)(Flying-to-Fredericton)/" itemprop="url">Uva(11820)(Flying-to-Fredericton)</a></h1>
+                <a class="post-title-link" href="/2018/11/17/Uva(11367)(Full-Tank)/" itemprop="url">Uva(11367)(Full-Tank)</a></h1>
         
 
         <div class="post-meta">
@@ -1809,8 +858,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/17/Uva(11820)(Flying-to-Fredericton)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11820)(Flying-to-Fredericton)/" itemprop="commentCount"></span>
+                <a href="/2018/11/17/Uva(11367)(Full-Tank)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11367)(Full-Tank)/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1839,10 +888,958 @@
 
       
         
-          <p>链接：<a href="https://vjudge.net/problem/UVA-11280" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11280</a><br>思路：dijkstra和动态规划结合的题目，其中有个点被坑的不要不要的，如果给的次数大于城市的数目则要初始化为n-1，因为最多转机n-1次不这样处理的话就会一直WA，经验教训啊！！！！！<br>
+          <p>链接：<a href="https://vjudge.net/problem/UVA-11367" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11367</a><br>思路：这是一个dijkstra+dp的问题，将dijkstra中的d改为二维，并以花费作为排序目标，然后进行dp，dp的时候可以回忆一下01背包滚动数组的dp方式，从右往左进行选择，即以单位油为状态进行选择。代码中我会详细解释<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/11/17/Uva(11820)(Flying-to-Fredericton)/#more" rel="contents">
+            <a class="btn" href="/2018/11/17/Uva(11367)(Full-Tank)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11324)(The-Largest-Clique)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/17/Uva(11324)(The-Largest-Clique)/" itemprop="url">Uva(11324)(The-Largest-Clique)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
+                2018-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/tarjan强连通分量/" itemprop="url" rel="index">
+                    <span itemprop="name">tarjan强连通分量</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/17/Uva(11324)(The-Largest-Clique)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11324)(The-Largest-Clique)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://vjudge.net/problem/UVA-11324" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11324</a><br>思路：还是一道有向图的强连通分量+缩点+DAG动态规划问题，首先主要还是熟悉tarjan的强连通分量，双连通分量（点双，边双）的不同写法。这道题有所不同，缩点的时候还要统计每个强连通分量有多少个点，把点数作为权值在新图上进行DAG的动态规划，顺便补了一下DAG的动态规划的写法，如果不清楚tarjan写法的可以看我其他几篇tarjan的题的博客，有详解<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/17/Uva(11324)(The-Largest-Clique)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11300)(Spreading-the-Wealth)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/17/Uva(11300)(Spreading-the-Wealth)/" itemprop="url">Uva(11300)(Spreading-the-Wealth)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
+                2018-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/贪心/" itemprop="url" rel="index">
+                    <span itemprop="name">贪心</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/17/Uva(11300)(Spreading-the-Wealth)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11300)(Spreading-the-Wealth)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://vjudge.net/problem/UVA-11300" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11300</a><br>思路：一道很巧妙的数学思路的贪心题，设xi为i到i-1的金币传递数量，可以推导出如下结论：<br><img src="http://upload-images.jianshu.io/upload_images/11236160-3e65ea83a181721e.jpg" alt="图片发自简书App"><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/17/Uva(11300)(Spreading-the-Wealth)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11294)(Wedding)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/17/Uva(11294)(Wedding)/" itemprop="url">Uva(11294)(Wedding)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
+                2018-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/2-SAT/" itemprop="url" rel="index">
+                    <span itemprop="name">2-SAT</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/17/Uva(11294)(Wedding)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11294)(Wedding)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://vjudge.net/problem/UVA-11294" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11294</a><br>思路：再一次深刻领悟到了2-SAT的一些东西，这个题首先要合点，把夫妇（或者说新郎新娘）变为一个点的两个状态，即一个凳子上要吗只坐新郎要吗只坐新娘，就可以变为2-SAT的模型，然后按照序号依次查看其mark[2*i]的值判断坐的是新郎还是新娘，最后输出即可，特别坑的地方就是要注意起始状态是0号的新娘，而不是说0号新郎新娘都可以，有两种办法，要吗mark[0]标为1，要吗从i=2开始进行2-SAT算法运行。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/17/Uva(11294)(Wedding)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11038)(How-Many-O's--)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/17/Uva(11038)(How-Many-O's--)/" itemprop="url">Uva(11038)(How-Many-O's--)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
+                2018-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/数论/" itemprop="url" rel="index">
+                    <span itemprop="name">数论</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/17/Uva(11038)(How-Many-O's--)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11038)(How-Many-O's--)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://vjudge.net/problem/UVA-11038" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11038</a><br>思路：虽然最后代码非常短，但是我觉得里面蕴含的巧妙的思想远远不止这些，首先算0个数肯定不能硬来，也不太好分区间算容易产生重叠，正解的方法是枚举原数的各个位置的数字，如果不为0，则该位前面的数字<em>pow （10，后面数字个数）就是当前位为0的方案总数（例如12139，枚举第三位为0，方案书为12</em>100），如果为0，则需要（前面-1）<em>pow （10，后面数字个数）+后面+1（例如12039，当枚举第三位时，此时的个位为前面的11种</em>后面的100种+39+1），这时最妙的来了，这样不会重叠或者说不是根本没有计算0有多少个吗，我们枚举的是当前为0的数的个数，试想一个数有很多个0，那么他的每个位置都会被枚举一次，从而这个数会被计算他0的个数那么多次，刚好就是我们要算的一共有多少0，这个实在是太妙了！！！！<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/17/Uva(11038)(How-Many-O's--)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(11019)(Matrix-Matcher)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/17/Uva(11019)(Matrix-Matcher)/" itemprop="url">Uva(11019)(Matrix-Matcher)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
+                2018-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/AC自动机/" itemprop="url" rel="index">
+                    <span itemprop="name">AC自动机</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/17/Uva(11019)(Matrix-Matcher)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(11019)(Matrix-Matcher)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://vjudge.net/problem/UVA-11019" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-11019</a><br>思路：我们需要改造一下就可以变成一个自动机的题目，我们把需要查找的矩阵按行拆成母串，然后构成一个trie图，用val记录他在原矩阵中的行数，然后将大的那个矩阵拆分成行依次进行匹配，当匹配成功就将对应的矩阵左上角顶点的值++，当某一个点的值等于小矩阵的行数的时候，就说明找到了一个矩阵。<br>注意事项：做自动机时一定要考虑到母串可能重叠覆盖的问题，对于本题可以将val改造成一个vector，记录每个的对应行数，还有一个就是注意内存问题，自动机的题很容易超内存！<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/17/Uva(11019)(Matrix-Matcher)/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/17/Uva(10891)(Game-of-Sum)/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/17/Uva(10891)(Game-of-Sum)/" itemprop="url">Uva(10891)(Game-of-Sum)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-17T17:39:25+08:00">
+                2018-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础dp/" itemprop="url" rel="index">
+                    <span itemprop="name">基础dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/17/Uva(10891)(Game-of-Sum)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/17/Uva(10891)(Game-of-Sum)/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://vjudge.net/problem/UVA-10891" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-10891</a><br>思路：其实我一开始没有看出来这是一个动态规划的题目，不过我们可以来思考一下，设d(i,j)为先手所能取得的最好的最大的分差，那么我们怎么表示这个d(i,j)呢，我们知道，总和是一定的，你取了多少分，马上可以算出对手取了多少分，那么d(i,j)就可以i表示为sum(i,j)-min(d(i+1,j),d(i+2,j)…….d(i,j-1),d(i,j-2)…..d(i,i+1),0)(注意0表示对手决策用完，即我一把把所有的都全部抓完，对手从而没有东西可以抓了，这种情况一定不要漏掉！！！)，然后用dd[][]保存已经计算出的值，记忆式搜索求出答案。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/11/17/Uva(10891)(Game-of-Sum)/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1885,7 +1882,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/35/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/page/37/">37</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="extend next" rel="next" href="/page/37/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/35/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/page/37/">37</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="extend next" rel="next" href="/page/37/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1931,7 +1928,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">471</span>
+                  <span class="site-state-item-count">472</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
