@@ -312,6 +312,164 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/Codeforces-Round-546-Div-2-E-Nastya-Hasn-t-Written-a-Legend/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/09/Codeforces-Round-546-Div-2-E-Nastya-Hasn-t-Written-a-Legend/" itemprop="url">Codeforces-Round-546-(Div.2)-E(Nastya Hasn't Written a Legend)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-09T22:57:54+08:00">
+                2019-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/线段树/" itemprop="url" rel="index">
+                    <span itemprop="name">线段树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/09/Codeforces-Round-546-Div-2-E-Nastya-Hasn-t-Written-a-Legend/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/Codeforces-Round-546-Div-2-E-Nastya-Hasn-t-Written-a-Legend/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://codeforces.com/contest/1136/problem/E" target="_blank" rel="noopener">https://codeforces.com/contest/1136/problem/E</a><br>思路：还是有很高难度的啊，很多性质都不那么容易发现。首先我们需要看出，如果更新某个点，那么在它后面存在一个点，他之后的都不用再更新，他之前的(包括他)都需要更新，这个可以很简单的证明一下。然后我们就要考虑怎么快速求出需要更新的那一段的值了，假设区间是l-r,那么更新后的每个点分别是a[l] + x, a[l] + b[l] + x, a[l]  + b[l] + b[l + 1] + x ……. ，我们把他求和，发现与b数组的前缀和的前缀和有关，即c是b数组前缀和，d是c数组前缀和，那么就可以表示为(a[l] - b[l]) * (r - l + 1) + d[r] - d[l - 1]，发现这个就是线段树最基本的赋值，那么这个题就直接做完了(一开始不会，看了题解会了也还是慢慢写了1个半小时，实在是弟中弟。。。。。)<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/09/Codeforces-Round-546-Div-2-E-Nastya-Hasn-t-Written-a-Legend/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/08/P4768-NOI2018-归程/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1720,164 +1878,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/03/P1912-NOI2009-诗人小G/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/03/P1912-NOI2009-诗人小G/" itemprop="url">P1912-[NOI2009](诗人小G)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-03T16:17:19+08:00">
-                2019-04-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/决策单调性/" itemprop="url" rel="index">
-                    <span itemprop="name">决策单调性</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/03/P1912-NOI2009-诗人小G/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/03/P1912-NOI2009-诗人小G/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://www.luogu.org/problemnew/show/P1912" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P1912</a><br>思路：首先证明一下dp的转移方程满足四边形不等式，然后就没有然后了，暂时只学了二分栈/队列的写法，还不太会分治，后面有空学了分治再补分治的写法上来吧，注意这个题要开long double精度才够。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/03/P1912-NOI2009-诗人小G/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1934,7 +1934,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">472</span>
+                  <span class="site-state-item-count">473</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1945,7 +1945,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

@@ -312,6 +312,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/18/2019牛客暑期多校训练营-第十场-J-Wood-Processing/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/18/2019牛客暑期多校训练营-第十场-J-Wood-Processing/" itemprop="url">2019牛客暑期多校训练营(第十场)-J(Wood Processing)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-18T19:06:36+08:00">
+                2019-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/wqs二分/" itemprop="url" rel="index">
+                    <span itemprop="name">wqs二分</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/18/2019牛客暑期多校训练营-第十场-J-Wood-Processing/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/18/2019牛客暑期多校训练营-第十场-J-Wood-Processing/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/890/J" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/890/J</a><br>思路：以为简单套套wqs二分就行了，结果出了一堆问题，才发现是自己wqs二分完全没学懂，这里会再细致梳理一下。</p>
+<h4 id="wqs二分概念"><a href="#wqs二分概念" class="headerlink" title="wqs二分概念"></a>wqs二分概念</h4><p>对于形如题目有限制选k个物品，或者至多至少选k个物品且我们证明出必定选满k个为最优的限制的题目，就可以运用wqs二分来解决。常规dp必须要将选多少个作为一维状态来记录，wqs二分可以感性理解：我们给每一次操作增加一个代价，然后去掉选k个的限制，显然代价和选的个数具有单调性关系，我们就利用这个单调性关系，二分代价，从而找到刚好选k个物品的答案，这样dp就可以降维。</p>
+<h4 id="wqs二分理论"><a href="#wqs二分理论" class="headerlink" title="wqs二分理论"></a>wqs二分理论</h4><p>假设没有选k个限制时，我们发现选的个数和答案是一个凸函数，我们考虑二分一个代价，然后加到总的答案里，我们发现图像会变成一个单峰函数，我们找到最值，再把选的代价还原回去，即可知道二分大了还是小了，根据方向更新答案（后面会说）。求最大值的话就是一个上凸函数，最小值就是一个下凸函数。<br><img src="/images/4.png" alt=""><br>图示就是一个上凸函数求最大值，考虑二分一个斜率（代价），这时候所有点当中，会有一个点使得这条直线的截距最大，如果这个点刚好是在k处取的，那么这个截距就是我们要求的选k个时候的答案。我们可以根据二分后dp结束后最优值与k的大小关系，来更新斜率的大小，从而最后把斜率卡在选k的位置，得到最后要求的答案。<br>注意wqs二分的上下界是[-n <em> max, n </em> max]</p>
+<h4 id="wqs一个非常重要且很容易让人忽视的细节"><a href="#wqs一个非常重要且很容易让人忽视的细节" class="headerlink" title="wqs一个非常重要且很容易让人忽视的细节"></a>wqs一个非常重要且很容易让人忽视的细节</h4><p>有一个很关键的问题，就是有没有可能这个斜率不是整数，即当斜率为x的时候最值在k - 1，当斜率为x + 1的时候最值在k + 1。我们想一想，出现这种情况，一定代表着你k - 1或者k + 1时也可以取到k处的答案（即凸函数在这几个点是共线的，要多思考一下这个问题），那么我们也可以用k - 1或者k + 1的答案来更新，因为它们是共线的所以没有影响。但问题来了，到底什么时候更新呢？<br>也就是说多点共线的时候，我们要强制保证我们取的答案必须是左端点或者右端点，如果在中间，你就不知道什么时候更新才是正确答案。如果在左端点，我们就在小于等于k的时候更新，如果在右端点，我们就在大于等于k的时候更新。因为我们知道，最后一定会取到那条直线上。当你强制规定一条直线取左右端点时，它一定会取到，且跟它共线的其他点不会取到，且只会在小于等于/大于等于k的时候更新，这样一定可以保证最后答案是正确的？<br>那么怎么保证一定在左端点或者右端点呢？这个就需要你在排序/dp的时候下功夫了。比如国家集训队tree那道题，可能出现选多个白边代价在一条直线上的情况，这样一定是有一些白边和黑边代价一样造成的，我们排序时权值相等就先选白边，这样就强制到了右端点，那么就大于等于的时候更新。</p>
+<p>还有就是这个题，因为是wqs二分套了斜率优化，我们考虑如果强制左端点，那么斜率优化的时候要保证转移的步数是最小的，也就是当斜率相同时必须要取最前面的点。好像看似一定会取到最前面的点，其实不然，考虑后面加点进去的时候，如果斜率相同一定要pop掉。因为斜率相同，说明有三点共线，说明中间那个点无论如何不可能时唯一的最优决策点，它前面那个点一定不会比他权值差且步数也不会比它多，如果这个时候不pop，后面可能会有一个斜率过大，把所有的折线都pop掉，只留下一个点，就可能是这个不可能成为唯一最优的决策点，事实上应该从这个斜率最前面的点转移过来是最优的（因为步数可能会更少，是因为没点了才被迫留下最后一个点），所以我们必须把斜率相同的也pop掉才对，斜率严格大于时才pop前面。（不建议这么写，非常容易想不清楚就出错了）<br>当然这种其实强制右端点更简单，那么斜率优化我们要保证转移的步数是最大的，也就是斜率相同我们尽量取后面的点，那从前面pop时斜率相同我们pop，后面就无所谓了反正一定会到最后一个点。</p>
+<p>还有南京那个题也就能解释怎么更新了，如果二分栈比较的时候你是按最大步数优先，外面就大于等于的时候更新，否则就小于等于的时候更新即可。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/18/2019牛客暑期多校训练营-第十场-J-Wood-Processing/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/16/2019牛客暑期多校训练营-第九场-I-KM-and-M/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1731,166 +1894,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/" itemprop="url">2019牛客暑期多校训练营(第八场)-E(Explorer)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T22:14:12+08:00">
-                2019-08-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/线段树分治/" itemprop="url" rel="index">
-                    <span itemprop="name">线段树分治</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/888/E" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/888/E</a><br>思路：咕咕咕了两天，研究线段树分治（ddc好像喜欢叫它时间分治），发现也是个很神奇的东西。</p>
-<h4 id="线段树分治"><a href="#线段树分治" class="headerlink" title="线段树分治"></a>线段树分治</h4><p>什么是线段树分治呢？考虑有些问题，某些范围可以看作是时间的限制，即在一个时间段内这个操作有效。同时这种操作一边比较容易但一边比较难（比如并查集合并容易，但分离就很难），但撤销前一个操作比较简单的时候（并查集撤销前一个操作比较简单）。我们就可以把所有的这些操作放在以时间（可能对应题目中不同的背景）为坐标的线段树下。考虑把这些操作放到线段树对应的区间里，然后我们按照线段树的dfs序进行处理，每次进去的时候把这个区间对应的操作加进去，然后根据题目进行某些统计，dfs完后出来的时候利用栈的性质把这些操作撤销掉。这样就避免了那些比较复杂的反面操作，从而做法变得非常优雅。</p>
-<p>考虑本题，每一条边对应一个[l, r]区间的人数，那么我们可以把人数看成线段树的下标（时间），把这些边插入到线段树中，考虑在dfs时维护一个并查集，到每个根节点后，check一下1和n是否在同一个集合中即可，然后出来的时候撤销之前的并查集合并操作即可。为了满足撤销操作，我们并查集需要按秩合并，那么这个题就没了。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/12/2019牛客暑期多校训练营-第八场-E-Explorer/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1947,7 +1950,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">472</span>
+                  <span class="site-state-item-count">473</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1958,7 +1961,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

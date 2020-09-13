@@ -312,6 +312,189 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/30/矩阵树定理初探/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/30/矩阵树定理初探/" itemprop="url">矩阵树定理初探</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-30T12:50:27+08:00">
+                2020-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/矩阵树/" itemprop="url" rel="index">
+                    <span itemprop="name">矩阵树</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/30/矩阵树定理初探/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/01/30/矩阵树定理初探/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="矩阵树概念"><a href="#矩阵树概念" class="headerlink" title="矩阵树概念"></a>矩阵树概念</h2><p>一般来说，矩阵树定理是用来解决生成树计数的问题，并且介绍广义矩阵树定理。本文不会证明矩阵树的原理（事实上也不会）</p>
+<h2 id="矩阵树定理"><a href="#矩阵树定理" class="headerlink" title="矩阵树定理"></a>矩阵树定理</h2><p>我们定义矩阵D为度数矩阵：</p>
+<script type="math/tex; mode=display">D_{i, j}=\left\{
+\begin{aligned}
+deg_i &&& {i = j}\\
+0 &&& {i \neq j }
+\end{aligned}
+\right.</script><p>我们定义矩阵C为邻接矩阵：</p>
+<script type="math/tex; mode=display">C_{i, j}=\left\{
+\begin{aligned}
+0 &&& {i = j}\\
+C &&& {i \neq j 且点i与j之间有c条重边}
+\end{aligned}
+\right.</script><p>我们定义矩阵A = D - C为基尔霍夫矩阵：</p>
+<script type="math/tex; mode=display">A_{i, j}=\left\{
+\begin{aligned}
+deg_i &&& {i = j}\\
+-C &&& {i \neq j 且点i与j之间有c条重边}
+\end{aligned}
+\right.</script><h3 id="无向图"><a href="#无向图" class="headerlink" title="无向图"></a>无向图</h3><p>如果图是无向图，根据上面算出来的基尔霍夫矩阵，我们求它任意一个余子式的行列式值就是最后生成树个数的答案。</p>
+<p>求余子式，其实就是一个矩阵的行列式，很显然是需要用高斯消元，复杂度是<script type="math/tex">O(n^3)</script>。</p>
+<h3 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h3><p>有向图比较麻烦一点，需要分为外向树和内向树。外向树指的是选定一个结点为根，构造出的树需要满足根节点能到达任意一个节点。内向树指的是选定一个结点为根，构造出的树需要满足任意一个节点能够到达根节点。</p>
+<p>内向树和外向树只在度数矩阵D的定义上有差别。</p>
+<h4 id="外向树"><a href="#外向树" class="headerlink" title="外向树"></a>外向树</h4><p>对于一条有向边(u, v)，则<script type="math/tex">deg_v++</script></p>
+<h4 id="内向树"><a href="#内向树" class="headerlink" title="内向树"></a>内向树</h4><p>对于一条有向边(u, v)，则<script type="math/tex">deg_u++</script></p>
+<p>将A去掉第i行和第i列<script type="math/tex">（i \in [1,n]）</script>，将它当做一个行列式求解，则det(A)就是以i为根的外向/内向树形图个数。很多时候我们会发现A的对角线上某数为<script type="math/tex">A_{i,i} = 0</script>，删去第i行和第i列可以干掉0。只有这样行列式才不等于0，其实也就是说只能从i出发有解了。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/30/矩阵树定理初探/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/29/三元环-四元环计数/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1732,164 +1915,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/14/2019-ICPC-Asia-Xuzhou-Regional-I-Interesting-game/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/14/2019-ICPC-Asia-Xuzhou-Regional-I-Interesting-game/" itemprop="url">2019 ICPC Asia Xuzhou Regional-I(Interesting game)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-14T22:56:10+08:00">
-                2019-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/贪心/" itemprop="url" rel="index">
-                    <span itemprop="name">贪心</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/12/14/2019-ICPC-Asia-Xuzhou-Regional-I-Interesting-game/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/14/2019-ICPC-Asia-Xuzhou-Regional-I-Interesting-game/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://nanti.jisuanke.com/t/42548" target="_blank" rel="noopener">https://nanti.jisuanke.com/t/42548</a><br>思路：注意到这么三个问题：1、博弈结果最多只跟四个物品有关（a最高两个和b最高两个）。2、如果b想让结果更优，必须要经过删除当前a最大的那个物品的过程，但删除a最大物品不一定会使结果变得更优。3、删除物品多少和最终结果是具有单调性的。<br>所以我们每次都贪心删掉a最大的物品，并且维护这个过程中每次删除后的最小值即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/12/14/2019-ICPC-Asia-Xuzhou-Regional-I-Interesting-game/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1946,7 +1971,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">472</span>
+                  <span class="site-state-item-count">473</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1957,7 +1982,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">88</span>
+                  <span class="site-state-item-count">89</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
