@@ -312,6 +312,322 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/10/2016-2017-ACM-ICPC-CHINA-Final-J-Mr-Panda-and-TubeMaster/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/10/2016-2017-ACM-ICPC-CHINA-Final-J-Mr-Panda-and-TubeMaster/" itemprop="url">2016-2017-ACM-ICPC-CHINA-Final-J(Mr.Panda and TubeMaster)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-10T08:18:17+08:00">
+                2019-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络流/" itemprop="url" rel="index">
+                    <span itemprop="name">网络流</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/10/2016-2017-ACM-ICPC-CHINA-Final-J-Mr-Panda-and-TubeMaster/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/10/2016-2017-ACM-ICPC-CHINA-Final-J-Mr-Panda-and-TubeMaster/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://codeforces.com/gym/101194/attachments" target="_blank" rel="noopener">https://codeforces.com/gym/101194/attachments</a><br>思路：记得哪位大神说过，网络流的难题好题都是要拆点的，果不其然。这个题一看很容易往网络流方面想，但是如何建图真的是非常难想。首先要求是一个环流或者没有，其次有些格子必须要流。我们观察得知，4种格子可以分为两类，并且相邻格子必然是两类中的各一个，这就有点像二分图染色了。我们给格子染色，然后给流定向，令流的方向为黑色到白色，一个环流可以看成是从某个点出发然后到这个点结束。我们想到了把一个点拆成入点和出点。因为给流定向了，所以对于某个点，如果他是黑色点，他就跟左右格子的入点连，否则跟上下格子入点连，这样原问题就变成了一个二分图最大权匹配。剩下的就是必须选，我们考虑非必须选，那么就是可以自己跟自己匹配抵消，所以我们把所有非必须选的格子自己跟自己连边即可。最后用费用流跑个最大流即可。 如果最大流跟格子数相等，说明原问题有解，输出最大费用即可，否则就无解。<br>正确性：如果不是必须边，则可以跟自己匹配，如果是必须边，则必须连别人的，则最大流必然会对应一种环，如若不然，这个点的入点的所有边都没有流量，相等于入点没有匹配，那么最大流最多为总点数 - 1，此时不为最大流，证明完毕。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/10/2016-2017-ACM-ICPC-CHINA-Final-J-Mr-Panda-and-TubeMaster/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/Codeforces-Round-546-Div-2-D-Nastya-Is-Buying-Lunch/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/09/Codeforces-Round-546-Div-2-D-Nastya-Is-Buying-Lunch/" itemprop="url">Codeforces-Round-546-(Div.2)-D(Nastya Is Buying Lunch)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-09T23:16:06+08:00">
+                2019-04-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/贪心/" itemprop="url" rel="index">
+                    <span itemprop="name">贪心</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/04/09/Codeforces-Round-546-Div-2-D-Nastya-Is-Buying-Lunch/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/Codeforces-Round-546-Div-2-D-Nastya-Is-Buying-Lunch/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://codeforces.com/contest/1136/problem/D" target="_blank" rel="noopener">https://codeforces.com/contest/1136/problem/D</a><br>思路：首先可以简单验证一下，如果有多个都可以到达最后一个，那么跟谁先先后顺序无关，我们考虑每次找最近的能跟最后交换的交换，怎么快速判断成了关键，首先肯定是倒着推，如果能交换的话意味着他可以交换到当前这个人前面的位置，我们假设这个人已经向前进了x步，那么就是在他后面的人数 + x = n - i, 如果可以交换，我们就把当前人交换到这个人后面(相当于踢出队列)，否则我们标记一下这个人位于后面，以便向前递推的时候计算有多少人在他后面用。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/09/Codeforces-Round-546-Div-2-D-Nastya-Is-Buying-Lunch/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/09/Codeforces-Round-546-Div-2-E-Nastya-Hasn-t-Written-a-Legend/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1562,322 +1878,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/03/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-B-Tournament/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/03/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-B-Tournament/" itemprop="url">2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-B(Tournament)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-03T16:31:05+08:00">
-                2019-04-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/wqs二分/" itemprop="url" rel="index">
-                    <span itemprop="name">wqs二分</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/03/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-B-Tournament/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/03/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-B-Tournament/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/gym/101981/problem/B" target="_blank" rel="noopener">https://codeforces.com/gym/101981/problem/B</a><br>思路：首先我们要证明一个东西，在l-r的村庄范围内如果只建一个庙，距离最短的肯定建在这些村庄的最中间的中位数的位置，如果有两个那么他们之间的任意一个位置即可。这个证明完后我们考虑所有的村庄都可以划分为连续的一段，使得这一段到他们中间的庙是距离最小的，那么我们其实就考虑转移只用考虑从上一次结束的位置以及下一次结束的位置。显而易见建满肯定是最优的，所以我们考虑wqs二分，然后根据单调决策性走一个二分栈，最后更新结果即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/03/2018-2019-ACM-ICPC-Asia-Nanjing-Regional-Contest-B-Tournament/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/03/2016-ACM-ICPC-World-Finals-B-Branch-Assignment/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/03/2016-ACM-ICPC-World-Finals-B-Branch-Assignment/" itemprop="url">2016-ACM-ICPC-World-Finals-B(Branch Assignment)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-03T16:21:52+08:00">
-                2019-04-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/wqs二分/" itemprop="url" rel="index">
-                    <span itemprop="name">wqs二分</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/03/2016-ACM-ICPC-World-Finals-B-Branch-Assignment/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/03/2016-ACM-ICPC-World-Finals-B-Branch-Assignment/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://codeforces.com/gym/101242/problem/B" target="_blank" rel="noopener">https://codeforces.com/gym/101242/problem/B</a><br>思路：前面的最短路部分不说了，问题转化为了把b个人分成至少s组，使得所有组的每个元素的(sz - 1) * (d1[i] + d2[i])最小。我们把f[i] = d1[i] + d2[i]，不难发现按照f[i]从小到大的顺序分组是最优的，而且分满s组的时候是最优的，那么这就满足wqs二分了，即必须在用满s个情况下可以达到最优解。我们二分权值后，问题变为了分任意组，每分一次权值 + C，求最后权值的最小值。可以打表或者证明验证满足单调决策性，那么我们可以用二分栈做完这个题，复杂度O(nlognlogC)。大多数人的做法都是n^2及以上的。这应该是最快的做法。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/03/2016-ACM-ICPC-World-Finals-B-Branch-Assignment/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1909,7 +1909,7 @@
 
      <div class="sidebar-inner">
   <!--�����Ʋ��-->
- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1397097038&auto=1&height=66"></iframe>
+ <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=608404&auto=0&height=66"></iframe>
 
 
     
@@ -1934,7 +1934,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">473</span>
+                  <span class="site-state-item-count">475</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1945,7 +1945,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

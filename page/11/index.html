@@ -312,6 +312,326 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/2019牛客暑期多校训练营-第五场-E-independent-set-1/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/02/2019牛客暑期多校训练营-第五场-E-independent-set-1/" itemprop="url">2019牛客暑期多校训练营(第五场)-E(independent set 1)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-02T11:46:47+08:00">
+                2019-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础dp/" itemprop="url" rel="index">
+                    <span itemprop="name">基础dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/02/2019牛客暑期多校训练营-第五场-E-independent-set-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/02/2019牛客暑期多校训练营-第五场-E-independent-set-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/885/E" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/885/E</a><br>思路：开始觉得不太可做啊，结果是没看n的范围。。。这范围明显可以状压dp，考虑dp[i]表示状态为i的最大独立集是多少。我们考虑枚举到一个i，他一定是由一个子状态转移过来的，我们不妨枚举最低位的点，那么转移过来的状态有两种：选它或者不选它，不选它的话我们就<br>找到去掉它的状态，这个肯定已经在之前处理过了。如果选它我们就找到不包含跟它有边的点的最大的状态，转移过来即可。最后取二者最大值就是当前状态的答案，最后把所有状态加起来就是最终答案了。<br>注意本题卡空间，一个状态的答案不会超过n，所以我们开个char就可以卡过去了。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/02/2019牛客暑期多校训练营-第五场-E-independent-set-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/2019牛客暑期多校训练营-第五场-C-generator-2/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/02/2019牛客暑期多校训练营-第五场-C-generator-2/" itemprop="url">2019牛客暑期多校训练营(第五场)-C(generator 2)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-02T10:36:51+08:00">
+                2019-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/bsgs/" itemprop="url" rel="index">
+                    <span itemprop="name">bsgs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/02/2019牛客暑期多校训练营-第五场-C-generator-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/02/2019牛客暑期多校训练营-第五场-C-generator-2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/885/C" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/885/C</a><br>思路：感觉是一个复习场啊，那就再来写写bsgs的东西吧，以前就只过了一个模板。</p>
+<h4 id="bsgs概念"><a href="#bsgs概念" class="headerlink" title="bsgs概念"></a>bsgs概念</h4><p>bsgs是解决形如$a^x \equiv b  (mod c)，求一个最小的x$的问题，通过鸽巢原理我们可以知道，当a，p互质的时候，答案一定在p以内</p>
+<h4 id="bsgs算法"><a href="#bsgs算法" class="headerlink" title="bsgs算法"></a>bsgs算法</h4><p>我们不可能每次都枚举x，试想一下如果生活中我们从一堆东西中找我们需要的东西，我们怎么找？一个比较好的方法是把东西先分成几等分，每一份的数量最好可以让我们一眼就找到，这样你一眼搜索的效率就比一件一件高太多了。 bsgs也是这个思想，我们先算出一部分的值作为底，假设我们算出的底为0-m，剩下如果存在一个数y在0-p内满足上式，他一定可以写成</p>
+<script type="math/tex; mode=display">a^{i*m - j} \equiv b \ (mod\ c)</script><p>其中m就是我们的底，j是一个0 - (m - 1)内的数，我们就是枚举i，然后对于这些基底我们全都放到一个hash表内，这样每次查询是否出现过就可以做到O(1)了，注意对于同模，我们取较大的那个下标，因为后面求答案是减，所以减去最大的就是最小的答案。<br>考虑复杂度，假设基底大小为m，p的大小为n，那么总复杂度就是$O(m + \frac{n}{m})$，如果是一次处理的话，我们由均值不等式得到，基底大小取$\sqrt(n)$的时候复杂度最小。</p>
+<p>回到这个题，我们先来推一推公式：<br>已知$x_i = ax_{i - 1} + b$<br>考虑构造我们可以得到：$x_i + t =  a(x_{i - 1} + t)$<br>解得$t = \frac{b}{a - 1}$，其中$a \neq 1 并且 a \neq 0$<br>得到通项公式：$x_n = a^n(x_0 + t) - t$<br>将t, v带入并化简：$a^n \equiv((a - 1)v + b) * ((a - 1)x_0 + b)^{-1}$<br>就变成了一个bsgs的问题。但很容易就直接上了，然后T掉。<br>观察这个题，只有v是询问中变化的。这时候就不要死板的觉得bsgs的底一定要选$\sqrt(p)$了，我们来算一算。假设基底选的大小为m<br>考虑bs部分的复杂度为$O(m)$，gs部分的复杂度为$O(\frac{pq}{m})$，这样总复杂度为$O(m + \frac{pq}{m})$，这样根据均值不等式可以看出m选$\sqrt(pq)$的时候最好，其实本题直接选$\frac{p}{1000}$作为基底就好了。<br>当然本题还要特判一下a等于0和1的情况，讨论一下就可以得出答案，在这里不再赘述了。<br>建议手写hash表哦，发现unorder_map比手写还是慢个5-6倍。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/02/2019牛客暑期多校训练营-第五场-C-generator-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/01/2019牛客暑期多校训练营-第五场-F-maximum-clique-1/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1572,327 +1892,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/30/2019-Multi-University-Training-Contest-2-L-Longest-Subarray/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/30/2019-Multi-University-Training-Contest-2-L-Longest-Subarray/" itemprop="url">2019 Multi-University Training Contest 2-L(Longest Subarray)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-30T22:30:27+08:00">
-                2019-07-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/线段树/" itemprop="url" rel="index">
-                    <span itemprop="name">线段树</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/30/2019-Multi-University-Training-Contest-2-L-Longest-Subarray/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/30/2019-Multi-University-Training-Contest-2-L-Longest-Subarray/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6602" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6602</a><br>思路：场上感觉已经非常接近正解了，可惜当时突然脑子短路没想到怎么找一个数一边第k次出现的位置。。。。事实上数才1e5，直接暴力装vector里就行了。。。我们考虑从左往右扫，当一个端点固定时（假设是右端点），左端点上如果所有数都满足可行条件，那么这个左端点就是合法的，我们考虑出现一个新的左端点，其他C - 1个数如果后面以这个端点作为左端点肯定是可行的（因为暂时还没出现），那么当前这个数出现，我们考虑会使左边哪些端点产生变化。首先是他到上一个出现的位置之间这段区间，本来它没出现前，这些区间作为左端点对这个数来说都是合法的，现在变的不合法了。还有就是如果存在，原来的第k - 1到k这个区间，因为新加入了一个数，它变为了k - k + 1是合法的了，所以我们需要线段树来区间更新。对于一个右端点，我们需要它最左边等于C的左端点位置，区间维护最大值即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/30/2019-Multi-University-Training-Contest-2-L-Longest-Subarray/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/28/The-2018-ACM-ICPC-Asia-Qingdao-Regional-Contest-L-Sub-cycle-Graph/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/28/The-2018-ACM-ICPC-Asia-Qingdao-Regional-Contest-L-Sub-cycle-Graph/" itemprop="url">The 2018 ACM-ICPC Asia Qingdao Regional Contest-L(Sub-cycle Graph)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-28T22:03:29+08:00">
-                2019-07-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/生成函数/" itemprop="url" rel="index">
-                    <span itemprop="name">生成函数</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/28/The-2018-ACM-ICPC-Asia-Qingdao-Regional-Contest-L-Sub-cycle-Graph/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/28/The-2018-ACM-ICPC-Asia-Qingdao-Regional-Contest-L-Sub-cycle-Graph/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://vjudge.net/problem/ZOJ-4069" target="_blank" rel="noopener">https://vjudge.net/problem/ZOJ-4069</a><br>思路：青岛赛站的金牌/出线题，然而会了生成函数后这个题直接变成了铜牌题的水准，刚学完我就试了试，发现很快推出了结果，不太相信又写了写，发现就过了。。。<br>题目要求一个n点m边的图，要求图加上一些边后能变成一个只有n个元素环的图。我们考虑m &gt; n的时候显然答案为0，n = m的时候就是一个n元环的排列方式，也非常好处理，关键是m &lt; n的时候怎么办？m &lt; n的时候，图上一共就会有k = n - m条链，那么其实就是问有k条链的图的方案数，我们考虑一条链如果有p个点，那么它的方案数：<br>p = 0, 方案数为0<br>p = 1, 方案数为1<br>p &gt; 1, 方案数为$\frac{p!}{2}$<br>那么它的生成函数为：</p>
-<script type="math/tex; mode=display">f(p) = x + \frac{1}{2}x + \frac{1}{2}x^2 + ... + \frac{1}{2}x^p = \frac{x}{1-x}(1 - \frac{x}{2})</script><p>那么k条链的生成函数为（因为k条链之间顺序无关，所以需要除以k!）：</p>
-<script type="math/tex; mode=display">res = \frac{x^k}{(1-x)^k}(1 - \frac{x}{2})^k\frac{1}{k!}</script><p>最终我们要求$x^n$的系数，再乘上n!就是答案，考虑二项式展开，因为上面有个稳定的$x^k$的贡献，所以我们只用求后面$x^m$的系数。<br>考虑后面二项式展开：</p>
-<script type="math/tex; mode=display">\frac{(1 - \frac{x}{2})^k}{(1-x)^k} = \sum_{s = 0}^{k}C_k^s(-\frac{1}{2})^sx^s\sum_{t = 0}^{\infty}C_{k + t - 1}^{k - 1}x^t</script><p>最终$x^m$的系数为:</p>
-<script type="math/tex; mode=display">\sum_{s = 0}^{k}C_k^s(-\frac{1}{2})^sC_{k + m - s - 1}^{k - 1}</script><p>最终答案就为：</p>
-<script type="math/tex; mode=display">\sum_{s = 0}^{k}C_k^s(-\frac{1}{2})^sC_{k + m - s - 1}^{k - 1}\frac{n!}{k!}</script><p>就这样，金牌题就没了？？？<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/28/The-2018-ACM-ICPC-Asia-Qingdao-Regional-Contest-L-Sub-cycle-Graph/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1924,7 +1923,7 @@
 
      <div class="sidebar-inner">
   <!--�����Ʋ��-->
- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1397097038&auto=1&height=66"></iframe>
+ <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=608404&auto=0&height=66"></iframe>
 
 
     
@@ -1949,7 +1948,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">473</span>
+                  <span class="site-state-item-count">475</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1960,7 +1959,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>

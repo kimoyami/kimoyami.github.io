@@ -126,7 +126,7 @@
 <meta property="og:site_name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
 <meta property="og:description" content="FFT先咕 NTT先咕 FWTFWT是解决形如C_k = \sum_{i \ op \ j}A_i * B_j，其中op可以是$\&amp;amp;  | \bigoplus$等操作，普通方法肯定是$O(n^2)$的，考虑$FFT$是做了一种变化，然后变化后进行点乘，再逆变化回去，就可以把复杂度优化到$O(nlogn)$，$FWT$能不能采取类似的思路呢？答案是肯定的。我们需要构造$FWT(A)$，使得$">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-11T08:12:12.130Z">
+<meta property="og:updated_time" content="2020-10-02T07:15:11.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="多项式，永远滴神">
 <meta name="twitter:description" content="FFT先咕 NTT先咕 FWTFWT是解决形如C_k = \sum_{i \ op \ j}A_i * B_j，其中op可以是$\&amp;amp;  | \bigoplus$等操作，普通方法肯定是$O(n^2)$的，考虑$FFT$是做了一种变化，然后变化后进行点乘，再逆变化回去，就可以把复杂度优化到$O(nlogn)$，$FWT$能不能采取类似的思路呢？答案是肯定的。我们需要构造$FWT(A)$，使得$">
@@ -429,7 +429,15 @@
 <p>对应反变换也很好写$IFWT(A) = (IFWT(A_0 + A_1)，IFWT(A_1))$</p>
 <h2 id="xor"><a href="#xor" class="headerlink" title="xor"></a>xor</h2><p>异或的构造是最难的，也是唯一没法从$FMT$角度解释的一个，可以说是真正的$FWT$。<br>这里给出构造$FWT(A) = (FWT(A_0 + A_1), FWT(A_0 - A_1))$</p>
 <p>给出正确性证明：<br>$= FWT((A_0 \bigoplus B_0) + FWT(A_1 \bigoplus B_1), FWT(A_0 \bigoplus B_1) + FWT(A_1 \bigoplus B_0))$</p>
-<script type="math/tex; mode=display">= (FWT(A_0 \bigoplus B_0 + A_1 \bigoplus B_1 + A_1 \bigoplus B_0 + A_0 \bigoplus B_1),</script><script type="math/tex; mode=display">FWT(A_0 \bigoplus B_0 + A_1 \bigoplus B_1 - A_1 \bigoplus B_0 - A_0 \bigoplus B_1))</script><script type="math/tex; mode=display">= ((FWT(A_0) + FWT(A_1)) * (FWT(B_0) + FWT(B_1)),</script><script type="math/tex; mode=display">(FWT(A_0) - FWT(A_1)) * (FWT(B_0) - FWT(B_1)))</script><script type="math/tex; mode=display">= (FWT(A_0 + A_1) * FWT(B_0 + B_1),</script><script type="math/tex; mode=display">FWT(A_0 - A_1) * FWT(B_0 - B_1))</script><script type="math/tex; mode=display">= (FWT(A_0 + A_1), FWT(A_0 - A_1)) * (FWT(B_0 + B_1),</script><script type="math/tex; mode=display">FWT(B_0 - B_1)) = FWT(A) * FWT(B)</script>
+<script type="math/tex; mode=display">= (FWT(A_0 \bigoplus B_0 + A_1 \bigoplus B_1 + A_1 \bigoplus B_0 + A_0 \bigoplus B_1),</script><script type="math/tex; mode=display">FWT(A_0 \bigoplus B_0 + A_1 \bigoplus B_1 - A_1 \bigoplus B_0 - A_0 \bigoplus B_1))</script><script type="math/tex; mode=display">= ((FWT(A_0) + FWT(A_1)) * (FWT(B_0) + FWT(B_1)),</script><script type="math/tex; mode=display">(FWT(A_0) - FWT(A_1)) * (FWT(B_0) - FWT(B_1)))</script><script type="math/tex; mode=display">= (FWT(A_0 + A_1) * FWT(B_0 + B_1),</script><script type="math/tex; mode=display">FWT(A_0 - A_1) * FWT(B_0 - B_1))</script><script type="math/tex; mode=display">= (FWT(A_0 + A_1), FWT(A_0 - A_1)) * (FWT(B_0 + B_1),</script><script type="math/tex; mode=display">FWT(B_0 - B_1)) = FWT(A) * FWT(B)</script><h1 id="分治fft"><a href="#分治fft" class="headerlink" title="分治fft"></a>分治fft</h1><p>求<script type="math/tex">f_i = \sum_{j = 1}^if_{i - j}g_j</script>时，可以考虑分治fft</p>
+<p>用cdq，考虑区间<script type="math/tex">[l, r]</script>里的<script type="math/tex">[l, mid]</script>对<script type="math/tex">[mid + 1, r]</script>这段区间的贡献，这可以用fft卷后直接累加到后面去。注意此时g的长度取区间长度，然后取结果中有用的项出来即可。<br>步骤如下：</p>
+<ul>
+<li>cdq(l, mid)</li>
+<li>将[l, mid]与g卷积，将结果累加到[mid + 1, r]上(注意g的长度以及下标问题)</li>
+<li>cdq(mid + 1, r)</li>
+</ul>
+<p>也可以用多项式求逆解决：<br>我们令<script type="math/tex">F(x) = \sum_{i = 0}^nf_ix^i, G(x) = \sum_{i = 0}^ng_ix^i,  G(0) = 0</script><br>发现有<script type="math/tex">F(x)G(x) + F(0) = F(x)(只看次数小于等于n的项)</script><br>有<script type="math/tex">F(x) = \frac{F(0)}{1 - G(x)}</script>(注意这里1就是常数1（0次项系数），不是多项式每一个位置的系数都是1)<br>直接上多项式求逆即可。</p>
+
       
     </div>
     
@@ -517,7 +525,7 @@
 
      <div class="sidebar-inner">
   <!--�����Ʋ��-->
- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1397097038&auto=1&height=66"></iframe>
+ <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=608404&auto=0&height=66"></iframe>
 
 
     
@@ -551,7 +559,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">473</span>
+                  <span class="site-state-item-count">475</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -562,7 +570,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -618,7 +626,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FFT"><span class="nav-number">1.</span> <span class="nav-text">FFT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NTT"><span class="nav-number">2.</span> <span class="nav-text">NTT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FWT"><span class="nav-number">3.</span> <span class="nav-text">FWT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#or"><span class="nav-number">3.1.</span> <span class="nav-text">or</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#and"><span class="nav-number">3.2.</span> <span class="nav-text">and</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xor"><span class="nav-number">3.3.</span> <span class="nav-text">xor</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FFT"><span class="nav-number">1.</span> <span class="nav-text">FFT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NTT"><span class="nav-number">2.</span> <span class="nav-text">NTT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FWT"><span class="nav-number">3.</span> <span class="nav-text">FWT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#or"><span class="nav-number">3.1.</span> <span class="nav-text">or</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#and"><span class="nav-number">3.2.</span> <span class="nav-text">and</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xor"><span class="nav-number">3.3.</span> <span class="nav-text">xor</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分治fft"><span class="nav-number">4.</span> <span class="nav-text">分治fft</span></a></li></ol></div>
             
 
           </div>
