@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="exgcd拓展欧几里得exgcd用来求方程ax + by = gcd(a, b)的一组特解，考虑运用辗转相除，假设我们得到了a_1x_1 + b_1y_1 = gcd(a, b)的解x_1, y_1，(a_1 = b, b_1 = a - \lfloor\frac{a}{b}\rfloor * b)，可以得到y = x_1 - \lfloor\frac{a}{b}\rfloor * y_1，x =">
+<meta property="og:type" content="article">
+<meta property="og:title" content="同余大杂烩">
+<meta property="og:url" content="http://yoursite.com/2020/10/29/同余大杂烩/index.html">
+<meta property="og:site_name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+<meta property="og:description" content="exgcd拓展欧几里得exgcd用来求方程ax + by = gcd(a, b)的一组特解，考虑运用辗转相除，假设我们得到了a_1x_1 + b_1y_1 = gcd(a, b)的解x_1, y_1，(a_1 = b, b_1 = a - \lfloor\frac{a}{b}\rfloor * b)，可以得到y = x_1 - \lfloor\frac{a}{b}\rfloor * y_1，x =">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-10-30T03:35:13.747Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="同余大杂烩">
+<meta name="twitter:description" content="exgcd拓展欧几里得exgcd用来求方程ax + by = gcd(a, b)的一组特解，考虑运用辗转相除，假设我们得到了a_1x_1 + b_1y_1 = gcd(a, b)的解x_1, y_1，(a_1 = b, b_1 = a - \lfloor\frac{a}{b}\rfloor * b)，可以得到y = x_1 - \lfloor\frac{a}{b}\rfloor * y_1，x =">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/10/29/同余大杂烩/">
+
+
+
+
+
+  <title>同余大杂烩 | 小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            成就
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/29/同余大杂烩/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">同余大杂烩</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-29T20:07:38+08:00">
+                2020-10-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/数论/" itemprop="url" rel="index">
+                    <span itemprop="name">数论</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/10/29/同余大杂烩/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/10/29/同余大杂烩/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="exgcd"><a href="#exgcd" class="headerlink" title="exgcd"></a>exgcd</h1><p>拓展欧几里得<script type="math/tex">exgcd</script>用来求方程<script type="math/tex">ax + by = gcd(a, b)</script>的一组特解，考虑运用辗转相除，假设我们得到了<script type="math/tex">a_1x_1 + b_1y_1 = gcd(a, b)</script>的解<script type="math/tex">x_1, y_1</script>，<script type="math/tex">(a_1 = b, b_1 = a - \lfloor\frac{a}{b}\rfloor * b)</script>，可以得到<script type="math/tex">y = x_1 - \lfloor\frac{a}{b}\rfloor * y_1</script>，<script type="math/tex">x = y_1</script>，所以我们可以直接交换<script type="math/tex">x, y</script>，再减去<script type="math/tex">\lfloor\frac{a}{b}\rfloor * y_1</script>即可，代码如下：<br><a id="more"></a><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">exgcd</span><span class="params">(ll a, ll b, ll &amp;x, ll &amp;y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!b) &#123;</span><br><span class="line">        x = <span class="number">1</span>, y = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    ll g = exgcd(b, a % b, y, x);</span><br><span class="line">    y -= x * (a / b);</span><br><span class="line">    <span class="keyword">return</span> g;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果给方程<script type="math/tex">ax + by = c</script>判断是否有解，只用判断是否有<script type="math/tex">gcd(a, b) | c</script>，求解出来后直接把<script type="math/tex">x, y</script>乘上<script type="math/tex">c / gcd(a, b)</script>即可。</p>
+<h2 id="最小自然数解"><a href="#最小自然数解" class="headerlink" title="最小自然数解"></a>最小自然数解</h2><p>可能有些情况需要我们保证<script type="math/tex">x</script>或者<script type="math/tex">y</script>是正整数，我们先考虑通解形式。<br>我们知道每次变化都是以<script type="math/tex">gcd(a, b)</script>为最小单位，感知我们可以发现，每次改变一个单位的<script type="math/tex">x</script>，会增加<script type="math/tex">\frac{a}{gcd(a, b)}</script>个<script type="math/tex">gcd</script>，改变一个单位的<script type="math/tex">y</script>，会增加<script type="math/tex">\frac{b}{gcd(a, b)}</script>个<script type="math/tex">gcd</script>，为了保证二者能够相互约掉，最小的改变的一步应该为<script type="math/tex">\frac{ab}{gcd(a, b)}</script>，那么通解形式为：</p>
+<script type="math/tex; mode=display">x = a(x_0 + \frac{b}{gcd(a, b)}), y = b(y_0 + \frac{a}{gcd(a, b)})</script><p>换句话说，对于<script type="math/tex">x</script>的解空间，它们在模<script type="math/tex">\frac{b}{gcd(a, b)}</script>下是一个等价类，对于<script type="math/tex">y</script>的解空间，它们在模<script type="math/tex">\frac{a}{gcd(a, b)}</script>下是一个等价类。</p>
+<p>于是我们可以求最小自然数解，如<script type="math/tex">x</script>，直接拿特解对<script type="math/tex">\frac{b}{gcd(a, b)}</script>求模意义下的最小自然数等价类，算出对应的<script type="math/tex">y</script>即可得到答案</p>
+<h2 id="求逆元"><a href="#求逆元" class="headerlink" title="求逆元"></a>求逆元</h2><p>求逆元我们习惯用费马小定理，但当<script type="math/tex">p</script>不是质数但是与<script type="math/tex">a</script>互质的时候，这时候存在逆元，却不能用费马小定理求逆元了，于是我们考虑用<script type="math/tex">exgcd</script>求逆元。<br>方程<script type="math/tex">a_x \equiv (1 \ mod \ p)</script>等价于存在一个<script type="math/tex">b使得ax - bp = 1</script>，于是只需要用<script type="math/tex">exgcd</script>求方程的解就行了，注意求出来后<script type="math/tex">x</script>可能是负数，需要对<script type="math/tex">p</script>取模求模意义下的最小自然数等价类。</p>
+<h1 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h1><h2 id="中国剩余定理-1"><a href="#中国剩余定理-1" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h2><p>中国剩余定理用来求解同余方程组</p>
+<script type="math/tex; mode=display">
+\begin{cases}
+x \equiv a_1(mod \ m_1)\\
+x \equiv a_2(mod \ m_2)\\
+x \equiv a_3(mod \ m_3)\\
+... \\
+x \equiv a_n(mod \ m_n)\\
+\end{cases}</script><p>其中<script type="math/tex">m_1, m_2, m_3, \cdots, m_n</script>是两两互质的数<br>一般是求<script type="math/tex">x</script>的最小正整数解</p>
+<h3 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h3><p>令<script type="math/tex">M = \prod_{i = 1}^n m_i</script>, <script type="math/tex">\frac{M}{m_i}t_i \equiv 1</script><br>有一个特解为<script type="math/tex">x = \sum_{i = 1}^na_i\frac{M}{m_i}t_i</script><br>最小非负整数解为<script type="math/tex">(x \% M + M) % M</script><br>证明非常容易，代入原来的<script type="math/tex">n</script>个条件发现都满足。</p>
+<p>中国剩余定理常用来辅助解决一些题目，一些题目对合数取模不好做的时候，可以对其所有质因子次方项取模求答案，最后再用<script type="math/tex">crt</script>合并答案。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">crt</span><span class="params">(<span class="built_in">vector</span>&lt;ll&gt; &amp;m, <span class="built_in">vector</span>&lt;ll&gt; &amp;a)</span></span>&#123;</span><br><span class="line">    ll M = <span class="number">1</span>, res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m.size(); i++) M *= m[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m.size(); i++)&#123;</span><br><span class="line">        ll w = M / m[i];</span><br><span class="line">        ll t = Ex_gcd::inv(w, m[i]);</span><br><span class="line">        <span class="comment">//res = (res + t * w * a[i]) % M;</span></span><br><span class="line">        res = (res + mul(mul(t, w, M), a[i], M)) % M; <span class="comment">//防止爆long long</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (res % M + M) % M;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="拓展中国剩余定理"><a href="#拓展中国剩余定理" class="headerlink" title="拓展中国剩余定理"></a>拓展中国剩余定理</h2><p>当所有<script type="math/tex">m_i</script>之间不满足两两互质的情况，这时候就要用到拓展中国剩余定理。</p>
+<h3 id="定理-1"><a href="#定理-1" class="headerlink" title="定理"></a>定理</h3><p>假设我们求出前<script type="math/tex">k - 1</script>个方程的解为<script type="math/tex">x</script>，且<script type="math/tex">M = lcm(\prod_{i = 1}^{k - 1}m_i)</script>，则前<script type="math/tex">k - 1</script>个方程的通解为<script type="math/tex">x + iM</script>。<br>考虑加入第<script type="math/tex">k</script>个方程，需要求一个<script type="math/tex">t</script>满足<script type="math/tex">x + tM \equiv (a_k \ mod \ m_k)</script>，转换一下即求<script type="math/tex">bm_k + tM \equiv(a_k - x \ mod \ m_k)</script>，这玩意可以用<script type="math/tex">exgcd</script>求解，当<script type="math/tex">gcd(m_k, M) | a_k - x</script>满足时才有解。求出对应的<script type="math/tex">t</script>后，我们需要将其扩大<script type="math/tex">\frac{a_k - x}{gcd(m_k, M)}</script>倍，且根据上面我们知道它的最小周期为<script type="math/tex">\frac{M}{gcd(M, m_i)}</script>，直接对其取模即可（注意过程中可能爆，所以用龟速乘）。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">mul</span><span class="params">(ll q, ll w, ll mod)</span></span>&#123;</span><br><span class="line">    ll ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(w)&#123;</span><br><span class="line">        <span class="keyword">if</span>(w &amp; <span class="number">1</span>) ret = (ret + q) % mod;</span><br><span class="line">        q = (q + q) % mod;</span><br><span class="line">        w &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">excrt</span><span class="params">(<span class="built_in">vector</span>&lt;ll&gt; &amp;m, <span class="built_in">vector</span>&lt;ll&gt; &amp;a)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(m.size() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    ll M = m[<span class="number">0</span>], res = a[<span class="number">0</span>], x, y;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m.size(); i++)&#123;</span><br><span class="line">        ll c = (a[i] - res % m[i] + m[i]) % m[i];</span><br><span class="line">        ll g = Ex_gcd::exgcd(M, m[i], x, y);</span><br><span class="line">        <span class="keyword">if</span>(c % g) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        ll bg = m[i] / g;</span><br><span class="line">        x = mul(x, c / g, bg);</span><br><span class="line">        res += x * M;</span><br><span class="line">        M *= bg;</span><br><span class="line">        res = (res % M + M) % M;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (res % M + M) % M;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="卢卡斯定理"><a href="#卢卡斯定理" class="headerlink" title="卢卡斯定理"></a>卢卡斯定理</h1><p>对于一般的组合数满足<script type="math/tex">n, m << p</script>的<script type="math/tex">C_n^m \ mod \ p</script>，我们预处理阶乘，然后用阶乘及逆元去做。但是当<script type="math/tex">n, m > p</script>的时候，预处理阶乘就不行了，这时候阶乘永远求出来结果是0，但是可能真实答案不是0。<br>卢卡斯定理用来计算这一类问题。</p>
+<h2 id="卢卡斯定理-1"><a href="#卢卡斯定理-1" class="headerlink" title="卢卡斯定理"></a>卢卡斯定理</h2><p>当<script type="math/tex">p</script>是质数的时候，有如下性质：</p>
+<script type="math/tex; mode=display">C_n^m \ mod \ p = C_{n \% p}^{m \% p}C_{n / p}^{m / p}</script><p>证明略过。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">C</span><span class="params">(ll n, ll m, ll p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">0</span> || n &lt; m || m &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> fac[n] * inv[m] % p * inv[n - m] % p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">lucas</span><span class="params">(ll n, ll m, ll p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!m) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> C(n % p, m % p, p) * lucas(n / p, m / p, p) % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="拓展卢卡斯定理"><a href="#拓展卢卡斯定理" class="headerlink" title="拓展卢卡斯定理"></a>拓展卢卡斯定理</h2><p>当<script type="math/tex">p</script>不是质数，上面的性质就不成立了，我们只能来冷静分析一波。<br>这时候就要用上<script type="math/tex">crt</script>的套路了，考虑把<script type="math/tex">p</script>分解成一部分因子相乘，每个因子都只包含一种质数，这样各个因子之间就是互质的，我们对这些因子求答案，再用<script type="math/tex">crt</script>合并。</p>
+<h3 id="求解-C-n-m-mod-p-i-k"><a href="#求解-C-n-m-mod-p-i-k" class="headerlink" title="求解$C_n^m  mod  p_i^k$"></a>求解$C_n^m  mod  p_i^k$</h3><p>这玩意也不能直接套用卢卡斯定理，我们考虑将<script type="math/tex">C_n^m</script>里面所有<script type="math/tex">p_i</script>的因子提出来，算剩下部分的贡献，即变为<script type="math/tex">\frac{\frac{n!}{p_i^a}}{\frac{m!}{p_i^b}\frac{(n - m)!}{p_i^c}}p_i^{a - b - c}</script></p>
+<p>问题变成了求<script type="math/tex">\frac{n!}{p_i^a} \ mod \ p_i^k \ mod \ p_i^k</script></p>
+<h3 id="求解-frac-n-p-i-a-mod-p-i-k"><a href="#求解-frac-n-p-i-a-mod-p-i-k" class="headerlink" title="求解$\frac{n!}{p_i^a}  mod  p_i^k$"></a>求解$\frac{n!}{p_i^a}  mod  p_i^k$</h3><p>我们把<script type="math/tex">n!</script>贡献分为三部分：</p>
+<ul>
+<li><script type="math/tex">p_i</script>的次方</li>
+<li><script type="math/tex">\lfloor\frac{n}{p_i}\rfloor</script>!</li>
+<li>非<script type="math/tex">p_i</script>倍数部分的余数</li>
+</ul>
+<p>举个例子<script type="math/tex">n = 22, p = 3</script></p>
+<script type="math/tex; mode=display">22! = 3^7 * (7!) * (1 * 2 * 4 * 5 * 7 * 8 * 10 * 11 * 13 * 14 * 16 * 17 * 19 * 20 * 22)</script><p>第一部分就是<script type="math/tex">3^7</script>，因为我们在外面会去掉所有<script type="math/tex">p_i</script>，所以没有贡献。<br>第二部分是<script type="math/tex">7!</script>，直接递归下去做。<br>第三部分分为两个part，一个是完整的模<script type="math/tex">p_i</script>周期内，所有完整周期内非<script type="math/tex">p_i</script>倍数的乘积的余数都是一样的，直接算一个周期然后快速幂即可，最后可能还剩一部分非完整的，剩下的部分直接暴力算即可。<br><strong>tips</strong>:预处理阶乘会快很多</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> Lucas&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;ll&gt; fac;</span><br><span class="line"></span><br><span class="line">    <span class="function">ll <span class="title">pow_mod</span><span class="params">(ll q, ll w, ll mod)</span></span>&#123;</span><br><span class="line">        ll ret = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(w)&#123;</span><br><span class="line">            <span class="keyword">if</span>(w &amp; <span class="number">1</span>) ret = ret * q % mod;</span><br><span class="line">            q = q * q % mod;</span><br><span class="line">            w &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">ll <span class="title">solve_fac</span><span class="params">(ll n, ll p, ll pk)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!n) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> pow_mod(fac[pk], n / pk, pk) * fac[n % pk] % pk * solve_fac(n / p, p, pk) % pk;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">ll <span class="title">cal</span><span class="params">(ll n, ll m, ll p)</span></span>&#123;</span><br><span class="line">        ll cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(ll i = n; i; i /= p) cnt += i / p;</span><br><span class="line">        <span class="keyword">for</span>(ll i = m; i; i /= p) cnt -= i / p;</span><br><span class="line">        <span class="keyword">for</span>(ll i = n - m; i; i /= p) cnt -= i / p;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">ll <span class="title">C</span><span class="params">(ll n, ll m, ll p, ll pk)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt; m) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        fac.resize(pk + <span class="number">1</span>);</span><br><span class="line">        fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= pk; i++)&#123;</span><br><span class="line">            fac[i] = fac[i - <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span>(i % p) fac[i] = fac[i] * i % pk;</span><br><span class="line">        &#125;</span><br><span class="line">        ll a = solve_fac(n, p, pk);</span><br><span class="line">        ll b = solve_fac(m, p, pk);</span><br><span class="line">        ll c = solve_fac(n - m, p, pk);</span><br><span class="line">        ll cnt = cal(n, m, p);</span><br><span class="line">        <span class="keyword">return</span> a * Ex_gcd::inv(b, pk) % pk * Ex_gcd::inv(c, pk) % pk * pow_mod(p, cnt, pk) % pk;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">ll <span class="title">exlucas</span><span class="params">(ll n, ll m, ll mod)</span></span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;ll&gt; a, b;</span><br><span class="line">        <span class="keyword">for</span>(ll i = <span class="number">2</span>; i * i &lt;= mod &amp;&amp; mod &gt; <span class="number">1</span>; i++)&#123;</span><br><span class="line">            ll tmp = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(mod % i == <span class="number">0</span>) mod /= i, tmp *= i;</span><br><span class="line">            <span class="keyword">if</span>(tmp &gt; <span class="number">1</span>) b.push_back(C(n, m, i, tmp)), a.push_back(tmp);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(mod &gt; <span class="number">1</span>) b.push_back(C(n, m, mod, mod)), a.push_back(mod);</span><br><span class="line">        <span class="keyword">return</span> CRT::crt(a, b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/10/10/Polya定理-Start-Dash/" rel="next" title="Polya定理, Start Dash!">
+                <i class="fa fa-chevron-left"></i> Polya定理, Start Dash!
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/11/04/整数划分与五边形定理/" rel="prev" title="整数划分与五边形定理">
+                整数划分与五边形定理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+
+     <div class="sidebar-inner">
+  <!--�����Ʋ��-->
+ <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=608404&auto=0&height=66"></iframe>
+
+
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">kimoyami</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">477</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                队友主页
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/LiuRunky/" title="LiuRunky" target="_blank">LiuRunky</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#exgcd"><span class="nav-number">1.</span> <span class="nav-text">exgcd</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最小自然数解"><span class="nav-number">1.1.</span> <span class="nav-text">最小自然数解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求逆元"><span class="nav-number">1.2.</span> <span class="nav-text">求逆元</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中国剩余定理"><span class="nav-number">2.</span> <span class="nav-text">中国剩余定理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#中国剩余定理-1"><span class="nav-number">2.1.</span> <span class="nav-text">中国剩余定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定理"><span class="nav-number">2.1.1.</span> <span class="nav-text">定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展中国剩余定理"><span class="nav-number">2.2.</span> <span class="nav-text">拓展中国剩余定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定理-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">定理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#卢卡斯定理"><span class="nav-number">3.</span> <span class="nav-text">卢卡斯定理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#卢卡斯定理-1"><span class="nav-number">3.1.</span> <span class="nav-text">卢卡斯定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展卢卡斯定理"><span class="nav-number">3.2.</span> <span class="nav-text">拓展卢卡斯定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#求解-C-n-m-mod-p-i-k"><span class="nav-number">3.2.1.</span> <span class="nav-text">求解$C_n^m  mod  p_i^k$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求解-frac-n-p-i-a-mod-p-i-k"><span class="nav-number">3.2.2.</span> <span class="nav-text">求解$\frac{n!}{p_i^a}  mod  p_i^k$</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </div></aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">kimoyami</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'gdOtc4ivWUXyUbmFmzktM9Cl-gzGzoHsz',
+        appKey: 'Duab8wLnlqsdGSXHzPQb2Dqx',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  undefined
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
