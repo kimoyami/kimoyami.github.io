@@ -312,6 +312,324 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/09/bzoj-4326-运输计划/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/09/bzoj-4326-运输计划/" itemprop="url">bzoj-4326(运输计划)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-09T21:48:32+08:00">
+                2019-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/差分/" itemprop="url" rel="index">
+                    <span itemprop="name">差分</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/09/bzoj-4326-运输计划/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/09/bzoj-4326-运输计划/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=4326" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=4326</a><br>思路：树上差分题目。</p>
+<h4 id="树上差分"><a href="#树上差分" class="headerlink" title="树上差分"></a>树上差分</h4><p>序列上差分是非常简单的东西，考虑差分用到树上，一般问题是对u, v上的路径加减同一个数，这个跟序列上非常类似，分为两种。<br>1、路径上的点差分：如果是对点差分，假设操作是 + 1，我们需要在点u, v上+1，在他们的lca处-1，在他们lca的father再减1，最后dfs合并，保证路径上都加到了。<br>2、路径上的边差分：边的话我们还是得转移到点上：即点x代表的路径是x到x的father的那条边，这样我们需要点u, v上+1，在他们的lca处-2，最后dfs合并即可。</p>
+<p>本题就是一个树上差分的应用，有一定思维难度。首先发现时间具有单调性，即更长的时间结果不会更差，这个就可以二分。考虑二分一个时间后，如果某条路径比这个值短或者相等，说明无论怎么样都可行，我们不用管它，否则我们将它放到树上进行边差分，并且维护一个最大值。最后放到树上的肯定都是大于二分值—即必须要删边才能满足的，假设一共加了x条路径，我们只用看某一个边出现次数是否等于x并且加入的最长路经 - 这条路径 &lt;= 二分值，如果存在就满足，否则不满足。这一点不太容易想到。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/09/bzoj-4326-运输计划/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/08/2019-Multi-University-Training-Contest-6-B-Nonsense-Time/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/08/2019-Multi-University-Training-Contest-6-B-Nonsense-Time/" itemprop="url">2019 Multi-University Training Contest 6-B(Nonsense Time)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-08T22:43:00+08:00">
+                2019-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/基础dp/" itemprop="url" rel="index">
+                    <span itemprop="name">基础dp</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/08/2019-Multi-University-Training-Contest-6-B-Nonsense-Time/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/08/2019-Multi-University-Training-Contest-6-B-Nonsense-Time/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6635" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6635</a><br>思路：这个题有一个结论，一个随机序列的LIS期望是<script type="math/tex">O(\sqrt(n))</script>的，那么我们考虑每次加入一个数，我们要check序列的LIS是否增长，这个没办法快速check。那我们考虑倒过来，如果是删除一个数，如果删的数不在LIS中，那么肯定不影响。如果在的话，因为期望是<script type="math/tex">O(\sqrt(n))</script>，所以我们考虑重新再求一个LIS。这样期望复杂度是<script type="math/tex">O(n\sqrt(n)logn)</script>。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/08/2019-Multi-University-Training-Contest-6-B-Nonsense-Time/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/08/bzoj-5317-部落战争/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1572,322 +1890,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/03/2019牛客暑期多校训练营-第六场-C-Palindrome-Mouse/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/03/2019牛客暑期多校训练营-第六场-C-Palindrome-Mouse/" itemprop="url">2019牛客暑期多校训练营(第六场)-C(Palindrome Mouse)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-03T23:43:17+08:00">
-                2019-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/回文自动机/" itemprop="url" rel="index">
-                    <span itemprop="name">回文自动机</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/03/2019牛客暑期多校训练营-第六场-C-Palindrome-Mouse/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/03/2019牛客暑期多校训练营-第六场-C-Palindrome-Mouse/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://ac.nowcoder.com/acm/contest/886/C" target="_blank" rel="noopener">https://ac.nowcoder.com/acm/contest/886/C</a><br>思路：又对回文自动机有了更进一步的认识。。。。<br>考虑对于回文树上的每一个点统计它的子回文串，我们考虑这些串一定是出现在它及它之前的后缀点的fail树上的（每个回文子串必定是某个后缀点的后缀回文子串），所以我们沿着一路下来，经过的每个点沿着fail树暴力标记，对于某个点的答案贡献就是它所标记的节点数量和。首先第一点：我们如果在fail树上遇到一个点标记过了，那么就停止。这个很好证明，因为之前来过这个点，那它更高的地方一定都被标记了。第二点：每次暴力跳最多不会超过两步。考虑我们每次移动后，新增加的串必定是以该点为结尾的回文串，我们先跳一步，跳到一个它的最长回文后缀的位置，这个点有可能没被计算过（只有结束点在中心点右边的位置的才算过，如果该长度小于之前一半对称过去就在中心点的左边，就可能没有计算过），这没关系，我们考虑再跳一步，它又是一个最长的回文后缀，这时候再在父亲的回文串上对称一下，它就变成了父亲的某个回文前缀，我们利用对称关系，一定可以找到起始点结束点都在中心点右边的该回文子串，这个串一定被统计过了。所以总体复杂度O(n)。<br>如果还不太懂可以看看这里： <a href="https://www.cnblogs.com/1625--H/p/11296121.html" target="_blank" rel="noopener">https://www.cnblogs.com/1625--H/p/11296121.html</a> 感谢原博主<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/03/2019牛客暑期多校训练营-第六场-C-Palindrome-Mouse/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/03/bzoj-4916-神犇和蒟蒻/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/03/bzoj-4916-神犇和蒟蒻/" itemprop="url">bzoj-4916(神犇和蒟蒻)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-03T23:35:39+08:00">
-                2019-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/杜教筛/" itemprop="url" rel="index">
-                    <span itemprop="name">杜教筛</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/08/03/bzoj-4916-神犇和蒟蒻/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/03/bzoj-4916-神犇和蒟蒻/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=4916" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=4916</a><br>思路：求第一个就不说了，恒为1。<br>第二个考虑化简：<script type="math/tex">\sum_{i = 1}^n\phi(i^2)</script><br>由于是积性函数，并且根据欧拉函数的性质，i中的质因子一定在$\phi(i)$中计算过了，所以可以得到:<script type="math/tex">\sum_{i = 1}^n\ i * \phi(i)</script><br>我们把这个函数尝试跟$I$做狄利克雷卷积：<script type="math/tex">f * I = \sum_{d|i}d * \phi(d) * \frac{i}{d} = i ^ 2</script><br>发现特别好算，于是套用杜教筛：<script type="math/tex">S(n) = i ^ 2 - \sum_{i = 2} ^ niS(\lfloor\frac{n}{i}\rfloor)</script><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/03/bzoj-4916-神犇和蒟蒻/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1944,7 +1946,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">477</span>
+                  <span class="site-state-item-count">479</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

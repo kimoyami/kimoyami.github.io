@@ -312,6 +312,326 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/bzoj-2154-Crash的数字表格/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/17/bzoj-2154-Crash的数字表格/" itemprop="url">bzoj-2154(Crash的数字表格)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-17T11:31:53+08:00">
+                2019-07-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/莫比乌斯反演/" itemprop="url" rel="index">
+                    <span itemprop="name">莫比乌斯反演</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/17/bzoj-2154-Crash的数字表格/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/17/bzoj-2154-Crash的数字表格/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2154" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=2154</a><br>思路：求$\sum_{i = 1}^{n}\sum_{j = 1}^{m}lcm(i, j)$<br>老规矩推公式：</p>
+<script type="math/tex; mode=display">\sum_{i = 1}^{n}\sum_{j = 1}^{m}\frac{ij}{gcd(i, j)}</script><p>考虑枚举gcd(i, j):</p>
+<script type="math/tex; mode=display">\sum_{d = 1}^{min(n, m)}d\sum_{i = 1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j = 1}^{\lfloor\frac{m}{d}\rfloor}ij\ [gcd(i, j) == 1]</script><p>根据莫比乌斯函数性质：</p>
+<script type="math/tex; mode=display">\sum_{d = 1}^{min(n, m)}d\sum_{i = 1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j = 1}^{\lfloor\frac{m}{d}\rfloor}ij\sum_{g | gcd(i, j)}\mu(g)</script><p>枚举g:</p>
+<script type="math/tex; mode=display">\sum_{d = 1}^{min(n, m)}d\sum_{g = 1}^{min(\lfloor\frac{n}{d}\rfloor, \lfloor\frac{m}{d}\rfloor)}g^2\mu(g)\sum_{i = 1}^{\lfloor\frac{n}{gd}\rfloor}\sum_{j = 1}^{\lfloor\frac{m}{gd}\rfloor}ij</script><p>发现后面那一块求和是两个等差数列求和，O(1)可以算出来，中间那个可以预处理$g^2\mu(g)$的前缀和，然后可以整除分块做，前面求和也可以整除分块做，相当于对于d * (常数)，对d求一次等差数列即可。<br>注：能不取模的地方就别取模，1e7取模也是要T的啊。。。。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/17/bzoj-2154-Crash的数字表格/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/bzoj-1396-识别子串/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/15/bzoj-1396-识别子串/" itemprop="url">bzoj-1396(识别子串)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-15T18:51:12+08:00">
+                2019-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/后缀自动机/" itemprop="url" rel="index">
+                    <span itemprop="name">后缀自动机</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/15/bzoj-1396-识别子串/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/15/bzoj-1396-识别子串/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=1396" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=1396</a><br>思路：挺好的一个SAM题目。首先因为是要求跟的字串出现次数有关的问题，很容易就想到SAM，那么只出现一次就肯定是找那些right集合为1的状态。考虑这个状态需要更新哪些位置。我们假设这个状态对于的位置为r, 最长串为maxlen, 最短串为minlen,那么对于[r - maxlen + 1, r - minlen + 1]这个区间上某个位置i，我们用r - i + 1来更新最小值。但还没结束，考虑如果这个状态的fail树的上一个状态的size不为1，那么就无法更新后面点的答案，后面点的答案有可能就是前面一个状态的最短串长，也就是说对于[r - minlen, r]这个区间上的某个位置i，我们用minlen来更新。这样我们发现两种情况可以用两个线段树来维护，第一种把i提出去就好了。最后取两种情况的最小值就是答案。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/07/15/bzoj-1396-识别子串/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/15/bzoj-3529-数表/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1582,329 +1902,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/08/luogu-P1776-宝物筛选/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/08/luogu-P1776-宝物筛选/" itemprop="url">luogu-P1776(宝物筛选)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-08T17:33:38+08:00">
-                2019-07-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/单调队列dp/" itemprop="url" rel="index">
-                    <span itemprop="name">单调队列dp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/08/luogu-P1776-宝物筛选/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/08/luogu-P1776-宝物筛选/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://www.luogu.org/problemnew/show/P1776" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P1776</a><br>思路：裸的多重背包，我们考虑朴素的算法，首先枚举第几个物品，再枚举重量，再枚举当前需要用几个，这样是O(nmW)的。这个优化方法就非常特别了，考虑单调队列是对于一段限定的区间里面取最大值，那么在这个问题中哪些状态是属于一段区间的呢，突然发现必须要余数相同的那些状态才有可能属于一个区间，余数相同的这些状态就可以用单调队列优化。所以我们按照余数分类，余数相同的那些状态我们一起转移。<br>原来我们有转移方程：</p>
-<script type="math/tex; mode=display">dp[i] = max(dp[j] + (i - j) / w * v), (i - j) \% w = 0</script><p>我们按照余数改写：</p>
-<script type="math/tex; mode=display">dp[d + i * w] = max(dp[d + j * w] + (i - j) * v), (i - j) <= c</script><p>这个方程展开后就可以用单调队列来优化了<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/08/luogu-P1776-宝物筛选/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/07/luogu-P2257-YY的GCD/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/07/luogu-P2257-YY的GCD/" itemprop="url">luogu-P2257(YY的GCD)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-07T21:33:30+08:00">
-                2019-07-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/莫比乌斯反演/" itemprop="url" rel="index">
-                    <span itemprop="name">莫比乌斯反演</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/07/luogu-P2257-YY的GCD/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/07/luogu-P2257-YY的GCD/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接:<a href="https://www.luogu.org/problemnew/show/P2257" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P2257</a><br>思路：给定N, M,求1&lt;=x&lt;=N, 1&lt;=y&lt;=M且gcd(x, y)为质数的(x, y)有多少对。<br>我们设</p>
-<script type="math/tex; mode=display">f(d) = \sum_{i = 1}^n\sum_{j = 1}^m[gcd(i, j) = d]</script><script type="math/tex; mode=display">F(n) = \sum_{n|d}f(d) = \lfloor\frac{N}{n}\rfloor\lfloor\frac{M}{n}\rfloor</script><script type="math/tex; mode=display">f(n) = \sum_{n|d}\mu(\frac{d}{n})F(d)</script><p>得出：</p>
-<script type="math/tex; mode=display">Ans = \sum_{p\in{prime}}f(p)</script><p>莫比乌斯反演得到：</p>
-<script type="math/tex; mode=display">Ans = \sum_{p\in{prime}}\sum_{p|d}\mu(\frac{d}{p})F(d)</script><p>$我们更改枚举项，枚举\lfloor\frac{d}{p}\rfloor$：</p>
-<script type="math/tex; mode=display">Ans = \sum_{p\in{prime}}\sum_{d = 1}^{min(\lfloor\frac{n}{p}\rfloor, \lfloor\frac{m}{p}\rfloor)}\mu(d)\lfloor\frac{n}{dp}\rfloor\lfloor\frac{m}{dp}\rfloor</script><p>我们将dp换成T：</p>
-<script type="math/tex; mode=display">Ans = \sum_{T = 1}^{min(n, m)}\lfloor\frac{n}{T}\rfloor\lfloor\frac{m}{T}\rfloor(\sum_{t|T, t\in{prime}}\mu(\frac{T}{t}))</script><p>推到这里就可以解决了，由于是多组数据，我们需要预处理。后面的对$\mu$求和我们可以事先预处理出来，剩下的就是整除分块求答案即可。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/07/luogu-P2257-YY的GCD/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1961,7 +1958,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">477</span>
+                  <span class="site-state-item-count">479</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
