@@ -312,6 +312,327 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/04/bzoj-2806-Cheat/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/04/bzoj-2806-Cheat/" itemprop="url">bzoj-2806(Cheat)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-04T18:46:00+08:00">
+                2019-08-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/后缀自动机/" itemprop="url" rel="index">
+                    <span itemprop="name">后缀自动机</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/04/bzoj-2806-Cheat/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/04/bzoj-2806-Cheat/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2806" target="_blank" rel="noopener">https://www.lydsy.com/JudgeOnline/problem.php?id=2806</a><br>思路：明显要二分L值，不然后面都没法做。。考虑二分L值后，如何check。考虑枚举到一个点i，此时到达自动机上u结点，此时匹配的最长后缀串长为x，那么我们考虑当前dp[i]是从哪个j转移过来的，很明显j的范围是[i - x, i - L] (x &gt;= L)，考虑i往后移动，i - x的值是单调不减的（i稳定 + 1，x每次最多 + 1而且还可能因为找不到匹配而变小）， i - L的值也是稳定单调递增，这就变成了一个滑窗，可以用单调队列优化dp解决了。注意单调队列中在i时只放入i - x极以前的位置，保证单调队列中的值在队首check后都是合法可以转移到i点的值。然后还有就是注意求当前匹配的最长后缀的写法。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/04/bzoj-2806-Cheat/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-B-Product/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="kimoyami">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-B-Product/" itemprop="url">The 2019 ACM-ICPC China Shannxi Provincial Programming Contest-B(Product)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-04T14:17:27+08:00">
+                2019-08-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/杜教筛/" itemprop="url" rel="index">
+                    <span itemprop="name">杜教筛</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/08/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-B-Product/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-B-Product/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>链接：<a href="https://nanti.jisuanke.com/t/39269" target="_blank" rel="noopener">https://nanti.jisuanke.com/t/39269</a><br>思路：考虑把东西全部拿到指数上面去，然后用欧拉降幂，令mod = p - 1，那么指数部分就变为了:</p>
+<script type="math/tex; mode=display">\sum_{i = 1}^n\sum_{j = 1}^n\sum_{k = 1}^ngcd(i, j)[k|gcd(i, j)]</script><p>枚举gcd(i, j):</p>
+<script type="math/tex; mode=display">\sum_{t = 1}^ntd(t)\sum_{i = 1}^{\lfloor\frac{n}{t}\rfloor}\sum_{j = 1}^{\lfloor\frac{n}{t}\rfloor}[gcd(i, j) == 1]</script><p>后面是非常典型的套路，用欧拉函数前缀和去凑:</p>
+<script type="math/tex; mode=display">\sum_{t = 1}^ntd(t) * (2 * \sum_{i = 1}^{\lfloor\frac{n}{d}\rfloor}\phi(i) - 1)</script><p>考虑前面分块，后面欧拉函数前缀和我们可以用杜教筛解决，关键是求区间的$td(t)$。<br>既然直接不太好求，我们考虑一下它的前缀和形式：</p>
+<script type="math/tex; mode=display">f(n) = \sum_{i = 1}^nid(i) = \sum_{i = 1}^ni\sum_{j|i}1</script><p>考虑枚举j:</p>
+<script type="math/tex; mode=display">\sum_{j = 1}^nj\sum_{i = 1}^{\lfloor\frac{n}{j}\rfloor}i = \sum_{j = 1}^nj * \frac{(1 + \lfloor\frac{n}{j}\rfloor)\lfloor\frac{n}{j}\rfloor}{2}</script><p>发现它的前缀和也可以数论分块做，但是两个数论分块套在一起复杂度爆了。我们仔细观察发现，里面的数论分块和外面的数论分块的分块值是完全一样的，换句话说它们要用的是共同的<script type="math/tex">2 * \sqrt(n)</script>个点处的值，所以我们考虑里面记忆化搜索，这样总的数论分块的复杂度就变为了<script type="math/tex">O(\sqrt(n))</script>。<br>对于欧拉函数的杜教筛部分也是一样，杜教筛只会用到那$2 * \sqrt(n)$处点的值，所以整个分块中杜教筛的复杂度仍然是<script type="math/tex">O(n^\frac{2}{3})</script><br>注意上面的是模的phi(p) = p - 1，可能不存在逆元，所以不要直接就乱取逆元。。。。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/08/04/The-2019-ACM-ICPC-China-Shannxi-Provincial-Programming-Contest-B-Product/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+      
+    
+      
+            
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/03/2019牛客暑期多校训练营-第六场-C-Palindrome-Mouse/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1578,328 +1899,6 @@
 
       
     
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/31/luogu-P5180-支配树/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/31/luogu-P5180-支配树/" itemprop="url">luogu-P5180(支配树)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-31T22:08:41+08:00">
-                2019-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/支配树/" itemprop="url" rel="index">
-                    <span itemprop="name">支配树</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/31/luogu-P5180-支配树/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/31/luogu-P5180-支配树/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="https://www.luogu.org/problem/P5180" target="_blank" rel="noopener">https://www.luogu.org/problem/P5180</a><br>思路：有向图支配树裸题，纯粹放一个板子在这里。。。。。具体内容看上一篇，待补。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/31/luogu-P5180-支配树/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
-      
-            
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/31/2019-Multi-University-Training-Contest-3-B-Blow-up-the-city/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="kimoyami">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="小雅米，来来往往这么多人，有多少是圆梦后才衣锦还乡的呢？">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/31/2019-Multi-University-Training-Contest-3-B-Blow-up-the-city/" itemprop="url">2019 Multi-University Training Contest 3-B(Blow up the city)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-31T21:34:38+08:00">
-                2019-07-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/支配树/" itemprop="url" rel="index">
-                    <span itemprop="name">支配树</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/31/2019-Multi-University-Training-Contest-3-B-Blow-up-the-city/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/31/2019-Multi-University-Training-Contest-3-B-Blow-up-the-city/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>链接：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=6604" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=6604</a><br>思路：先着重来介绍一下支配树的性质与构造方法吧，本文不详细做证明。</p>
-<h4 id="支配树概念"><a href="#支配树概念" class="headerlink" title="支配树概念"></a>支配树概念</h4><p>支配树解决的问题是从一个起点出发，如果想要到达y结点必须要经过x结点，我们说x支配y（x是y的必经点）。<br>我们所要根据一张图构建出一棵支配树，使得支配树的根代表起点。对于任意一个点x，他到根这条链上的点都是要达到他的必经点（都是它的支配点），他是他所有子树的支配点。</p>
-<h4 id="支配树的构造"><a href="#支配树的构造" class="headerlink" title="支配树的构造"></a>支配树的构造</h4><h5 id="树"><a href="#树" class="headerlink" title="树"></a>树</h5><p>树同时也是支配树，只需要求出以起点为根的有根树就行了。</p>
-<h5 id="DAG"><a href="#DAG" class="headerlink" title="DAG"></a>DAG</h5><p>考虑拓扑排序，我们假设当前处理到拓扑序为x的结点，那么拓扑序为1 - (x - 1)之间的点我们都已经处理完了，我们考虑所有跟他相连的点，都肯定之前已经被处理过了，他们在支配树上的LCA一定在该点到根的链上（如果他们的LCA都没了，他们也就全没了，自然不会有后面的），所以我们把该点的父亲设为其他点在支配树上共同的LCA，一直重复，这样支配树就构造好了。</p>
-<h5 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h5><p><a href="https://blog.csdn.net/litble/article/details/83019578" target="_blank" rel="noopener">https://blog.csdn.net/litble/article/details/83019578</a> 留一个链接在这里吧，暂时没看太懂，有时间再来补，顺手留一个板子</p>
-<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p>考虑如果有多个起点我们怎么办？我们可以设置一个超级起点，然后向这多个起点连边，最后以这个超级结点为根建立支配树就行了。</p>
-<p>回到本题，本题求的是，给你两个点a, b，问有多少点（包括这两个点在内），使得去掉这个点以及它周围的所有边之后，ab两点中至少有一个点不能到达原图中出度为0的点。<br>考虑对于那些出度为0的点，可以看作是起点，我们建立一个超级起点然后建立支配树，对于两点的答案就是他俩的深度和 - lca的深度，就是中间点的数量。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/31/2019-Multi-University-Training-Contest-3-B-Blow-up-the-city/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-      
-    
   </section>
 
   
@@ -1956,7 +1955,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">479</span>
+                  <span class="site-state-item-count">481</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1967,7 +1966,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2027,7 +2026,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
